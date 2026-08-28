@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriKita - Home</title>
+
+    <!-- Tailwind CSS CDN (Untuk styling mudah) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome (Untuk ikon visual) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- 1. NAVBAR (BAGIAN MENU ATAS) -->
+    <nav class="fixed top-0 left-0 w-full bg-white shadow-sm z-50 py-4">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            
+            <!-- Logo Website -->
+            <a href="#" class="text-2xl font-bold text-emerald-600">
+                <i class="fa-solid fa-apple-whole text-amber-500"></i> NutriKita
+            </a>
+
+            <!-- Menu Tautan (Laptop) -->
+            <div class="hidden md:flex space-x-6 font-semibold">
+                <a href="#beranda" class="hover:text-emerald-600">Beranda</a>
+                <a href="#masalah" class="hover:text-emerald-600">Fakta Gizi</a>
+                <a href="#fitur" class="hover:text-emerald-600">Fitur</a>
+            </div>
+
+            <!-- Tombol Aksi Utama -->
+            <a href="#fitur" class="bg-emerald-600 text-white font-bold px-5 py-2 rounded-full hover:bg-emerald-700">
+                Cek Status Gizi
+            </a>
+
+        </div>
+    </nav>
+
+    <!-- 2. HERO SECTION (HALAMAN UTAMA RATA TENGAH) -->
+    <header id="beranda" class="relative min-h-screen flex items-center justify-center text-center px-4 pt-20">
+
+        <!-- Gambar Latar Makanan -->
+        <img src="./gambar/Gemini_Generated_Image_6yd9706yd9706yd9.png"
+             alt="Gambar Latar NutriKita"
+             class="absolute inset-0 w-full h-full object-cover">
+
+        <!-- Lapisan Kaca Putih Transparan (80%) -->
+        <div class="absolute inset-0 bg-white/50"></div>
+
+        <!-- Konten Teks & Tombol (Ditaruh di Atas Gambar) -->
+        <div class="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
+
+            <!-- Judul Utama -->
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                Pahami Tubuhmu, <br>
+                <span class="text-emerald-600">Pilih Pangan Seimbang.</span>
+            </h1>
+
+            <!-- Deskripsi Singkat -->
+            <p class="text-base text-gray-600 mb-8">
+                Bukan sekadar hitung kalori. NutriKita membantu menerjemahkan status gizi tubuhmu menjadi pilihan porsi makan harian yang tepat.
+            </p>
+
+            <!--bagian tombol-->
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#fitur" class="bg-emerald-600 text-white font-bold px-6 py-3 rounded-full hover:bg-emerald-700">
+                    <i class="fa-solid fa-calculator"></i> Hitung Gizi Saya
+                </a>                   <!--fa-calculator = buat iconnya -->
+                <a href="#masalah" class="bg-gray-200 text-gray-800 font-bold px-6 py-3 rounded-full hover:bg-gray-300">
+                    Pelajari Fakta
+                </a>
+            </div>
+
+        </div>
+    </header>
+</body>
+</html>
