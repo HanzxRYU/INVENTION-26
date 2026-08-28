@@ -14,7 +14,7 @@
 <body class="bg-white text-gray-800">
 
     <!-- 1. NAVBAR (BAGIAN MENU ATAS) -->
-    <nav class="fixed top-0 left-0 w-full bg-white shadow-sm z-50 py-4">
+    <nav class="fixed top-0 left-0 w-full bg-white shadow-sm z-50 py-6">
         <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
             
             <!-- Logo Website -->
@@ -24,15 +24,26 @@
 
             <!-- Menu Tautan (Laptop) -->
             <div class="hidden md:flex space-x-6 font-semibold">
-                <a href="#beranda" class="hover:text-emerald-600">Beranda</a>
-                <a href="#masalah" class="hover:text-emerald-600">Fakta Gizi</a>
-                <a href="#fitur" class="hover:text-emerald-600">Fitur</a>
+                <a href="#home" class="hover:text-emerald-600">Home</a>
+                <a href="#blog" class="hover:text-emerald-600">Blog</a>
+                <a href="#bmi" class="hover:text-emerald-600">BMI</a>
+                <a href="#faq" class="hover:text-emerald-600">FAQ</a>
             </div>
 
-            <!-- Tombol Aksi Utama -->
-            <a href="#fitur" class="bg-emerald-600 text-white font-bold px-5 py-2 rounded-full hover:bg-emerald-700">
-                Cek Status Gizi
-            </a>
+            <!-- PILIHAN BARU: SEARCH BAR & TOMBOL AKUN -->
+            <div class="flex items-center gap-3">
+
+            <!-- 1. Search Bar (Kotak Pencarian) -->
+                <div class="relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                    <input type="text" placeholder="Cari..." class="bg-gray-100 text-sm rounded-full pl-9 pr-4 py-1.5 w-32 sm:w-48 focus:outline-none focus:ring-2 focus:ring-emerald-600">
+                </div>
+
+            <!-- 2. Tombol Akun -->
+                <a href="#" class="w-9 h-9 bg-emerald-600 text-white rounded-full flex items-center justify-center hover:bg-emerald-700 transition shadow-sm">
+                    <i class="fa-solid fa-user text-sm"></i>
+                </a>
+            </div>
 
         </div>
     </nav>
