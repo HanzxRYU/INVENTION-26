@@ -24,36 +24,50 @@
 </head>
 <body class="bg-white text-gray-800">
 
-    <!-- 1. NAVBAR -->
-    <nav class="fixed top-0 left-0 w-full z-50 py-5">
-        <div class="max-w-5xl mx-auto px-4 flex justify-center items-center gap-8 md:gap-12">
-            
-            <!-- Menu Kiri -->
-            <a href="#beranda" class="text-sm font-medium text-gray-600 hover:text-black transition">Beranda</a>
-            <a href="#bmi" class="text-sm font-medium text-gray-600 hover:text-black transition">BMI</a>
-
-            <!-- Logo 'gizy' -->
-            <a href="#beranda" class="text-2xl font-extrabold text-black tracking-tight mx-2">
-                gizy
-            </a>
-
-            <!-- Menu Kanan -->
-            <a href="#blog" class="text-sm font-medium text-gray-600 hover:text-black transition">Blog</a>
-            <a href="#faq" class="text-sm font-medium text-gray-600 hover:text-black transition">FAQ</a>
-
+<!-- ================= NAVBAR ADAPTIF (PRESISI SIMETRIS SEIMBANG) ================= -->
+<nav id="main-nav" class="fixed top-0 left-0 w-full z-50 py-5 transition-all duration-150 ease-in-out flex justify-center">
+    <div id="nav-container" class="w-full max-w-5xl mx-auto px-4 flex justify-between items-center transition-all duration-150 ease-in-out">
+        
+        <!-- Group Kiri (Lebar Otomatis Seimbang) -->
+        <div class="flex-1 flex items-center justify-end gap-4 sm:gap-8">
+            <a href="#beranda" class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap">Beranda</a>
+            <a href="#masalah" class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap">Masalah</a>
         </div>
-    </nav>
+
+        <!-- Logo 'gizy' (Pasti di Tengah-Tengah) -->
+        <a href="#beranda" id="nav-logo" class="text-2xl font-extrabold text-black tracking-tight mx-6 sm:mx-10 transition-colors duration-150 flex-shrink-0">
+            gizy
+        </a>
+
+        <!-- Group Kanan (Lebar Otomatis Seimbang) -->
+        <div class="flex-1 flex items-center justify-start gap-4 sm:gap-8">
+            <a href="#blog" class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap">Blog</a>
+            <a href="#faq" class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap">FAQ</a>
+        </div>
+
+    </div>
+</nav>
+
 
     <!-- 2. HERO SECTION -->
     <header id="beranda" class="relative min-h-screen flex items-center justify-center text-center px-4 pt-20">
 
-        <!-- Gambar Latar Makanan -->
-        <img src=""
-             alt="Gambar Latar gizy"
-             class="absolute inset-0 w-full h-full object-cover">
+<!-- Lingkaran Lengkung Dekoratif Utama (Diperbesar) -->
+<div class="absolute w-[850px] h-[850px] md:w-[1200px] md:h-[1200px] rounded-full border border-gray-300/60 pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
 
-        <!-- Lapisan Kaca Putih Transparan (50%) -->
-        <div class="absolute inset-0 bg-white/50"></div>
+<!-- Bentuk Hiasan Dekoratif (Shapes Diperbesar) -->
+
+<!-- 1. Shape Segitiga Hijau Muda (Kiri Atas) -->
+<div class="hidden sm:block absolute top-1/4 left-8 md:left-20 w-20 h-20 md:w-28 md:h-28 bg-[#eaf8db] border border-black/80 rounded-3xl rotate-12 pointer-events-none z-10"></div>
+
+<!-- 2. Shape Kapsul Merah Muda (Kiri Bawah) -->
+<div class="hidden sm:block absolute bottom-12 left-6 md:left-12 w-20 h-44 md:w-24 md:h-56 bg-[#ffb1b1] border border-black/80 rounded-full -rotate-45 pointer-events-none z-10"></div>
+
+<!-- 3. Shape Lingkaran Merah Muda (Kanan Atas) -->
+<div class="hidden sm:block absolute top-1/3 right-8 md:right-20 w-20 h-20 md:w-28 md:h-28 bg-[#ffa8a8] border border-black/80 rounded-full pointer-events-none z-10"></div>
+
+<!-- 4. Shape Bunga/Awan Ungu (Kanan Bawah) -->
+<div class="hidden sm:block absolute bottom-12 right-6 md:right-12 w-24 h-24 md:w-32 md:h-32 bg-[#f3cbff] border border-black/80 rounded-[40px] rotate-12 pointer-events-none z-10"></div>
 
         <!-- Konten Teks & Tombol -->
         <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
@@ -72,28 +86,93 @@
             <!-- Bagian Tombol Aksi -->
             <div class="flex flex-col sm:flex-row gap-4">
                 <button 
-    onclick="window.location.href='nutrikita.html'"
-    class="group flex items-center text-[#FFAEAF]"
->
-    <!-- Lingkaran Ikon Kiri (Muncul saat Hover) -->
-    <div class="w-10 h-10 lg:w-12 lg:h-12 border border-[#FFAEAF] rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 scale-0 group-hover:scale-100 -mr-10 lg:-mr-12 z-10">
-        <i class="fa-solid fa-chevron-down text-sm -translate-x-8 -translate-y-8 transition-transform duration-300 delay-100 group-hover:translate-x-0 group-hover:translate-y-0"></i>
-    </div>
+                    onclick="window.location.href='nutrikita.html'"
+                    class="group flex items-center text-[#FFAEAF]"
+                >
+                    <!-- Lingkaran Ikon Kiri (Muncul saat Hover) -->
+                    <div class="w-10 h-10 lg:w-12 lg:h-12 border border-[#FFAEAF] rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 scale-0 group-hover:scale-100 -mr-10 lg:-mr-12 z-10">
+                        <i class="fa-solid fa-chevron-down text-sm -translate-x-8 -translate-y-8 transition-transform duration-300 delay-100 group-hover:translate-x-0 group-hover:translate-y-0"></i>
+                    </div>
 
-    <!-- Teks Utama (Bergeser ke Kanan saat Hover) -->
-    <div class="text-[#FFAEAF] h-10 lg:h-12 px-4 lg:px-6 border border-[#FFAEAF] rounded-full flex items-center text-sm lg:text-[18px] font-extralight transition-transform duration-300 group-hover:translate-x-10 lg:group-hover:translate-x-12">
-        Pelajari Gizi Sehat!
-    </div>
+                    <!-- Teks Utama (Bergeser ke Kanan saat Hover) -->
+                    <div class="text-[#FFAEAF] h-10 lg:h-12 px-4 lg:px-6 border border-[#FFAEAF] rounded-full flex items-center text-sm lg:text-[18px] font-extralight transition-transform duration-300 group-hover:translate-x-10 lg:group-hover:translate-x-12">
+                        Pelajari Gizi Sehat!
+                    </div>
 
-    <!-- Lingkaran Ikon Kanan (Sembunyi saat Hover) -->
-    <div class="w-10 h-10 lg:w-12 lg:h-12 border border-[#FFAEAF] rounded-full flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-0">
-        <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300 group-hover:translate-x-8 group-hover:translate-y-8"></i>
-    </div>
-</button>
+                    <!-- Lingkaran Ikon Kanan (Sembunyi saat Hover) -->
+                    <div class="w-10 h-10 lg:w-12 lg:h-12 border border-[#FFAEAF] rounded-full flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-0">
+                        <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300 group-hover:translate-x-8 group-hover:translate-y-8"></i>
+                    </div>
+                </button>
             </div>
 
         </div>
     </header>
 
+<!-- ================= SECTION MASALAH KAMI ================= -->
+
+<!-- 1. Lengkungan Atas (SVG Arch) -->
+<div class="w-full overflow-hidden leading-none -mb-1 relative z-20">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-full h-12 sm:h-20 md:h-28 text-[#FFA2A2]">
+        <path d="M0,120 Q600,0 1200,120 L1200,120 L0,120 Z" fill="currentColor"></path>
+    </svg>
+</div>
+
+<!-- 2. Konten Utama Section Pink -->
+<section id="masalah" class="bg-[#FFA2A2] text-white pb-20 pt-4 px-4 relative z-20">
+    <div class="max-w-4xl mx-auto text-center">
+        
+        <!-- Badge "Masalah Kami" (Ukuran disamakan dengan tombol Hero) -->
+        <div class="inline-flex items-center justify-center h-10 lg:h-12 px-6 lg:px-8 border border-white/80 rounded-full text-white text-sm lg:text-[18px] font-extralight mb-6 sm:mb-8">
+            Masalah Kami
+        </div>
+
+        <!-- Judul Utama -->
+        <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-12 sm:mb-16 max-w-2xl mx-auto">
+            Masalah gizi anak di Indonesia masih menjadi tantangan besar
+        </h2>
+
+        <!-- Grid 2 Kolom (Gambar & Teks) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 text-left items-start">
+            
+            <!-- KOLOM KIRI: Gambar Dulu -> Teks -->
+            <div class="flex flex-col gap-4">
+                <!-- Gambar 1 (Posyandu/Pemeriksaan) -->
+                <div class="overflow-hidden rounded-3xl shadow-md">
+                    <img 
+                        src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=800&auto=format&fit=crop" 
+                        alt="Pemeriksaan Gizi Anak" 
+                        class="w-full h-60 sm:h-64 object-cover"
+                    >
+                </div>
+                <!-- Teks Bawah Gambar 1 -->
+                <p class="text-xs sm:text-sm font-normal text-white/90 leading-relaxed px-1">
+                    Berdasarkan Survei Status Gizi Indonesia, sekitar 1 dari 5 anak Indonesia masih mengalami stunting akibat kekurangan gizi kronis — angka yang meski menurun, tetap menjadi tantangan besar setiap tahunnya.
+                </p>
+            </div>
+
+            <!-- KOLOM KANAN: Teks Dulu -> Gambar -->
+            <div class="flex flex-col gap-4">
+                <!-- Teks Atas Gambar 2 -->
+                <p class="text-xs sm:text-sm font-normal text-white/90 leading-relaxed px-1">
+                    Di balik data ini, ada banyak keluarga yang sebenarnya ingin berubah, hanya belum tahu harus mulai dari mana. 
+                </p>
+                <!-- Gambar 2 (Anak-anak) -->
+                <div class="overflow-hidden rounded-3xl shadow-md">
+                    <img 
+                        src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800&auto=format&fit=crop" 
+                        alt="Anak-anak Indonesia" 
+                        class="w-full h-60 sm:h-64 object-cover"
+                    >
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<script src="gizy.js"></script>
 </body>
 </html>
