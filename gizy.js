@@ -91,3 +91,49 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+// bagian sticky
+(function() {
+    const masalah = document.getElementById('masalah');
+    const spacer = document.getElementById('masalah-spacer');
+    let isFixed = false;
+    let rafId = null;
+
+    function update() {
+        // Scroll sudah melewati tinggi section 1?
+        const shouldFix = window.scrollY >= masalah.offsetHeight;
+
+        if (shouldFix !== isFixed) {
+            if (shouldFix) {
+                // Pasang spacer supaya layout tidak jeblog
+                spacer.style.height = masalah.offsetHeight + 'px';
+                masalah.classList.add('masalah-fixed');
+                isFixed = true;
+            } else {
+                masalah.classList.remove('masalah-fixed');
+                spacer.style.height = '0';
+                isFixed = false;
+            }
+        }
+
+        rafId = null;
+    }
+
+    window.addEventListener('scroll', function() {
+        if (!rafId) {
+            rafId = requestAnimationFrame(update);
+        }
+    }, { passive: true });
+
+    // Update spacer kalau ukuran berubah (resize)
+    window.addEventListener('resize', function() {
+        if (isFixed) {
+            spacer.style.height = masalah.offsetHeight + 'px';
+        }
+        // Re-check posisi
+        if (!rafId) {
+            rafId = requestAnimationFrame(update);
+        }
+    }, { passive: true });
+})();
