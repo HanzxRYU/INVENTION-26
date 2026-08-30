@@ -61,3 +61,33 @@
             });
         }
     });
+
+    // ================= ANIMASI ANGKA (COUNT UP ON HOVER) =================
+document.addEventListener('DOMContentLoaded', function() {
+    const statCards = document.querySelectorAll('.card-stat');
+
+    statCards.forEach(card => {
+        const numberElement = card.querySelector('.stat-number');
+        const targetNumber = parseInt(numberElement.getAttribute('data-target'));
+        let timer = null;
+
+        card.addEventListener('mouseenter', function() {
+            let current = 1;
+            numberElement.textContent = current;
+            clearInterval(timer);
+
+            // Hitung kecepatan penambahan angka (durasi total ~0.4 detik)
+            const duration = 400; 
+            const stepTime = Math.max(10, Math.floor(duration / targetNumber));
+
+            timer = setInterval(() => {
+                current++;
+                numberElement.textContent = current;
+
+                if (current >= targetNumber) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        });
+    });
+});
