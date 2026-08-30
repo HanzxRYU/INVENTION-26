@@ -20,6 +20,8 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
+        .chat-scrollbar::-webkit-scrollbar { width: 6px; }
+        .chat-scrollbar::-webkit-scrollbar-thumb { background: #fecaca; border-radius: 999px; }
     </style>
 </head>
 <body class="bg-white text-gray-800">
@@ -173,6 +175,27 @@
 </section>
 
 
+<!-- Chatbot FAQ pola hidup sehat -->
+<div id="chatbot" class="fixed bottom-5 right-5 z-50 flex flex-col items-end">
+    <section id="chat-window" aria-label="Chatbot FAQ pola hidup sehat" class="hidden w-[calc(100vw-2.5rem)] max-w-sm overflow-hidden rounded-3xl border border-rose-100 bg-white shadow-2xl shadow-rose-200/60 mb-4">
+        <header class="flex items-center justify-between bg-[#ef4444] px-5 py-4 text-white">
+            <div class="flex items-center gap-3"><span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20"><i class="fa-solid fa-heart-pulse"></i></span><div><h2 class="text-sm font-bold">Teman Sehat gizy</h2><p class="text-xs text-white/80">Tanya seputar hidup sehat</p></div></div>
+            <button id="chat-close" type="button" aria-label="Tutup chatbot" class="h-8 w-8 rounded-full hover:bg-white/20"><i class="fa-solid fa-xmark"></i></button>
+        </header>
+        <div id="chat-messages" class="chat-scrollbar h-80 space-y-3 overflow-y-auto bg-rose-50/40 p-4" aria-live="polite"></div>
+        <div class="border-t border-rose-100 p-3">
+            <div id="quick-questions" class="mb-3 flex flex-wrap gap-2"></div>
+            <form id="chat-form" class="flex gap-2">
+                <label for="chat-input" class="sr-only">Tulis pertanyaan</label>
+                <input id="chat-input" type="text" autocomplete="off" placeholder="Contoh: tips minum air" class="min-w-0 flex-1 rounded-full border border-rose-200 px-4 py-2 text-sm outline-none transition focus:border-red-400 focus:ring-2 focus:ring-red-100">
+                <button type="submit" aria-label="Kirim pesan" class="h-10 w-10 shrink-0 rounded-full bg-[#ef4444] text-white transition hover:bg-red-600"><i class="fa-solid fa-paper-plane text-sm"></i></button>
+            </form>
+        </div>
+    </section>
+    <button id="chat-toggle" type="button" aria-label="Buka chatbot FAQ" aria-expanded="false" class="flex h-16 w-16 items-center justify-center rounded-full bg-[#ef4444] text-2xl text-white shadow-lg shadow-red-300 transition hover:scale-105 hover:bg-red-600 focus:outline-none focus:ring-4 focus:ring-red-200"><i class="fa-solid fa-comment-dots"></i></button>
+</div>
+
 <script src="gizy.js"></script>
+<script src="faq.js"></script>
 </body>
 </html>
