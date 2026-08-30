@@ -8,3 +8,21 @@
     width: 100% !important;
     z-index: 10 !important;
 }
+
+/* Gaya tombol gender saat tidak aktif */
+    .gender-btn {
+        background-color: white;
+        border-color: #d1d5db; /* gray-300 */
+        color: #374151; /* gray-700 */
+    }
+    .gender-btn:hover {
+        border-color: #a1a1aa; /* gray-400 */
+        background-color: #f9fafb; /* gray-50 */
+    }
+    /* Gaya tombol gender saat AKTIF (diklik) */
+    .gender-btn.active {
+        background-color: #ecfdf5; /* emerald-50 */
+        border-color: #34D399; /* emerald-400 (Warna hijau abang) */
+        color: #065f46; /* emerald-800 */
+        box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.2); /* Efek blur hijau */
+    }

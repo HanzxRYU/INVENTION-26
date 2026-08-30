@@ -1,3 +1,5 @@
+
+
 // 1. Ambil elemen HTML yang ingin diubah
     const mainNav = document.getElementById('main-nav');
     const navContainer = document.getElementById('nav-container');
@@ -137,3 +139,70 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, { passive: true });
 })();
+
+// bagian kebutuhan kalori
+// 1. DATA KEBUTUHAN GIZI (Berdasarkan AKG Indonesia - Disederhanakan untuk pemula)
+    // Data ini yang menentukan angka dan panjang diagram batang.
+    const dataGizi = {
+        'laki': {
+            '6-11': { kalori: 800, karbo: 50, lemak: 35, protein: 15, info: 'Usia MPASI awal. Fokus pada pengenalan tekstur makanan dan energi untuk merangkak/belajar berdiri. Lemak tinggi untuk perkembangan otak.' },
+            '1-3':  { kalori: 1350, karbo: 55, lemak: 30, protein: 15, info: 'Anak sangat aktif bergerak, belajar jalan & bicara. Butuh energi stabil dari karbohidrat dan protein untuk pertumbuhan otot.' },
+            '4-6':  { kalori: 1400, karbo: 55, lemak: 25, protein: 20, info: 'Masa prasekolah. Energi untuk bermain dan sosialisasi. Kebutuhan protein meningkat untuk daya tahan tubuh dan pertumbuhan tulang.' }
+        },
+        'perempuan': {
+            '6-11': { kalori: 750, karbo: 50, lemak: 35, protein: 15, info: 'Usia MPASI awal. Pertumbuhan fisik cepat. Membutuhkan zat besi tinggi dari protein hewani dan lemak sehat.' },
+            '1-3':  { kalori: 1200, karbo: 55, lemak: 30, protein: 15, info: 'Aktif bermain dan bereksplorasi. Lemak sehat mendukung kecerdasan, karbohidrat sebagai bahan bakar utamanya.' },
+            '4-6':  { kalori: 1300, karbo: 55, lemak: 25, protein: 20, info: 'Persiapan sekolah. Kebutuhan gizi seimbang untuk konsentrasi belajar dan aktivitas fisik yang semakin beragam.' }
+        }
+    };
+
+    // Variabel untuk menyimpan pilihan user (Default: Laki-laki)
+    let genderAktif = 'laki';
+
+    // 2. FUNGSI UNTUK MEMILIH GENDER (Diklik)
+    function setGender(gender) {
+        genderAktif = gender;
+        
+        // Hapus kelas 'active' dari semua tombol gender
+        document.querySelectorAll('.gender-btn').forEach(btn => btn.classList.remove('active'));
+        
+        // Tambahkan kelas 'active' ke tombol yang diklik
+        document.getElementById('btn-' + gender).classList.add('active');
+        
+        // Perbarui diagram
+        updatePapaDiagram();
+    }
+
+    // 3. FUNGSI UTAMA UNTUK MENGUBAH TAMPILAN DIAGRAM (LOGIKA TINGKAT PEMULA)
+    function updatePapaDiagram() {
+        // A. Ambil nilai umur dari dropdown
+        const umurSelect = document.getElementById('umur-select');
+        const umurAktif = umurSelect.value;
+
+        // B. Ambil data yang tepat dari "Gudang Data" (dataGizi) di atas
+        const dataPilihan = dataGizi[genderAktif][umurAktif];
+
+        if(!dataPilihan) return; // Jaga-jaga jika data tidak ditemukan
+
+        // C. UBAH TAMPILAN HTML MENGGUNAKAN JAVASCRIPT
+
+        // 1. Ubah Teks Kalori
+        document.getElementById('teks-kalori').innerHTML = `${dataPilihan.kalori} <span class="text-xl font-bold text-gray-700">Kkal/hari</span>`;
+
+        // 2. Ubah Panjang Diagram Batang (CSS Width)
+        // Kita ubah style "width" nya secara otomatis
+        document.getElementById('bar-karbo').style.width = dataPilihan.karbo + '%';
+        document.getElementById('bar-lemak').style.width = dataPilihan.lemak + '%';
+        document.getElementById('bar-protein').style.width = dataPilihan.protein + '%';
+
+        // 3. Ubah Angka Persentase di Legenda
+        document.getElementById('legenda-karbo').innerText = dataPilihan.karbo + '%';
+        document.getElementById('legenda-lemak').innerText = dataPilihan.lemak + '%';
+        document.getElementById('legenda-protein').innerText = dataPilihan.protein + '%';
+
+        // 4. Ubah Teks Penjelasan Perkembangan
+        document.getElementById('teks-perkembangan').innerText = dataPilihan.info;
+    }
+
+    // Menjalankan fungsi sekali saat halaman pertama kali dimuat agar data default muncul
+    window.onload = updatePapaDiagram;
