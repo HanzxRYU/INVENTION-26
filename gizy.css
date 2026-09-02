@@ -22,7 +22,7 @@
     /* Gaya tombol gender saat AKTIF (diklik) */
     .gender-btn.active {
         background-color: #ecfdf5; /* emerald-50 */
-        border-color: #34D399; /* emerald-400 (Warna hijau abang) */
+        border-color: #34D399; /* emerald-400 */
         color: #065f46; /* emerald-800 */
         box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.2); /* Efek blur hijau */
     }

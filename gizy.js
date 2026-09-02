@@ -1,12 +1,29 @@
+// ================= KEMBALI KE HERO SAAT HALAMAN DI-REFRESH =================
 
+// 1. Matikan fitur browser yang \"mengingat\" posisi scroll terakhir
+history.scrollRestoration = 'manual';
 
-// 1. Ambil elemen HTML yang ingin diubah
+// 2. Hapus tanda # di URL (misal #faq) supaya tidak lompat ke section itu
+if (window.location.hash) {
+    history.replaceState(null, '', window.location.pathname);
+}
+
+// 3. Tarik langsung ke paling atas (bagian hero)
+window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+// 4. Jaga-jaga: ulangi lagi setelah semua gambar selesai dimuat,
+//    karena gambar besar bisa menggeser posisi scroll
+window.addEventListener('load', function() {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+});
+
+// ================= NAVBAR SCROLL EFFECT =================
     const mainNav = document.getElementById('main-nav');
     const navContainer = document.getElementById('nav-container');
     const navLogo = document.getElementById('nav-logo');
     const navItems = document.querySelectorAll('.nav-item');
 
-    // 2. Jalankan fungsi ini setiap kali layar di-scroll
+    // Jalankan fungsi ini setiap kali layar di-scroll
     window.addEventListener('scroll', function() {
         
         // Cek apakah posisi scroll sudah lebih dari 40 piksel
@@ -95,16 +112,23 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// bagian sticky
+// ================= SECTION 1 STICKY =================
+// Hero sticky + Section 1 rounded-top nutupin hero,
+// lalu Section 1 jadi fixed, baru Section 2 nutupin Section 1.
 (function() {
+    const beranda = document.getElementById('beranda');
     const masalah = document.getElementById('masalah');
     const spacer = document.getElementById('masalah-spacer');
     let isFixed = false;
     let rafId = null;
 
     function update() {
-        // Scroll sudah melewati tinggi section 1?
-        const shouldFix = window.scrollY >= masalah.offsetHeight;
+        // Hitung threshold: posisi scroll dimana seluruh Section 1 udah terlihat
+        // = tinggi hero + tinggi section1 - tinggi layar
+        const threshold = beranda.offsetHeight + masalah.offsetHeight - window.innerHeight;
+
+        // Scroll sudah melewati seluruh section 1?
+        const shouldFix = window.scrollY >= threshold;
 
         if (shouldFix !== isFixed) {
             if (shouldFix) {
@@ -138,6 +162,22 @@ document.addEventListener('DOMContentLoaded', function() {
             rafId = requestAnimationFrame(update);
         }
     }, { passive: true });
+
+    // ===== KLIK BERANDA → LANGSUNG SCROLL KE HERO =====
+    document.querySelectorAll('a[href=\"#beranda\"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Langsung lepas fixed state kalau sedang aktif
+            if (isFixed) {
+                masalah.classList.remove('masalah-fixed');
+                spacer.style.height = '0';
+                isFixed = false;
+            }
+            // Smooth scroll ke hero
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+
 })();
 
 // bagian kebutuhan kalori
@@ -173,24 +213,22 @@ document.addEventListener('DOMContentLoaded', function() {
         updatePapaDiagram();
     }
 
-    // 3. FUNGSI UTAMA UNTUK MENGUBAH TAMPILAN DIAGRAM (LOGIKA TINGKAT PEMULA)
+    // 3. FUNGSI UTAMA UNTUK MENGUBAH TAMPILAN DIAGRAM
     function updatePapaDiagram() {
         // A. Ambil nilai umur dari dropdown
         const umurSelect = document.getElementById('umur-select');
         const umurAktif = umurSelect.value;
 
-        // B. Ambil data yang tepat dari "Gudang Data" (dataGizi) di atas
+        // B. Ambil data yang tepat dari \"Gudang Data\" (dataGizi) di atas
         const dataPilihan = dataGizi[genderAktif][umurAktif];
 
-        if(!dataPilihan) return; // Jaga-jaga jika data tidak ditemukan
-
-        // C. UBAH TAMPILAN HTML MENGGUNAKAN JAVASCRIPT
+        if(!dataPilihan) return;
 
         // 1. Ubah Teks Kalori
-        document.getElementById('teks-kalori').innerHTML = `${dataPilihan.kalori} <span class="text-xl font-bold text-gray-700">Kkal/hari</span>`;
+        document.getElementById('teks-kalori').innerHTML = `${dataPilihan.kalori} <span class=\"text-xl font-bold text-gray-700\">Kkal/hari</span>`;
 
         // 2. Ubah Panjang Diagram Batang (CSS Width)
-        // Kita ubah style "width" nya secara otomatis
+        // Kita ubah style \"width\" nya secara otomatis
         document.getElementById('bar-karbo').style.width = dataPilihan.karbo + '%';
         document.getElementById('bar-lemak').style.width = dataPilihan.lemak + '%';
         document.getElementById('bar-protein').style.width = dataPilihan.protein + '%';
