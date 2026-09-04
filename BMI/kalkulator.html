@@ -8,17 +8,31 @@
     <!-- Tailwind CSS CDN (sama seperti di gizy.html) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Font Google (Plus Jakarta Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Font Awesome (Ikon Visual) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
+
   </head>
-  <body class="bg-white text-[#1A1A1A] font-['Inter'] leading-[1.6]">
+  <body class="bg-white text-[#1A1A1A] leading-[1.6]">
     <!-- ================= NAVBAR (SAMA PERSIS SEPERTI DI gizy.html) ================= -->
     <nav
       id="main-nav"
@@ -70,7 +84,7 @@
     <!-- ================= KONTEN UTAMA ================= -->
     <div class="max-w-[920px] mx-auto px-6 pt-32 pb-[100px]">
       <h1
-        class="text-center mb-2 text-3xl sm:text-4xl md:text-[38px] font-['Poppins'] font-bold"
+        class="text-center mb-2 text-3xl sm:text-4xl md:text-[38px] font-bold"
       >
         Kalkulator BMI & Kebutuhan Gizi
       </h1>
@@ -90,7 +104,7 @@
               placeholder="cth. 16"
               min="10"
               max="90"
-              class="px-3.5 py-3 border border-black/[0.09] rounded-[10px] font-['Inter'] text-[15px] bg-white focus:outline focus:outline-2 focus:outline-[#FF6B81] focus:border-[#FF6B81]"
+              class="px-3.5 py-3 border border-black/[0.09] rounded-[10px] text-[15px] bg-white focus:outline focus:outline-2 focus:outline-[#FF6B81] focus:border-[#FF6B81]"
             />
           </div>
 
@@ -118,7 +132,7 @@
               type="number"
               id="input-height"
               placeholder="cth. 165"
-              class="px-3.5 py-3 border border-black/[0.09] rounded-[10px] font-['Inter'] text-[15px] bg-white focus:outline focus:outline-2 focus:outline-[#FF6B81] focus:border-[#FF6B81]"
+              class="px-3.5 py-3 border border-black/[0.09] rounded-[10px] text-[15px] bg-white focus:outline focus:outline-2 focus:outline-[#FF6B81] focus:border-[#FF6B81]"
             />
           </div>
 
@@ -128,7 +142,7 @@
               type="number"
               id="input-weight"
               placeholder="cth. 55"
-              class="px-3.5 py-3 border border-black/[0.09] rounded-[10px] font-['Inter'] text-[15px] bg-white focus:outline focus:outline-2 focus:outline-[#FF6B81] focus:border-[#FF6B81]"
+              class="px-3.5 py-3 border border-black/[0.09] rounded-[10px] text-[15px] bg-white focus:outline focus:outline-2 focus:outline-[#FF6B81] focus:border-[#FF6B81]"
             />
           </div>
 
@@ -138,7 +152,7 @@
             >
             <select
               id="input-activity"
-              class="px-3.5 py-3 border border-black/[0.09] rounded-[10px] font-['Inter'] text-[15px] bg-white cursor-pointer focus:outline focus:outline-2 focus:outline-[#FF6B81] focus:border-[#FF6B81]"
+              class="px-3.5 py-3 border border-black/[0.09] rounded-[10px] text-[15px] bg-white cursor-pointer focus:outline focus:outline-2 focus:outline-[#FF6B81] focus:border-[#FF6B81]"
             >
               <option value="1.2">
                 Jarang bergerak (aktivitas ringan/sekolah saja)
@@ -156,7 +170,7 @@
         </div>
 
         <button
-          class="w-full mt-6 py-[15px] bg-[#FF6B81] text-white rounded-full font-['Poppins'] font-bold text-[15px] cursor-pointer hover:bg-[#E14F66] transition-colors"
+          class="w-full mt-6 py-[15px] bg-[#FF6B81] text-white rounded-full font-bold text-[15px] cursor-pointer hover:bg-[#E14F66] transition-colors"
           id="btn-hitung"
         >
           Hitung Status Gizi Saya
@@ -170,7 +184,7 @@
         >
           <div>
             <div
-              class="font-['Poppins'] font-extrabold text-5xl text-[#E14F66]"
+              class="font-extrabold text-5xl text-[#E14F66]"
               id="out-bmi"
             >
               --
@@ -208,21 +222,21 @@
         </div>
 
         <div
-          class="font-['Poppins'] font-bold text-[13px] uppercase tracking-[0.04em] text-[#E14F66] mb-2.5"
+          class="font-bold text-[13px] uppercase tracking-[0.04em] text-[#E14F66] mb-2.5"
         >
           Kebutuhan Kalori Harian
         </div>
         <p class="text-[15px] text-[#6B6B6B]">
           <strong
             id="out-kalori"
-            class="font-['Poppins'] text-[22px] text-[#1A1A1A]"
+            class="text-[22px] text-[#1A1A1A]"
           ></strong>
           kkal/hari — dihitung dari berat, tinggi, usia, dan tingkat aktivitasmu
           (rumus Mifflin-St Jeor).
         </p>
 
         <div
-          class="font-['Poppins'] font-bold text-[13px] uppercase tracking-[0.04em] text-[#E14F66] mb-2.5 mt-6"
+          class="font-bold text-[13px] uppercase tracking-[0.04em] text-[#E14F66] mb-2.5 mt-6"
         >
           Proporsi Makronutrien yang Disarankan
         </div>
@@ -256,7 +270,7 @@
         </div>
 
         <div
-          class="font-['Poppins'] font-bold text-[13px] uppercase tracking-[0.04em] text-[#E14F66] mb-2.5"
+          class="font-bold text-[13px] uppercase tracking-[0.04em] text-[#E14F66] mb-2.5"
         >
           Saran Per Bagian
         </div>
@@ -266,7 +280,7 @@
         ></div>
 
         <div
-          class="font-['Poppins'] font-bold text-[13px] uppercase tracking-[0.04em] text-[#E14F66] mb-2.5"
+          class="font-bold text-[13px] uppercase tracking-[0.04em] text-[#E14F66] mb-2.5"
         >
           Kandungan yang Sering Kurang pada Masyarakat Indonesia
         </div>
@@ -279,10 +293,10 @@
           class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-3.5 mb-4"
         >
           <div class="border border-black/[0.09] rounded-xl p-4">
-            <div class="font-['Poppins'] font-extrabold text-[22px] text-[#D9483A]">
+            <div class="font-extrabold text-[22px] text-[#D9483A]">
               71%
             </div>
-            <h3 class="text-sm mt-1 mb-1.5 font-['Poppins'] font-bold">
+            <h3 class="text-sm mt-1 mb-1.5 font-bold">
               Vitamin C
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
@@ -290,10 +304,10 @@
             </p>
           </div>
           <div class="border border-black/[0.09] rounded-xl p-4">
-            <div class="font-['Poppins'] font-extrabold text-[22px] text-[#D9483A]">
+            <div class="font-extrabold text-[22px] text-[#D9483A]">
               64%
             </div>
-            <h3 class="text-sm mt-1 mb-1.5 font-['Poppins'] font-bold">
+            <h3 class="text-sm mt-1 mb-1.5 font-bold">
               Kalsium
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
@@ -301,10 +315,10 @@
             </p>
           </div>
           <div class="border border-black/[0.09] rounded-xl p-4">
-            <div class="font-['Poppins'] font-extrabold text-[22px] text-[#D9483A]">
+            <div class="font-extrabold text-[22px] text-[#D9483A]">
               50%
             </div>
-            <h3 class="text-sm mt-1 mb-1.5 font-['Poppins'] font-bold">
+            <h3 class="text-sm mt-1 mb-1.5 font-bold">
               Vitamin D
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
@@ -312,10 +326,10 @@
             </p>
           </div>
           <div class="border border-black/[0.09] rounded-xl p-4">
-            <div class="font-['Poppins'] font-extrabold text-[22px] text-[#D9483A]">
+            <div class="font-extrabold text-[22px] text-[#D9483A]">
               45%
             </div>
-            <h3 class="text-sm mt-1 mb-1.5 font-['Poppins'] font-bold">
+            <h3 class="text-sm mt-1 mb-1.5 font-bold">
               Vitamin A
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
@@ -323,10 +337,10 @@
             </p>
           </div>
           <div class="border border-black/[0.09] rounded-xl p-4">
-            <div class="font-['Poppins'] font-extrabold text-[22px] text-[#D9483A]">
+            <div class="font-extrabold text-[22px] text-[#D9483A]">
               36%
             </div>
-            <h3 class="text-sm mt-1 mb-1.5 font-['Poppins'] font-bold">
+            <h3 class="text-sm mt-1 mb-1.5 font-bold">
               Seng (Zinc)
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
@@ -334,10 +348,10 @@
             </p>
           </div>
           <div class="border border-black/[0.09] rounded-xl p-4">
-            <div class="font-['Poppins'] font-extrabold text-[22px] text-[#D9483A]">
+            <div class="font-extrabold text-[22px] text-[#D9483A]">
               32%
             </div>
-            <h3 class="text-sm mt-1 mb-1.5 font-['Poppins'] font-bold">
+            <h3 class="text-sm mt-1 mb-1.5 font-bold">
               Zat Besi
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
