@@ -1,3 +1,22 @@
+// ================= SELALU MULAI DARI ATAS SAAT HALAMAN DIBUKA (SAMA SEPERTI DI gizy.js) =================
+
+// 1. Matikan fitur browser yang "mengingat" posisi scroll terakhir
+history.scrollRestoration = "manual";
+
+// 2. Hapus tanda # di URL (misal #hasil) supaya tidak lompat ke section itu
+if (window.location.hash) {
+  history.replaceState(null, "", window.location.pathname);
+}
+
+// 3. Tarik langsung ke paling atas begitu halaman dibuka
+window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+
+// 4. Jaga-jaga: ulangi lagi setelah semua gambar/aset selesai dimuat,
+//    karena kadang itu bisa menggeser posisi scroll
+window.addEventListener("load", function () {
+  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+});
+
 // ================= NAVBAR SCROLL EFFECT (SAMA SEPERTI DI gizy.js) =================
 const mainNav = document.getElementById("main-nav");
 const navContainer = document.getElementById("nav-container");
@@ -52,6 +71,17 @@ window.addEventListener("scroll", function () {
       item.classList.add("text-gray-600", "hover:text-black");
     });
   }
+});
+
+// ================= KLIK 'BMI' (DI NAVBAR ATAU DI FOOTER) → SCROLL KE ATAS =================
+// Semua link yang dikasih class "scroll-top-link" (baik yang di navbar
+// maupun yang di footer) tidak akan pindah halaman / reload, tapi cuma
+// menggulung (scroll) halaman yang sedang dibuka ini pelan-pelan ke paling atas.
+document.querySelectorAll(".scroll-top-link").forEach(function (link) {
+  link.addEventListener("click", function (e) {
+    e.preventDefault(); // batalkan aksi pindah halaman bawaan link <a>
+    window.scrollTo({ top: 0, behavior: "smooth" }); // scroll halus ke atas
+  });
 });
 
 // ================= LOGIKA KALKULATOR BMI (ISI SAMA SEPERTI SEBELUMNYA) =================
@@ -325,4 +355,3 @@ document.getElementById("btn-hitung").addEventListener("click", () => {
     .getElementById("result-section")
     .scrollIntoView({ behavior: "smooth" });
 });
-
