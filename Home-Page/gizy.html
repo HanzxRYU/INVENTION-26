@@ -148,26 +148,26 @@
           >
             <!-- Lingkaran Ikon Kiri (Muncul saat Hover) -->
             <div
-              class="w-10 h-10 lg:w-12 lg:h-12 border border-[#FFAEAF] rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 scale-0 group-hover:scale-100 -mr-10 lg:-mr-12 z-10"
+              class="w-10 h-10 lg:w-12 lg:h-12 border-2 border-[#FFAEAF] rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 scale-0 group-hover:scale-100 -mr-10 lg:-mr-12 z-10"
             >
               <i
-                class="fa-solid fa-chevron-down text-sm -translate-x-8 -translate-y-8 transition-transform duration-300 delay-100 group-hover:translate-x-0 group-hover:translate-y-0"
+                class="fa-solid fa-chevron-down text-lg -translate-x-8 -translate-y-8 transition-transform duration-300 delay-100 group-hover:translate-x-0 group-hover:translate-y-0"
               ></i>
             </div>
 
             <!-- Teks Utama (Bergeser ke Kanan saat Hover) -->
             <div
-              class="text-[#FFAEAF] h-10 lg:h-12 px-4 lg:px-6 border border-[#FFAEAF] rounded-full flex items-center text-sm lg:text-[18px] font-extralight transition-transform duration-300 group-hover:translate-x-10 lg:group-hover:translate-x-12"
+              class="text-[#FFAEAF] h-10 lg:h-12 px-4 lg:px-6 border-2 border-[#FFAEAF] rounded-full flex items-center text-sm lg:text-[18px] font-extralight transition-transform duration-300 group-hover:translate-x-10 lg:group-hover:translate-x-12"
             >
               Pelajari Gizi Sehat!
             </div>
 
             <!-- Lingkaran Ikon Kanan (Sembunyi saat Hover) -->
             <div
-              class="w-10 h-10 lg:w-12 lg:h-12 border border-[#FFAEAF] rounded-full flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-0"
+              class="w-10 h-10 lg:w-12 lg:h-12 border-2 border-[#FFAEAF] rounded-full flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-0"
             >
               <i
-                class="fa-solid fa-chevron-down text-sm transition-transform duration-300 group-hover:translate-x-8 group-hover:translate-y-8"
+                class="fa-solid fa-chevron-down text-lg transition-transform duration-300 group-hover:translate-x-8 group-hover:translate-y-8"
               ></i>
             </div>
           </button>
@@ -317,10 +317,10 @@
           <!-- Header Section -->
           <div class="text-center mb-12 sm:mb-16">
             <div
-              class="inline-flex items-center justify-center h-10 px-6 border border-gray-300 rounded-full text-gray-600 text-sm font-medium mb-4"
-            >
-              Panduan Porsi Makan
-            </div>
+            class="inline-flex items-center justify-center h-10 lg:h-12 px-6 lg:px-8 border border-gray-300 rounded-full text-gray-600 text-sm lg:text-[18px] font-extralight mb-6 sm:mb-8"
+          >
+            Panduan Gizi Sehat
+          </div>
             <h2
               class="text-3xl sm:text-5xl font-black text-gray-900 tracking-tight"
             >
@@ -391,8 +391,11 @@
             <!-- KOLOM KANAN: KARTU PENJELASAN -->
             <div class="lg:col-span-7 flex flex-col gap-4">
               <!-- Kartu 1: Karbohidrat -->
-              <div class="bg-white p-4 sm:p-5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4 hover:border-black transition border duration-300">
-                  <img src="../assets/kotak-lengkung.svg" class="h-12 w-12" alt="">
+              <div class="bg-white p-4 sm:p-5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4 hover:border-[#B8A9C9] transition border duration-300">
+                  <div class="relative h-12 w-12 shrink-0">
+                    <img src="../assets/kotak-lengkung.svg" class="h-12 w-12" alt="">
+                    <span class="absolute inset-0 flex items-center justify-center text-gray-500 text-xs font-bold">17%</span>
+                  </div>
                 <div>
                   <h3 class="text-sm font-bold text-gray-900 mb-1">
                     Karbohidrat
@@ -408,8 +411,11 @@
 
               <!-- Kartu 2: Protein (Lauk Pauk) -->
               <div
-                class="bg-white p-4 sm:p-5 rounded-2xl border-gray-100 shadow-sm flex items-start gap-4 hover:border-black transition border duration-300">
-                <img src="../assets/lingkaran.svg" class="h-12 w-12" alt="">
+                class="bg-white p-4 sm:p-5 rounded-2xl border-gray-100 shadow-sm flex items-start gap-4 hover:border-[#F4A698] transition border duration-300">
+                <div class="relative h-12 w-12 shrink-0">
+                  <img src="../assets/lingkaran.svg" class="h-12 w-12" alt="">
+                  <span class="absolute inset-0 flex items-center justify-center text-gray-500 text-xs font-bold">33%</span>
+                </div>
                 <div>
                   <h3 class="text-sm font-bold text-gray-900 mb-1">
                     Protein (Lauk Pauk)
@@ -425,11 +431,11 @@
 
               <!-- Kartu 3: Sayur-Sayuran -->
               <div
-                class="bg-white p-4 sm:p-5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4 hover:border-black transition border duration-300"
-              >
-
+                class="bg-white p-4 sm:p-5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4 hover:border-[#A8DADC] transition border duration-300">
+                <div class="relative h-12 w-12 shrink-0">
                   <img src="../assets/segitiga.svg" class="h-12 w-12" alt="">
-
+                  <span class="absolute inset-0 flex items-center justify-center text-gray-500 text-xs font-bold">17%</span>
+                </div>
                 <div>
                   <h3 class="text-sm font-bold text-gray-900 mb-1">
                     Sayur-Sayuran
@@ -445,9 +451,12 @@
 
               <!-- Kartu 4: Buah-Buahan -->
               <div
-                class="bg-white p-4 sm:p-5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4 hover:border-black transition border duration-300"
+                class="bg-white p-4 sm:p-5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4 hover:border-[#B8A9C9] transition border duration-300"
               >
-                  <img src="../assets/bintang.svg" class="h-12 w-12" alt="">
+                  <div class="relative h-12 w-12 shrink-0">
+                    <img src="../assets/bintang.svg" class="h-12 w-12" alt="">
+                    <span class="absolute inset-0 flex items-center justify-center text-gray-500 text-xs font-bold">33%</span>
+                  </div>
                 <div>
                   <h3 class="text-sm font-bold text-gray-900 mb-1">
                     Buah-Buahan
