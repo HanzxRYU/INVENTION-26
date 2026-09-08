@@ -74,38 +74,50 @@ window.addEventListener("scroll", function () {
 });
 
 // ================= KLIK 'BMI' (DI NAVBAR ATAU DI FOOTER) → SCROLL KE ATAS =================
-// Semua link yang dikasih class "scroll-top-link" (baik yang di navbar
-// maupun yang di footer) tidak akan pindah halaman / reload, tapi cuma
-// menggulung (scroll) halaman yang sedang dibuka ini pelan-pelan ke paling atas.
 document.querySelectorAll(".scroll-top-link").forEach(function (link) {
   link.addEventListener("click", function (e) {
-    e.preventDefault(); // batalkan aksi pindah halaman bawaan link <a>
-    window.scrollTo({ top: 0, behavior: "smooth" }); // scroll halus ke atas
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
 
-// ================= LOGIKA KALKULATOR BMI (ISI SAMA SEPERTI SEBELUMNYA) =================
+// ================= LOGIKA KALKULATOR BMI =================
 let selectedGender = "L";
 let riwayat = JSON.parse(localStorage.getItem("gizy_riwayat") || "[]");
 
-// Class Tailwind yang dipakai untuk menandai tombol gender yang lagi aktif/dipilih
-const genderActiveClasses = [
-  "bg-[#FF6B81]",
-  "text-white",
-  "border-[#FF6B81]",
-];
+// ----- TOMBOL GENDER (SEKARANG IKON BULAT, BUKAN TOMBOL TEKS) -----
+// Dua "paket" class ini ditukar bolak-balik: kalau satu paket masuk,
+// paket satunya pasti dikeluarkan dulu. Jadi gak akan ada bentrok
+// (misalnya warna latar lama nempel bareng warna latar baru).
+const genderActiveClasses = ["bg-[#FF6B81]", "border-[#FF6B81]", "text-white"];
+const genderInactiveClasses = ["bg-white", "border-black/[0.09]", "text-[#6B6B6B]"];
 
 document.querySelectorAll(".gender-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
+    // matikan semua tombol dulu -> pasang paket "tidak aktif" ke semuanya
     document.querySelectorAll(".gender-btn").forEach((b) => {
-      b.classList.remove(...genderActiveClasses);
-      b.classList.remove("active");
+      b.classList.remove(...genderActiveClasses, "active");
+      b.classList.add(...genderInactiveClasses);
     });
-    btn.classList.add(...genderActiveClasses);
-    btn.classList.add("active");
+    // baru nyalakan tombol yang diklik -> pasang paket "aktif"
+    btn.classList.remove(...genderInactiveClasses);
+    btn.classList.add(...genderActiveClasses, "active");
     selectedGender = btn.dataset.gender;
   });
 });
+
+// ----- GAMBAR ILUSTRASI BADAN SESUAI KATEGORI BMI -----
+// GANTI value (path) di bawah ini dengan path gambar kamu sendiri.
+// "Sangat Kurus" & "Kurus" sengaja dibikin sama-sama pakai gambar "kurus"
+// -- kalau kamu punya gambar terpisah untuk masing-masing, tinggal
+// pisahkan value-nya jadi 2 baris berbeda.
+const gambarBadan = {
+  "Sangat Kurus": "../assets/badan-kurus.svg",
+  "Kurus": "../assets/badan-kurus.svg",
+  "Normal": "../assets/badan-normal.svg",
+  "Gemuk": "../assets/badan-gendut.svg",
+  "Obesitas": "../assets/obesitas.svg",
+};
 
 function kategoriBMI(bmi) {
   if (bmi < 17)
@@ -154,7 +166,7 @@ function saranPerBagian(kat) {
   const map = {
     "Sangat Kurus": [
       {
-        icon: "fa-fire",
+        label: "fa-fire",
         title: "Kalori",
         text: "Tambah 300-500 kkal dari kebutuhan harianmu secara bertahap, bukan sekaligus.",
       },
@@ -270,7 +282,11 @@ document.getElementById("btn-hitung").addEventListener("click", () => {
   const age = parseFloat(document.getElementById("input-age").value);
   const height = parseFloat(document.getElementById("input-height").value);
   const weight = parseFloat(document.getElementById("input-weight").value);
-  const activity = parseFloat(document.getElementById("input-activity").value);
+  // Field "Tingkat Aktivitas Harian" sudah dihapus dari tampilan.
+  // Supaya "Kebutuhan Kalori Harian" tetap bisa dihitung, dipakai
+  // angka tetap 1.55 (setara "Sedang, olahraga 3-5x/minggu"),
+  // yaitu nilai yang dulu jadi pilihan default di dropdown-nya.
+  const activity = 1.55;
 
   if (!age || !height || !weight) {
     alert("Isi semua data dulu ya (usia, tinggi, berat).");
@@ -303,12 +319,29 @@ document.getElementById("btn-hitung").addEventListener("click", () => {
   const gProtein = Math.round((totalKalori * pProtein) / 100 / 4);
   const gLemak = Math.round((totalKalori * pLemak) / 100 / 9);
 
+  // ----- UPDATE RINGKASAN DI KARTU ATAS (SELALU TERLIHAT) -----
   document.getElementById("out-bmi").textContent = bmi.toFixed(1);
+
   const badgeEl = document.getElementById("out-badge");
   badgeEl.textContent = kat.label;
-  badgeEl.style.background = kat.bg;
-  badgeEl.style.color = kat.color;
-  document.getElementById("out-desc").textContent = kat.desc;
+  badgeEl.style.color = kat.color; // cuma warna teksnya, tanpa background pill
+
+  // Ganti gambar ilustrasi badan sesuai kategori
+  const bodyImg = document.getElementById("body-silhouette");
+  if (gambarBadan[kat.label]) {
+    bodyImg.src = gambarBadan[kat.label];
+  }
+
+  // ----- UPDATE BANNER PENJELASAN KATEGORI (di bawah kartu form) -----
+  document.getElementById("out-bmi-banner").textContent = bmi.toFixed(1);
+
+  const badgeBannerEl = document.getElementById("out-badge-banner");
+  badgeBannerEl.textContent = kat.label;
+  badgeBannerEl.style.color = kat.color;
+
+  document.getElementById("out-desc-banner").textContent = kat.desc;
+
+  // ----- UPDATE BAGIAN DETAIL DI BAWAH -----
   document.getElementById("out-kalori").textContent =
     totalKalori.toLocaleString("id-ID");
 
@@ -322,14 +355,13 @@ document.getElementById("btn-hitung").addEventListener("click", () => {
   document.getElementById("out-lemak").textContent =
     pLemak + "% (" + gLemak + "g)";
 
-  // Kartu saran, sekarang pakai class Tailwind langsung (bukan class kalkulator.css lagi)
   const saranContainer = document.getElementById("saran-container");
   saranContainer.innerHTML = saranPerBagian(kat.label)
     .map(
       (s) => `
     <div class="border border-black/[0.09] rounded-xl p-[18px]">
       <i class="fa-solid ${s.icon} text-[#E14F66] text-lg mb-2 block"></i>
-      <h3 class="text-[15px] mb-1.5 font-['Poppins'] font-bold">${s.title}</h3>
+      <h3 class="text-[15px] mb-1.5 font-bold">${s.title}</h3>
       <p class="text-[13.5px] m-0 text-[#6B6B6B]">${s.text}</p>
     </div>
   `,
