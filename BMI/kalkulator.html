@@ -82,14 +82,14 @@
     </nav>
 
     <!-- ================= KONTEN UTAMA (2 KOLOM SESUAI DESAIN BARU) ================= -->
-    <div class="max-w-[1100px] mx-auto px-6 pt-32 pb-[100px]">
+    <div class="max-w-[1006px] mx-auto px-6 pt-32 pb-[100px]">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
         <!-- ============ KOLOM KIRI: JUDUL, DESKRIPSI, KEUNGGULAN FITUR ============ -->
         <div>
           <h1 class="text-4xl sm:text-[42px] font-black mb-4 leading-tight">
             BMI Kalkulator
           </h1>
-          <p class="text-[#6B6B6B] mb-4">
+          <p class="text-[#6B6B6B] mb-4 ">
             Berat badan ideal adalah impian semua orang. Tidak hanya memiliki
             bentuk tubuh yang menunjang penampilan, berat badan ideal juga
             menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk,
@@ -105,7 +105,7 @@
             <div class="flex items-center gap-4 bg-white p-4 sm:p-5 rounded-2xl shadow-sm hover:border-[#B8A9C9] transition border duration-300">
               <!-- GANTI src di bawah ini dengan gambar ikon kamu sendiri -->
               <img
-                src="../assets/kotak-lengkung.svg"
+                src="../assets/vector/kotak-lengkung.svg"
                 class="h-11 w-11 shrink-0"
                 alt="Ikon menghitung berat badan"
               />
@@ -116,7 +116,7 @@
             <div class="flex items-center gap-4 bg-white p-4 sm:p-5 rounded-2xl shadow-sm hover:border-[#F4A698] transition border duration-300">
               <!-- GANTI src di bawah ini dengan gambar ikon kamu sendiri -->
               <img
-                src="../assets/lingkaran.svg"
+                src="../assets/vector/lingkaran.svg"
                 class="h-11 w-11 shrink-0"
                 alt="Ikon kategori berat badan"
               />
@@ -127,7 +127,7 @@
             <div class="flex items-center gap-4 bg-white p-4 sm:p-5 rounded-2xl shadow-sm hover:border-[#c5d9a4] transition border duration-300">
               <!-- GANTI src di bawah ini dengan gambar ikon kamu sendiri -->
               <img
-                src="../assets/segitiga.svg"
+                src="../assets/vector/segitiga.svg"
                 class="h-11 w-11 shrink-0"
                 alt="Ikon program penurunan berat badan"
               />
@@ -147,7 +147,7 @@
             <!-- (gambar ini otomatis GANTI lewat JavaScript sesuai kategori BMI) -->
             <img
               id="body-silhouette"
-              src="../assets/badan-normal.svg"
+              src="../assets/badan/badan-default.svg"
               class="h-40 sm:h-52 w-auto"
               alt="Ilustrasi bentuk badan"
             />
@@ -190,7 +190,7 @@
                 <input
                   type="number"
                   id="input-age"
-                  placeholder="cth. 16"
+                  placeholder="Masukkan umur Anda"
                   min="10"
                   max="90"
                   class="w-full px-3.5 py-2.5 border border-black/[0.09] rounded-[10px] text-[15px] bg-white focus:outline focus:outline-2 focus:outline-[#FF6B81] focus:border-[#FF6B81]"
@@ -205,7 +205,7 @@
               <input
                 type="number"
                 id="input-height"
-                placeholder="cth. 165"
+                placeholder="Masukkan tinggi badan"
                 class="w-full px-3.5 py-2.5 border border-black/[0.09] rounded-[10px] text-[15px] bg-white focus:outline focus:outline-2 focus:outline-[#FF6B81] focus:border-[#FF6B81]"
               />
             </div>
@@ -217,7 +217,7 @@
               <input
                 type="number"
                 id="input-weight"
-                placeholder="cth. 55"
+                placeholder="Masukkan berat badan"
                 class="w-full px-3.5 py-2.5 border border-black/[0.09] rounded-[10px] text-[15px] bg-white focus:outline focus:outline-2 focus:outline-[#FF6B81] focus:border-[#FF6B81]"
               />
             </div>
@@ -233,12 +233,10 @@
       </div>
 
       <!-- ============ BANNER PENJELASAN KATEGORI (MUNCUL/KE-UPDATE SETELAH HITUNG) ============ -->
-      <div
-        class="mt-12 relative overflow-hidden rounded-2xl bg-[#FF7A7A] p-8 sm:p-10 flex flex-col sm:flex-row items-center gap-6 sm:gap-10"
-      >
+      <div class="w-full max-w-[726px] h-[140px] mx-auto mt-12 relative overflow-hidden rounded-[32px] bg-[#FF7A7A] p-8 sm:p-10 flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
         <!-- dekorasi lingkaran blur, cuma hiasan -->
-        <img src="../assets/kotak-lengkung-pink.svg" class="absolute -top-10 left-10 w-50 h-50 rotate-12 pointer-events-none">
-        <img src="../assets/kotak-lengkung-pink.svg" class="absolute -bottom-10 -right-20 w-50 h-50 pointer-events-none">
+        <img src="../assets/vector/kotak-lengkung-pink.svg" class="absolute -top-10 left-10 w-50 h-50 rotate-12 pointer-events-none">
+        <img src="../assets/vector/kotak-lengkung-pink.svg" class="absolute -bottom-10 -right-20 w-50 h-50 pointer-events-none">
 
         <div class="relative z-10 text-center sm:text-left shrink-0">
           <div
@@ -256,7 +254,7 @@
         </div>
         <p
           id="out-desc-banner"
-          class="relative z-10 text-white font-semibold text-base sm:text-lg text-center sm:text-right leading-relaxed m-0"
+          class="relative z-10 text-[18px] text-white font-semibold text-base sm:text-lg text-center sm:text-right leading-relaxed m-0"
         >
           Isi data di atas lalu klik "Hitung BMI" untuk melihat penjelasan
           status gizimu di sini.
@@ -264,46 +262,22 @@
       </div>
 
       <!-- ============ HASIL DETAIL (MUNCUL SETELAH KLIK "HITUNG BMI") ============ -->
-      <div id="result-section" class="hidden mt-16">
-        <p
-          class="text-[12.5px] bg-[#FDF1DD] text-[#7a5406] px-4 py-3 rounded-[10px] mb-7"
-        >
-          <i class="fa-solid fa-circle-info"></i>
-          Kategori BMI ini menggunakan standar dewasa (Kemenkes RI). Untuk usia
-          di bawah 20 tahun, interpretasi BMI yang lebih akurat sebenarnya
-          menggunakan grafik persentil sesuai usia (WHO Growth Reference) —
-          hasil ini tetap berguna sebagai gambaran awal, bukan diagnosis.
-        </p>
+      <div id="result-section" class="hidden mt-16 ">
 
-        <div class="flex items-center gap-3 mb-8">
-          <div
-            class="flex items-center gap-2 bg-[#EFE9FB] text-[#8C6FD1] px-4 py-2 rounded-full text-[13px] font-bold"
-          >
-            <i class="fa-solid fa-medal"></i>
-            <span id="out-badge-gamif">Cek Pertama!</span>
-          </div>
-          <span class="text-[13px] text-[#6B6B6B]" id="out-streak"></span>
-        </div>
-
-        <div
-          class="font-bold text-[13px] uppercase tracking-[0.04em] text-[#E14F66] mb-2.5"
-        >
+        <!-- ===== KEBUTUHAN KALORI HARIAN ===== -->
+        <!-- Judulnya sekarang tulisan biasa (gak full huruf besar lagi), -->
+        <!-- warnanya pink, dan lebih gede -->
+        <div class="font-bold text-lg text-[#FF6B81] mb-3">
           Kebutuhan Kalori Harian
         </div>
-        <p class="text-[15px] text-[#6B6B6B]">
-          <strong
-            id="out-kalori"
-            class="text-[22px] text-[#1A1A1A]"
-          ></strong>
-          kkal/hari — dihitung dari berat, tinggi, usia, dan tingkat aktivitasmu
-          (rumus Mifflin-St Jeor).
-        </p>
 
-        <div
-          class="font-bold text-[13px] uppercase tracking-[0.04em] text-[#E14F66] mb-2.5 mt-6"
-        >
-          Proporsi Makronutrien yang Disarankan
+        <!-- Angkanya + satuannya ditaruh sejajar (flex), gak pake kalimat -->
+        <!-- panjang lagi kayak sebelumnya -->
+        <div class="flex items-end gap-2 mb-4">
+          <span id="out-kalori" class="font-black text-[32px] text-[#1A1A1A] leading-none">--</span>
+          <span class="text-sm text-[#6B6B6B] mb-1">kkal/hari</span>
         </div>
+
         <div class="flex h-[26px] rounded-lg overflow-hidden mb-3">
           <div id="bar-karbo" style="background: #B8A9C9; width: 55%"></div>
           <div id="bar-protein" style="background: #C5D9A4; width: 30%"></div>
@@ -333,9 +307,8 @@
           </span>
         </div>
 
-        <div
-          class="font-bold text-[13px] uppercase tracking-[0.04em] text-[#E14F66] mb-2.5"
-        >
+        <!-- ===== SARAN PER BAGIAN ===== -->
+        <div class="font-bold text-lg text-[#FF6B81] mb-3">
           Saran Per Bagian
         </div>
         <div
@@ -343,16 +316,10 @@
           id="saran-container"
         ></div>
 
-        <div
-          class="font-bold text-[13px] uppercase tracking-[0.04em] text-[#E14F66] mb-2.5"
-        >
-          Kandungan yang Sering Kurang pada Masyarakat Indonesia
+        <!-- ===== PANDUAN KANDUNGAN SEHAT (dulu namanya beda, sekarang diganti) ===== -->
+        <div class="font-bold text-lg text-[#FF6B81] mb-3">
+          Panduan Kandungan Sehat
         </div>
-        <p class="text-[13px] text-[#6B6B6B]">
-          Ini bukan hasil dari datamu secara personal, tapi gambaran umum agar
-          kamu lebih waspada — riset menunjukkan sebagian besar penduduk dewasa
-          Indonesia kekurangan zat gizi mikro berikut:
-        </p>
         <div
           class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-3.5 mb-4"
         >
@@ -383,10 +350,10 @@
               50%
             </div>
             <h3 class="text-sm mt-1 mb-1.5 font-bold">
-              Vitamin D
+              Vitamin A
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
-              Ikan berlemak, telur, paparan sinar matahari pagi
+              Wortel, bayam, hati ayam, labu kuning
             </p>
           </div>
           <div class="border border-black/[0.09] rounded-xl p-4">
@@ -394,10 +361,10 @@
               45%
             </div>
             <h3 class="text-sm mt-1 mb-1.5 font-bold">
-              Vitamin A
+              Vitamin D
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
-              Wortel, bayam, hati ayam, labu kuning
+              Ikan berlemak, telur, paparan sinar matahari pagi
             </p>
           </div>
           <div class="border border-black/[0.09] rounded-xl p-4">

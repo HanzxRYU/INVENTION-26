@@ -112,11 +112,11 @@ document.querySelectorAll(".gender-btn").forEach((btn) => {
 // -- kalau kamu punya gambar terpisah untuk masing-masing, tinggal
 // pisahkan value-nya jadi 2 baris berbeda.
 const gambarBadan = {
-  "Sangat Kurus": "../assets/badan-kurus.svg",
-  "Kurus": "../assets/badan-kurus.svg",
-  "Normal": "../assets/badan-normal.svg",
-  "Gemuk": "../assets/badan-gendut.svg",
-  "Obesitas": "../assets/obesitas.svg",
+  "Sangat Kurus": "../assets/badan/badan-kurus.svg",
+  "Kurus": "../assets/badan/badan-kurus.svg",
+  "Normal": "../assets/badan/badan-normal.svg",
+  "Gemuk": "../assets/badan/badan-gemuk.svg",
+  "Obesitas": "../assets/badan/obesitas.svg",
 };
 
 function kategoriBMI(bmi) {
@@ -166,110 +166,110 @@ function saranPerBagian(kat) {
   const map = {
     "Sangat Kurus": [
       {
-        label: "fa-fire",
+        icon: "../assets/icon/Api.svg",
         title: "Kalori",
         text: "Tambah 300-500 kkal dari kebutuhan harianmu secara bertahap, bukan sekaligus.",
       },
       {
-        icon: "fa-drumstick-bite",
+        icon: "../assets/icon/ayam.svg",
         title: "Protein",
         text: "Perbanyak telur, ikan, tahu, tempe di setiap waktu makan untuk bantu tambah massa otot.",
       },
       {
-        icon: "fa-bread-slice",
+        icon: "../assets/icon/Baju.svg",
         title: "Karbohidrat",
         text: "Pilih karbohidrat padat energi seperti nasi, kentang, dan ubi dalam porsi cukup.",
       },
       {
-        icon: "fa-person-walking",
+        icon: "../assets/icon/Orang-lari.svg",
         title: "Aktivitas",
         text: "Latihan beban ringan bisa membantu berat badan bertambah sebagai otot, bukan cuma lemak.",
       },
     ],
     Kurus: [
       {
-        icon: "fa-fire",
+        icon: "../assets/icon/Api.svg",
         title: "Kalori",
         text: "Tambah sedikit porsi di setiap waktu makan, sekitar 200-300 kkal dari kebutuhan harianmu.",
       },
       {
-        icon: "fa-drumstick-bite",
+        icon: "../assets/icon/ayam.svg",
         title: "Protein",
         text: "Pastikan ada sumber protein di setiap makan besar: telur, ayam, ikan, atau tempe.",
       },
       {
-        icon: "fa-bread-slice",
+        icon: "../assets/icon/Baju.svg",
         title: "Karbohidrat",
         text: "Jangan lewatkan waktu makan, terutama sarapan, untuk menjaga energi harian.",
       },
       {
-        icon: "fa-person-walking",
+        icon: "../assets/icon/Orang-lari.svg",
         title: "Aktivitas",
         text: "Tetap aktif bergerak, tapi tidak perlu berlebihan — fokus ke kecukupan makan dulu.",
       },
     ],
     Normal: [
       {
-        icon: "fa-fire",
+        icon: "../assets/icon/Api.svg",
         title: "Kalori",
         text: "Pertahankan pola makan saat ini, sesuaikan porsi dengan tingkat aktivitas harianmu.",
       },
       {
-        icon: "fa-drumstick-bite",
+        icon: "../assets/icon/ayam.svg",
         title: "Protein",
         text: "Variasikan sumber protein hewani dan nabati agar nutrisi lebih lengkap.",
       },
       {
-        icon: "fa-bread-slice",
+        icon: "../assets/icon/Baju.svg",
         title: "Karbohidrat",
         text: "Pilih karbohidrat kompleks (nasi merah, oat) lebih sering dibanding yang olahan.",
       },
       {
-        icon: "fa-person-walking",
+        icon: "../assets/icon/Orang-lari.svg",
         title: "Aktivitas",
         text: "Jaga rutinitas aktif minimal 30 menit per hari untuk menjaga kebugaran.",
       },
     ],
     Gemuk: [
       {
-        icon: "fa-fire",
+        icon: "../assets/icon/Api.svg",
         title: "Kalori",
         text: "Kurangi sekitar 200-300 kkal dari kebutuhan harianmu secara bertahap, jangan drastis.",
       },
       {
-        icon: "fa-drumstick-bite",
+        icon: "../assets/icon/ayam.svg",
         title: "Protein",
         text: "Pertahankan asupan protein agar tetap kenyang lebih lama saat mengurangi porsi.",
       },
       {
-        icon: "fa-bread-slice",
+        icon: "../assets/icon/Baju.svg",
         title: "Karbohidrat",
         text: "Kurangi gula dan karbohidrat olahan (gorengan, minuman manis), ganti dengan serat.",
       },
       {
-        icon: "fa-person-walking",
+        icon: "../assets/icon/Orang-lari.svg",
         title: "Aktivitas",
         text: "Tambahkan aktivitas fisik ringan-sedang, seperti jalan cepat 30 menit, 4-5x seminggu.",
       },
     ],
     Obesitas: [
       {
-        icon: "fa-fire",
+        icon: "../assets/icon/Api.svg",
         title: "Kalori",
         text: "Penyesuaian kalori sebaiknya dilakukan bertahap dan didampingi tenaga profesional.",
       },
       {
-        icon: "fa-drumstick-bite",
+        icon: "../assets/icon/ayam.svg",
         title: "Protein",
         text: "Utamakan protein rendah lemak seperti ikan, dada ayam, dan tahu.",
       },
       {
-        icon: "fa-bread-slice",
+        icon: "../assets/icon/Baju.svg",
         title: "Karbohidrat",
         text: "Kurangi signifikan gula tambahan dan makanan olahan tinggi kalori.",
       },
       {
-        icon: "fa-person-walking",
+        icon: "../assets/icon/Orang-lari.svg",
         title: "Aktivitas",
         text: "Mulai dari aktivitas ringan yang konsisten, tingkatkan bertahap sesuai kemampuan tubuh.",
       },
@@ -360,27 +360,13 @@ document.getElementById("btn-hitung").addEventListener("click", () => {
     .map(
       (s) => `
     <div class="border border-black/[0.09] rounded-xl p-[18px]">
-      <i class="fa-solid ${s.icon} text-[#E14F66] text-lg mb-2 block"></i>
+      <img src="${s.icon}" alt="${s.title}" class="h-8 w-8 mb-2" />
       <h3 class="text-[15px] mb-1.5 font-bold">${s.title}</h3>
       <p class="text-[13.5px] m-0 text-[#6B6B6B]">${s.text}</p>
     </div>
   `,
     )
     .join("");
-
-  // gamifikasi: simpan riwayat + badge pertama
-  riwayat.push({
-    date: new Date().toISOString(),
-    bmi: bmi.toFixed(1),
-    kategori: kat.label,
-  });
-  localStorage.setItem("gizy_riwayat", JSON.stringify(riwayat));
-  document.getElementById("out-badge-gamif").textContent =
-    riwayat.length === 1 ? "Cek Pertama!" : "Konsisten Cek Gizi";
-  document.getElementById("out-streak").textContent =
-    riwayat.length > 1
-      ? `Sudah ${riwayat.length}x cek BMI di sini`
-      : "Data tersimpan di perangkatmu";
 
   document.getElementById("result-section").style.display = "block";
   document
