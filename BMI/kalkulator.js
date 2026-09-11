@@ -152,7 +152,7 @@ function kategoriBMI(bmi) {
     label: "Obesitas",
     color: "#D9483A",
     bg: "#FCE7E5",
-    desc: "Berat badanmu cukup jauh di atas kisaran ideal. Disarankan mengatur pola makan bertahap dan berkonsultasi dengan tenaga medis untuk pendampingan yang tepat.",
+    desc: "Berat badanmu jauh di atas ideal. Atur pola makan bertahap dan konsultasi ke tenaga medis.",
   };
 }
 

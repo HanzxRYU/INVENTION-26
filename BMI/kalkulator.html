@@ -241,7 +241,7 @@
         <div class="relative z-10 text-center sm:text-left shrink-0">
           <div
             id="out-bmi-banner"
-            class="font-black text-6xl text-white leading-none"
+            class="font-black text-[48px] text-white leading-none"
           >
             --
           </div>
@@ -263,27 +263,31 @@
 
       <!-- ============ HASIL DETAIL (MUNCUL SETELAH KLIK "HITUNG BMI") ============ -->
       <div id="result-section" class="hidden mt-16 ">
-
+ 
         <!-- ===== KEBUTUHAN KALORI HARIAN ===== -->
         <!-- Judulnya sekarang tulisan biasa (gak full huruf besar lagi), -->
         <!-- warnanya pink, dan lebih gede -->
         <div class="font-bold text-lg text-[#FF6B81] mb-3">
           Kebutuhan Kalori Harian
         </div>
-
-        <!-- Angkanya + satuannya ditaruh sejajar (flex), gak pake kalimat -->
-        <!-- panjang lagi kayak sebelumnya -->
-        <div class="flex items-end gap-2 mb-4">
-          <span id="out-kalori" class="font-black text-[32px] text-[#1A1A1A] leading-none">--</span>
-          <span class="text-sm text-[#6B6B6B] mb-1">kkal/hari</span>
+ 
+        <!-- Angka kalori DAN bar-nya digabung jadi 1 baris pakai flex: -->
+        <!-- kiri = angka+satuan (ukurannya tetap, gak ikut ngecil/ngelebar,      -->
+        <!--        makanya dikasih "shrink-0"), kanan = bar (ngisi sisa ruang    -->
+        <!--        yang ada, makanya dikasih "flex-1"). -->
+        <div class="flex items-center gap-6 mb-3">
+          <div class="flex items-end gap-2 shrink-0">
+            <span id="out-kalori" class="font-black text-[48px] text-[#1A1A1A] leading-none">--</span>
+            <span class="text-sm text-[#6B6B6B] mb-1">kkal/hari</span>
+          </div>
+ 
+          <div class="flex-1 flex h-[26px] rounded-lg overflow-hidden">
+            <div id="bar-karbo" style="background: #B8A9C9; width: 55%"></div>
+            <div id="bar-protein" style="background: #C5D9A4; width: 30%"></div>
+            <div id="bar-lemak" style="background: #F4A698; width: 15%"></div>
+          </div>
         </div>
-
-        <div class="flex h-[26px] rounded-lg overflow-hidden mb-3">
-          <div id="bar-karbo" style="background: #B8A9C9; width: 55%"></div>
-          <div id="bar-protein" style="background: #C5D9A4; width: 30%"></div>
-          <div id="bar-lemak" style="background: #F4A698; width: 15%"></div>
-        </div>
-        <div class="flex gap-[18px] flex-wrap mb-8">
+        <div class="flex gap-[18px] flex-wrap mb-8 justify-between items-center">
           <span class="text-sm">
             <span
               class="w-2.5 h-2.5 rounded-[3px] inline-block mr-1.5"
@@ -324,10 +328,10 @@
           class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-3.5 mb-4"
         >
           <div class="border border-black/[0.09] rounded-xl p-4">
-            <div class="font-extrabold text-[22px] text-[#D9483A]">
+            <div class="font-extrabold text-[48px] text-[#D9483A]">
               71%
             </div>
-            <h3 class="text-sm mt-1 mb-1.5 font-bold">
+            <h3 class="text-[18px] mt-1 mb-1.5 font-bold">
               Vitamin C
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
@@ -335,10 +339,10 @@
             </p>
           </div>
           <div class="border border-black/[0.09] rounded-xl p-4">
-            <div class="font-extrabold text-[22px] text-[#D9483A]">
+            <div class="font-extrabold text-[48px] text-[#D9483A]">
               64%
             </div>
-            <h3 class="text-sm mt-1 mb-1.5 font-bold">
+            <h3 class="text-[18px] mt-1 mb-1.5 font-bold">
               Kalsium
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
@@ -346,10 +350,10 @@
             </p>
           </div>
           <div class="border border-black/[0.09] rounded-xl p-4">
-            <div class="font-extrabold text-[22px] text-[#D9483A]">
+            <div class="font-extrabold text-[48px] text-[#D9483A]">
               50%
             </div>
-            <h3 class="text-sm mt-1 mb-1.5 font-bold">
+            <h3 class="text-[18px] mt-1 mb-1.5 font-bold">
               Vitamin A
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
@@ -357,10 +361,10 @@
             </p>
           </div>
           <div class="border border-black/[0.09] rounded-xl p-4">
-            <div class="font-extrabold text-[22px] text-[#D9483A]">
+            <div class="font-extrabold text-[48px] text-[#D9483A]">
               45%
             </div>
-            <h3 class="text-sm mt-1 mb-1.5 font-bold">
+            <h3 class="text-[18px] mt-1 mb-1.5 font-bold">
               Vitamin D
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
@@ -368,10 +372,10 @@
             </p>
           </div>
           <div class="border border-black/[0.09] rounded-xl p-4">
-            <div class="font-extrabold text-[22px] text-[#D9483A]">
+            <div class="font-extrabold text-[48px] text-[#D9483A]">
               36%
             </div>
-            <h3 class="text-sm mt-1 mb-1.5 font-bold">
+            <h3 class="text-[18px] mt-1 mb-1.5 font-bold">
               Seng (Zinc)
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
@@ -379,10 +383,10 @@
             </p>
           </div>
           <div class="border border-black/[0.09] rounded-xl p-4">
-            <div class="font-extrabold text-[22px] text-[#D9483A]">
+            <div class="font-extrabold text-[48px] text-[#D9483A]">
               32%
             </div>
-            <h3 class="text-sm mt-1 mb-1.5 font-bold">
+            <h3 class="text-[18px] mt-1 mb-1.5 font-bold">
               Zat Besi
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
@@ -390,7 +394,7 @@
             </p>
           </div>
         </div>
-        <p class="text-xs text-[#6B6B6B] border-l-2 border-black/[0.09] pl-2.5">
+        <p class="text-[12.5px] text-[#6B6B6B] border-l-2 border-black/[0.09] pl-2.5">
           Sumber: Studi prevalensi defisiensi zat gizi mikro penduduk dewasa
           Indonesia (metode probabilitas), IPB; studi asupan vitamin D populasi
           Indonesia. Angka bersifat gambaran nasional, bukan hasil ukur
