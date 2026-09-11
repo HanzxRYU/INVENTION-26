@@ -57,7 +57,7 @@
     >
       <div
         id="nav-container"
-        class="w-full max-w-5xl mx-auto px-4 flex justify-between items-center transition-all duration-150 ease-in-out"
+        class="w-full max-w-[1006px] mx-auto px-4 flex justify-between items-center transition-all duration-150 ease-in-out"
       >
         <!-- Group Kiri (Lebar Otomatis Seimbang) -->
         <div class="flex-1 flex items-center justify-end gap-4 sm:gap-8">
@@ -148,26 +148,26 @@
           >
             <!-- Lingkaran Ikon Kiri (Muncul saat Hover) -->
             <div
-              class="w-10 h-10 lg:w-12 lg:h-12 border border-[#FFAEAF] rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 scale-0 group-hover:scale-100 -mr-10 lg:-mr-12 z-10"
+              class="w-10 h-10 lg:w-12 lg:h-12 border-2 border-[#FFAEAF] rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 scale-0 group-hover:scale-100 -mr-10 lg:-mr-12 z-10"
             >
               <i
-                class="fa-solid fa-chevron-down text-sm -translate-x-8 -translate-y-8 transition-transform duration-300 delay-100 group-hover:translate-x-0 group-hover:translate-y-0"
+                class="fa-solid fa-chevron-down text-lg -translate-x-8 -translate-y-8 transition-transform duration-300 delay-100 group-hover:translate-x-0 group-hover:translate-y-0"
               ></i>
             </div>
 
             <!-- Teks Utama (Bergeser ke Kanan saat Hover) -->
             <div
-              class="text-[#FFAEAF] h-10 lg:h-12 px-4 lg:px-6 border border-[#FFAEAF] rounded-full flex items-center text-sm lg:text-[18px] font-extralight transition-transform duration-300 group-hover:translate-x-10 lg:group-hover:translate-x-12"
+              class="text-[#FFAEAF] h-10 lg:h-12 px-4 lg:px-6 border-2 border-[#FFAEAF] rounded-full flex items-center text-sm lg:text-[18px] font-extralight transition-transform duration-300 group-hover:translate-x-10 lg:group-hover:translate-x-12"
             >
               Pelajari Gizi Sehat!
             </div>
 
             <!-- Lingkaran Ikon Kanan (Sembunyi saat Hover) -->
             <div
-              class="w-10 h-10 lg:w-12 lg:h-12 border border-[#FFAEAF] rounded-full flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-0"
+              class="w-10 h-10 lg:w-12 lg:h-12 border-2 border-[#FFAEAF] rounded-full flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-0"
             >
               <i
-                class="fa-solid fa-chevron-down text-sm transition-transform duration-300 group-hover:translate-x-8 group-hover:translate-y-8"
+                class="fa-solid fa-chevron-down text-lg transition-transform duration-300 group-hover:translate-x-8 group-hover:translate-y-8"
               ></i>
             </div>
           </button>
@@ -179,10 +179,19 @@
       <!-- SECTION 1: Nutupin Hero, lalu jadi Sticky -->
       <section
         id="masalah"
-        class="relative z-[5] bg-[#FFA2A2] text-white pb-24 sm:pb-32 pt-8 px-4 flex flex-col justify-center rounded-t-[40px] sm:rounded-t-[60px] shadow-[0_-20px_40px_rgba(0,0,0,0.15)]"
+        class="relative z-[5] bg-[#FFA2A2] text-white pb-24 sm:pb-32 pt-16 px-4 flex flex-col justify-start shadow-[0_-20px_40px_rgba(0,0,0,0.15)]"
         style="min-height: 100vh"
       >
-        <div class="max-w-4xl mx-auto text-center">
+
+      <svg
+     class="absolute top-0 left-0 w-full h-[70px] sm:h-[110px] -translate-y-full pointer-events-none"
+     viewBox="0 0 1200 120"
+     preserveAspectRatio="none"
+   >
+     <path d="M0,120 C300,0 900,0 1200,120 L1200,120 L0,120 Z" fill="#FFA2A2"></path>
+   </svg>
+
+        <div class="max-w-[1006px] mx-auto text-center">
           <!-- Badge "Masalah Kami" -->
           <div
             class="inline-flex items-center justify-center h-10 lg:h-12 px-6 lg:px-8 border border-white/80 rounded-full text-white text-sm lg:text-[18px] font-extralight mb-6 sm:mb-8"
@@ -293,16 +302,25 @@
       <!-- SECTION 2: Nutupin Section 1 yang Sticky -->
       <section
         id="isi-piring"
-        class="relative z-20 bg-[#FAF8F5] text-gray-800 rounded-t-[40px] sm:rounded-t-[60px] shadow-[0_-20px_40px_rgba(0,0,0,0.15)] min-h-screen pt-16 pb-24 px-4 sm:px-8"
+        class="relative z-20 bg-[#FAF8F5] text-gray-800 shadow-[0_-20px_40px_rgba(0,0,0,0.15)] min-h-screen pt-16 pb-24 px-4 sm:px-8"
       >
-        <div class="max-w-5xl mx-auto">
+
+      <svg
+     class="absolute top-0 left-0 w-full h-[70px] sm:h-[110px] -translate-y-full pointer-events-none"
+     viewBox="0 0 1200 120"
+     preserveAspectRatio="none"
+   >
+     <path d="M0,120 C300,0 900,0 1200,120 L1200,120 L0,120 Z" fill="#FAF8F5"></path>
+   </svg>
+
+        <div class="max-w-[1006px] mx-auto">
           <!-- Header Section -->
           <div class="text-center mb-12 sm:mb-16">
             <div
-              class="inline-flex items-center justify-center h-10 px-6 border border-gray-300 rounded-full text-gray-600 text-sm font-medium mb-4"
-            >
-              Panduan Porsi Makan
-            </div>
+            class="inline-flex items-center justify-center h-10 lg:h-12 px-6 lg:px-8 border border-gray-300 rounded-full text-gray-600 text-sm lg:text-[18px] font-extralight mb-6 sm:mb-8"
+          >
+            Panduan Gizi Sehat
+          </div>
             <h2
               class="text-3xl sm:text-5xl font-black text-gray-900 tracking-tight"
             >
@@ -373,16 +391,11 @@
             <!-- KOLOM KANAN: KARTU PENJELASAN -->
             <div class="lg:col-span-7 flex flex-col gap-4">
               <!-- Kartu 1: Karbohidrat -->
-              <div
-                class="bg-white p-4 sm:p-5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow"
-              >
-                <div
-                  class="w-12 h-12 rounded-xl bg-[#B8A9C9] text-white text-lg flex items-center justify-center shrink-0"
-                >
-                  <div class="text-md font-black text-white leading-none">
-                    33%
+              <div class="bg-white p-4 sm:p-5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4 hover:border-[#B8A9C9] transition border duration-300">
+                  <div class="relative h-12 w-12 shrink-0">
+                    <img src="../assets/vector/kotak-lengkung.svg" class="h-12 w-12" alt="">
+                    <span class="absolute inset-0 flex items-center justify-center text-gray-500 text-xs font-bold">17%</span>
                   </div>
-                </div>
                 <div>
                   <h3 class="text-sm font-bold text-gray-900 mb-1">
                     Karbohidrat
@@ -398,14 +411,10 @@
 
               <!-- Kartu 2: Protein (Lauk Pauk) -->
               <div
-                class="bg-white p-4 sm:p-5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow"
-              >
-                <div
-                  class="w-12 h-12 rounded-xl bg-[#F4A698] text-white text-lg flex items-center justify-center shrink-0"
-                >
-                  <div class="text-md font-black text-white leading-none">
-                    17%
-                  </div>
+                class="bg-white p-4 sm:p-5 rounded-2xl border-gray-100 shadow-sm flex items-start gap-4 hover:border-[#F4A698] transition border duration-300">
+                <div class="relative h-12 w-12 shrink-0">
+                  <img src="../assets/vector/lingkaran.svg" class="h-12 w-12" alt="">
+                  <span class="absolute inset-0 flex items-center justify-center text-gray-500 text-xs font-bold">33%</span>
                 </div>
                 <div>
                   <h3 class="text-sm font-bold text-gray-900 mb-1">
@@ -422,14 +431,10 @@
 
               <!-- Kartu 3: Sayur-Sayuran -->
               <div
-                class="bg-white p-4 sm:p-5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow"
-              >
-                <div
-                  class="w-12 h-12 rounded-xl bg-[#C5D9A4] text-white text-lg flex items-center justify-center shrink-0"
-                >
-                  <div class="text-md font-black text-white leading-none">
-                    33%
-                  </div>
+                class="bg-white p-4 sm:p-5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4 hover:border-[#A8DADC] transition border duration-300">
+                <div class="relative h-12 w-12 shrink-0">
+                  <img src="../assets/vector/segitiga.svg" class="h-12 w-12" alt="">
+                  <span class="absolute inset-0 flex items-center justify-center text-gray-500 text-xs font-bold">17%</span>
                 </div>
                 <div>
                   <h3 class="text-sm font-bold text-gray-900 mb-1">
@@ -446,15 +451,12 @@
 
               <!-- Kartu 4: Buah-Buahan -->
               <div
-                class="bg-white p-4 sm:p-5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow"
+                class="bg-white p-4 sm:p-5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4 hover:border-[#B8A9C9] transition border duration-300"
               >
-                <div
-                  class="w-12 h-12 rounded-xl bg-[#9B8AA5] text-white text-lg flex items-center justify-center shrink-0"
-                >
-                  <div class="text-md font-black text-white leading-none">
-                    17%
+                  <div class="relative h-12 w-12 shrink-0">
+                    <img src="../assets/vector/bintang.svg" class="h-12 w-12" alt="">
+                    <span class="absolute inset-0 flex items-center justify-center text-gray-500 text-xs font-bold">33%</span>
                   </div>
-                </div>
                 <div>
                   <h3 class="text-sm font-bold text-gray-900 mb-1">
                     Buah-Buahan
@@ -465,6 +467,159 @@
                       >Pisang, pepaya, jeruk, apel</span
                     >
                   </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ========================================================================= -->
+          <!-- [BAGIAN BARU: TIPS MAKAN SEHAT - KARTU YANG "DIBALIK" (FLIP) SAAT DI-HOVER] -->
+          <!-- ========================================================================= -->
+          <div class="mt-20 sm:mt-28 text-center">
+            <div
+              class="inline-flex items-center justify-center h-10 px-6 border border-gray-300 rounded-full text-gray-600 text-sm font-medium mb-4"
+            >
+              Pesan Pola Seimbang
+            </div>
+            <h2
+              class="text-3xl sm:text-5xl font-black text-gray-900 tracking-tight mb-10"
+            >
+              Tips Makan Sehat
+            </h2>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-left">
+              <!-- KARTU 1: kartu pembuka, warna solid saja, TIDAK bisa dibalik -->
+              <div
+                class="h-[320px] w-[239.5px] rounded-2xl overflow-hidden bg-gradient-to-br from-[#FF9B9B] to-[#FF7A7A] p-5 flex flex-col justify-between"
+              >
+                <h3 class="text-white font-extrabold text-lg leading-snug">
+                  Tidak Cukup hanya dari piringmu!
+                </h3>
+                <p class="text-white/90 text-xs leading-relaxed">
+                  Berikut adalah 3 tips untuk menjaga pola gizi sehat.
+                </p>
+              </div>
+
+              <!-- ===== KARTU 2, 3, 4: BISA DIBALIK SAAT DI-HOVER ===== -->
+              <!-- Cara kerja "flip": setiap kartu punya SISI DEPAN (foto+judul)
+                   dan SISI BELAKANG (warna+penjelasan) yang ditumpuk pas-pasan.
+                   Class "group" di pembungkus luar itu "saklar"-nya; begitu mouse
+                   nempel di atas kartu (hover), class "group-hover:[transform:rotateY(180deg)]"
+                   di lapisan dalam bikin kartunya muter 180 derajat secara halus
+                   (karena ada "transition-transform duration-500"), jadi sisi
+                   belakang yang kelihatan. "[backface-visibility:hidden]" itu yang
+                   bikin sisi belakang gak transparan/kebalik pas lagi muter. -->
+
+              <!-- Kartu 2: Makan Seimbang dan Beragam -->
+              <div class="group [perspective:1000px] h-[320px] w-[239.5px]">
+                <div
+                  class="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
+                >
+                  <!-- Sisi depan -->
+                  <div
+                    class="absolute inset-0 rounded-2xl overflow-hidden [backface-visibility:hidden]"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?q=80&w=600&auto=format&fit=crop"
+                      class="w-full h-full object-cover"
+                      alt="Makan seimbang dan beragam"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
+                    ></div>
+                    <h3
+                      class="absolute bottom-4 left-4 right-4 text-white font-extrabold text-base leading-snug"
+                    >
+                      Makan Seimbang dan Beragam
+                    </h3>
+                  </div>
+                  <!-- Sisi belakang -->
+                  <div
+                    class="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#C5E8B7] to-[#8FCB7A] p-5 flex flex-col justify-center [backface-visibility:hidden] [transform:rotateY(180deg)]"
+                  >
+                    <h3 class="text-white font-extrabold text-base mb-2">
+                      Makan Seimbang dan Beragam
+                    </h3>
+                    <p class="text-white text-xs leading-relaxed">
+                      Pastikan piringmu selalu ada karbohidrat, protein,
+                      sayur, dan buah dalam porsi yang seimbang di setiap
+                      waktu makan.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Kartu 3: Batasi Asupan & Jaga Kebersihan -->
+              <div class="group [perspective:1000px] h-[320px] w-[239.5px]">
+                <div
+                  class="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
+                >
+                  <div
+                    class="absolute inset-0 rounded-2xl overflow-hidden [backface-visibility:hidden]"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1581622558667-3419a8dc5f83?q=80&w=600&auto=format&fit=crop"
+                      class="w-full h-full object-cover"
+                      alt="Batasi asupan dan jaga kebersihan"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
+                    ></div>
+                    <h3
+                      class="absolute bottom-4 left-4 right-4 text-white font-extrabold text-base leading-snug"
+                    >
+                      Batasi Asupan &amp; Jaga Kebersihan
+                    </h3>
+                  </div>
+                  <div
+                    class="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#F4D9A0] to-[#E8B65C] p-5 flex flex-col justify-center [backface-visibility:hidden] [transform:rotateY(180deg)]"
+                  >
+                    <h3 class="text-white font-extrabold text-base mb-2">
+                      Batasi Asupan &amp; Jaga Kebersihan
+                    </h3>
+                    <p class="text-white text-xs leading-relaxed">
+                      Kurangi gula, garam, dan minyak berlebih. Jangan lupa
+                      cuci tangan sebelum makan untuk mencegah kuman masuk
+                      ke tubuh.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Kartu 4: Rutinitas Sehat Setiap Hari -->
+              <div class="group [perspective:1000px] h-[320px] w-[239.5px]">
+                <div
+                  class="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
+                >
+                  <div
+                    class="absolute inset-0 rounded-2xl overflow-hidden [backface-visibility:hidden]"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1578671642900-cb78b0fe2969?q=80&w=600&auto=format&fit=crop"
+                      class="w-full h-full object-cover"
+                      alt="Rutinitas sehat setiap hari"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
+                    ></div>
+                    <h3
+                      class="absolute bottom-4 left-4 right-4 text-white font-extrabold text-base leading-snug"
+                    >
+                      Rutinitas Sehat Setiap Hari
+                    </h3>
+                  </div>
+                  <div
+                    class="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#FFB1B1] to-[#FF8A8A] p-5 flex flex-col justify-center [backface-visibility:hidden] [transform:rotateY(180deg)]"
+                  >
+                    <h3 class="text-white font-extrabold text-base mb-2">
+                      Rutinitas Sehat Setiap Hari
+                    </h3>
+                    <p class="text-white text-xs leading-relaxed">
+                      Biasakan minum air putih yang cukup, tidur teratur,
+                      dan tetap aktif bergerak setiap hari supaya tubuh
+                      tetap bugar.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

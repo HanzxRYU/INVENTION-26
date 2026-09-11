@@ -8,17 +8,31 @@
     <!-- Tailwind CSS CDN (sama seperti di gizy.html) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Font Google (Plus Jakarta Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Font Awesome (Ikon Visual) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
+
   </head>
-  <body class="bg-white text-[#1A1A1A] font-['Inter'] leading-[1.6]">
+  <body class="bg-white text-[#1A1A1A] leading-[1.6]">
     <!-- ================= NAVBAR (SAMA PERSIS SEPERTI DI gizy.html) ================= -->
     <nav
       id="main-nav"
@@ -67,171 +81,213 @@
       </div>
     </nav>
 
-    <!-- ================= KONTEN UTAMA ================= -->
-    <div class="max-w-[920px] mx-auto px-6 pt-32 pb-[100px]">
-      <h1
-        class="text-center mb-2 text-3xl sm:text-4xl md:text-[38px] font-['Poppins'] font-bold"
-      >
-        Kalkulator BMI & Kebutuhan Gizi
-      </h1>
-      <p class="text-center max-w-[480px] mx-auto mb-10 text-[#6B6B6B]">
-        Isi data di bawah untuk mengetahui status gizimu, kebutuhan kalori
-        harian, dan saran personal.
-      </p>
+    <!-- ================= KONTEN UTAMA (2 KOLOM SESUAI DESAIN BARU) ================= -->
+    <div class="max-w-[1006px] mx-auto px-6 pt-32 pb-[100px]">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        <!-- ============ KOLOM KIRI: JUDUL, DESKRIPSI, KEUNGGULAN FITUR ============ -->
+        <div>
+          <h1 class="text-4xl sm:text-[42px] font-black mb-4 leading-tight">
+            BMI Kalkulator
+          </h1>
+          <p class="text-[#6B6B6B] mb-4 ">
+            Berat badan ideal adalah impian semua orang. Tidak hanya memiliki
+            bentuk tubuh yang menunjang penampilan, berat badan ideal juga
+            menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk,
+            hitung sekarang di BMI Kalkulator.
+          </p>
+          <p class="text-[#6B6B6B] mb-10">
+            Isi data disamping untuk mengetahui status gizimu, kebutuhan
+            kalori harian dan saran personal!
+          </p>
 
-      <!-- ============ CARD FORM ============ -->
-      <div class="bg-[#FAFAFA] border border-black/[0.09] rounded-2xl p-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <div class="flex flex-col gap-1.5">
-            <label class="text-[13px] font-semibold">Usia (tahun)</label>
-            <input
-              type="number"
-              id="input-age"
-              placeholder="cth. 16"
-              min="10"
-              max="90"
-              class="px-3.5 py-3 border border-black/[0.09] rounded-[10px] font-['Inter'] text-[15px] bg-white focus:outline focus:outline-2 focus:outline-[#FF6B81] focus:border-[#FF6B81]"
-            />
-          </div>
-
-          <div class="flex flex-col gap-1.5">
-            <label class="text-[13px] font-semibold">Jenis Kelamin</label>
-            <div class="flex gap-2.5">
-              <div
-                class="gender-btn active flex-1 py-3 px-3 border border-[#FF6B81] bg-[#FF6B81] text-white rounded-[10px] text-center cursor-pointer font-semibold text-sm transition-colors"
-                data-gender="L"
-              >
-                Laki-laki
-              </div>
-              <div
-                class="gender-btn flex-1 py-3 px-3 border border-black/[0.09] rounded-[10px] text-center cursor-pointer font-semibold text-sm transition-colors"
-                data-gender="P"
-              >
-                Perempuan
-              </div>
+          <div class="font-bold text-lg mb-5">Keunggulan Fitur</div>
+          <div class="flex flex-col gap-5">
+            <div class="flex items-center gap-4 bg-white p-4 sm:p-5 rounded-2xl shadow-sm hover:border-[#B8A9C9] transition border duration-300">
+              <!-- GANTI src di bawah ini dengan gambar ikon kamu sendiri -->
+              <img
+                src="../assets/vector/kotak-lengkung.svg"
+                class="h-11 w-11 shrink-0"
+                alt="Ikon menghitung berat badan"
+              />
+              <p class="text-sm text-[#1A1A1A] m-0">
+                Menghitung berat badan
+              </p>
             </div>
-          </div>
-
-          <div class="flex flex-col gap-1.5">
-            <label class="text-[13px] font-semibold">Tinggi Badan (cm)</label>
-            <input
-              type="number"
-              id="input-height"
-              placeholder="cth. 165"
-              class="px-3.5 py-3 border border-black/[0.09] rounded-[10px] font-['Inter'] text-[15px] bg-white focus:outline focus:outline-2 focus:outline-[#FF6B81] focus:border-[#FF6B81]"
-            />
-          </div>
-
-          <div class="flex flex-col gap-1.5">
-            <label class="text-[13px] font-semibold">Berat Badan (kg)</label>
-            <input
-              type="number"
-              id="input-weight"
-              placeholder="cth. 55"
-              class="px-3.5 py-3 border border-black/[0.09] rounded-[10px] font-['Inter'] text-[15px] bg-white focus:outline focus:outline-2 focus:outline-[#FF6B81] focus:border-[#FF6B81]"
-            />
-          </div>
-
-          <div class="flex flex-col gap-1.5 sm:col-span-2">
-            <label class="text-[13px] font-semibold"
-              >Tingkat Aktivitas Harian</label
-            >
-            <select
-              id="input-activity"
-              class="px-3.5 py-3 border border-black/[0.09] rounded-[10px] font-['Inter'] text-[15px] bg-white cursor-pointer focus:outline focus:outline-2 focus:outline-[#FF6B81] focus:border-[#FF6B81]"
-            >
-              <option value="1.2">
-                Jarang bergerak (aktivitas ringan/sekolah saja)
-              </option>
-              <option value="1.375">Ringan (olahraga 1-3x/minggu)</option>
-              <option value="1.55" selected>
-                Sedang (olahraga 3-5x/minggu)
-              </option>
-              <option value="1.725">Aktif (olahraga 6-7x/minggu)</option>
-              <option value="1.9">
-                Sangat aktif (atlet/latihan fisik berat)
-              </option>
-            </select>
+            <div class="flex items-center gap-4 bg-white p-4 sm:p-5 rounded-2xl shadow-sm hover:border-[#F4A698] transition border duration-300">
+              <!-- GANTI src di bawah ini dengan gambar ikon kamu sendiri -->
+              <img
+                src="../assets/vector/lingkaran.svg"
+                class="h-11 w-11 shrink-0"
+                alt="Ikon kategori berat badan"
+              />
+              <p class="text-sm text-[#1A1A1A] m-0">
+                Menentukan kategori berat badan ideal atau tidak
+              </p>
+            </div>
+            <div class="flex items-center gap-4 bg-white p-4 sm:p-5 rounded-2xl shadow-sm hover:border-[#c5d9a4] transition border duration-300">
+              <!-- GANTI src di bawah ini dengan gambar ikon kamu sendiri -->
+              <img
+                src="../assets/vector/segitiga.svg"
+                class="h-11 w-11 shrink-0"
+                alt="Ikon program penurunan berat badan"
+              />
+              <p class="text-sm text-[#1A1A1A] m-0">
+                Mempersiapkan program penurunan berat badan
+              </p>
+            </div>
           </div>
         </div>
 
-        <button
-          class="w-full mt-6 py-[15px] bg-[#FF6B81] text-white rounded-full font-['Poppins'] font-bold text-[15px] cursor-pointer hover:bg-[#E14F66] transition-colors"
-          id="btn-hitung"
-        >
-          Hitung Status Gizi Saya
-        </button>
+        <!-- ============ KOLOM KANAN: RINGKASAN (TANPA BORDER) + KARTU FORM (DENGAN BORDER) ============ -->
+        <div>
+          <!-- Ringkasan BMI: TIDAK dibungkus card/border, ngambang di atas kartu form -->
+          <!-- SELALU TAMPIL, ke-update tiap kali tombol "Hitung BMI" diklik -->
+          <div class="flex items-center justify-between gap-4 mb-6">
+            <!-- GANTI src di bawah ini dengan gambar ilustrasi badan "normal" kamu -->
+            <!-- (gambar ini otomatis GANTI lewat JavaScript sesuai kategori BMI) -->
+            <img
+              id="body-silhouette"
+              src="../assets/badan/badan-default.svg"
+              class="h-40 sm:h-52 w-auto"
+              alt="Ilustrasi bentuk badan"
+            />
+            <div class="text-right">
+              <p class="text-xs text-[#6B6B6B] m-0 mb-1">Body Mass Index</p>
+              <div id="out-bmi" class="font-black text-5xl leading-none">
+                --
+              </div>
+              <div id="out-badge" class="font-bold text-base mt-1">--</div>
+            </div>
+          </div>
+
+          <!-- Kartu form: INI yang punya border -->
+          <div class="bg-white border border-black/[0.09] rounded-2xl p-6 sm:p-8 shadow-sm">
+            <!-- Baris: Jenis Kelamin + Umur (sejajar) -->
+            <div class="flex items-start justify-between gap-4 mb-5">
+              <div>
+                <label class="block text-[13px] font-semibold mb-2"
+                  >Jenis Kelamin</label
+                >
+                <div class="flex gap-2">
+                  <div
+                    class="gender-btn active h-10 w-10 flex items-center justify-center rounded-[10px] border bg-[#FF6B81] border-[#FF6B81] text-white cursor-pointer transition-colors"
+                    data-gender="L"
+                  >
+                    <i class="fa-solid fa-mars"></i>
+                  </div>
+                  <div
+                    class="gender-btn h-10 w-10 flex items-center justify-center rounded-[10px] border bg-white border-black/[0.09] text-[#6B6B6B] cursor-pointer transition-colors"
+                    data-gender="P"
+                  >
+                    <i class="fa-solid fa-venus"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-1">
+                <label class="block text-[13px] font-semibold mb-2"
+                  >Umur</label
+                >
+                <input
+                  type="number"
+                  id="input-age"
+                  placeholder="Masukkan umur Anda"
+                  min="10"
+                  max="90"
+                  class="w-full px-3.5 py-2.5 border border-black/[0.09] rounded-[10px] text-[15px] bg-white focus:outline focus:outline-2 focus:outline-[#FF6B81] focus:border-[#FF6B81]"
+                />
+              </div>
+            </div>
+
+            <div class="mb-5">
+              <label class="block text-[13px] font-semibold mb-2"
+                >Tinggi (cm)</label
+              >
+              <input
+                type="number"
+                id="input-height"
+                placeholder="Masukkan tinggi badan"
+                class="w-full px-3.5 py-2.5 border border-black/[0.09] rounded-[10px] text-[15px] bg-white focus:outline focus:outline-2 focus:outline-[#FF6B81] focus:border-[#FF6B81]"
+              />
+            </div>
+
+            <div class="mb-5">
+              <label class="block text-[13px] font-semibold mb-2"
+                >Berat (kg)</label
+              >
+              <input
+                type="number"
+                id="input-weight"
+                placeholder="Masukkan berat badan"
+                class="w-full px-3.5 py-2.5 border border-black/[0.09] rounded-[10px] text-[15px] bg-white focus:outline focus:outline-2 focus:outline-[#FF6B81] focus:border-[#FF6B81]"
+              />
+            </div>
+
+            <button
+              class="w-full py-[15px] bg-[#FF6B81] text-white rounded-full font-bold text-[15px] cursor-pointer hover:bg-[#E14F66] transition-colors"
+              id="btn-hitung"
+            >
+              Hitung BMI
+            </button>
+          </div>
+        </div>
       </div>
 
-      <!-- ============ HASIL ============ -->
-      <div id="result-section" class="hidden mt-10">
-        <div
-          class="flex flex-col items-start sm:flex-row sm:items-center gap-6 bg-[#FFE9EC] rounded-2xl px-8 py-7 mb-4 flex-wrap"
-        >
-          <div>
-            <div
-              class="font-['Poppins'] font-extrabold text-5xl text-[#E14F66]"
-              id="out-bmi"
-            >
-              --
-            </div>
-            <div
-              class="inline-block px-3.5 py-[5px] rounded-full text-[13px] font-bold mt-1"
-              id="out-badge"
-            >
-              --
-            </div>
-          </div>
-          <div class="flex-1 min-w-[200px]">
-            <p class="m-0 text-sm text-[#6B6B6B]" id="out-desc">--</p>
-          </div>
-        </div>
+      <!-- ============ BANNER PENJELASAN KATEGORI (MUNCUL/KE-UPDATE SETELAH HITUNG) ============ -->
+      <div class="w-full max-w-[726px] h-[140px] mx-auto mt-12 relative overflow-hidden rounded-[32px] bg-[#FF7A7A] p-8 sm:p-10 flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
+        <!-- dekorasi lingkaran blur, cuma hiasan -->
+        <img src="../assets/vector/kotak-lengkung-pink.svg" class="absolute -top-10 left-10 w-50 h-50 rotate-12 pointer-events-none">
+        <img src="../assets/vector/kotak-lengkung-pink.svg" class="absolute -bottom-10 -right-20 w-50 h-50 pointer-events-none">
 
-        <p
-          class="text-[12.5px] bg-[#FDF1DD] text-[#7a5406] px-4 py-3 rounded-[10px] mb-7"
-        >
-          <i class="fa-solid fa-circle-info"></i>
-          Kategori BMI ini menggunakan standar dewasa (Kemenkes RI). Untuk usia
-          di bawah 20 tahun, interpretasi BMI yang lebih akurat sebenarnya
-          menggunakan grafik persentil sesuai usia (WHO Growth Reference) —
-          hasil ini tetap berguna sebagai gambaran awal, bukan diagnosis.
-        </p>
-
-        <div class="flex items-center gap-3 mb-8">
+        <div class="relative z-10 text-center sm:text-left shrink-0">
           <div
-            class="flex items-center gap-2 bg-[#EFE9FB] text-[#8C6FD1] px-4 py-2 rounded-full text-[13px] font-bold"
+            id="out-bmi-banner"
+            class="font-black text-[48px] text-white leading-none"
           >
-            <i class="fa-solid fa-medal"></i>
-            <span id="out-badge-gamif">Cek Pertama!</span>
+            --
           </div>
-          <span class="text-[13px] text-[#6B6B6B]" id="out-streak"></span>
+          <div
+            id="out-badge-banner"
+            class="inline-block mt-3 px-4 py-1.5 rounded-full bg-white/90 font-bold text-sm"
+          >
+            --
+          </div>
         </div>
-
-        <div
-          class="font-['Poppins'] font-bold text-[13px] uppercase tracking-[0.04em] text-[#E14F66] mb-2.5"
+        <p
+          id="out-desc-banner"
+          class="relative z-10 text-[18px] text-white font-semibold text-base sm:text-lg text-center sm:text-right leading-relaxed m-0"
         >
+          Isi data di atas lalu klik "Hitung BMI" untuk melihat penjelasan
+          status gizimu di sini.
+        </p>
+      </div>
+
+      <!-- ============ HASIL DETAIL (MUNCUL SETELAH KLIK "HITUNG BMI") ============ -->
+      <div id="result-section" class="hidden mt-16 ">
+ 
+        <!-- ===== KEBUTUHAN KALORI HARIAN ===== -->
+        <!-- Judulnya sekarang tulisan biasa (gak full huruf besar lagi), -->
+        <!-- warnanya pink, dan lebih gede -->
+        <div class="font-bold text-lg text-[#FF6B81] mb-3">
           Kebutuhan Kalori Harian
         </div>
-        <p class="text-[15px] text-[#6B6B6B]">
-          <strong
-            id="out-kalori"
-            class="font-['Poppins'] text-[22px] text-[#1A1A1A]"
-          ></strong>
-          kkal/hari — dihitung dari berat, tinggi, usia, dan tingkat aktivitasmu
-          (rumus Mifflin-St Jeor).
-        </p>
-
-        <div
-          class="font-['Poppins'] font-bold text-[13px] uppercase tracking-[0.04em] text-[#E14F66] mb-2.5 mt-6"
-        >
-          Proporsi Makronutrien yang Disarankan
+ 
+        <!-- Angka kalori DAN bar-nya digabung jadi 1 baris pakai flex: -->
+        <!-- kiri = angka+satuan (ukurannya tetap, gak ikut ngecil/ngelebar,      -->
+        <!--        makanya dikasih "shrink-0"), kanan = bar (ngisi sisa ruang    -->
+        <!--        yang ada, makanya dikasih "flex-1"). -->
+        <div class="flex items-center gap-6 mb-3">
+          <div class="flex items-end gap-2 shrink-0">
+            <span id="out-kalori" class="font-black text-[48px] text-[#1A1A1A] leading-none">--</span>
+            <span class="text-sm text-[#6B6B6B] mb-1">kkal/hari</span>
+          </div>
+ 
+          <div class="flex-1 flex h-[26px] rounded-lg overflow-hidden">
+            <div id="bar-karbo" style="background: #B8A9C9; width: 55%"></div>
+            <div id="bar-protein" style="background: #C5D9A4; width: 30%"></div>
+            <div id="bar-lemak" style="background: #F4A698; width: 15%"></div>
+          </div>
         </div>
-        <div class="flex h-[26px] rounded-lg overflow-hidden mb-3">
-          <div id="bar-karbo" style="background: #B8A9C9; width: 55%"></div>
-          <div id="bar-protein" style="background: #C5D9A4; width: 30%"></div>
-          <div id="bar-lemak" style="background: #F4A698; width: 15%"></div>
-        </div>
-        <div class="flex gap-[18px] flex-wrap mb-8">
+        <div class="flex gap-[18px] flex-wrap mb-8 justify-between items-center">
           <span class="text-sm">
             <span
               class="w-2.5 h-2.5 rounded-[3px] inline-block mr-1.5"
@@ -255,9 +311,8 @@
           </span>
         </div>
 
-        <div
-          class="font-['Poppins'] font-bold text-[13px] uppercase tracking-[0.04em] text-[#E14F66] mb-2.5"
-        >
+        <!-- ===== SARAN PER BAGIAN ===== -->
+        <div class="font-bold text-lg text-[#FF6B81] mb-3">
           Saran Per Bagian
         </div>
         <div
@@ -265,24 +320,18 @@
           id="saran-container"
         ></div>
 
-        <div
-          class="font-['Poppins'] font-bold text-[13px] uppercase tracking-[0.04em] text-[#E14F66] mb-2.5"
-        >
-          Kandungan yang Sering Kurang pada Masyarakat Indonesia
+        <!-- ===== PANDUAN KANDUNGAN SEHAT (dulu namanya beda, sekarang diganti) ===== -->
+        <div class="font-bold text-lg text-[#FF6B81] mb-3">
+          Panduan Kandungan Sehat
         </div>
-        <p class="text-[13px] text-[#6B6B6B]">
-          Ini bukan hasil dari datamu secara personal, tapi gambaran umum agar
-          kamu lebih waspada — riset menunjukkan sebagian besar penduduk dewasa
-          Indonesia kekurangan zat gizi mikro berikut:
-        </p>
         <div
           class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-3.5 mb-4"
         >
           <div class="border border-black/[0.09] rounded-xl p-4">
-            <div class="font-['Poppins'] font-extrabold text-[22px] text-[#D9483A]">
+            <div class="font-extrabold text-[48px] text-[#D9483A]">
               71%
             </div>
-            <h3 class="text-sm mt-1 mb-1.5 font-['Poppins'] font-bold">
+            <h3 class="text-[18px] mt-1 mb-1.5 font-bold">
               Vitamin C
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
@@ -290,10 +339,10 @@
             </p>
           </div>
           <div class="border border-black/[0.09] rounded-xl p-4">
-            <div class="font-['Poppins'] font-extrabold text-[22px] text-[#D9483A]">
+            <div class="font-extrabold text-[48px] text-[#D9483A]">
               64%
             </div>
-            <h3 class="text-sm mt-1 mb-1.5 font-['Poppins'] font-bold">
+            <h3 class="text-[18px] mt-1 mb-1.5 font-bold">
               Kalsium
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
@@ -301,21 +350,10 @@
             </p>
           </div>
           <div class="border border-black/[0.09] rounded-xl p-4">
-            <div class="font-['Poppins'] font-extrabold text-[22px] text-[#D9483A]">
+            <div class="font-extrabold text-[48px] text-[#D9483A]">
               50%
             </div>
-            <h3 class="text-sm mt-1 mb-1.5 font-['Poppins'] font-bold">
-              Vitamin D
-            </h3>
-            <p class="text-[12.5px] m-0 text-[#6B6B6B]">
-              Ikan berlemak, telur, paparan sinar matahari pagi
-            </p>
-          </div>
-          <div class="border border-black/[0.09] rounded-xl p-4">
-            <div class="font-['Poppins'] font-extrabold text-[22px] text-[#D9483A]">
-              45%
-            </div>
-            <h3 class="text-sm mt-1 mb-1.5 font-['Poppins'] font-bold">
+            <h3 class="text-[18px] mt-1 mb-1.5 font-bold">
               Vitamin A
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
@@ -323,10 +361,21 @@
             </p>
           </div>
           <div class="border border-black/[0.09] rounded-xl p-4">
-            <div class="font-['Poppins'] font-extrabold text-[22px] text-[#D9483A]">
+            <div class="font-extrabold text-[48px] text-[#D9483A]">
+              45%
+            </div>
+            <h3 class="text-[18px] mt-1 mb-1.5 font-bold">
+              Vitamin D
+            </h3>
+            <p class="text-[12.5px] m-0 text-[#6B6B6B]">
+              Ikan berlemak, telur, paparan sinar matahari pagi
+            </p>
+          </div>
+          <div class="border border-black/[0.09] rounded-xl p-4">
+            <div class="font-extrabold text-[48px] text-[#D9483A]">
               36%
             </div>
-            <h3 class="text-sm mt-1 mb-1.5 font-['Poppins'] font-bold">
+            <h3 class="text-[18px] mt-1 mb-1.5 font-bold">
               Seng (Zinc)
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
@@ -334,10 +383,10 @@
             </p>
           </div>
           <div class="border border-black/[0.09] rounded-xl p-4">
-            <div class="font-['Poppins'] font-extrabold text-[22px] text-[#D9483A]">
+            <div class="font-extrabold text-[48px] text-[#D9483A]">
               32%
             </div>
-            <h3 class="text-sm mt-1 mb-1.5 font-['Poppins'] font-bold">
+            <h3 class="text-[18px] mt-1 mb-1.5 font-bold">
               Zat Besi
             </h3>
             <p class="text-[12.5px] m-0 text-[#6B6B6B]">
@@ -345,7 +394,7 @@
             </p>
           </div>
         </div>
-        <p class="text-xs text-[#6B6B6B] border-l-2 border-black/[0.09] pl-2.5">
+        <p class="text-[12.5px] text-[#6B6B6B] border-l-2 border-black/[0.09] pl-2.5">
           Sumber: Studi prevalensi defisiensi zat gizi mikro penduduk dewasa
           Indonesia (metode probabilitas), IPB; studi asupan vitamin D populasi
           Indonesia. Angka bersifat gambaran nasional, bukan hasil ukur
@@ -354,7 +403,7 @@
       </div>
     </div>
 
-        <!-- ================= FOOTER (NORMAL) ================= -->
+    <!-- ================= FOOTER (NORMAL) ================= -->
     <footer class="bg-[#FFA2A2] text-white pt-12 pb-8 px-4 relative z-30">
       <div
         class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-white/30"
