@@ -1,6 +1,6 @@
 // ================= KEMBALI KE HERO SAAT HALAMAN DI-REFRESH =================
 
-// 1. Matikan fitur browser yang \"mengingat\" posisi scroll terakhir
+// 1. Matikan fitur browser yang "mengingat" posisi scroll terakhir
 history.scrollRestoration = "manual";
 
 // 2. Hapus tanda # di URL (misal #faq) supaya tidak lompat ke section itu
@@ -23,6 +23,11 @@ const navContainer = document.getElementById("nav-container");
 const navLogo = document.getElementById("nav-logo");
 const navItems = document.querySelectorAll(".nav-item");
 
+// Tambahan: ambil elemen hamburger & menu mobile
+const navToggle = document.getElementById("nav-toggle");
+const navToggleIcon = document.getElementById("nav-toggle-icon");
+const mobileMenu = document.getElementById("mobile-menu");
+
 // Jalankan fungsi ini setiap kali layar di-scroll
 window.addEventListener("scroll", function () {
   // Cek apakah posisi scroll sudah lebih dari 40 piksel
@@ -31,21 +36,26 @@ window.addEventListener("scroll", function () {
     mainNav.classList.remove("top-0", "py-5");
     mainNav.classList.add("top-4"); // Turun sedikit dari atas layar
 
-    navContainer.classList.remove("max-w-5xl", "px-4");
+    // CATATAN: yang di-remove harus "max-w-[1006px]" (sesuai HTML),
+    // bukan "max-w-5xl" — kalau gak sama, kapsulnya gak akan mengecil.
+    navContainer.classList.remove("max-w-[1006px]", "px-4");
     navContainer.classList.add(
       "max-w-xl",
       "px-6",
       "py-3",
-      "bg-[#FFA2A2]/50" /* Background pink transparan 85% */,
-      "backdrop-blur-md" /* Efek buram/blur pada elemen di belakangnya */,
-      "rounded-full" /* Bentuk kapsul melengkung */,
+      "mx-4", // biar kapsul gak nempel banget ke pinggir layar HP
+      "bg-[#FFA2A2]/50", // Background pink transparan
+      "backdrop-blur-md", // Efek buram pada elemen di belakangnya
+      "rounded-full", // Bentuk kapsul melengkung
       "border",
-      "border-white/80" /* Garis tepi putih */,
+      "border-white/80", // Garis tepi putih
       "shadow-lg",
     );
 
-    // Ubah warna teks logo dan menu menjadi putih
+    // Ubah warna teks logo & ikon hamburger jadi putih
     navLogo.classList.replace("text-black", "text-white");
+    navToggle.classList.replace("text-black", "text-white");
+
     navItems.forEach((item) => {
       item.classList.remove("text-gray-600", "hover:text-black");
       item.classList.add("text-white", "hover:opacity-80");
@@ -59,6 +69,7 @@ window.addEventListener("scroll", function () {
       "max-w-xl",
       "px-6",
       "py-3",
+      "mx-4",
       "bg-[#FFA2A2]/50",
       "backdrop-blur-md",
       "rounded-full",
@@ -66,14 +77,52 @@ window.addEventListener("scroll", function () {
       "border-white/80",
       "shadow-lg",
     );
-    navContainer.classList.add("max-w-5xl", "px-4");
+    navContainer.classList.add("max-w-[1006px]", "px-4");
 
-    // Kembalikan warna teks logo dan menu ke warna awal
+    // Kembalikan warna teks logo & ikon hamburger ke hitam
     navLogo.classList.replace("text-white", "text-black");
+    navToggle.classList.replace("text-white", "text-black");
+
     navItems.forEach((item) => {
       item.classList.remove("text-white", "hover:opacity-80");
       item.classList.add("text-gray-600", "hover:text-black");
     });
+  }
+});
+
+// ================= MENU MOBILE (HAMBURGER) =================
+// Fungsi kecil biar gak nulis kode yang sama berkali-kali
+function tutupMenuMobile() {
+  mobileMenu.classList.add("hidden");
+  navToggleIcon.classList.replace("fa-xmark", "fa-bars"); // ikon X -> garis 3
+  navToggle.setAttribute("aria-expanded", "false");
+}
+
+navToggle.addEventListener("click", function () {
+  const lagiTertutup = mobileMenu.classList.contains("hidden");
+
+  if (lagiTertutup) {
+    mobileMenu.classList.remove("hidden"); // tampilkan menu
+    navToggleIcon.classList.replace("fa-bars", "fa-xmark"); // garis 3 -> X
+    navToggle.setAttribute("aria-expanded", "true");
+  } else {
+    tutupMenuMobile();
+  }
+});
+
+// Tutup menu otomatis setelah salah satu link di dalamnya diklik
+document.querySelectorAll(".mobile-link").forEach(function (link) {
+  link.addEventListener("click", tutupMenuMobile);
+});
+
+// Tutup juga kalau user klik di luar area menu / tombolnya
+document.addEventListener("click", function (e) {
+  if (
+    !mobileMenu.classList.contains("hidden") &&
+    !mobileMenu.contains(e.target) &&
+    !navToggle.contains(e.target)
+  ) {
+    tutupMenuMobile();
   }
 });
 
@@ -168,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   // ===== KLIK BERANDA → LANGSUNG SCROLL KE HERO =====
-  document.querySelectorAll('a[href=\"#beranda\"]').forEach(function (link) {
+  document.querySelectorAll('a[href="#beranda"]').forEach(function (link) {
     link.addEventListener("click", function (e) {
       e.preventDefault();
       // Langsung lepas fixed state kalau sedang aktif
@@ -183,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 })();
 
-// bagian kebutuhan kalori
+// ================== BAGIAN KEBUTUHAN KALORI ANAK ==================
 // 1. DATA KEBUTUHAN GIZI (Berdasarkan AKG Indonesia - Disederhanakan untuk pemula)
 // Data ini yang menentukan angka dan panjang diagram batang.
 const dataGizi = {
@@ -260,17 +309,16 @@ function updatePapaDiagram() {
   const umurSelect = document.getElementById("umur-select");
   const umurAktif = umurSelect.value;
 
-  // B. Ambil data yang tepat dari \"Gudang Data\" (dataGizi) di atas
+  // B. Ambil data yang tepat dari "Gudang Data" (dataGizi) di atas
   const dataPilihan = dataGizi[genderAktif][umurAktif];
 
   if (!dataPilihan) return;
 
   // 1. Ubah Teks Kalori
   document.getElementById("teks-kalori").innerHTML =
-    `${dataPilihan.kalori} <span class=\"text-xl font-bold text-gray-700\">Kkal/hari</span>`;
+    `${dataPilihan.kalori} <span class="text-xl font-bold text-gray-700">Kkal/hari</span>`;
 
   // 2. Ubah Panjang Diagram Batang (CSS Width)
-  // Kita ubah style \"width\" nya secara otomatis
   document.getElementById("bar-karbo").style.width = dataPilihan.karbo + "%";
   document.getElementById("bar-lemak").style.width = dataPilihan.lemak + "%";
   document.getElementById("bar-protein").style.width =

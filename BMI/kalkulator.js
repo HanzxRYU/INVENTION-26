@@ -1,4 +1,4 @@
-// ================= SELALU MULAI DARI ATAS SAAT HALAMAN DIBUKA (SAMA SEPERTI DI gizy.js) =================
+// ================= SELALU MULAI DARI ATAS SAAT HALAMAN DIBUKA =================
 
 // 1. Matikan fitur browser yang "mengingat" posisi scroll terakhir
 history.scrollRestoration = "manual";
@@ -17,11 +17,16 @@ window.addEventListener("load", function () {
   window.scrollTo({ top: 0, left: 0, behavior: "instant" });
 });
 
-// ================= NAVBAR SCROLL EFFECT (SAMA SEPERTI DI gizy.js) =================
+// ================= NAVBAR SCROLL EFFECT =================
 const mainNav = document.getElementById("main-nav");
 const navContainer = document.getElementById("nav-container");
 const navLogo = document.getElementById("nav-logo");
 const navItems = document.querySelectorAll(".nav-item");
+
+// Tambahan: ambil elemen hamburger & menu mobile
+const navToggle = document.getElementById("nav-toggle");
+const navToggleIcon = document.getElementById("nav-toggle-icon");
+const mobileMenu = document.getElementById("mobile-menu");
 
 window.addEventListener("scroll", function () {
   if (window.scrollY > 40) {
@@ -34,6 +39,7 @@ window.addEventListener("scroll", function () {
       "max-w-xl",
       "px-6",
       "py-3",
+      "mx-4", // biar kapsul gak nempel banget ke pinggir layar HP
       "bg-[#FFA2A2]/50",
       "backdrop-blur-md",
       "rounded-full",
@@ -42,7 +48,10 @@ window.addEventListener("scroll", function () {
       "shadow-lg",
     );
 
+    // Logo & ikon hamburger ikut jadi putih
     navLogo.classList.replace("text-black", "text-white");
+    navToggle.classList.replace("text-black", "text-white");
+
     navItems.forEach((item) => {
       item.classList.remove("text-gray-600", "hover:text-black");
       item.classList.add("text-white", "hover:opacity-80");
@@ -56,6 +65,7 @@ window.addEventListener("scroll", function () {
       "max-w-xl",
       "px-6",
       "py-3",
+      "mx-4",
       "bg-[#FFA2A2]/50",
       "backdrop-blur-md",
       "rounded-full",
@@ -65,11 +75,50 @@ window.addEventListener("scroll", function () {
     );
     navContainer.classList.add("max-w-5xl", "px-4");
 
+    // Logo & ikon hamburger kembali hitam
     navLogo.classList.replace("text-white", "text-black");
+    navToggle.classList.replace("text-white", "text-black");
+
     navItems.forEach((item) => {
       item.classList.remove("text-white", "hover:opacity-80");
       item.classList.add("text-gray-600", "hover:text-black");
     });
+  }
+});
+
+// ================= MENU MOBILE (HAMBURGER) =================
+// Fungsi kecil biar gak nulis kode yang sama berkali-kali
+function tutupMenuMobile() {
+  mobileMenu.classList.add("hidden");
+  navToggleIcon.classList.replace("fa-xmark", "fa-bars"); // ikon X -> garis 3
+  navToggle.setAttribute("aria-expanded", "false");
+}
+
+navToggle.addEventListener("click", function () {
+  const lagiTertutup = mobileMenu.classList.contains("hidden");
+
+  if (lagiTertutup) {
+    mobileMenu.classList.remove("hidden"); // tampilkan menu
+    navToggleIcon.classList.replace("fa-bars", "fa-xmark"); // garis 3 -> X
+    navToggle.setAttribute("aria-expanded", "true");
+  } else {
+    tutupMenuMobile();
+  }
+});
+
+// Tutup menu otomatis setelah salah satu link di dalamnya diklik
+document.querySelectorAll(".mobile-link").forEach(function (link) {
+  link.addEventListener("click", tutupMenuMobile);
+});
+
+// Tutup juga kalau user klik di luar area menu / tombolnya
+document.addEventListener("click", function (e) {
+  if (
+    !mobileMenu.classList.contains("hidden") &&
+    !mobileMenu.contains(e.target) &&
+    !navToggle.contains(e.target)
+  ) {
+    tutupMenuMobile();
   }
 });
 
@@ -83,9 +132,8 @@ document.querySelectorAll(".scroll-top-link").forEach(function (link) {
 
 // ================= LOGIKA KALKULATOR BMI =================
 let selectedGender = "L";
-let riwayat = JSON.parse(localStorage.getItem("gizy_riwayat") || "[]");
 
-// ----- TOMBOL GENDER (SEKARANG IKON BULAT, BUKAN TOMBOL TEKS) -----
+// ----- TOMBOL GENDER (IKON BULAT, BUKAN TOMBOL TEKS) -----
 // Dua "paket" class ini ditukar bolak-balik: kalau satu paket masuk,
 // paket satunya pasti dikeluarkan dulu. Jadi gak akan ada bentrok
 // (misalnya warna latar lama nempel bareng warna latar baru).

@@ -33,17 +33,17 @@
 
   </head>
   <body class="bg-white text-[#1A1A1A] leading-[1.6]">
-    <!-- ================= NAVBAR (SAMA PERSIS SEPERTI DI gizy.html) ================= -->
+    <!-- ================= NAVBAR (DESKTOP: LINK TEKS | HP: ICON MENU) ================= -->
     <nav
       id="main-nav"
       class="fixed top-0 left-0 w-full z-50 py-5 transition-all duration-150 ease-in-out flex justify-center"
     >
       <div
         id="nav-container"
-        class="w-full max-w-5xl mx-auto px-4 flex justify-between items-center transition-all duration-150 ease-in-out"
+        class="w-full max-w-5xl px-4 flex justify-between items-center transition-all duration-150 ease-in-out"
       >
-        <!-- Group Kiri -->
-        <div class="flex-1 flex items-center justify-end gap-4 sm:gap-8">
+        <!-- Group Kiri: SEMBUNYI di HP -->
+        <div class="hidden md:flex flex-1 items-center justify-end gap-4 sm:gap-8">
           <a
             href="../Home-Page/gizy.html#beranda"
             class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
@@ -56,17 +56,17 @@
           >
         </div>
 
-        <!-- Logo 'gizy' di tengah -->
+        <!-- Logo: di desktop di tengah, di HP otomatis ke kiri -->
         <a
           href="../Home-Page/gizy.html"
           id="nav-logo"
-          class="text-2xl font-extrabold text-black tracking-tight mx-6 sm:mx-10 transition-colors duration-150 flex-shrink-0"
+          class="text-2xl font-extrabold text-black tracking-tight md:mx-6 lg:mx-10 transition-colors duration-150 flex-shrink-0"
         >
           gizy
         </a>
 
-        <!-- Group Kanan -->
-        <div class="flex-1 flex items-center justify-start gap-4 sm:gap-8">
+        <!-- Group Kanan: SEMBUNYI di HP -->
+        <div class="hidden md:flex flex-1 items-center justify-start gap-4 sm:gap-8">
           <a
             href="../Home-Page/gizy.html#blog"
             class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
@@ -78,8 +78,46 @@
             >BMI</a
           >
         </div>
+
+        <!-- Tombol hamburger: CUMA MUNCUL di HP -->
+        <button
+          id="nav-toggle"
+          type="button"
+          aria-label="Buka menu"
+          aria-expanded="false"
+          class="md:hidden h-10 w-10 flex items-center justify-center rounded-full text-xl text-black transition hover:opacity-70"
+        >
+          <i id="nav-toggle-icon" class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </nav>
+
+    <!-- ================= MENU MOBILE (turun pas hamburger diklik) ================= -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden fixed top-24 left-4 right-4 z-40 bg-white border border-black/[0.09] rounded-2xl shadow-xl p-3"
+    >
+      <a
+        href="../Home-Page/gizy.html#beranda"
+        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >Beranda</a
+      >
+      <a
+        href="../Home-Page/gizy.html#masalah"
+        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >Masalah</a
+      >
+      <a
+        href="../Home-Page/gizy.html#blog"
+        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >Blog</a
+      >
+      <a
+        href="#atas"
+        class="mobile-link scroll-top-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >BMI</a
+      >
+    </div>
 
     <!-- ================= KONTEN UTAMA (2 KOLOM SESUAI DESAIN BARU) ================= -->
     <div class="max-w-[1006px] mx-auto px-6 pt-32 pb-[100px]">
@@ -263,24 +301,19 @@
 
       <!-- ============ HASIL DETAIL (MUNCUL SETELAH KLIK "HITUNG BMI") ============ -->
       <div id="result-section" class="hidden mt-16 ">
- 
+
         <!-- ===== KEBUTUHAN KALORI HARIAN ===== -->
-        <!-- Judulnya sekarang tulisan biasa (gak full huruf besar lagi), -->
-        <!-- warnanya pink, dan lebih gede -->
         <div class="font-bold text-lg text-[#FF6B81] mb-3">
           Kebutuhan Kalori Harian
         </div>
- 
-        <!-- Angka kalori DAN bar-nya digabung jadi 1 baris pakai flex: -->
-        <!-- kiri = angka+satuan (ukurannya tetap, gak ikut ngecil/ngelebar,      -->
-        <!--        makanya dikasih "shrink-0"), kanan = bar (ngisi sisa ruang    -->
-        <!--        yang ada, makanya dikasih "flex-1"). -->
+
+        <!-- Angka kalori DAN bar-nya digabung jadi 1 baris pakai flex -->
         <div class="flex items-center gap-6 mb-3">
           <div class="flex items-end gap-2 shrink-0">
             <span id="out-kalori" class="font-black text-[48px] text-[#1A1A1A] leading-none">--</span>
             <span class="text-sm text-[#6B6B6B] mb-1">kkal/hari</span>
           </div>
- 
+
           <div class="flex-1 flex h-[26px] rounded-lg overflow-hidden">
             <div id="bar-karbo" style="background: #B8A9C9; width: 55%"></div>
             <div id="bar-protein" style="background: #C5D9A4; width: 30%"></div>
@@ -320,7 +353,7 @@
           id="saran-container"
         ></div>
 
-        <!-- ===== PANDUAN KANDUNGAN SEHAT (dulu namanya beda, sekarang diganti) ===== -->
+        <!-- ===== PANDUAN KANDUNGAN SEHAT ===== -->
         <div class="font-bold text-lg text-[#FF6B81] mb-3">
           Panduan Kandungan Sehat
         </div>

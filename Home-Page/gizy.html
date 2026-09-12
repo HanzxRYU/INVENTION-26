@@ -50,17 +50,17 @@
     </style>
   </head>
   <body class="bg-white text-gray-800">
-    <!-- ================= NAVBAR ADAPTIF (PRESISI SIMETRIS SEIMBANG) ================= -->
+    <!-- ================= NAVBAR ADAPTIF (DESKTOP: LINK TEKS | HP: ICON MENU) ================= -->
     <nav
       id="main-nav"
       class="fixed top-0 left-0 w-full z-50 py-5 transition-all duration-150 ease-in-out flex justify-center"
     >
       <div
         id="nav-container"
-        class="w-full max-w-[1006px] mx-auto px-4 flex justify-between items-center transition-all duration-150 ease-in-out"
+        class="w-full max-w-[1006px] px-4 flex justify-between items-center transition-all duration-150 ease-in-out"
       >
-        <!-- Group Kiri (Lebar Otomatis Seimbang) -->
-        <div class="flex-1 flex items-center justify-end gap-4 sm:gap-8">
+        <!-- Group Kiri: SEMBUNYI di HP (hidden md:flex = muncul mulai layar tablet) -->
+        <div class="hidden md:flex flex-1 items-center justify-end gap-4 sm:gap-8">
           <a
             href="#beranda"
             class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
@@ -73,17 +73,18 @@
           >
         </div>
 
-        <!-- Logo 'gizy' (Pasti di Tengah-Tengah) -->
+        <!-- Logo: di desktop tetap di tengah, di HP otomatis ke kiri -->
+        <!-- (karena group kiri hilang, dia jadi elemen paling awal) -->
         <a
           href="#beranda"
           id="nav-logo"
-          class="text-2xl font-extrabold text-black tracking-tight mx-6 sm:mx-10 transition-colors duration-150 flex-shrink-0"
+          class="text-2xl font-extrabold text-black tracking-tight md:mx-6 lg:mx-10 transition-colors duration-150 flex-shrink-0"
         >
           gizy
         </a>
 
-        <!-- Group Kanan (Lebar Otomatis Seimbang) -->
-        <div class="flex-1 flex items-center justify-start gap-4 sm:gap-8">
+        <!-- Group Kanan: SEMBUNYI di HP -->
+        <div class="hidden md:flex flex-1 items-center justify-start gap-4 sm:gap-8">
           <a
             href="#blog"
             class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
@@ -95,8 +96,47 @@
             >BMI</a
           >
         </div>
+
+        <!-- Tombol hamburger: CUMA MUNCUL di HP (md:hidden) -->
+        <button
+          id="nav-toggle"
+          type="button"
+          aria-label="Buka menu"
+          aria-expanded="false"
+          class="md:hidden h-10 w-10 flex items-center justify-center rounded-full text-xl text-black transition hover:opacity-70"
+        >
+          <i id="nav-toggle-icon" class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </nav>
+
+    <!-- ================= MENU MOBILE (turun pas hamburger diklik) ================= -->
+    <!-- "hidden md:hidden" = cuma bisa muncul di layar kecil, gak akan muncul di desktop -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden fixed top-24 left-4 right-4 z-40 bg-white border border-black/[0.09] rounded-2xl shadow-xl p-3"
+    >
+      <a
+        href="#beranda"
+        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >Beranda</a
+      >
+      <a
+        href="#masalah"
+        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >Masalah</a
+      >
+      <a
+        href="#blog"
+        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >Blog</a
+      >
+      <a
+        href="../BMI/kalkulator.html"
+        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >BMI</a
+      >
+    </div>
 
     <!-- ================= HERO SECTION (STICKY) ================= -->
     <header
@@ -475,7 +515,7 @@
           <!-- ========================================================================= -->
           <!-- [BAGIAN BARU: TIPS MAKAN SEHAT - KARTU YANG "DIBALIK" (FLIP) SAAT DI-HOVER] -->
           <!-- ========================================================================= -->
-          <div class="mt-20 sm:mt-28 text-center">
+          <div class="mt-[229px] text-center">
             <div
               class="inline-flex items-center justify-center h-10 px-6 border border-gray-300 rounded-full text-gray-600 text-sm font-medium mb-4"
             >
@@ -501,14 +541,6 @@
               </div>
 
               <!-- ===== KARTU 2, 3, 4: BISA DIBALIK SAAT DI-HOVER ===== -->
-              <!-- Cara kerja "flip": setiap kartu punya SISI DEPAN (foto+judul)
-                   dan SISI BELAKANG (warna+penjelasan) yang ditumpuk pas-pasan.
-                   Class "group" di pembungkus luar itu "saklar"-nya; begitu mouse
-                   nempel di atas kartu (hover), class "group-hover:[transform:rotateY(180deg)]"
-                   di lapisan dalam bikin kartunya muter 180 derajat secara halus
-                   (karena ada "transition-transform duration-500"), jadi sisi
-                   belakang yang kelihatan. "[backface-visibility:hidden]" itu yang
-                   bikin sisi belakang gak transparan/kebalik pas lagi muter. -->
 
               <!-- Kartu 2: Makan Seimbang dan Beragam -->
               <div class="group [perspective:1000px] h-[320px] w-[239.5px]">
@@ -630,7 +662,7 @@
           <!-- ========================================================================= -->
 
           <div
-            class="max-w-4xl mx-auto mt-28 sm:mt-36 p-6 sm:p-10 bg-white rounded-3xl shadow-lg border border-gray-100"
+            class="max-w-4xl mx-auto mt-[229px] p-6 sm:p-10 bg-white rounded-3xl shadow-lg border border-gray-100"
           >
             <!-- Header Fitur Baru -->
             <div class="text-center mb-10">
