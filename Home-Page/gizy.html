@@ -658,6 +658,151 @@
           </div>
 
           <!-- ========================================================================= -->
+<!-- [BAGIAN BARU: BLOG PANDUAN SEHAT]                                          -->
+<!-- Dikasih id="blog" supaya link "Blog" di navbar bisa lompat ke sini         -->
+<!-- ========================================================================= -->
+<div id="blog" class="mt-[229px] text-center">
+  <!-- Badge kecil di atas judul (pil dengan garis tepi) -->
+  <div
+    class="inline-flex items-center justify-center h-10 px-6 border border-gray-300 rounded-full text-gray-600 text-sm font-medium mb-4"
+  >
+    Artikel Terbaru
+  </div>
+
+  <!-- Judul section -->
+  <h2
+    class="text-3xl sm:text-5xl font-black text-gray-900 tracking-tight mb-10"
+  >
+    Blog Panduan Sehat
+  </h2>
+
+  <!-- Grid kartu artikel -->
+  <!-- grid-cols-1 = 1 kolom di HP, sm:grid-cols-3 = 3 kolom sejajar di layar besar -->
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 text-left">
+
+    <!-- ===== KARTU ARTIKEL 1 ===== -->
+    <div
+      class="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition duration-300 flex flex-col"
+    >
+      <!-- Gambar artikel (GANTI src dengan fotomu sendiri) -->
+      <img
+        src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=600&auto=format&fit=crop"
+        alt="Piring makanan seimbang"
+        class="w-full h-40 object-cover rounded-xl border border-gray-100 mb-4"
+      />
+      <!-- Judul artikel -->
+      <h3 class="text-base font-bold text-gray-900 leading-snug mb-3">
+        Isi Piringmu: Sudah Seimbang atau Baru Sekadar Kenyang?
+      </h3>
+      <!-- Nama penulis (ikon user di lingkaran kecil) -->
+      <div class="flex items-center gap-2 mb-4">
+        <div
+          class="w-6 h-6 rounded-full bg-[#FFE3E3] flex items-center justify-center shrink-0"
+        >
+          <i class="fa-solid fa-user text-[10px] text-[#FF6B81]"></i>
+        </div>
+        <span class="text-xs text-gray-500">John Doe</span>
+      </div>
+      <!-- Tombol baca (mt-auto = selalu nempel di bawah kartu, -->
+      <!-- jadi tingginya sejajar walau judul artikel beda panjang)-->
+      <button
+        class="mt-auto w-full py-2.5 border border-gray-300 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
+      >
+        Pelajari Lebih Lanjut
+      </button>
+    </div>
+
+    <!-- ===== KARTU ARTIKEL 2 ===== -->
+    <div
+      class="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition duration-300 flex flex-col"
+    >
+      <img
+        src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600&auto=format&fit=crop"
+        alt="Sayur dan buah segar"
+        class="w-full h-40 object-cover rounded-xl border border-gray-100 mb-4"
+      />
+      <h3 class="text-base font-bold text-gray-900 leading-snug mb-3">
+        Isi Piringmu: Sudah Seimbang atau Baru Sekadar Kenyang?
+      </h3>
+      <div class="flex items-center gap-2 mb-4">
+        <div
+          class="w-6 h-6 rounded-full bg-[#FFE3E3] flex items-center justify-center shrink-0"
+        >
+          <i class="fa-solid fa-user text-[10px] text-[#FF6B81]"></i>
+        </div>
+        <span class="text-xs text-gray-500">John Doe</span>
+      </div>
+      <button
+        class="mt-auto w-full py-2.5 border border-gray-300 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
+      >
+        Pelajari Lebih Lanjut
+      </button>
+    </div>
+
+    <!-- ===== KARTU ARTIKEL 3 ===== -->
+    <div
+      class="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition duration-300 flex flex-col"
+    >
+      <img
+        src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=600&auto=format&fit=crop"
+        alt="Makanan sehat siap santap"
+        class="w-full h-40 object-cover rounded-xl border border-gray-100 mb-4"
+      />
+      <h3 class="text-base font-bold text-gray-900 leading-snug mb-3">
+        Isi Piringmu: Sudah Seimbang atau Baru Sekadar Kenyang?
+      </h3>
+      <div class="flex items-center gap-2 mb-4">
+        <div
+          class="w-6 h-6 rounded-full bg-[#FFE3E3] flex items-center justify-center shrink-0"
+        >
+          <i class="fa-solid fa-user text-[10px] text-[#FF6B81]"></i>
+        </div>
+        <span class="text-xs text-gray-500">John Doe</span>
+      </div>
+      <button
+        class="mt-auto w-full py-2.5 border border-gray-300 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
+      >
+        Pelajari Lebih Lanjut
+      </button>
+    </div>
+  </div>
+
+  <!-- Tombol di bawah: "Lihat Semua" + tombol bulat panah ke bawah -->
+  <div class="mt-12 text-center">
+          <button
+            onclick="window.location.href = '../BMI/kalkulator.html'"
+            class="group inline-flex items-center text-[#FFAEAF]"
+          >
+            <!-- Lingkaran Ikon Kiri (Muncul saat Hover) -->
+            <div
+              class="w-10 h-10 lg:w-12 lg:h-12 border-2 border-[#FFAEAF] rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 scale-0 group-hover:scale-100 -mr-10 lg:-mr-12 z-10"
+            >
+              <i
+                class="fa-solid fa-chevron-down text-lg -translate-x-8 -translate-y-8 transition-transform duration-300 delay-100 group-hover:translate-x-0 group-hover:translate-y-0"
+              ></i>
+            </div>
+
+            <!-- Teks Utama (Bergeser ke Kanan saat Hover) -->
+            <div
+              class="text-[#FFAEAF] h-10 lg:h-12 px-4 lg:px-6 border-2 border-[#FFAEAF] rounded-full flex items-center text-sm lg:text-[18px] font-extralight transition-transform duration-300 group-hover:translate-x-10 lg:group-hover:translate-x-12"
+            >
+              Lihat Semua
+            </div>
+
+            <!-- Lingkaran Ikon Kanan (Sembunyi saat Hover) -->
+            <div
+              class="w-10 h-10 lg:w-12 lg:h-12 border-2 border-[#FFAEAF] rounded-full flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-0"
+            >
+              <i
+                class="fa-solid fa-chevron-down text-lg transition-transform duration-300 group-hover:translate-x-8 group-hover:translate-y-8"
+              ></i>
+            </div>
+          </button>
+        </div>
+</div>
+<!-- [AKHIR BAGIAN BLOG] -->
+
+          <!-- ========================================================================= -->
           <!-- [BAGIAN 2: FITUR BARU - CEK KEBUTUHAN GIZI ANAK SESUAI GAMBAR] -->
           <!-- ========================================================================= -->
 
