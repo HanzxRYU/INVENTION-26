@@ -1,8 +1,7 @@
-<svg width="85" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="0.5" y="0.5" width="84" height="84" rx="42" fill="url(#paint0_linear_134_6)"/>
-<rect x="0.5" y="0.5" width="84" height="84" rx="42" stroke="#5C5C5C"/>
+<svg width="86" height="86" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="42.7148" cy="42.7149" r="42.2063" transform="rotate(27.8535 42.7148 42.7149)" fill="url(#paint0_linear_16_33)" stroke="#FF8385"/>
 <defs>
-<linearGradient id="paint0_linear_134_6" x1="42.5" y1="0" x2="42.5" y2="85" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_16_33" x1="42.7148" y1="0.00857544" x2="42.7148" y2="85.4212" gradientUnits="userSpaceOnUse">
 <stop stop-color="#FFAEAF"/>
 <stop offset="1" stop-color="#FFCACA"/>
 </linearGradient>

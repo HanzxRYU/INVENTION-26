@@ -230,4 +230,13 @@ document.addEventListener("DOMContentLoaded", function () {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
+
+  //==== Klik masalah langsung scroll ke section masalah ====
+  document.querySelectorAll('a[href="#masalah"]').forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetY = beranda.offsetHeight;
+      window.scrollTo({ top: targetY, behavior: "smooth" });
+    });
+  });
 })();
