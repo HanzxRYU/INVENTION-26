@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Gizy</title>
+
+    <!-- Tailwind CSS CDN (sama seperti di gizy.html) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Google (Plus Jakarta Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome (Ikon Visual) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-white text-[#1A1A1A] leading-[1.6]">
+        <!-- ================= NAVBAR (DESKTOP: LINK TEKS | HP: ICON MENU) ================= -->
+    <nav
+      id="main-nav"
+      class="fixed top-0 left-0 w-full z-50 py-5 transition-all duration-150 ease-in-out flex justify-center"
+    >
+      <div
+        id="nav-container"
+        class="w-full max-w-5xl px-4 flex justify-between items-center transition-all duration-150 ease-in-out"
+      >
+        <!-- Group Kiri: SEMBUNYI di HP -->
+        <div class="hidden md:flex flex-1 items-center justify-end gap-4 sm:gap-8">
+          <a
+            href="../Home-Page/gizy.html#beranda"
+            class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
+            >Beranda</a
+          >
+          <a
+            href="../BMI/kalkulator.html"
+            class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
+            >BMI</a
+          >
+        </div>
+
+        <!-- Logo: di desktop di tengah, di HP otomatis ke kiri -->
+        <a
+          href="../Home-Page/gizy.html"
+          id="nav-logo"
+          class="text-2xl font-extrabold text-black tracking-tight md:mx-6 lg:mx-10 transition-colors duration-150 flex-shrink-0"
+        >
+          gizy
+        </a>
+
+        <!-- Group Kanan: SEMBUNYI di HP -->
+        <div class="hidden md:flex flex-1 items-center justify-start gap-4 sm:gap-8">
+          <a
+            href="../Blog/blog.html"
+            class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap scroll-top-link"
+            >Blog</a
+          >
+          <a
+            href="#atas"
+            class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
+            >ChatBot</a
+          >
+        </div>
+
+        <!-- Tombol hamburger: CUMA MUNCUL di HP -->
+        <button
+          id="nav-toggle"
+          type="button"
+          aria-label="Buka menu"
+          aria-expanded="false"
+          class="md:hidden h-10 w-10 flex items-center justify-center rounded-full text-xl text-black transition hover:opacity-70"
+        >
+          <i id="nav-toggle-icon" class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ================= MENU MOBILE (turun pas hamburger diklik) ================= -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden fixed top-24 left-4 right-4 z-40 bg-white border border-black/[0.09] rounded-2xl shadow-xl p-3"
+    >
+      <a
+        href="../Home-Page/gizy.html#beranda"
+        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >Beranda</a
+      >
+      <a
+        href="../BMI/kalkulator.html"
+        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >BMI</a
+      >
+      <a
+        href="#atas"
+        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >Blog</a
+      >
+      <a
+        href="#atas"
+        class="mobile-link scroll-top-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >Chatbox</a
+      >
+    </div>
+
+    <!-- ================= KONTEN UTAMA ================= -->
+<div class="max-w-[1006px] mx-auto px-4 pt-32 pb-[100px]">
+
+  <!-- ===== HEADER: judul + deskripsi ===== -->
+  <div class="text-center mb-10">
+    <h1 class="text-3xl sm:text-[48px] font-black tracking-tight mb-3">
+      Blog Panduan Sehat
+    </h1>
+    <p class="text-sm text-[#6B6B6B] max-w-md mx-auto">
+      Belajar ilmu mendalam mengenai status gizimu, kebutuhan kalori harian,
+      dan saran pola hidup sehat yang personal!
+    </p>
+  </div>
+
+  <!-- ===== SEARCH BAR ===== -->
+  <form id="form-cari" class="max-w-xl mx-auto mb-12 flex items-center gap-3">
+    <input
+      id="input-cari"
+      type="text"
+      placeholder="Cari artikel..."
+      class="flex-1 h-12 px-5 rounded-full border border-gray-300 text-sm focus:outline-none focus:border-[#FF6B81] focus:ring-2 focus:ring-[#FFE3E3]"
+    />
+    <button
+      type="submit"
+      aria-label="Cari"
+      class="h-12 w-12 shrink-0 rounded-full bg-[#F9C4BE] text-[#C0534B] hover:bg-[#F5B3AC] transition-colors"
+    >
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </form>
+
+  <!-- ===== GRID ARTIKEL (6 kartu = 2 baris) ===== -->
+  <div id="daftar-artikel" class="grid grid-cols-1 sm:grid-cols-3 gap-5 text-left">
+
+    <!-- KARTU 1 (PINK) -->
+    <div class="bg-white rounded-2xl p-4 flex flex-col border border-white hover:border-[#F9C4BE] transition duration-300 hover:scale-105">
+      <img src="../assets/backgrounds/susah-makan.svg" alt="Anak susah makan"
+        class="w-full h-40 object-cover rounded-xl border border-[#5C5C5C] mb-4" />
+      <h3 class="text-[24px] text-[#5C5C5C] leading-snug mb-3">
+        <span class="font-bold">Kenapa Anak Susah Makan?</span> Jangan Langsung Menyerah
+      </h3>
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-6 h-6 rounded-full bg-[#FFE3E3] flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-user text-[10px] text-[#FF6B81]"></i>
+        </div>
+        <span class="text-[14px] text-[#5C5C5C]">John Doe</span>
+      </div>
+      <button class="mt-auto w-full py-2.5 rounded-lg text-[18px] font-semibold bg-[#F9C4BE] text-[#5C5C5C] hover:bg-[#F5B3AC] transition-colors">
+        Pelajari Lebih Lanjut
+      </button>
+    </div>
+
+    <!-- KARTU 2 (HIJAU) -->
+    <div class="bg-white rounded-2xl p-4 flex flex-col border border-white hover:border-[#E4F1CE] transition duration-300 hover:scale-105">
+      <img src="../assets/backgrounds/sedang-masak.svg" alt="Memasak makanan sehat"
+        class="w-full h-40 object-cover rounded-xl border border-[#5C5C5C] mb-4" />
+      <h3 class="text-[24px] text-[#5C5C5C] leading-snug mb-3">
+        <span class="font-bold">Makan Sehat Tak Harus Mahal:</span> Trik Gizi dari Dapur Rumah
+      </h3>
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-6 h-6 rounded-full bg-[#FFE3E3] flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-user text-[10px] text-[#FF6B81]"></i>
+        </div>
+        <span class="text-[14px] text-[#5C5C5C]">John Doe</span>
+      </div>
+      <button class="mt-auto w-full py-2.5 rounded-lg text-[18px] font-semibold bg-[#E4F1CE] text-[#5C5C5C] hover:bg-[#D8EABC] transition-colors">
+        Pelajari Lebih Lanjut
+      </button>
+    </div>
+
+    <!-- KARTU 3 (PINK) -->
+    <div class="bg-white rounded-2xl p-4 flex flex-col border border-white hover:border-[#F9C4BE] transition duration-300 hover:scale-105">
+      <img src="../assets/backgrounds/mbg.svg" alt="Piring makanan seimbang"
+        class="w-full h-40 object-cover rounded-xl border border-[#5C5C5C] mb-4" />
+      <h3 class="text-[24px] text-[#5C5C5C] leading-snug mb-3">
+        <span class="font-bold">Isi Piringmu:</span> Sudah Seimbang atau Baru Sekadar Kenyang?
+      </h3>
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-6 h-6 rounded-full bg-[#FFE3E3] flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-user text-[10px] text-[#FF6B81]"></i>
+        </div>
+        <span class="text-[14px] text-[#5C5C5C]">John Doe</span>
+      </div>
+      <button class="mt-auto w-full py-2.5 rounded-lg text-[18px] font-semibold bg-[#F9C4BE] text-[#5C5C5C] hover:bg-[#F5B3AC] transition-colors">
+        Pelajari Lebih Lanjut
+      </button>
+    </div>
+
+    <!-- KARTU 4 (PINK) -->
+    <div class="bg-white rounded-2xl p-4 flex flex-col border border-white hover:border-[#F9C4BE] transition duration-300 hover:scale-105">
+      <img src="../assets/backgrounds/mbg.svg" alt="Bahan makanan bergizi"
+        class="w-full h-40 object-cover rounded-xl border border-[#5C5C5C] mb-4" />
+      <h3 class="text-[24px] text-[#5C5C5C] leading-snug mb-3">
+        <span class="font-bold">Mengenal Gizi Makro</span> dan Mikro
+      </h3>
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-6 h-6 rounded-full bg-[#FFE3E3] flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-user text-[10px] text-[#FF6B81]"></i>
+        </div>
+        <span class="text-[14px] text-[#5C5C5C]">John Doe</span>
+      </div>
+      <button class="mt-auto w-full py-2.5 rounded-lg text-[18px] font-semibold bg-[#F9C4BE] text-[#5C5C5C] hover:bg-[#F5B3AC] transition-colors">
+        Pelajari Lebih Lanjut
+      </button>
+    </div>
+
+    <!-- KARTU 5 (UNGU) -->
+    <div class="bg-white rounded-2xl p-4 flex flex-col border border-white hover:border-[#D7CEE9] transition duration-300 hover:scale-105">
+      <img src="../assets/backgrounds/susah-makan.svg" alt="Membaca label gizi"
+        class="w-full h-40 object-cover rounded-xl border border-[#5C5C5C] mb-4" />
+      <h3 class="text-[24px] text-[#5C5C5C] leading-snug mb-3">
+        <span class="font-bold">Gula, Gram, dan Lemak:</span> Membaca Label dengan Bijak
+      </h3>
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-6 h-6 rounded-full bg-[#FFE3E3] flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-user text-[10px] text-[#FF6B81]"></i>
+        </div>
+        <span class="text-[14px] text-[#5C5C5C]">John Doe</span>
+      </div>
+      <button class="mt-auto w-full py-2.5 rounded-lg text-[18px] font-semibold bg-[#D7CEE9] text-[#5C5C5C] hover:bg-[#C9BDE0] transition-colors">
+        Pelajari Lebih Lanjut
+      </button>
+    </div>
+
+    <!-- KARTU 6 (HIJAU) -->
+    <div class="bg-white rounded-2xl p-4 flex flex-col border border-white hover:border-[#E4F1CE] transition duration-300 hover:scale-105">
+      <img src="../assets/backgrounds/sedang-masak.svg" alt="Panduan gizi makanan"
+        class="w-full h-40 object-cover rounded-xl border border-[#5C5C5C] mb-4" />
+      <h3 class="text-[24px] text-[#5C5C5C] leading-snug mb-3">
+        <span class="font-bold">Panduan Gizi Makanan</span> di Setiap Bita
+      </h3>
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-6 h-6 rounded-full bg-[#FFE3E3] flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-user text-[10px] text-[#FF6B81]"></i>
+        </div>
+        <span class="text-[14px] text-[#5C5C5C]">John Doe</span>
+      </div>
+      <button class="mt-auto w-full py-2.5 rounded-lg text-[18px] font-semibold bg-[#E4F1CE] text-[#5C5C5C] hover:bg-[#D8EABC] transition-colors">
+        Pelajari Lebih Lanjut
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== PAGINATION ===== -->
+  <div id="pagination" class="flex items-center justify-center gap-2 mt-14">
+    <!-- panah kiri -->
+    <button class="h-10 w-10 flex items-center justify-center rounded-full border-2 border-[#FFB1B1] text-[#E8604C] hover:bg-[#FFF0F0] transition-colors">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <!-- halaman 1 (sedang aktif = solid pink) -->
+    <button class="h-10 w-10 rounded-full bg-[#F9C4BE] text-white text-sm font-semibold">1</button>
+    <button class="h-10 w-10 rounded-full border-2 border-[#FFB1B1] text-[#E8604C] text-sm font-semibold hover:bg-[#FFF0F0] transition-colors">2</button>
+    <button class="h-10 w-10 rounded-full border-2 border-[#FFB1B1] text-[#E8604C] text-sm font-semibold hover:bg-[#FFF0F0] transition-colors">3</button>
+    <button class="h-10 w-10 rounded-full border-2 border-[#FFB1B1] text-[#E8604C] text-sm font-semibold hover:bg-[#FFF0F0] transition-colors">4</button>
+    <button class="h-10 w-10 rounded-full border-2 border-[#FFB1B1] text-[#E8604C] text-sm font-semibold hover:bg-[#FFF0F0] transition-colors">5</button>
+    <!-- panah kanan -->
+    <button class="h-10 w-10 flex items-center justify-center rounded-full border-2 border-[#FFB1B1] text-[#E8604C] hover:bg-[#FFF0F0] transition-colors">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </div>
+</div>
+
+    <!-- ================= FOOTER BARU: LENGKUNG + CARD CTA + WORDMARK ================= -->
+    <footer class="relative z-30 bg-white pt-16 sm:pt-[280px]">
+
+      <!-- ===== 1. LENGKUNGAN PINK (SVG) ===== -->
+      <!-- Mau lengkungannya lebih tinggi/landai? Ubah angka "10" di path
+           (makin kecil = makin tinggi kubahnya) -->
+      <svg
+        viewBox="0 0 1440 120"
+        preserveAspectRatio="none"
+        class="block w-full h-[90px] sm:h-[140px]"
+        aria-hidden="true"
+      >
+        <path d="M0,120 L0,90 C320,10 1120,10 1440,90 L1440,120 Z" fill="#FFA2A2"></path>
+      </svg>
+
+      <!-- ===== 2. AREA PINK (badan footer) ===== -->
+      <!-- pb-0 = gak ada padding bawah, karena penutupnya sekarang
+           adalah wordmark "gizy" gede yang kepotong di tepi -->
+      <div class="bg-[#FFA2A2] text-white px-4 pt-4 pb-0">
+
+        <!-- ===== CARD CTA (ditarik ke atas pakai -mt biar nimpa lengkungannya) ===== -->
+        <div id="bmi" class="max-w-[1006px] mx-auto -mt-20 sm:-mt-[300px] relative z-10">
+          <div
+            class="bg-[#FAF7E1] rounded-3xl overflow-hidden flex flex-col md:flex-row"
+          >
+            <!-- KIRI: teks & tombol -->
+            <div class="p-8 sm:p-12 flex-1">
+              <!-- kotak hijau kecil sebagai logo/aksen -->
+              <div class="w-10 h-10 rounded-lg mb-6 flex items-center justify-center">
+                <img src="../assets/vector/kotak-lengkung-green.svg" class="h-12 w-12" alt="">
+              </div>
+
+              <h3
+                class="text-2xl sm:text-[48px] font-extrabold text-[#1A1A1A] leading-tight mb-[11px]"
+              >
+                Siap Jalani hidup<br />lebih bergizi?
+              </h3>
+
+              <p class="text-[18px] text-[#6B6B6B] leading-relaxed mb-[90px] max-w-xs">
+                Ketahui status gizimu,
+                kebutuhan kalori harian dan saran personal dengan alat pengukur BMI!
+              </p>
+
+              <!-- Tombol (arah ke kalkulator BMI, ganti kalau perlu) -->
+              <button
+                onclick="window.location.href = '../BMI/kalkulator.html'"
+                class="px-6 py-3 w-[242px] h-[48px] bg-[#C6D4A9] rounded-[16px] text-[18px] font-semibold text-white hover:bg-[#A8B88A] transition-colors items-center justify-center gap-2"
+              >
+                Kalkulator BMI<i class="fa-solid fa-chevron-right ml-[27px]"></i>
+              </button>
+            </div>
+
+            <!-- KANAN: gambar makanan -->
+            <div class="md:w-[45%] h-56 md:h-auto">
+              <img
+                src="../assets/backgrounds/buah2an.svg"
+                alt="Bahan makanan segar"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== 3. ISI FOOTER ===== -->
+        <div class="max-w-[1006px] mx-auto mt-[87px]">
+          <!-- Flex luar: blok kiri vs GRUP kanan, didorong ke ujung pakai justify-between -->
+          <div class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0">
+
+            <!-- BLOK KIRI: tagline + copyright + logo -->
+            <div class="flex flex-col">
+              <p class="text-[18px] text-white/90">
+                Web Edukasi untuk keluarga<br />menuju Indonesia Sehat
+              </p>
+              <p class="text-[18px] text-white/70 mt-6">&copy; 2026 Gizy</p>
+              <img
+    src="../assets/vector/text-gede.svg"
+    class="sm:w-[128px] mt-6 pointer-events-none"
+    alt=""
+  />
+            </div>
+
+            <!-- GRUP KANAN: Jelajah + Kontak dipeluk bareng -->
+            <!-- gap-24 = 96px antara Jelajah dan Kontak (ubah sesuai selera) -->
+            <div class="flex flex-col sm:flex-row gap-10 sm:gap-24 lg:gap-32">
+
+              <!-- KOLOM JELAJAH -->
+              <div>
+                <h4 class="font-bold text-[18px] mb-3">Jelajah</h4>
+                <ul class="space-y-2 text-[18px] text-white/90">
+                  <li><a href="../Home-Page/gizy.html" class="hover:opacity-80">Beranda</a></li>
+                  <li><a href="../BMI/" class="hover:opacity-80">BMI</a></li>
+                  <li><a href="../Blog/blog.html" class="hover:opacity-80 scroll-top-link">Blog</a></li>
+                  <li><a href="#" class="hover:opacity-80">ChatBot</a></li>
+                </ul>
+              </div>
+
+              <!-- KOLOM KONTAK -->
+              <div>
+                <h4 class="font-bold text-[18px] mb-3">Kontak</h4>
+                <ul class="space-y-2 text-[18px] text-white/90">
+                  <li>+62 081812623943</li>
+                  <li>gizy@gmail.com</li>
+                  <li><a href="#" class="hover:opacity-80">Instagram</a></li>
+                  <li><a href="#" class="hover:opacity-80">Facebook</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- ===== 4. WORDMARK "GIZY" GEDE DI PALING BAWAH ===== -->
+<div class="relative overflow-hidden mt-[152px]" aria-hidden="true">
+
+
+<!-- ===== LAPISAN VECTOR ===== -->
+<div
+  class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 sm:gap-8 pointer-events-none"
+>
+  <img
+    src="../assets/vector/kotak-lengkung-pink.svg"
+    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
+    alt=""
+  />
+  <img
+    src="../assets/vector/lingkaran-pink.svg"
+    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
+    alt=""
+  />
+  <img
+    src="../assets/vector/segitiga-pink.svg"
+    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
+    alt=""
+  />
+  <img
+    src="../assets/vector/bintang-pink.svg"
+    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
+    alt=""
+  />
+</div>
+  <!-- WORDMARK: tetap di depan (z-10), bawahnya kepotong -->
+  <img
+    src="../assets/vector/text-gede.svg"
+    class="relative z-10 block mx-auto w-[75%] sm:w-[1006px] -mb-[5vw] sm:-mb-[80px] pointer-events-none"
+    alt=""
+  />
+</div>    </footer>
+    <!-- ================= AKHIR FOOTER ================= -->
+
+    <!--============================================
+        CHATBOX
+    ============================================-->
+    <!-- Chatbot FAQ pola hidup sehat -->
+    <div
+      id="chatbot"
+      class="fixed bottom-5 right-5 z-50 flex flex-col items-end"
+    >
+      <section
+        id="chat-window"
+        aria-label="Chatbot FAQ pola hidup sehat"
+        class="hidden w-[calc(100vw-2.5rem)] max-w-sm overflow-hidden rounded-3xl border border-rose-100 bg-white shadow-2xl shadow-rose-200/60 mb-4"
+      >
+        <header
+          class="flex items-center justify-between bg-[#ef4444] px-5 py-4 text-white"
+        >
+          <div class="flex items-center gap-3">
+            <span
+              class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20"
+              ><i class="fa-solid fa-heart-pulse"></i
+            ></span>
+            <div>
+              <h2 class="text-sm font-bold">Teman Sehat gizy</h2>
+              <p class="text-xs text-white/80">Tanya seputar hidup sehat</p>
+            </div>
+          </div>
+          <button
+            id="chat-close"
+            type="button"
+            aria-label="Tutup chatbot"
+            class="h-8 w-8 rounded-full hover:bg-white/20"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </header>
+        <div
+          id="chat-messages"
+          class="chat-scrollbar h-80 space-y-3 overflow-y-auto bg-rose-50/40 p-4"
+          aria-live="polite"
+        ></div>
+        <div class="border-t border-rose-100 p-3">
+          <div id="quick-questions" class="mb-3 flex flex-wrap gap-2"></div>
+          <form id="chat-form" class="flex gap-2">
+            <label for="chat-input" class="sr-only">Tulis pertanyaan</label>
+            <input
+              id="chat-input"
+              type="text"
+              autocomplete="off"
+              placeholder="Contoh: tips minum air"
+              class="min-w-0 flex-1 rounded-full border border-rose-200 px-4 py-2 text-sm outline-none transition focus:border-red-400 focus:ring-2 focus:ring-red-100"
+            />
+            <button
+              type="submit"
+              aria-label="Kirim pesan"
+              class="h-10 w-10 shrink-0 rounded-full bg-[#ef4444] text-white transition hover:bg-red-600"
+            >
+              <i class="fa-solid fa-paper-plane text-sm"></i>
+            </button>
+          </form>
+        </div>
+      </section>
+      <button
+        id="chat-toggle"
+        type="button"
+        aria-label="Buka chatbot FAQ"
+        aria-expanded="false"
+        class="flex h-16 w-16 items-center justify-center rounded-full bg-[#ef4444] text-2xl text-white shadow-lg shadow-red-300 transition hover:scale-105 hover:bg-red-600 focus:outline-none focus:ring-4 focus:ring-red-200"
+      >
+        <i class="fa-solid fa-comment-dots"></i>
+      </button>
+    </div>
+
+
+<script src="blog.js"></script>
+<script src="../Home-Page/faq.js"></script>
+</body>
+</html>
