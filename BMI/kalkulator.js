@@ -163,7 +163,7 @@ const gambarBadan = {
   "Sangat Kurus": "../assets/badan/badan-kurus.svg",
   "Kurus": "../assets/badan/badan-kurus.svg",
   "Normal": "../assets/badan/badan-normal.svg",
-  "Gemuk": "../assets/badan/badan-gemuk.svg",
+  "Gemuk": "../assets/badan/badan-gendut.svg",
   "Obesitas": "../assets/badan/obesitas.svg",
 };
 
@@ -407,7 +407,7 @@ document.getElementById("btn-hitung").addEventListener("click", () => {
   saranContainer.innerHTML = saranPerBagian(kat.label)
     .map(
       (s) => `
-    <div class="border border-black/[0.09] rounded-xl p-[18px]">
+    <div class="border border-white rounded-xl p-[18px]">
       <img src="${s.icon}" alt="${s.title}" class="h-8 w-8 mb-2" />
       <h3 class="text-[15px] mb-1.5 font-bold">${s.title}</h3>
       <p class="text-[13.5px] m-0 text-[#6B6B6B]">${s.text}</p>

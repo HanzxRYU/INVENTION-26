@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel - Gizy</title>
+    <!-- Tailwind CSS CDN (sama seperti di gizy.html) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Google (Plus Jakarta Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome (Ikon Visual) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
+
+</head>
+<body>
+    
+    <nav
+      id="main-nav"
+      class="fixed top-0 left-0 w-full z-50 py-5 transition-all duration-150 ease-in-out flex justify-center"
+    >
+      <div
+        id="nav-container"
+        class="w-full max-w-5xl px-4 flex justify-between items-center transition-all duration-150 ease-in-out"
+      >
+        <!-- Group Kiri: SEMBUNYI di HP -->
+        <div class="hidden md:flex flex-1 items-center justify-end gap-4 sm:gap-8">
+          <a
+            href="../Home-Page/gizy.html#beranda"
+            class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
+            >Beranda</a
+          >
+          <a
+            href="../BMI/kalkulator.html"
+            class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
+            >BMI</a
+          >
+        </div>
+
+        <!-- Logo: di desktop di tengah, di HP otomatis ke kiri -->
+        <a
+          href="../Home-Page/gizy.html"
+          id="nav-logo"
+          class="text-2xl font-extrabold text-black tracking-tight md:mx-6 lg:mx-10 transition-colors duration-150 flex-shrink-0"
+        >
+          gizy
+        </a>
+
+        <!-- Group Kanan: SEMBUNYI di HP -->
+        <div class="hidden md:flex flex-1 items-center justify-start gap-4 sm:gap-8">
+          <a
+            href="../Blog/blog.html"
+            class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
+            >Blog</a
+          >
+          <a
+            href="#atas"
+            class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
+            >ChatBot</a
+          >
+        </div>
+
+        <!-- Tombol hamburger: CUMA MUNCUL di HP -->
+        <button
+          id="nav-toggle"
+          type="button"
+          aria-label="Buka menu"
+          aria-expanded="false"
+          class="md:hidden h-10 w-10 flex items-center justify-center rounded-full text-xl text-black transition hover:opacity-70"
+        >
+          <i id="nav-toggle-icon" class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ================= MENU MOBILE (turun pas hamburger diklik) ================= -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden fixed top-24 left-4 right-4 z-40 bg-white border border-black/[0.09] rounded-2xl shadow-xl p-3"
+    >
+      <a
+        href="../Home-Page/gizy.html#beranda"
+        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >Beranda</a
+      >
+      <a
+        href="../BMI/kalkulator.html"
+        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >BMI</a
+      >
+      <a
+        href="../Blog/blog.html"
+        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >Blog</a
+      >
+      <a
+        href="#atas"
+        class="mobile-link scroll-top-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >Chatbox</a
+      >
+    </div>
+
+        <!-- ================= KONTEN ARTIKEL ================= -->
+    <div id="atas" class="max-w-[720px] mx-auto px-4 pt-32 pb-[100px]">
+
+      <!-- Gambar utama (diisi otomatis dari URL) -->
+      <img
+        id="artikel-gambar"
+        src=""
+        alt="Ilustrasi artikel"
+        class="w-full h-64 sm:h-80 object-cover rounded-2xl border border-black mb-6"
+      />
+
+      <!-- Judul (diisi otomatis) -->
+      <h1 id="artikel-judul" class="text-3xl sm:text-[40px] font-black leading-tight mb-3">
+        --
+      </h1>
+
+      <!-- Penulis (diisi otomatis) -->
+      <div class="flex items-center gap-2 mb-8">
+        <div class="w-6 h-6 rounded-full bg-[#FFE3E3] flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-user text-[10px] text-[#FF6B81]"></i>
+        </div>
+        <span id="artikel-penulis" class="text-[14px] text-gray-500">--</span>
+      </div>
+
+      <!-- ===== ISI ARTIKEL ===== -->
+      <div class="flex flex-col gap-8">
+        <section>
+          <h2 class="text-[22px] font-bold mb-2">Masalah yang dibahas</h2>
+          <p class="text-[16px] text-[#6B6B6B] leading-relaxed">
+            <!-- tulis isi artikel di sini -->
+          </p>
+        </section>
+        <section>
+          <h2 class="text-[22px] font-bold mb-2">Kenapa ini terjadi?</h2>
+          <p class="text-[16px] text-[#6B6B6B] leading-relaxed">
+            <!-- isi -->
+          </p>
+        </section>
+        <section>
+          <h2 class="text-[22px] font-bold mb-2">Kapan harus mulai khawatir?</h2>
+          <p class="text-[16px] text-[#6B6B6B] leading-relaxed">
+            <!-- isi -->
+          </p>
+        </section>
+        <section>
+          <h2 class="text-[22px] font-bold mb-2">Referensi</h2>
+          <p class="text-[14px] text-[#6B6B6B] leading-relaxed">
+            <!-- sumber -->
+          </p>
+        </section>
+      </div>
+
+      <!-- Tombol balik ke blog -->
+      <button
+        onclick="window.location.href = '../Blog/blog.html'"
+        class="mt-12 px-6 py-3 rounded-full bg-[#F9C4BE] text-[#C0534B] text-sm font-semibold hover:bg-[#F5B3AC] transition-colors"
+      >
+        <i class="fa-solid fa-arrow-left mr-2"></i>Kembali ke Blog
+      </button>
+    </div>
+
+    <script src="../Isi-Blog/isi-blog.js"></script>
+</body>
+</html>

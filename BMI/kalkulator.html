@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kalkulator BMI — Gizy</title>
+    <title>Gizy - Kalkulator BMI</title>
 
     <!-- Tailwind CSS CDN (sama seperti di gizy.html) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -140,7 +140,7 @@
 
           <div class="font-bold text-lg mb-5">Keunggulan Fitur</div>
           <div class="flex flex-col gap-5">
-            <div class="flex items-center gap-4 bg-white p-4 sm:p-5 rounded-2xl shadow-sm hover:border-[#B8A9C9] transition border duration-300">
+            <div class="flex items-center gap-4 bg-white p-4 sm:p-5 rounded-2xl border-white hover:border-[#B8A9C9] transition border duration-300">
               <!-- GANTI src di bawah ini dengan gambar ikon kamu sendiri -->
               <img
                 src="../assets/vector/kotak-lengkung.svg"
@@ -151,7 +151,7 @@
                 Menghitung berat badan
               </p>
             </div>
-            <div class="flex items-center gap-4 bg-white p-4 sm:p-5 rounded-2xl shadow-sm hover:border-[#F4A698] transition border duration-300">
+            <div class="flex items-center gap-4 bg-white p-4 sm:p-5 rounded-2xl hover:border-[#F4A698] transition border border-white duration-300">
               <!-- GANTI src di bawah ini dengan gambar ikon kamu sendiri -->
               <img
                 src="../assets/vector/lingkaran.svg"
@@ -162,7 +162,7 @@
                 Menentukan kategori berat badan ideal atau tidak
               </p>
             </div>
-            <div class="flex items-center gap-4 bg-white p-4 sm:p-5 rounded-2xl shadow-sm hover:border-[#c5d9a4] transition border duration-300">
+            <div class="flex items-center gap-4 bg-white p-4 sm:p-5 rounded-2xl border-white hover:border-[#c5d9a4] transition border duration-300">
               <!-- GANTI src di bawah ini dengan gambar ikon kamu sendiri -->
               <img
                 src="../assets/vector/segitiga.svg"
@@ -360,7 +360,7 @@
         <div
           class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-3.5 mb-4"
         >
-          <div class="border border-black/[0.09] rounded-xl p-4">
+          <div class="border border-white rounded-xl p-4">
             <div class="font-extrabold text-[48px] text-[#D9483A]">
               71%
             </div>
@@ -371,7 +371,7 @@
               Jeruk, jambu biji, pepaya, tomat
             </p>
           </div>
-          <div class="border border-black/[0.09] rounded-xl p-4">
+          <div class="border border-white rounded-xl p-4">
             <div class="font-extrabold text-[48px] text-[#D9483A]">
               64%
             </div>
@@ -382,7 +382,7 @@
               Susu, ikan teri, tahu, sayuran hijau
             </p>
           </div>
-          <div class="border border-black/[0.09] rounded-xl p-4">
+          <div class="border border-white rounded-xl p-4">
             <div class="font-extrabold text-[48px] text-[#D9483A]">
               50%
             </div>
@@ -393,7 +393,7 @@
               Wortel, bayam, hati ayam, labu kuning
             </p>
           </div>
-          <div class="border border-black/[0.09] rounded-xl p-4">
+          <div class="border border-white rounded-xl p-4">
             <div class="font-extrabold text-[48px] text-[#D9483A]">
               45%
             </div>
@@ -404,7 +404,7 @@
               Ikan berlemak, telur, paparan sinar matahari pagi
             </p>
           </div>
-          <div class="border border-black/[0.09] rounded-xl p-4">
+          <div class="border border-white rounded-xl p-4">
             <div class="font-extrabold text-[48px] text-[#D9483A]">
               36%
             </div>
@@ -415,7 +415,7 @@
               Daging merah, kacang-kacangan, biji labu
             </p>
           </div>
-          <div class="border border-black/[0.09] rounded-xl p-4">
+          <div class="border border-white rounded-xl p-4">
             <div class="font-extrabold text-[48px] text-[#D9483A]">
               32%
             </div>
@@ -436,45 +436,116 @@
       </div>
     </div>
 
-    <!-- ================= FOOTER (NORMAL) ================= -->
-    <footer class="bg-[#FFA2A2] text-white pt-12 pb-8 px-4 relative z-30">
-      <div
-        class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-white/30"
+<footer class="relative z-30 bg-white pt-0">
+
+      <!-- ===== 1. LENGKUNGAN PINK (SVG) ===== -->
+      <!-- Mau lengkungannya lebih tinggi/landai? Ubah angka "10" di path
+           (makin kecil = makin tinggi kubahnya) -->
+      <svg
+        viewBox="0 0 1440 120"
+        preserveAspectRatio="none"
+        class="block w-full h-[90px] sm:h-[140px]"
+        aria-hidden="true"
       >
-        <!-- Brand & Slogan -->
-        <div class="text-center md:text-left">
-          <p
-            class="text-2xl font-extrabold tracking-tight text-white/90"
-            >gizy</p
-          >
-          <p class="text-sm text-white/90 mt-1">
-            Pelajari pola hidup sehat mulai dari gizimu!
-          </p>
+        <path d="M0,120 L0,90 C320,10 1120,10 1440,90 L1440,120 Z" fill="#FFA2A2"></path>
+      
+      <path
+    d="M0,90 C320,10 1120,10 1440,90"
+    fill="none"
+    class="stroke-[#FF8385] stroke-[1]"
+  ></path>
+      </svg>
+
+      <!-- ===== 2. AREA PINK (badan footer) ===== -->
+      <!-- pb-0 = gak ada padding bawah, karena penutupnya sekarang
+           adalah wordmark "gizy" gede yang kepotong di tepi -->
+      <div class="bg-[#FFA2A2] text-white px-4 pt-4 pb-0">
+
+        
+
+        <!-- ===== 3. ISI FOOTER ===== -->
+        <div class="max-w-[1006px] mx-auto mt-[87px]">
+          <!-- Flex luar: blok kiri vs GRUP kanan, didorong ke ujung pakai justify-between -->
+          <div class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0">
+
+            <!-- BLOK KIRI: tagline + copyright + logo -->
+            <div class="flex flex-col">
+              <p class="text-[18px] text-white/90">
+                Web Edukasi untuk keluarga<br />menuju Indonesia Sehat
+              </p>
+              <p class="text-[18px] text-white/70 mt-6">&copy; 2026 Gizy</p>
+              <img
+    src="../assets/vector/text-gede.svg"
+    class="sm:w-[128px] mt-6 pointer-events-none"
+    alt=""
+  />
+            </div>
+
+            <!-- GRUP KANAN: Jelajah + Kontak dipeluk bareng -->
+            <!-- gap-24 = 96px antara Jelajah dan Kontak (ubah sesuai selera) -->
+            <div class="flex flex-col sm:flex-row gap-10 sm:gap-24 lg:gap-32">
+
+              <!-- KOLOM JELAJAH -->
+              <div>
+                <h4 class="font-bold text-[18px] mb-3">Jelajah</h4>
+                <ul class="space-y-2 text-[18px] text-white/90">
+                  <li><a href="#beranda" class="hover:opacity-80">Beranda</a></li>
+                  <li><a href="../BMI/kalkulator.html" class="hover:opacity-80">BMI</a></li>
+                  <li><a href="../Blog/blog.html" class="hover:opacity-80">Blog</a></li>
+                  <li><a href="#bmi" class="hover:opacity-80">ChatBot</a></li>
+                </ul>
+              </div>
+
+              <!-- KOLOM KONTAK -->
+              <div>
+                <h4 class="font-bold text-[18px] mb-3">Kontak</h4>
+                <ul class="space-y-2 text-[18px] text-white/90">
+                  <li>+62 081812623943</li>
+                  <li>gizy@gmail.com</li>
+                  <li><a href="#" class="hover:opacity-80">Instagram</a></li>
+                  <li><a href="#" class="hover:opacity-80">Facebook</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Navigasi Cepat -->
-        <div class="flex flex-wrap justify-center gap-6 text-sm text-white">
-          <a href="../Home-Page/gizy.html" class="hover:opacity-80 transition-colors"
-            >Beranda</a
-          >
-          <a href="../BMI/kalkulator.html" class="hover:opacity-80 transition-colors scroll-top-link"
-            >BMI</a
-          >
-          <a href="#blog" class="hover:opacity-80 transition-colors">Blog</a>
-          <a
-            href="#"
-            class="hover:opacity-80 transition-colors"
-            >ChatBot</a
-          >
-        </div>
-      </div>
+<!-- ===== 4. WORDMARK "GIZY" GEDE DI PALING BAWAH ===== -->
+<div class="relative overflow-hidden mt-[152px]" aria-hidden="true">
 
-      <!-- Copyright -->
-      <div class="max-w-5xl mx-auto pt-6 text-center text-xs text-white">
-        &copy; 2026 gizy. All rights reserved.
-      </div>
-    </footer>
 
+<!-- ===== LAPISAN VECTOR ===== -->
+<div
+  class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 sm:gap-8 pointer-events-none"
+>
+  <img
+    src="../assets/vector/kotak-lengkung-pink.svg"
+    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
+    alt=""
+  />
+  <img
+    src="../assets/vector/lingkaran-pink.svg"
+    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
+    alt=""
+  />
+  <img
+    src="../assets/vector/segitiga-pink.svg"
+    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
+    alt=""
+  />
+  <img
+    src="../assets/vector/bintang-pink.svg"
+    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
+    alt=""
+  />
+</div>
+  <!-- WORDMARK: tetap di depan (z-10), bawahnya kepotong -->
+  <img
+    src="../assets/vector/text-gede.svg"
+    class="relative z-10 block mx-auto w-[75%] sm:w-[1006px] -mb-[5vw] sm:-mb-[80px] pointer-events-none"
+    alt=""
+  />
+</div>    </footer>
 <!--============================================
     CHATBOX
 ============================================-->

@@ -222,12 +222,24 @@
       >
 
         <svg
-          class="absolute top-0 left-0 w-full h-[70px] sm:h-[110px] -translate-y-full pointer-events-none"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path d="M0,120 C300,0 900,0 1200,120 L1200,120 L0,120 Z" fill="#FFA2A2"></path>
-        </svg>
+  class="absolute top-0 left-0 w-full h-[70px] sm:h-[110px] -translate-y-full pointer-events-none"
+  viewBox="0 0 1200 120"
+  preserveAspectRatio="none"
+  aria-hidden="true"
+>
+  <!-- Isi lengkungan -->
+  <path
+    d="M0,120 C300,0 900,0 1200,120 L1200,120 L0,120 Z"
+    fill="#FFA2A2"
+  ></path>
+
+  <!-- Border hanya pada sisi atas/lengkungan -->
+  <path
+    d="M0,120 C300,0 900,0 1200,120"
+    fill="none"
+    class="stroke-[#FF8385] stroke-[1]"
+  ></path>
+</svg>
 
         <div class="max-w-[1006px] mx-auto text-center">
           <!-- Badge "Masalah Kami" -->
@@ -331,22 +343,21 @@
 
       <!-- ===== CARD PENUTUP (ditarik ke atas biar nimpa batas pink & putih) ===== -->
 <!-- -mt-... = tarik naik ke area pink. relative z-10 = di depan lengkungan SVG -->
-<div class="relative z-10 -top-24 sm:-top-52 max-w-xl mx-auto">
+<div class="relative w-[768px] h-[214px] z-10 -top-24 sm:-top-52 mx-auto">
   <div
     class="bg-[#F1F6E3] border border-[#DCE8C5] rounded-2xl shadow-sm px-8 py-7 text-center"
   >
-    <p class="text-[18px] text-[#1A1A1A] leading-relaxed m-0">
+    <p class="text-[24px] text-[#5C5C5C] leading-relaxed font-semibold m-0">
       Gizy mengajak kamu belajar pelan–pelan lewat infografis yang mudah
       dipahami, sekaligus tips sederhana yang sudah dicoba dan dibagikan
       oleh teman–teman.
     </p>
 
     <!-- 4 ikon kecil: bintang, lingkaran, kotak, segitiga -->
-    <div class="flex items-center justify-center gap-4 mt-5 text-[#A9BD8B] text-sm">
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-circle"></i>
-      <i class="fa-solid fa-square"></i>
-      <i class="fa-solid fa-play rotate-90"></i>
+    <div class="flex items-center justify-center gap-4 mt-5 text-[#A9BD8B] text-[16px]">
+      <p><i class="fa-solid fa-star mr-2"></i> Panduan </p>
+      <p><i class="fa-solid fa-circle mr-2"></i> Tips </p>
+      <p><i class="fa-solid fa-square mr-2"></i> Blog Sehat </p>
     </div>
   </div>
 </div>
@@ -357,6 +368,13 @@
           preserveAspectRatio="none"
         >
           <path d="M0,120 C300,0 900,0 1200,120 L1200,120 L0,120 Z" fill="white"></path>
+        
+            <!-- Border hanya pada sisi atas/lengkungan -->
+  <path
+    d="M0,120 C300,0 900,0 1200,120"
+    fill="none"
+    class="stroke-[#5C5C5C] stroke-[1]"
+  ></path>
         </svg>
 
         <div class="max-w-[1006px] mx-auto">
@@ -443,12 +461,12 @@
                   <!-- <span class="absolute inset-0 flex items-center justify-center text-gray-500 text-xs font-bold">17%</span> -->
                 </div>
                 <div>
-                  <h3 class="text-[18px] font-bold text-gray-900 mb-1">
+                  <h3 class="text-[18px] font-bold text-[#5C5C5C] mb-1">
                     Karbohidrat
                   </h3>
-                  <p class="text-[18px] text-gray-500 leading-relaxed">
+                  <p class="text-[18px] text-[#5C5C5C] leading-relaxed">
                     Sumber:
-                    <span class="font-semibold text-gray-700">Nasi, ubi jalar, kentang</span>
+                    <span class="font-semibold text-[#5C5C5C]">Nasi, ubi jalar, kentang</span>
                   </p>
                 </div>
               </div>
@@ -460,12 +478,12 @@
                   <!-- <span class="absolute inset-0 flex items-center justify-center text-gray-500 text-xs font-bold">33%</span> -->
                 </div>
                 <div>
-                  <h3 class="text-[18px] font-bold text-gray-900 mb-1">
+                  <h3 class="text-[18px] font-bold text-[#5C5C5C] mb-1">
                     Protein (Lauk Pauk)
                   </h3>
-                  <p class="text-[18px] text-gray-500 leading-relaxed">
+                  <p class="text-[18px] text-[#5C5C5C] leading-relaxed">
                     Sumber:
-                    <span class="font-semibold text-gray-700">Tahu, ikan, tempe, telur, ayam</span>
+                    <span class="font-semibold text-[#5C5C5C]">Tahu, ikan, tempe, telur, ayam</span>
                   </p>
                 </div>
               </div>
@@ -477,12 +495,12 @@
                   <!-- <span class="absolute inset-0 flex items-center justify-center text-gray-500 text-xs font-bold">17%</span> -->
                 </div>
                 <div>
-                  <h3 class="text-[18px] font-bold text-gray-900 mb-1">
+                  <h3 class="text-[18px] font-bold text-[#5C5C5C] mb-1">
                     Sayur-Sayuran
                   </h3>
-                  <p class="text-[18px] text-gray-500 leading-relaxed">
+                  <p class="text-[18px] text-[#5C5C5C] leading-relaxed">
                     Sumber:
-                    <span class="font-semibold text-gray-700">Bayam, wortel, brokoli, kangkung</span>
+                    <span class="font-semibold text-[#5C5C5C]">Bayam, wortel, brokoli, kangkung</span>
                   </p>
                 </div>
               </div>
@@ -494,12 +512,12 @@
                   <span class="absolute inset-0 flex items-center justify-center text-gray-500 text-xs font-bold">17%</span>
                 </div>
                 <div>
-                  <h3 class="text-[18px] font-bold text-gray-900 mb-1">
+                  <h3 class="text-[18px] font-bold text-[#5C5C5C] mb-1">
                     Buah-Buahan
                   </h3>
-                  <p class="text-[18px] text-gray-500 leading-relaxed">
+                  <p class="text-[18px] text-[#5C5C5C] leading-relaxed">
                     Sumber:
-                    <span class="font-semibold text-gray-700">Pisang, pepaya, jeruk, apel</span>
+                    <span class="font-semibold text-[#5C5C5C]">Pisang, pepaya, jeruk, apel</span>
                   </p>
                 </div>
               </div>
@@ -685,11 +703,9 @@
                   <span class="text-[14px] text-[#5C5C5C]">John Doe</span>
                 </div>
                 <!-- Tombol warna pink: background pink muda + teks merah bata -->
-                <button
-                  class="mt-auto w-full py-2.5 rounded-lg text-[18px] font-semibold bg-[#F9C4BE] text-[#5C5C5C] hover:bg-[#F5B3AC] transition-colors"
-                >
-                  Pelajari Lebih Lanjut
-                </button>
+      <a href="../Isi-Blog/isi-blog.html" class="flex item-center justify-center mt-auto w-full py-2.5 rounded-lg border border-[#FF8385] font-semibold bg-[#FFAEAF] text-[#5C5C5C] hover:bg-[#FF8385] transition-colors">
+        Pelajari Lebih Lanjut
+      </a>
               </div>
 
               <!-- KARTU ARTIKEL 2 (tombol HIJAU) -->
@@ -709,11 +725,9 @@
                   <span class="text-[14px] text-[#5C5C5C]">John Doe</span>
                 </div>
                 <!-- Tombol warna hijau: background hijau muda + teks hijau tua -->
-                <button
-                  class="mt-auto w-full py-2.5 rounded-lg text-[18px] font-semibold bg-[#E4F1CE] text-[#5C5C5C] hover:bg-[#D8EABC] transition-colors"
-                >
-                  Pelajari Lebih Lanjut
-                </button>
+                <a href="../Isi-Blog/isi-blog.html" class="flex item-center justify-center mt-auto w-full py-2.5 rounded-lg text-[18px] border border-[#C6D4A9] font-semibold bg-[#F6FFE5] text-[#5C5C5C] hover:bg-[#C6D4A9] transition-colors">
+        Pelajari Lebih Lanjut
+      </a>
               </div>
 
               <!-- KARTU ARTIKEL 3 (tombol UNGU) -->
@@ -733,11 +747,9 @@
                   <span class="text-[14px] text-[#5C5C5C]">John Doe</span>
                 </div>
                 <!-- Tombol warna ungu: background ungu muda + teks ungu tua -->
-                <button
-                  class="mt-auto w-full py-2.5 rounded-lg text-[18px] font-semibold bg-[#D7CEE9] text-[#5C5C5C] hover:bg-[#C9BDE0] transition-colors"
-                >
-                  Pelajari Lebih Lanjut
-                </button>
+                <a href="../Isi-Blog/isi-blog.html" class="flex item-center justify-center mt-auto w-full py-2.5 rounded-lg border border-[#9B85A3] text-[18px] font-semibold bg-[#C2A6CC] text-[#5C5C5C] hover:bg-[#9B85A3] transition-colors">
+        Pelajari Lebih Lanjut
+      </a>
               </div>
             </div>
 
@@ -793,6 +805,12 @@
         aria-hidden="true"
       >
         <path d="M0,120 L0,90 C320,10 1120,10 1440,90 L1440,120 Z" fill="#FFA2A2"></path>
+      
+      <path
+    d="M0,90 C320,10 1120,10 1440,90"
+    fill="none"
+    class="stroke-[#FF8385] stroke-[1]"
+  ></path>
       </svg>
 
       <!-- ===== 2. AREA PINK (badan footer) ===== -->
@@ -801,9 +819,9 @@
       <div class="bg-[#FFA2A2] text-white px-4 pt-4 pb-0">
 
         <!-- ===== CARD CTA (ditarik ke atas pakai -mt biar nimpa lengkungannya) ===== -->
-        <div id="bmi" class="max-w-[1006px] mx-auto -mt-20 sm:-mt-[300px] relative z-10">
+        <div id="bmi" class="max-w-[1006px] mx-auto -mt-20 sm:-mt-[320px] relative z-10">
           <div
-            class="bg-[#FAF7E1] rounded-3xl overflow-hidden flex flex-col md:flex-row"
+            class="bg-[#F6FFE5] rounded-3xl border border-[#C6D4A9] overflow-hidden flex flex-col md:flex-row"
           >
             <!-- KIRI: teks & tombol -->
             <div class="p-8 sm:p-12 flex-1">
