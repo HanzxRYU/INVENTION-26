@@ -416,8 +416,19 @@ document.getElementById("btn-hitung").addEventListener("click", () => {
     )
     .join("");
 
+      // Tampilkan tombol konsultasi AI (muncul bareng result-section)  ← ★ INI
+  document.getElementById("btn-konsultasi").classList.remove("hidden");
+
   document.getElementById("result-section").style.display = "block";
   document
     .getElementById("result-section")
     .scrollIntoView({ behavior: "smooth" });
 });
+
+// ================= TOMBOL "KONSULTASI AI CHATBOT" =================
+const btnKonsultasi = document.getElementById("btn-konsultasi");
+if (btnKonsultasi) {
+  btnKonsultasi.addEventListener("click", function () {
+    window.location.href = "../ChatBot/chatbot.html";
+  });
+}

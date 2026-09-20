@@ -30,13 +30,14 @@
       body {
         font-family: "Plus Jakarta Sans", sans-serif;
       }
-      .chat-scrollbar::-webkit-scrollbar {
-        width: 6px;
-      }
-      .chat-scrollbar::-webkit-scrollbar-thumb {
-        background: #fecaca;
-        border-radius: 999px;
-      }
+/* Scrollbar slide tips disembunyikan (HP + desktop) */
+.tips-scroller::-webkit-scrollbar {
+  display: none;
+}
+.tips-scroller {
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* Edge lama */
+}
 
       /* ===== CSS UNTUK SECTION 1 STICKY ===== */
       .masalah-fixed {
@@ -90,7 +91,7 @@
             >Blog</a
           >
           <a
-            href="#bmi"
+            href="../ChatBot/chatbot.html"
             class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
             >ChatBot</a
           >
@@ -120,51 +121,83 @@
         >Beranda</a
       >
       <a
-        href="#masalah"
+        href="../BMI/kalkulator.html"
         class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
-        >Masalah</a
+        >BMI</a
       >
       <a
-        href="#blog"
+        href="../Blog/blog.html"
         class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
         >Blog</a
       >
       <a
-        href="../BMI/kalkulator.html"
+        href="../ChatBot/chatbot.html"
         class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
-        >BMI</a
+        >ChatBot</a
       >
     </div>
 
     <!-- ================= HERO SECTION (STICKY) ================= -->
     <header
       id="beranda"
-      class="sticky top-0 z-[1] bg-white min-h-screen flex items-center justify-center text-center px-4 pt-20"
+      class="sticky top-0 z-[1] bg-white min-h-screen flex items-center justify-center text-center px-4 pt-20 overflow-hidden"
     >
       <!-- Bentuk Hiasan Dekoratif (Shapes Diperbesar) -->
 
-      <!-- 1. Shape Segitiga Hijau Muda (Kiri Atas) -->
-      <div
-        class="hidden sm:block absolute top-1/4 left-8 md:left-20 w-20 h-20 md:w-28 md:h-28 bg-[#eaf8db] border border-black/80 rounded-3xl rotate-12 pointer-events-none z-10"
-      ></div>
+      <!-- 1. Shape Segitiga Hijau Muda -->
+      <img
+        src="../assets/vector/segitiga-green-gede.svg"
+        alt=""
+        class="block absolute top-[12%] left-5 w-20 h-20 md:w-28 md:h-28
+       sm:top-1/4 sm:left-8 md:left-20
+       object-contain rotate-12 pointer-events-none z-10"
+        />
 
-      <!-- 2. Shape Kapsul Merah Muda (Kiri Bawah) -->
-      <div
-        class="hidden sm:block absolute bottom-12 left-6 md:left-12 w-20 h-44 md:w-24 md:h-56 bg-[#ffb1b1] border border-black/80 rounded-full -rotate-45 pointer-events-none z-10"
-      ></div>
+      <!-- 2. Shape Kapsul Merah Muda -->
+      <img
+        src="../assets/vector/bintang-purple-gede.svg"
+        alt=""
+        class="block absolute top-[5%] right-2 w-20 h-20 md:w-28 md:h-28
+       sm:top-1/3 sm:right-8 md:right-20
+       object-contain pointer-events-none z-10"
+        />
 
-      <!-- 3. Shape Lingkaran Merah Muda (Kanan Atas) -->
-      <div
-        class="hidden sm:block absolute top-1/3 right-8 md:right-20 w-20 h-20 md:w-28 md:h-28 bg-[#ffa8a8] border border-black/80 rounded-full pointer-events-none z-10"
-      ></div>
+      <!-- 3. Shape Lingkaran Merah Muda -->
+      <img
+        src="../assets/vector/lingkaran-pink.svg"
+        alt=""
+class="block absolute top-[30%] -left-16 w-28 h-28
+       sm:top-auto sm:bottom-12 sm:left-6 sm:w-36 sm:h-36 md:w-48 md:h-48
+       object-contain -rotate-45 pointer-events-none z-10"      />
 
-      <!-- 4. Shape Bunga/Awan Ungu (Kanan Bawah) -->
-      <div
-        class="hidden sm:block absolute bottom-12 right-6 md:right-12 w-24 h-24 md:w-32 md:h-32 bg-[#f3cbff] border border-black/80 rounded-[40px] rotate-12 pointer-events-none z-10"
-      ></div>
+      <!-- 4. Shape Bunga/Awan Ungu -->
+      <img
+        src="../assets/vector/Vector-6.svg"
+        alt=""
+class="block absolute top-[38%] -right-10 w-24 h-24
+       sm:top-auto sm:bottom-12 sm:right-6 sm:w-24 sm:h-24 md:w-32 md:h-32
+       object-contain rounded-[40px] rotate-12 pointer-events-none z-10"      />
+
+      <!-- Shape Tengah Kanan -->
+      <img
+        src="../assets/vector/kapsul-purple.svg"
+        alt=""
+class="block absolute bottom-[-50px] -left-10 w-32 h-32
+       sm:bottom-[-40px] sm:left-[28%] sm:w-36 sm:h-36 md:w-48 md:h-48
+       object-contain -rotate-12 pointer-events-none z-10"
+             />
+
+      <!-- Shape Tengah Kiri -->
+      <img
+        src="../assets/vector/segitiga-green-gede.svg"
+        alt=""
+class="block absolute bottom-[-40px] -right-8 w-24 h-24
+       sm:bottom-[-40px] sm:right-[28%] sm:w-36 sm:h-36 md:w-48 md:h-48
+       object-contain rotate-12 pointer-events-none z-10"
+             />
 
       <!-- Konten Teks & Tombol -->
-      <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+      <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center -mt-8">
         <!-- Judul Utama -->
         <h1
           class="text-4xl sm:text-6xl md:text-[98px] font-black text-black tracking-tight leading-[1.1] mb-6"
@@ -174,19 +207,19 @@
         </h1>
 
         <!-- Subteks -->
-        <p class="text-sm md:text-base text-gray-500 font-medium mb-8 max-w-md">
+        <p class="text-[16px] sm:text-[18px] md:text-base text-gray-500 font-medium mb-10 sm:mb-[61px] max-w-md">
           Pelajari pola hidup sehat mulai dari gizimu!
         </p>
 
         <!-- Bagian Tombol Aksi -->
         <div class="flex flex-col sm:flex-row gap-4">
           <button
-            onclick="window.location.href = '../BMI/kalkulator.html'"
-            class="group flex items-center text-[#FFAEAF]"
+            onclick="window.location.href = '#'"
+            class="group flex items-center text-[#FF8385]"
           >
             <!-- Lingkaran Ikon Kiri (Muncul saat Hover) -->
             <div
-              class="w-10 h-10 lg:w-12 lg:h-12 border-2 border-[#FFAEAF] rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 scale-0 group-hover:scale-100 -mr-10 lg:-mr-12 z-10"
+              class="text-[#FF8385] w-[64px] h-[64px] lg:w-[74px] lg:h-[74px] border-2 border-[#FF8385] rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 scale-0 group-hover:scale-100 -mr-10 lg:-mr-12 z-10"
             >
               <i
                 class="fa-solid fa-chevron-down text-lg -translate-x-8 -translate-y-8 transition-transform duration-300 delay-100 group-hover:translate-x-0 group-hover:translate-y-0"
@@ -195,14 +228,14 @@
 
             <!-- Teks Utama (Bergeser ke Kanan saat Hover) -->
             <div
-              class="text-[#FFAEAF] h-10 lg:h-12 px-4 lg:px-6 border-2 border-[#FFAEAF] rounded-full flex items-center text-sm lg:text-[18px] font-extralight transition-transform duration-300 group-hover:translate-x-10 lg:group-hover:translate-x-12"
+              class="justify-center text-[#FF8385] h-[64px] w-[222px] lg:h-[74px] px-4 lg:px-6 border-2 border-[#FF8385] rounded-full flex items-center text-[16px] lg:text-[18px] font-semibold transition-transform duration-300 group-hover:translate-x-10 lg:group-hover:translate-x-12"
             >
               Pelajari Gizi Sehat!
             </div>
 
             <!-- Lingkaran Ikon Kanan (Sembunyi saat Hover) -->
             <div
-              class="w-10 h-10 lg:w-12 lg:h-12 border-2 border-[#FFAEAF] rounded-full flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-0"
+              class="text-[#FF8385] w-[64px] h-[64px] lg:w-[74px] lg:h-[74px] border-2 border-[#FF8385] rounded-full flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-0"
             >
               <i
                 class="fa-solid fa-chevron-down text-lg transition-transform duration-300 group-hover:translate-x-8 group-hover:translate-y-8"
@@ -222,24 +255,24 @@
       >
 
         <svg
-  class="absolute top-0 left-0 w-full h-[70px] sm:h-[110px] -translate-y-full pointer-events-none"
-  viewBox="0 0 1200 120"
-  preserveAspectRatio="none"
-  aria-hidden="true"
->
-  <!-- Isi lengkungan -->
-  <path
-    d="M0,120 C300,0 900,0 1200,120 L1200,120 L0,120 Z"
-    fill="#FFA2A2"
-  ></path>
+          class="absolute top-0 left-0 w-full h-[70px] sm:h-[110px] -translate-y-full pointer-events-none"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <!-- Isi lengkungan -->
+          <path
+            d="M0,120 C300,0 900,0 1200,120 L1200,120 L0,120 Z"
+            fill="#FFA2A2"
+          ></path>
 
-  <!-- Border hanya pada sisi atas/lengkungan -->
-  <path
-    d="M0,120 C300,0 900,0 1200,120"
-    fill="none"
-    class="stroke-[#FF8385] stroke-[1]"
-  ></path>
-</svg>
+          <!-- Border hanya pada sisi atas/lengkungan -->
+          <path
+            d="M0,120 C300,0 900,0 1200,120"
+            fill="none"
+            class="stroke-[#FF8385] stroke-[1]"
+          ></path>
+        </svg>
 
         <div class="max-w-[1006px] mx-auto text-center">
           <!-- Badge "Masalah Kami" -->
@@ -287,14 +320,14 @@
                 </div>
               </div>
 
-              <p class="text-base sm:text-[24px] font-normal text-white/90 leading-relaxed px-1">
+              <p class="text-base sm:text-[24px] text-right font-normal text-white/90 leading-snug px-1">
                 Di balik data ini, ada banyak keluarga yang sebenarnya ingin berubah, hanya belum tahu harus mulai dari mana.
               </p>
             </div>
 
             <!-- KOLOM KANAN -->
-            <div class="flex flex-col gap-4">
-              <p class="text-base sm:text-[24px] font-normal text-white/90 leading-relaxed px-1">
+            <div class="flex flex-col gap-4 max-md:flex-col-reverse md:flex-row-reverse md:flex-col">
+              <p class="text-base sm:text-[24px] font-normal text-white/90 leading-snug px-1">
                 Berdasarkan Survei Status Gizi Indonesia, <span class="font-bold">sekitar 1 dari 5 anak Indonesia masih mengalami stunting akibat kekurangan gizi kronis</span> — angka yang meski menurun, tetap menjadi tantangan besar setiap tahunnya.
               </p>
 
@@ -325,9 +358,9 @@
             </div>
           </div>
 
-          <!-- TEKS PENUTUP BAWAH -->
-          <div class="mt-20 sm:mt-32 mb-8 max-w-2xl mx-auto px-4">
-          
+          <!-- TEKS PENUTUP BAWAH (isinya kosong; spesial buat HP diperkecil biar gak jadi gap gede) -->
+          <div class="mt-10 sm:mt-32 mb-4 sm:mb-8 max-w-2xl mx-auto px-4">
+
           </div>
         </div>
       </section>
@@ -342,25 +375,26 @@
       >
 
       <!-- ===== CARD PENUTUP (ditarik ke atas biar nimpa batas pink & putih) ===== -->
-<!-- -mt-... = tarik naik ke area pink. relative z-10 = di depan lengkungan SVG -->
-<div class="relative w-[768px] h-[214px] z-10 -top-24 sm:-top-52 mx-auto">
-  <div
-    class="bg-[#F1F6E3] border border-[#DCE8C5] rounded-2xl shadow-sm px-8 py-7 text-center"
-  >
-    <p class="text-[24px] text-[#5C5C5C] leading-relaxed font-semibold m-0">
-      Gizy mengajak kamu belajar pelan–pelan lewat infografis yang mudah
-      dipahami, sekaligus tips sederhana yang sudah dicoba dan dibagikan
-      oleh teman–teman.
-    </p>
+      <!-- FIX MOBILE: w-full max-w-[768px] + h-auto di HP (dulu w-[768px] paku = overflow) -->
+      <div class="relative w-full max-w-[768px] h-auto sm:h-[214px] z-10 -top-24 sm:-top-52 mx-auto">
+        <div
+          class="bg-[#F1F6E3] border border-[#DCE8C5] rounded-2xl shadow-sm px-8 py-7 text-center"
+        >
+          <p class="text-[18px] sm:text-[24px] text-[#5C5C5C] leading-relaxed font-semibold m-0">
+            Gizy mengajak kamu belajar pelan–pelan lewat infografis yang mudah
+            dipahami, sekaligus tips sederhana yang sudah dicoba dan dibagikan
+            oleh teman–teman.
+          </p>
 
-    <!-- 4 ikon kecil: bintang, lingkaran, kotak, segitiga -->
-    <div class="flex items-center justify-center gap-4 mt-5 text-[#A9BD8B] text-[16px]">
-      <p><i class="fa-solid fa-star mr-2"></i> Panduan </p>
-      <p><i class="fa-solid fa-circle mr-2"></i> Tips </p>
-      <p><i class="fa-solid fa-square mr-2"></i> Blog Sehat </p>
-    </div>
-  </div>
-</div>
+          <!-- 4 ikon kecil: bintang, lingkaran, kotak, segitiga -->
+          <!-- FIX MOBILE: flex-wrap biar gak dempet di layar sempit -->
+          <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-5 text-[#A9BD8B] text-[16px]">
+            <p><i class="fa-solid fa-star mr-2"></i> Panduan </p>
+            <p><i class="fa-solid fa-circle mr-2"></i> Tips </p>
+            <p><i class="fa-solid fa-square mr-2"></i> Blog Sehat </p>
+          </div>
+        </div>
+      </div>
 
         <svg
           class="absolute top-0 left-0 w-full h-[70px] sm:h-[110px] -translate-y-full pointer-events-none"
@@ -368,13 +402,13 @@
           preserveAspectRatio="none"
         >
           <path d="M0,120 C300,0 900,0 1200,120 L1200,120 L0,120 Z" fill="white"></path>
-        
+
             <!-- Border hanya pada sisi atas/lengkungan -->
-  <path
-    d="M0,120 C300,0 900,0 1200,120"
-    fill="none"
-    class="stroke-[#5C5C5C] stroke-[1]"
-  ></path>
+          <path
+            d="M0,120 C300,0 900,0 1200,120"
+            fill="none"
+            class="stroke-[#5C5C5C] stroke-[1]"
+          ></path>
         </svg>
 
         <div class="max-w-[1006px] mx-auto">
@@ -399,8 +433,9 @@
             <!-- KOLOM KIRI: DONUT CHART -->
             <div class="lg:col-span-5 flex flex-col items-center">
               <!-- Donut Chart -->
+              <!-- FIX MOBILE: w-64 (256px) di HP biar gak mepet, desktop tetap 400px -->
               <div
-                class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full flex items-center justify-center transition-transform duration-300 hover:scale-105"
+                class="relative w-64 h-64 sm:w-[400px] sm:h-[400px] rounded-full flex items-center justify-center transition-transform duration-300 hover:scale-105"
                 style="
                   background: conic-gradient(
                     #b8a9c9 0% 33%,
@@ -412,7 +447,7 @@
               >
                 <!-- Lingkaran tengah (hitam + gambar makanan + teks) -->
                 <div
-                  class="w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden flex items-center justify-center relative shadow-inner"
+                  class="w-48 h-48 sm:w-64 sm:h-64 rounded-full overflow-hidden flex items-center justify-center relative shadow-inner"
                   style="background: #1a1a1a"
                 >
                   <!-- Gambar sayur-segar sebagai latar -->
@@ -524,149 +559,231 @@
             </div>
           </div>
 
-          <!-- ========================================================================= -->
-          <!-- [BAGIAN: TIPS MAKAN SEHAT - KARTU YANG "DIBALIK" (FLIP) SAAT DI-HOVER] -->
-          <!-- ========================================================================= -->
-          <div class="mt-[229px] text-center">
-            <div
-              class="inline-flex items-center justify-center h-10 lg:h-12 px-6 lg:px-8 border border-gray-300 rounded-full text-gray-600 text-sm lg:text-[18px] font-extralight mb-6 sm:mb-8"
-            >
-              Panduan Gizi Sehat
-            </div>
-            <h2
-              class="text-3xl sm:text-[48px] font-black text-gray-900 tracking-tight mb-10"
-            >
-              Tips Makan Sehat
-            </h2>
+<!-- ========================================================================= -->
+<!-- [BAGIAN: TIPS MAKAN SEHAT - DESKTOP: HOVER FLIP | HP: SLIDE + TAP FLIP] -->
+<!-- ========================================================================= -->
+<div class="mt-[229px] text-center">
+  <div
+    class="inline-flex items-center justify-center h-10 lg:h-12 px-6 lg:px-8 border border-gray-300 rounded-full text-gray-600 text-sm lg:text-[18px] font-extralight mb-6 sm:mb-8"
+  >
+    Panduan Gizi Sehat
+  </div>
+  <h2
+    class="text-3xl sm:text-[48px] font-black text-gray-900 tracking-tight mb-10"
+  >
+    Tips Makan Sehat
+  </h2>
 
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-left">
-              <!-- KARTU 1: kartu pembuka, warna solid saja, TIDAK bisa dibalik -->
-              <div
-                class="h-[320px] w-[239.5px] rounded-2xl overflow-hidden bg-gradient-to-br from-[#FF9B9B] to-[#FF7A7A] p-5 flex flex-col justify-between"
-              >
-                <h3 class="text-white font-extrabold text-[24px] leading-snug">
-                  Tidak Cukup hanya dari piringmu!
-                </h3>
-                <p class="text-white/90 text-[18px] leading-relaxed">
-                  Berikut adalah 3 tips untuk menjaga pola gizi sehat.
-                </p>
-              </div>
+  <!-- ===== PEMBUNGUS ===== -->
+  <!-- HP  : flex + bisa di-slide ke samping (overflow-x-auto + snap) -->
+  <!-- sm  : balik jadi grid 4 kolom persis seperti desain desktop -->
+  <div
+    class="tips-scroller flex overflow-x-auto snap-x snap-mandatory gap-4 text-left px-4 -mx-4
+           sm:grid sm:grid-cols-4 sm:overflow-visible sm:mx-0 sm:px-0"
+  >
+    <!-- ===== KARTU 1: pembuka (gak bisa dibalik, warna solid) ===== -->
+    <div
+      class="relative h-[320px] w-[239.5px] shrink-0 snap-center
+       overflow-hidden rounded-2xl bg-gradient-to-br from-[#FFAEAF] to-[#FFCACA] p-5 flex flex-col justify-between"
+    >
+      <img
+        src="../assets/vector/kotak-lengkung-pink.svg"
+        class="absolute z-0 w-[200px] h-[200px] left-[-40px] top-[-65px] pointer-events-none"
+        alt=""
+      />
 
-              <!-- Kartu 2: Makan Seimbang dan Beragam -->
-              <div class="group [perspective:1000px] h-[320px] w-[239.5px]">
-                <div
-                  class="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
-                >
-                  <!-- Sisi depan -->
-                  <div
-                    class="absolute inset-0 rounded-2xl overflow-hidden [backface-visibility:hidden]"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?q=80&w=600&auto=format&fit=crop"
-                      class="w-full h-full object-cover"
-                      alt="Makan seimbang dan beragam"
-                    />
-                    <div
-                      class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
-                    ></div>
-                    <h3
-                      class="absolute bottom-4 left-4 right-4 text-white font-extrabold text-[18px] leading-snug"
-                    >
-                      Makan Seimbang dan Beragam
-                    </h3>
-                  </div>
-                  <!-- Sisi belakang -->
-                  <div
-                    class="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#C5E8B7] to-[#8FCB7A] p-5 flex flex-col justify-center [backface-visibility:hidden] [transform:rotateY(180deg)]"
-                  >
-                    <h3 class="text-white font-extrabold text-[18px] mb-2">
-                      Makan Seimbang dan Beragam
-                    </h3>
-                    <p class="text-white text-[12px] leading-relaxed">
-                      Pastikan piringmu selalu ada karbohidrat, protein,
-                      sayur, dan buah dalam porsi yang seimbang di setiap
-                      waktu makan.
-                    </p>
-                  </div>
-                </div>
-              </div>
+      <h3 class="relative z-10 text-[#5C5C5C] font-extrabold text-[18px] sm:text-[24px] leading-snug">
+        Tidak Cukup hanya dari piringmu!
+      </h3>
 
-              <!-- Kartu 3: Batasi Asupan & Jaga Kebersihan -->
-              <div class="group [perspective:1000px] h-[320px] w-[239.5px]">
-                <div
-                  class="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
-                >
-                  <div
-                    class="absolute inset-0 rounded-2xl overflow-hidden [backface-visibility:hidden]"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1581622558667-3419a8dc5f83?q=80&w=600&auto=format&fit=crop"
-                      class="w-full h-full object-cover"
-                      alt="Batasi asupan dan jaga kebersihan"
-                    />
-                    <div
-                      class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
-                    ></div>
-                    <h3
-                      class="absolute bottom-4 left-4 right-4 text-white font-extrabold text-[18px] leading-snug"
-                    >
-                      Batasi Asupan &amp; Jaga Kebersihan
-                    </h3>
-                  </div>
-                  <div
-                    class="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#F4D9A0] to-[#E8B65C] p-5 flex flex-col justify-center [backface-visibility:hidden] [transform:rotateY(180deg)]"
-                  >
-                    <h3 class="text-white font-extrabold text-[18px] mb-2">
-                      Batasi Asupan &amp; Jaga Kebersihan
-                    </h3>
-                    <p class="text-white text-[12px] leading-relaxed">
-                      Kurangi gula, garam, dan minyak berlebih. Jangan lupa
-                      cuci tangan sebelum makan untuk mencegah kuman masuk
-                      ke tubuh.
-                    </p>
-                  </div>
-                </div>
-              </div>
+      <p class="relative z-10 text-[#5C5C5C] text-[18px] leading-relaxed">
+        Berikut adalah 3 tips untuk menjaga pola gizi sehat.
+      </p>
+    </div>
 
-              <!-- Kartu 4: Rutinitas Sehat Setiap Hari -->
-              <div class="group [perspective:1000px] h-[320px] w-[239.5px]">
-                <div
-                  class="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
-                >
-                  <div
-                    class="absolute inset-0 rounded-2xl overflow-hidden [backface-visibility:hidden]"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1578671642900-cb78b0fe2969?q=80&w=600&auto=format&fit=crop"
-                      class="w-full h-full object-cover"
-                      alt="Rutinitas sehat setiap hari"
-                    />
-                    <div
-                      class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
-                    ></div>
-                    <h3
-                      class="absolute bottom-4 left-4 right-4 text-white font-extrabold text-[18px] leading-snug"
-                    >
-                      Rutinitas Sehat Setiap Hari
-                    </h3>
-                  </div>
-                  <div
-                    class="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#FFB1B1] to-[#FF8A8A] p-5 flex flex-col justify-center [backface-visibility:hidden] [transform:rotateY(180deg)]"
-                  >
-                    <h3 class="text-white font-extrabold text-[18px] mb-2">
-                      Rutinitas Sehat Setiap Hari
-                    </h3>
-                    <p class="text-white text-[12px] leading-relaxed">
-                      Biasakan minum air putih yang cukup, tidur teratur,
-                      dan tetap aktif bergerak setiap hari supaya tubuh
-                      tetap bugar.
-                    </p>
-                  </div>
-                </div>
-              </div>
+    <!-- ===== KARTU 2: Makan Seimbang dan Beragam (FLIP) ===== -->
+    <div class="flip-card group [perspective:1000px] h-[320px] w-[239.5px] shrink-0 snap-center">
+      <div
+        class="flip-rotator relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
+      >
+        <!-- Sisi depan -->
+        <div
+          class="absolute inset-0 rounded-2xl overflow-hidden [backface-visibility:hidden]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?q=80&w=600&auto=format&fit=crop"
+            class="w-full h-full object-cover"
+            alt="Makan seimbang dan beragam"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
+          ></div>
+          <h3
+            class="absolute bottom-4 left-4 right-4 text-white font-extrabold text-[18px] leading-snug"
+          >
+            Makan Seimbang dan Beragam
+          </h3>
+        </div>
+        <!-- Sisi belakang -->
+        <div
+          class="absolute inset-0 overflow-hidden rounded-2xl bg-[#C6D4A9] p-5 [backface-visibility:hidden] [transform:rotateY(180deg)]"
+        >
+          <img
+            src="../assets/vector/kotak-lengkung-green-gede.svg"
+            class="absolute z-0 w-[200px] h-[200px] left-[-40px] top-[-65px] pointer-events-none"
+            alt=""
+          />
+
+          <div class="relative z-10 flex h-full flex-col justify-center text-left">
+            <h3 class="text-[#5C5C5C] font-extrabold text-[20px] mb-8">
+              Makan Seimbang<br />dan Beragam
+            </h3>
+
+            <div class="space-y-4 text-[#5C5C5C] text-[12px] leading-tight">
+              <p>
+                Hindari hanya satu jenis<br />
+                makanan;
+              </p>
+
+              <p>
+                tubuh butuh kombinasi energi,<br />
+                protein, vitamin, dan mineral.
+              </p>
+
+              <p>
+                Gunakan pangan lokal<br />
+                (tempe, ikan, sayur hijau, buah<br />
+                tropis) agar lebih terjangkau<br />
+                dan bergizi.
+              </p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- ===== KARTU 3: Batasi Asupan & Jaga Kebersihan (FLIP) ===== -->
+    <div class="flip-card group [perspective:1000px] h-[320px] w-[239.5px] shrink-0 snap-center">
+      <div
+        class="flip-rotator relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
+      >
+        <div
+          class="absolute inset-0 rounded-2xl overflow-hidden [backface-visibility:hidden]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1581622558667-3419a8dc5f83?q=80&w=600&auto=format&fit=crop"
+            class="w-full h-full object-cover"
+            alt="Batasi asupan dan jaga kebersihan"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
+          ></div>
+          <h3
+            class="absolute bottom-4 left-4 right-4 text-white font-extrabold text-[18px] leading-snug"
+          >
+            Batasi Asupan &amp; Jaga Kebersihan
+          </h3>
+        </div>
+        <div
+          class="absolute inset-0 overflow-hidden rounded-2xl bg-[#C2A6CC] p-5 [backface-visibility:hidden] [transform:rotateY(180deg)]"
+        >
+          <img
+            src="../assets/vector/kotak-lengkung-purple.svg"
+            class="absolute z-0 w-[200px] h-[200px] left-[-40px] top-[-65px] pointer-events-none"
+            alt=""
+          />
+
+          <div class="relative z-10 flex h-full flex-col justify-center text-left">
+            <h3 class="text-[#5C5C5C] font-extrabold text-[20px] mb-6">
+              Batasi Asupan &amp;<br />Jaga Kebersihan
+            </h3>
+
+            <div class="space-y-4 text-[#5C5C5C] text-[12px] leading-tight">
+              <p>
+                Kurangi makanan/minuman<br />
+                tinggi gula, garam, dan lemak<br />
+                (soft drink, gorengan,<br />
+                makanan instan).
+              </p>
+
+              <p>
+                Biasakan membaca label gizi<br />
+                pada kemasan untuk<br />
+                mengontrol kalori dan<br />
+                nutrisi.
+              </p>
+
+              <p>
+                Cuci tangan dengan sabun<br />
+                sebelum makan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== KARTU 4: Rutinitas Sehat Setiap Hari (FLIP) ===== -->
+    <div class="flip-card group [perspective:1000px] h-[320px] w-[239.5px] shrink-0 snap-center">
+      <div
+        class="flip-rotator relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
+      >
+        <div
+          class="absolute inset-0 rounded-2xl overflow-hidden [backface-visibility:hidden]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1578671642900-cb78b0fe2969?q=80&w=600&auto=format&fit=crop"
+            class="w-full h-full object-cover"
+            alt="Rutinitas sehat setiap hari"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
+          ></div>
+          <h3
+            class="absolute bottom-4 left-4 right-4 text-white font-extrabold text-[18px] leading-snug"
+          >
+            Rutinitas Sehat Setiap Hari
+          </h3>
+        </div>
+        <div
+          class="absolute inset-0 overflow-hidden rounded-2xl bg-gradient-to-br from-[#FF8385] to-[#FFAEAF] p-5 [backface-visibility:hidden] [transform:rotateY(180deg)]"
+        >
+          <img
+            src="../assets/vector/kotak-lengkung-muda.svg"
+            class="absolute left-[-40px] top-[-65px] z-0 h-[200px] w-[200px] pointer-events-none"
+            alt=""
+          />
+
+          <div class="relative z-10 flex h-full flex-col justify-center text-left">
+            <h3 class="mb-6 text-[20px] font-extrabold leading-tight text-[#5C5C5C]">
+              Rutinitas Sehat<br />Setiap Hari
+            </h3>
+
+            <div class="space-y-4 text-[12px] leading-tight text-[#5C5C5C]">
+              <p>
+                Sarapan bergizi setiap pagi<br />
+                untuk energi dan konsentrasi.
+              </p>
+
+              <p>
+                Minum cukup air putih (8<br />
+                gelas/hari) untuk<br />
+                metabolisme.
+              </p>
+
+              <p>
+                Aktif bergerak: olahraga<br />
+                ringan 30 menit/hari menjaga<br />
+                berat badan ideal dan<br />
+                kesehatan jantung.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
           <!-- ========================================================================= -->
           <!-- [BAGIAN: BLOG PANDUAN SEHAT] -->
           <!-- ========================================================================= -->
@@ -703,9 +820,10 @@
                   <span class="text-[14px] text-[#5C5C5C]">John Doe</span>
                 </div>
                 <!-- Tombol warna pink: background pink muda + teks merah bata -->
-      <a href="../Isi-Blog/isi-blog.html" class="flex item-center justify-center mt-auto w-full py-2.5 rounded-lg border border-[#FF8385] font-semibold bg-[#FFAEAF] text-[#5C5C5C] hover:bg-[#FF8385] transition-colors">
-        Pelajari Lebih Lanjut
-      </a>
+                <!-- FIX: typo item-center -> items-center -->
+                <a href="../Isi-Blog/isi-blog.html" class="flex items-center justify-center mt-auto w-full py-2.5 rounded-lg border border-[#FF8385] font-semibold bg-[#FFAEAF] text-[#5C5C5C] hover:bg-[#FF8385] transition-colors">
+                  Pelajari Lebih Lanjut
+                </a>
               </div>
 
               <!-- KARTU ARTIKEL 2 (tombol HIJAU) -->
@@ -725,9 +843,9 @@
                   <span class="text-[14px] text-[#5C5C5C]">John Doe</span>
                 </div>
                 <!-- Tombol warna hijau: background hijau muda + teks hijau tua -->
-                <a href="../Isi-Blog/isi-blog.html" class="flex item-center justify-center mt-auto w-full py-2.5 rounded-lg text-[18px] border border-[#C6D4A9] font-semibold bg-[#F6FFE5] text-[#5C5C5C] hover:bg-[#C6D4A9] transition-colors">
-        Pelajari Lebih Lanjut
-      </a>
+                <a href="../Isi-Blog/isi-blog.html" class="flex items-center justify-center mt-auto w-full py-2.5 rounded-lg text-[18px] border border-[#C6D4A9] font-semibold bg-[#F6FFE5] text-[#5C5C5C] hover:bg-[#C6D4A9] transition-colors">
+                  Pelajari Lebih Lanjut
+                </a>
               </div>
 
               <!-- KARTU ARTIKEL 3 (tombol UNGU) -->
@@ -747,9 +865,9 @@
                   <span class="text-[14px] text-[#5C5C5C]">John Doe</span>
                 </div>
                 <!-- Tombol warna ungu: background ungu muda + teks ungu tua -->
-                <a href="../Isi-Blog/isi-blog.html" class="flex item-center justify-center mt-auto w-full py-2.5 rounded-lg border border-[#9B85A3] text-[18px] font-semibold bg-[#C2A6CC] text-[#5C5C5C] hover:bg-[#9B85A3] transition-colors">
-        Pelajari Lebih Lanjut
-      </a>
+                <a href="../Isi-Blog/isi-blog.html" class="flex items-center justify-center mt-auto w-full py-2.5 rounded-lg border border-[#9B85A3] text-[18px] font-semibold bg-[#C2A6CC] text-[#5C5C5C] hover:bg-[#9B85A3] transition-colors">
+                  Pelajari Lebih Lanjut
+                </a>
               </div>
             </div>
 
@@ -757,11 +875,11 @@
             <div class="mt-12 text-center">
               <button
                 onclick="window.location.href = '../Blog/blog.html'"
-                class="group inline-flex items-center text-[#FFAEAF]"
+                class="group inline-flex items-center text-[#FF8385]"
               >
                 <!-- Lingkaran Ikon Kiri (Muncul saat Hover) -->
                 <div
-                  class="w-10 h-10 lg:w-12 lg:h-12 border-2 border-[#FFAEAF] rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 scale-0 group-hover:scale-100 -mr-10 lg:-mr-12 z-10"
+                  class="text-[#FF8385] w-[64px] h-[64px] lg:h-[74px] lg:w-[74px] border-2 border-[#FF8385] rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 scale-0 group-hover:scale-100 -mr-10 lg:-mr-12 z-10"
                 >
                   <i
                     class="fa-solid fa-chevron-down text-lg -translate-x-8 -translate-y-8 transition-transform duration-300 delay-100 group-hover:translate-x-0 group-hover:translate-y-0"
@@ -770,14 +888,14 @@
 
                 <!-- Teks Utama (Bergeser ke Kanan saat Hover) -->
                 <div
-                  class="text-[#FFAEAF] h-10 lg:h-12 px-4 lg:px-6 border-2 border-[#FFAEAF] rounded-full flex items-center text-sm lg:text-[18px] font-extralight transition-transform duration-300 group-hover:translate-x-10 lg:group-hover:translate-x-12"
+                  class="text-[#FF8385] h-[64px] w-[222px] lg:h-[74px] px-4 lg:px-6 border-2 border-[#FF8385] rounded-full flex justify-center items-center text-[16px] lg:text-[18px] font-extralight transition-transform duration-300 group-hover:translate-x-10 lg:group-hover:translate-x-12"
                 >
-                  Lihat Semua
+                  Lihat Semua Blog
                 </div>
 
                 <!-- Lingkaran Ikon Kanan (Sembunyi saat Hover) -->
                 <div
-                  class="w-10 h-10 lg:w-12 lg:h-12 border-2 border-[#FFAEAF] rounded-full flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-0"
+                  class="text-[#FF8385] w-[64px] h-[64px] lg:h-[74px] lg:w-[74px] border-2 border-[#FF8385] rounded-full flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-0"
                 >
                   <i
                     class="fa-solid fa-chevron-down text-lg transition-transform duration-300 group-hover:translate-x-8 group-hover:translate-y-8"
@@ -796,8 +914,6 @@
     <footer class="relative z-30 bg-white pt-16 sm:pt-[280px]">
 
       <!-- ===== 1. LENGKUNGAN PINK (SVG) ===== -->
-      <!-- Mau lengkungannya lebih tinggi/landai? Ubah angka "10" di path
-           (makin kecil = makin tinggi kubahnya) -->
       <svg
         viewBox="0 0 1440 120"
         preserveAspectRatio="none"
@@ -805,43 +921,38 @@
         aria-hidden="true"
       >
         <path d="M0,120 L0,90 C320,10 1120,10 1440,90 L1440,120 Z" fill="#FFA2A2"></path>
-      
-      <path
-    d="M0,90 C320,10 1120,10 1440,90"
-    fill="none"
-    class="stroke-[#FF8385] stroke-[1]"
-  ></path>
+
+        <path
+          d="M0,90 C320,10 1120,10 1440,90"
+          fill="none"
+          class="stroke-[#FF8385] stroke-[1]"
+        ></path>
       </svg>
 
       <!-- ===== 2. AREA PINK (badan footer) ===== -->
-      <!-- pb-0 = gak ada padding bawah, karena penutupnya sekarang
-           adalah wordmark "gizy" gede yang kepotong di tepi -->
       <div class="bg-[#FFA2A2] text-white px-4 pt-4 pb-0">
 
-        <!-- ===== CARD CTA (ditarik ke atas pakai -mt biar nimpa lengkungannya) ===== -->
+        <!-- ===== CARD CTA ===== -->
+        <!-- HP: gambar di atas teks (flex-col-reverse) | desktop: teks kiri, gambar kanan -->
         <div id="bmi" class="max-w-[1006px] mx-auto -mt-20 sm:-mt-[320px] relative z-10">
-          <div
-            class="bg-[#F6FFE5] rounded-3xl border border-[#C6D4A9] overflow-hidden flex flex-col md:flex-row"
-          >
+          <div class="bg-[#F6FFE5] rounded-3xl border border-[#C6D4A9] overflow-hidden flex flex-col-reverse md:flex-row">
             <!-- KIRI: teks & tombol -->
             <div class="p-8 sm:p-12 flex-1">
-              <!-- kotak hijau kecil sebagai logo/aksen -->
               <div class="w-10 h-10 rounded-lg mb-6 flex items-center justify-center">
                 <img src="../assets/vector/kotak-lengkung-green.svg" class="h-12 w-12" alt="">
               </div>
 
               <h3
-                class="text-2xl sm:text-[48px] font-extrabold text-[#1A1A1A] leading-tight mb-[11px]"
+                class="text-2xl sm:text-[48px] font-extrabold text-[#1A1A1A] leading-[1.30] mb-[11px]"
               >
                 Siap Jalani hidup<br />lebih bergizi?
               </h3>
 
-              <p class="text-[18px] text-[#6B6B6B] leading-relaxed mb-[90px] max-w-xs">
+              <p class="text-[18px] text-[#6B6B6B] leading-tight mb-10 sm:mb-[90px] max-w-xs">
                 Ketahui status gizimu,
                 kebutuhan kalori harian dan saran personal dengan alat pengukur BMI!
               </p>
 
-              <!-- Tombol (arah ke kalkulator BMI, ganti kalau perlu) -->
               <button
                 onclick="window.location.href = '../BMI/kalkulator.html'"
                 class="px-6 py-3 w-[242px] h-[48px] bg-[#C6D4A9] rounded-[16px] text-[18px] font-semibold text-white hover:bg-[#A8B88A] transition-colors items-center justify-center gap-2"
@@ -862,26 +973,15 @@
         </div>
 
         <!-- ===== 3. ISI FOOTER ===== -->
+        <!-- Urutan sesuai mockup HP: Jelajah+Kontak DULU, baru Web Edukasi+copyright.
+             Tapi urutan HTML tidak diubah — cukup pakai order di HP:
+             - HP : grup kanan (order-1) tampil duluan, blok kiri (order-2) di bawah
+             - md : balik normal (blok kiri kiri, grup kanan kanan) -->
         <div class="max-w-[1006px] mx-auto mt-[87px]">
-          <!-- Flex luar: blok kiri vs GRUP kanan, didorong ke ujung pakai justify-between -->
           <div class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0">
 
-            <!-- BLOK KIRI: tagline + copyright + logo -->
-            <div class="flex flex-col">
-              <p class="text-[18px] text-white/90">
-                Web Edukasi untuk keluarga<br />menuju Indonesia Sehat
-              </p>
-              <p class="text-[18px] text-white/70 mt-6">&copy; 2026 Gizy</p>
-              <img
-    src="../assets/vector/text-gede.svg"
-    class="sm:w-[128px] mt-6 pointer-events-none"
-    alt=""
-  />
-            </div>
-
-            <!-- GRUP KANAN: Jelajah + Kontak dipeluk bareng -->
-            <!-- gap-24 = 96px antara Jelajah dan Kontak (ubah sesuai selera) -->
-            <div class="flex flex-col sm:flex-row gap-10 sm:gap-24 lg:gap-32">
+            <!-- GRUP KANAN (Jelajah + Kontak) — di HP diturunin ke atas pakai order-1 -->
+            <div class="order-1 md:order-2 flex w-full gap-16 sm:gap-24 lg:gap-32">
 
               <!-- KOLOM JELAJAH -->
               <div>
@@ -890,7 +990,7 @@
                   <li><a href="#beranda" class="hover:opacity-80">Beranda</a></li>
                   <li><a href="../BMI/kalkulator.html" class="hover:opacity-80">BMI</a></li>
                   <li><a href="../Blog/blog.html" class="hover:opacity-80">Blog</a></li>
-                  <li><a href="#bmi" class="hover:opacity-80">ChatBot</a></li>
+                  <li><a href="../ChatBot/chatbot.html" class="hover:opacity-80">ChatBot</a></li>
                 </ul>
               </div>
 
@@ -905,120 +1005,63 @@
                 </ul>
               </div>
             </div>
-          </div>
-        </div>
 
-<!-- ===== 4. WORDMARK "GIZY" GEDE DI PALING BAWAH ===== -->
-<div class="relative overflow-hidden mt-[152px]" aria-hidden="true">
-
-
-<!-- ===== LAPISAN VECTOR ===== -->
-<div
-  class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 sm:gap-8 pointer-events-none"
->
-  <img
-    src="../assets/vector/kotak-lengkung-pink.svg"
-    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
-    alt=""
-  />
-  <img
-    src="../assets/vector/lingkaran-pink.svg"
-    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
-    alt=""
-  />
-  <img
-    src="../assets/vector/segitiga-pink.svg"
-    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
-    alt=""
-  />
-  <img
-    src="../assets/vector/bintang-pink.svg"
-    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
-    alt=""
-  />
-</div>
-  <!-- WORDMARK: tetap di depan (z-10), bawahnya kepotong -->
-  <img
-    src="../assets/vector/text-gede.svg"
-    class="relative z-10 block mx-auto w-[75%] sm:w-[1006px] -mb-[5vw] sm:-mb-[80px] pointer-events-none"
-    alt=""
-  />
-</div>    </footer>
-    <!-- ================= AKHIR FOOTER ================= -->
-
-    <!--============================================
-        CHATBOX
-    ============================================-->
-    <!-- Chatbot FAQ pola hidup sehat -->
-    <div
-      id="chatbot"
-      class="fixed bottom-5 right-5 z-50 flex flex-col items-end"
-    >
-      <section
-        id="chat-window"
-        aria-label="Chatbot FAQ pola hidup sehat"
-        class="hidden w-[calc(100vw-2.5rem)] max-w-sm overflow-hidden rounded-3xl border border-rose-100 bg-white shadow-2xl shadow-rose-200/60 mb-4"
-      >
-        <header
-          class="flex items-center justify-between bg-[#ef4444] px-5 py-4 text-white"
-        >
-          <div class="flex items-center gap-3">
-            <span
-              class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20"
-              ><i class="fa-solid fa-heart-pulse"></i
-            ></span>
-            <div>
-              <h2 class="text-sm font-bold">Teman Sehat gizy</h2>
-              <p class="text-xs text-white/80">Tanya seputar hidup sehat</p>
+            <!-- BLOK KIRI (Web Edukasi + copyright) — di HP ke bawah pakai order-2 -->
+            <div class="order-2 md:order-1 flex flex-col">
+              <p class="text-[18px] text-white/90">
+                Web Edukasi untuk keluarga<br />menuju Indonesia Sehat
+              </p>
+              <p class="text-[18px] text-white/70 mt-6">&copy; 2026 Gizy</p>
+              <!-- Logo kecil: sembunyi di HP (wordmark gede di bawah sudah mewakili) -->
+              <img
+                src="../assets/vector/text-gede.svg"
+                class="hidden sm:block w-[128px] mt-6 pointer-events-none"
+                alt=""
+              />
             </div>
           </div>
-          <button
-            id="chat-close"
-            type="button"
-            aria-label="Tutup chatbot"
-            class="h-8 w-8 rounded-full hover:bg-white/20"
-          >
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </header>
-        <div
-          id="chat-messages"
-          class="chat-scrollbar h-80 space-y-3 overflow-y-auto bg-rose-50/40 p-4"
-          aria-live="polite"
-        ></div>
-        <div class="border-t border-rose-100 p-3">
-          <div id="quick-questions" class="mb-3 flex flex-wrap gap-2"></div>
-          <form id="chat-form" class="flex gap-2">
-            <label for="chat-input" class="sr-only">Tulis pertanyaan</label>
-            <input
-              id="chat-input"
-              type="text"
-              autocomplete="off"
-              placeholder="Contoh: tips minum air"
-              class="min-w-0 flex-1 rounded-full border border-rose-200 px-4 py-2 text-sm outline-none transition focus:border-red-400 focus:ring-2 focus:ring-red-100"
-            />
-            <button
-              type="submit"
-              aria-label="Kirim pesan"
-              class="h-10 w-10 shrink-0 rounded-full bg-[#ef4444] text-white transition hover:bg-red-600"
-            >
-              <i class="fa-solid fa-paper-plane text-sm"></i>
-            </button>
-          </form>
         </div>
-      </section>
-      <button
-        id="chat-toggle"
-        type="button"
-        aria-label="Buka chatbot FAQ"
-        aria-expanded="false"
-        class="flex h-16 w-16 items-center justify-center rounded-full bg-[#ef4444] text-2xl text-white shadow-lg shadow-red-300 transition hover:scale-105 hover:bg-red-600 focus:outline-none focus:ring-4 focus:ring-red-200"
-      >
-        <i class="fa-solid fa-comment-dots"></i>
-      </button>
-    </div>
 
+        <!-- ===== 4. WORDMARK "GIZY" GEDE DI PALING BAWAH ===== -->
+        <div class="relative overflow-hidden mt-[100px] sm:mt-[152px]" aria-hidden="true">
+
+          <!-- ===== LAPISAN VECTOR ===== -->
+          <div
+            class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 sm:gap-8 pointer-events-none"
+          >
+            <img
+              src="../assets/vector/kotak-lengkung-pink.svg"
+              class="w-[20%] sm:w-[300px] shrink-0 object-contain -mb-[30px] sm:-mb-[150px]"
+              alt=""
+            />
+            <img
+              src="../assets/vector/lingkaran-pink.svg"
+              class="w-[20%] sm:w-[300px] shrink-0 object-contain -mb-[30px] sm:-mb-[150px]"
+              alt=""
+            />
+            <img
+              src="../assets/vector/segitiga-pink.svg"
+              class="w-[20%] sm:w-[300px] shrink-0 object-contain -mb-[30px] sm:-mb-[150px]"
+              alt=""
+            />
+            <img
+              src="../assets/vector/bintang-pink.svg"
+              class="w-[20%] sm:w-[300px] shrink-0 object-contain -mb-[30px] sm:-mb-[150px]"
+              alt=""
+            />
+          </div>
+
+          <!-- WORDMARK gizy: di depan (z-10), bawahnya kepotong -->
+          <img
+            src="../assets/vector/text-gede.svg"
+            class="relative z-10 block mx-auto w-[100%] sm:w-[1006px] -mb-[6vw] sm:-mb-[80px] pointer-events-none"
+            alt=""
+          />
+        </div>
+      </div>
+    </footer>
+    <!-- ================= AKHIR FOOTER ================= -->
+     
     <script src="gizy.js"></script>
-    <script src="faq.js"></script>
   </body>
 </html>

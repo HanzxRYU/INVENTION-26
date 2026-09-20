@@ -72,7 +72,7 @@
             >Blog</a
           >
           <a
-            href="#atas"
+            href="../ChatBot/chatbot.html"
             class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
             >ChatBot</a
           >
@@ -112,72 +112,292 @@
         >Blog</a
       >
       <a
-        href="#atas"
+        href="../ChatBot/chatbot.html"
         class="mobile-link scroll-top-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
         >Chatbox</a
       >
     </div>
 
         <!-- ================= KONTEN ARTIKEL ================= -->
-    <div id="atas" class="max-w-[720px] mx-auto px-4 pt-32 pb-[100px]">
+<div id="atas" class="mx-4 max-w-none px-0 pt-32 pb-[100px] text-[#5C5C5C] lg:mx-[218px]">
+  <img
+    id="artikel-gambar"
+    src="../assets/backgrounds/susah-makan-full.svg"
+    class="mb-6 h-64 w-full rounded-2xl border border-black object-cover sm:h-[500px]"
+    alt="Anak susah makan"
+  />
 
-      <!-- Gambar utama (diisi otomatis dari URL) -->
-      <img
-        id="artikel-gambar"
-        src=""
-        alt="Ilustrasi artikel"
-        class="w-full h-64 sm:h-80 object-cover rounded-2xl border border-black mb-6"
-      />
-
-      <!-- Judul (diisi otomatis) -->
-      <h1 id="artikel-judul" class="text-3xl sm:text-[40px] font-black leading-tight mb-3">
-        --
-      </h1>
-
-      <!-- Penulis (diisi otomatis) -->
-      <div class="flex items-center gap-2 mb-8">
-        <div class="w-6 h-6 rounded-full bg-[#FFE3E3] flex items-center justify-center shrink-0">
-          <i class="fa-solid fa-user text-[10px] text-[#FF6B81]"></i>
-        </div>
-        <span id="artikel-penulis" class="text-[14px] text-gray-500">--</span>
-      </div>
-
-      <!-- ===== ISI ARTIKEL ===== -->
-      <div class="flex flex-col gap-8">
-        <section>
-          <h2 class="text-[22px] font-bold mb-2">Masalah yang dibahas</h2>
-          <p class="text-[16px] text-[#6B6B6B] leading-relaxed">
-            <!-- tulis isi artikel di sini -->
-          </p>
-        </section>
-        <section>
-          <h2 class="text-[22px] font-bold mb-2">Kenapa ini terjadi?</h2>
-          <p class="text-[16px] text-[#6B6B6B] leading-relaxed">
-            <!-- isi -->
-          </p>
-        </section>
-        <section>
-          <h2 class="text-[22px] font-bold mb-2">Kapan harus mulai khawatir?</h2>
-          <p class="text-[16px] text-[#6B6B6B] leading-relaxed">
-            <!-- isi -->
-          </p>
-        </section>
-        <section>
-          <h2 class="text-[22px] font-bold mb-2">Referensi</h2>
-          <p class="text-[14px] text-[#6B6B6B] leading-relaxed">
-            <!-- sumber -->
-          </p>
-        </section>
-      </div>
-
-      <!-- Tombol balik ke blog -->
-      <button
-        onclick="window.location.href = '../Blog/blog.html'"
-        class="mt-12 px-6 py-3 rounded-full bg-[#F9C4BE] text-[#C0534B] text-sm font-semibold hover:bg-[#F5B3AC] transition-colors"
-      >
-        <i class="fa-solid fa-arrow-left mr-2"></i>Kembali ke Blog
-      </button>
+  <div class="mb-8 flex items-center gap-2">
+    <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#FFE3E3]">
+      <i class="fa-solid fa-user text-[10px] text-[#FF6B81]"></i>
     </div>
+    <span id="artikel-penulis" class="text-[14px] text-[#5C5C5C]">
+      John Doe
+    </span>
+  </div>
+
+  <h1
+    id="artikel-judul"
+    class="mb-3 text-3xl font-black leading-tight text-[#5C5C5C] sm:text-[40px]"
+  >
+    Kenapa Anak Susah Makan?<br />
+    Jangan Langsung Menyerah
+  </h1>
+
+  <p class="mb-10 text-[14px] italic leading-relaxed text-[#5C5C5C]">
+    Anak menolak sayur, hanya mau makanan tertentu, atau sering menutup mulut
+    saat disuapi? Kondisi ini cukup umum, tetapi tetap perlu diperhatikan agar
+    kebutuhan gizinya tidak terabaikan.
+  </p>
+
+  <article class="space-y-8 text-[14px] leading-relaxed text-[#5C5C5C]">
+    <section>
+      <h2 class="mb-2 text-[28px] font-bold">Masalah yang perlu dipahami</h2>
+      <p>
+        Anak susah makan tidak selalu berarti ia hanya pilih-pilih. Penyebabnya
+        dapat berupa belum terbiasa dengan rasa atau tekstur makanan, porsi
+        terlalu besar, jadwal makan yang tidak teratur, suasana makan yang
+        menekan, atau masalah kesehatan tertentu.
+      </p>
+      <p class="mt-4">
+        Persoalan ini penting karena kualitas makan anak Indonesia masih menjadi
+        tantangan. Berdasarkan data Survei Kesehatan Indonesia yang dirangkum
+        UNICEF, hanya sekitar 60,9% anak usia 6–23 bulan yang memenuhi
+        keragaman pangan minimum dan 39,7% yang memenuhi Minimum Acceptable Diet
+        (MAD).
+      </p>
+    </section>
+
+    <section>
+      <h2 class="mb-2 text-[28px] font-bold">Apa yang bisa dilakukan?</h2>
+
+      <h3 class="mt-5 text-[18px] font-semibold">1. Berikan porsi kecil</h3>
+      <p>
+        Porsinya yang terlalu banyak dapat membuat anak enggan memulai. Sajikan
+        sedikit terlebih dahulu, kemudian tambahkan jika anak masih lapar.
+      </p>
+
+      <h3 class="mt-5 text-[18px] font-semibold">
+        2. Kenalkan makanan berulang kali
+      </h3>
+      <p>
+        Anak membutuhkan waktu untuk mengenal rasa dan tekstur baru. Jika makanan
+        ditolak, coba lagi pada kesempatan berikutnya dengan bentuk atau cara
+        masak yang berbeda.
+      </p>
+
+      <h3 class="mt-5 text-[18px] font-semibold">3. Buat jadwal makan</h3>
+      <p>
+        Atur waktu makan dan camilan secara teratur. Hindari memberikan terlalu
+        banyak camilan atau minuman manis sebelum waktu makan.
+      </p>
+
+      <h3 class="mt-5 text-[18px] font-semibold">4. Makan tanpa paksaan</h3>
+      <p>
+        WHO menganjurkan responsive feeding, yaitu memberi makan dengan sabar,
+        memperhatikan tanda lapar dan kenyang anak, serta tidak memaksa anak
+        menghabiskan makanan.
+      </p>
+
+      <h3 class="mt-5 text-[18px] font-semibold">
+        5. Sajikan makanan beragam
+      </h3>
+      <p>
+        Usahakan menu mengandung makanan pokok, lauk sumber protein, sayur, dan
+        buah. Contohnya nasi, telur, sayur bening, serta pisang.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="mb-2 text-[28px] font-bold">Kapan harus mencari bantuan?</h2>
+      <p>Konsultasikan anak kepada dokter, ahli gizi, atau tenaga kesehatan jika:</p>
+
+      <ul class="mt-3 list-disc space-y-1 pl-5">
+        <li>Berat badan sulit naik atau menurun.</li>
+        <li>Menolak hampir semua makanan dalam waktu lama.</li>
+        <li>Sering tersedak, muntah, atau kesulitan menelan.</li>
+        <li>Terlihat sangat lemas.</li>
+        <li>Mengalami gangguan pertumbuhan.</li>
+      </ul>
+
+      <p class="mt-4">
+        Jangan menilai kondisi gizi hanya dari banyak atau sedikitnya anak makan
+        dalam satu waktu. Yang lebih penting adalah pola makan, pertumbuhan, dan
+        kondisi anak secara keseluruhan.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="mb-2 text-[28px] font-bold">Penutup</h2>
+      <p>
+        Anak susah makan membutuhkan kesabaran, bukan tekanan. Mulailah dari
+        porsi kecil, jadwal yang teratur, menu yang beragam, dan suasana makan
+        yang tenang. Kenalkan makanan berulang kali dan tetap perhatikan
+        pertumbuhannya.
+      </p>
+    </section>
+  </article>
+
+  <button
+    onclick="window.location.href = '../Blog/blog.html'"
+    class="mt-12 rounded-full bg-[#F9C4BE] px-6 py-3 text-sm font-semibold text-[#C0534B] transition-colors hover:bg-[#F5B3AC]"
+  >
+    <i class="fa-solid fa-arrow-left mr-2"></i>Kembali ke Blog
+  </button>
+</div>
+
+    <!-- ================= FOOTER BARU: LENGKUNG + CARD CTA + WORDMARK ================= -->
+    <footer class="relative z-30 bg-white pt-16 sm:pt-[280px]">
+
+      <!-- ===== 1. LENGKUNGAN PINK (SVG) ===== -->
+      <!-- Mau lengkungannya lebih tinggi/landai? Ubah angka "10" di path
+           (makin kecil = makin tinggi kubahnya) -->
+      <svg
+        viewBox="0 0 1440 120"
+        preserveAspectRatio="none"
+        class="block w-full h-[90px] sm:h-[140px]"
+        aria-hidden="true"
+      >
+        <path d="M0,120 L0,90 C320,10 1120,10 1440,90 L1440,120 Z" fill="#FFA2A2"></path>
+      
+      <path
+    d="M0,90 C320,10 1120,10 1440,90"
+    fill="none"
+    class="stroke-[#FF8385] stroke-[1]"
+  ></path>
+      </svg>
+
+      <!-- ===== 2. AREA PINK (badan footer) ===== -->
+      <!-- pb-0 = gak ada padding bawah, karena penutupnya sekarang
+           adalah wordmark "gizy" gede yang kepotong di tepi -->
+      <div class="bg-[#FFA2A2] text-white px-4 pt-4 pb-0">
+
+        <!-- ===== CARD CTA (ditarik ke atas pakai -mt biar nimpa lengkungannya) ===== -->
+        <div id="bmi" class="max-w-[1006px] mx-auto -mt-20 sm:-mt-[320px] relative z-10">
+          <div
+  class="bg-[#F6FFE5] rounded-3xl border border-[#C6D4A9] overflow-hidden flex flex-col-reverse md:flex-row"
+>
+            <!-- KIRI: teks & tombol -->
+            <div class="p-8 sm:p-12 flex-1">
+              <!-- kotak hijau kecil sebagai logo/aksen -->
+              <div class="w-10 h-10 rounded-lg mb-6 flex items-center justify-center">
+                <img src="../assets/vector/kotak-lengkung-green.svg" class="h-12 w-12" alt="">
+              </div>
+
+              <h3
+                class="text-2xl sm:text-[48px] font-extrabold text-[#1A1A1A] leading-[1.30] mb-[11px]"
+              >
+                Siap Jalani hidup<br />lebih bergizi?
+              </h3>
+
+              <p class="text-[18px] text-[#6B6B6B] leading-tight mb-[90px] max-w-xs">
+                Ketahui status gizimu,
+                kebutuhan kalori harian dan saran personal dengan alat pengukur BMI!
+              </p>
+
+              <!-- Tombol (arah ke kalkulator BMI, ganti kalau perlu) -->
+              <button
+                onclick="window.location.href = '../BMI/kalkulator.html'"
+                class="px-6 py-3 w-[242px] h-[48px] bg-[#C6D4A9] rounded-[16px] text-[18px] font-semibold text-white hover:bg-[#A8B88A] transition-colors items-center justify-center gap-2"
+              >
+                Kalkulator BMI<i class="fa-solid fa-chevron-right ml-[27px]"></i>
+              </button>
+            </div>
+
+            <!-- KANAN: gambar makanan -->
+            <div class="md:w-[45%] h-56 md:h-auto">
+              <img
+                src="../assets/backgrounds/buah2an.svg"
+                alt="Bahan makanan segar"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== 3. ISI FOOTER ===== -->
+        <div class="max-w-[1006px] mx-auto mt-[87px]">
+          <!-- Flex luar: blok kiri vs GRUP kanan, didorong ke ujung pakai justify-between -->
+          <div class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0">
+
+            <!-- BLOK KIRI: tagline + copyright + logo -->
+            <div class="flex flex-col">
+              <p class="text-[18px] text-white/90">
+                Web Edukasi untuk keluarga<br />menuju Indonesia Sehat
+              </p>
+              <p class="text-[18px] text-white/70 mt-6">&copy; 2026 Gizy</p>
+              <img
+    src="../assets/vector/text-gede.svg"
+    class="sm:w-[128px] mt-6 pointer-events-none"
+    alt=""
+  />
+            </div>
+
+            <!-- GRUP KANAN: Jelajah + Kontak dipeluk bareng -->
+            <!-- gap-24 = 96px antara Jelajah dan Kontak (ubah sesuai selera) -->
+            <div class="flex flex-col sm:flex-row gap-10 sm:gap-24 lg:gap-32">
+
+              <!-- KOLOM JELAJAH -->
+              <div>
+                <h4 class="font-bold text-[18px] mb-3">Jelajah</h4>
+                <ul class="space-y-2 text-[18px] text-white/90">
+                  <li><a href="#beranda" class="hover:opacity-80">Beranda</a></li>
+                  <li><a href="../BMI/kalkulator.html" class="hover:opacity-80">BMI</a></li>
+                  <li><a href="../Blog/blog.html" class="hover:opacity-80">Blog</a></li>
+                  <li><a href="../ChatBot/chatbot.html" class="hover:opacity-80">ChatBot</a></li>
+                </ul>
+              </div>
+
+              <!-- KOLOM KONTAK -->
+              <div>
+                <h4 class="font-bold text-[18px] mb-3">Kontak</h4>
+                <ul class="space-y-2 text-[18px] text-white/90">
+                  <li>+62 081812623943</li>
+                  <li>gizy@gmail.com</li>
+                  <li><a href="#" class="hover:opacity-80">Instagram</a></li>
+                  <li><a href="#" class="hover:opacity-80">Facebook</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- ===== 4. WORDMARK "GIZY" GEDE DI PALING BAWAH ===== -->
+<div class="relative overflow-hidden mt-[152px]" aria-hidden="true">
+
+
+<!-- ===== LAPISAN VECTOR ===== -->
+<div
+  class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 sm:gap-8 pointer-events-none"
+>
+  <img
+    src="../assets/vector/kotak-lengkung-pink.svg"
+    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
+    alt=""
+  />
+  <img
+    src="../assets/vector/lingkaran-pink.svg"
+    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
+    alt=""
+  />
+  <img
+    src="../assets/vector/segitiga-pink.svg"
+    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
+    alt=""
+  />
+  <img
+    src="../assets/vector/bintang-pink.svg"
+    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
+    alt=""
+  />
+</div>
+  <!-- WORDMARK: tetap di depan (z-10), bawahnya kepotong -->
+  <img
+    src="../assets/vector/text-gede.svg"
+    class="relative z-10 block mx-auto w-[75%] sm:w-[1006px] -mb-[5vw] sm:-mb-[80px] pointer-events-none"
+    alt=""
+  />
+</div>    </footer>
 
     <script src="../Isi-Blog/isi-blog.js"></script>
 </body>

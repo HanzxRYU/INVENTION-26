@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbot - Gizy</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Plus Jakarta Sans", sans-serif; }
+
+  /* Scrollbar disembunyikan total (kayak ChatGPT).
+     Scroll tetap jalan: roda mouse, trackpad, swipe */
+  .chat-scrollbar::-webkit-scrollbar {
+    display: none;            /* Chrome, Safari, Edge */
+  }
+  .chat-scrollbar {
+    scrollbar-width: none;    /* Firefox */
+    -ms-overflow-style: none; /* Edge lama */
+  }
+</style>
+</head>
+<body class="bg-white text-[#1A1A1A]">
+
+  <!-- ================= NAVBAR ================= -->
+<nav
+      id="main-nav"
+      class="fixed top-0 left-0 w-full z-50 py-5 transition-all duration-150 ease-in-out flex justify-center"
+    >
+      <div
+        id="nav-container"
+        class="w-full max-w-5xl px-4 flex justify-between items-center transition-all duration-150 ease-in-out"
+      >
+        <!-- Group Kiri: SEMBUNYI di HP -->
+        <div class="hidden md:flex flex-1 items-center justify-end gap-4 sm:gap-8">
+          <a
+            href="../Home-Page/gizy.html#beranda"
+            class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
+            >Beranda</a
+          >
+          <a
+            href="../BMI/kalkulator.html"
+            class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
+            >BMI</a
+          >
+        </div>
+
+        <!-- Logo: di desktop di tengah, di HP otomatis ke kiri -->
+        <a
+          href="../Home-Page/gizy.html"
+          id="nav-logo"
+          class="text-2xl font-extrabold text-black tracking-tight md:mx-6 lg:mx-10 transition-colors duration-150 flex-shrink-0"
+        >
+          gizy
+        </a>
+
+        <!-- Group Kanan: SEMBUNYI di HP -->
+        <div class="hidden md:flex flex-1 items-center justify-start gap-4 sm:gap-8">
+          <a
+            href="../Blog/blog.html"
+            class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap scroll-top-link"
+            >Blog</a
+          >
+          <a
+            href="../ChatBot/chatbot.html"
+            class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
+            >ChatBot</a
+          >
+        </div>
+
+        <!-- Tombol hamburger: CUMA MUNCUL di HP -->
+        <button
+          id="nav-toggle"
+          type="button"
+          aria-label="Buka menu"
+          aria-expanded="false"
+          class="md:hidden h-10 w-10 flex items-center justify-center rounded-full text-xl text-black transition hover:opacity-70"
+        >
+          <i id="nav-toggle-icon" class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ================= MENU MOBILE (turun pas hamburger diklik) ================= -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden fixed top-24 left-4 right-4 z-40 bg-white border border-black/[0.09] rounded-2xl shadow-xl p-3"
+    >
+      <a
+        href="../Home-Page/gizy.html#beranda"
+        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >Beranda</a
+      >
+      <a
+        href="../BMI/kalkulator.html"
+        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >BMI</a
+      >
+      <a
+        href="../Blog/blog.html"
+        class="mobile-link scroll-top-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >Blog</a
+      >
+      <a
+        href="../ChatBot/chatbot.html"
+        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
+        >Chatbox</a
+      >
+    </div>
+
+  <!-- ================= HALAMAN CHAT ================= -->
+  <main class="px-4 pt-28 pb-4">
+    <div class="max-w-4xl mx-auto h-[calc(100vh-160px)] flex flex-col">
+
+      <!-- AREA PESAN (bisa di-scroll, tanpa kotak — teks langsung di background putih) -->
+      <div
+        id="chat-messages"
+        class="chat-scrollbar flex-1 space-y-5 overflow-y-auto px-1"
+        aria-live="polite"
+      ></div>
+
+      <!-- SARAN CEPAT (pil warna-warni) -->
+      <div id="quick-questions" class="flex flex-wrap gap-2 py-4 shrink-0"></div>
+
+      <!-- INPUT BESAR (paperclip + input + tombol kirim) -->
+      <form
+        id="chat-form"
+        class="shrink-0 flex items-center gap-3 border border-gray-200 rounded-2xl p-2 pl-3 shadow-sm"
+      >
+        <!-- ikon paperclip (hiasan, gak fungsional) -->
+        <span
+          class="h-9 w-9 shrink-0 rounded-full border border-gray-200 flex items-center justify-center text-gray-400"
+        >
+          <i class="fa-solid fa-paperclip text-sm"></i>
+        </span>
+        <label for="chat-input" class="sr-only">Tulis pertanyaan</label>
+        <input
+          id="chat-input"
+          type="text"
+          autocomplete="off"
+          placeholder="Tanyakan Sesuatu..."
+          class="min-w-0 flex-1 text-sm outline-none placeholder:text-gray-400"
+        />
+        <button
+          type="submit"
+          aria-label="Kirim pesan"
+          class="h-10 w-10 shrink-0 rounded-full bg-[#F8AFA8] text-white transition hover:bg-[#F0958C]"
+        >
+          <i class="fa-solid fa-paper-plane text-sm"></i>
+        </button>
+      </form>
+
+      <!-- DISCLAIMER -->
+      <p class="text-center text-[11px] text-gray-400 mt-3 shrink-0">
+        Chatbot ini hanya memberikan informasi umum. Bukan pengganti konsultasi medis.
+      </p>
+    </div>
+  </main>
+
+  <script src="chatbot.js"></script>
+</body>
+</html>
