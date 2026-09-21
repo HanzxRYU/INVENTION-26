@@ -32,6 +32,16 @@
     scrollbar-width: none;    /* Firefox */
     -ms-overflow-style: none; /* Edge lama */
   }
+  
+  /* ===== ANIMASI MENU MOBILE ===== */
+/* Panel muncul "turun dari atas" pakai transform + transition.
+   Gak pakai display:none biar animasinya bisa jalan. */
+#mobile-panel {
+  transition: transform 0.3s ease;
+}
+#mobile-panel.panel-tertutup {
+  transform: translateY(-105%); /* digeser naik sampai keluar layar */
+}
 </style>
 </head>
 <body class="bg-white text-[#1A1A1A]">
@@ -95,33 +105,46 @@
       </div>
     </nav>
 
-    <!-- ================= MENU MOBILE (turun pas hamburger diklik) ================= -->
-    <div
-      id="mobile-menu"
-      class="hidden md:hidden fixed top-24 left-4 right-4 z-40 bg-white border border-black/[0.09] rounded-2xl shadow-xl p-3"
-    >
-      <a
-        href="../Home-Page/gizy.html#beranda"
-        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
-        >Beranda</a
+    <!-- ================= MENU MOBILE (overlay gelap + kartu-kartu putih) ================= -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40 bg-black/60">
+      <!-- Panel = cuma "wadah" transparan:
+           pt-24      = mulai di bawah navbar (biar gak nimpa logo gizy & ✕)
+           px-4       = jarak dari pinggir kiri-kanan layar -->
+      <div
+        id="mobile-panel"
+        class="pt-24 px-4 transition-transform duration-300 -translate-y-full"
       >
-      <a
-        href="../BMI/kalkulator.html"
-        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
-        >BMI</a
-      >
-      <a
-        href="../Blog/blog.html"
-        class="mobile-link scroll-top-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
-        >Blog</a
-      >
-      <a
-        href="../ChatBot/chatbot.html"
-        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
-        >Chatbox</a
-      >
+        <!-- TIAP LINK = 1 kartu putih sendiri, ada jarak antar kartu (mb-3) -->
+        <a
+          href="../Home-Page/gizy.html"
+          class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
+        >
+          Beranda
+          <i class="fa-solid fa-house text-gray-400"></i>
+        </a>
+        <a
+          href="../BMI/kalkulator.html"
+          class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
+        >
+          BMI
+          <i class="fa-solid fa-calculator text-gray-400"></i>
+        </a>
+        <a
+          href="../Blog/blog.html"
+          class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
+        >
+          Blog
+          <i class="fa-solid fa-newspaper text-gray-400"></i>
+        </a>
+        <a
+          href="../ChatBot/chatbot.html"
+          class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
+        >
+          ChatBot
+          <i class="fa-solid fa-comment-dots text-gray-400"></i>
+        </a>
+      </div>
     </div>
-
   <!-- ================= HALAMAN CHAT ================= -->
   <main class="px-4 pt-28 pb-4">
     <div class="max-w-4xl mx-auto h-[calc(100vh-160px)] flex flex-col">
@@ -143,7 +166,7 @@
       >
         <!-- ikon paperclip (hiasan, gak fungsional) -->
         <span
-          class="h-9 w-9 shrink-0 rounded-full border border-gray-200 flex items-center justify-center text-gray-400"
+          class="h-9 w-9 shrink-0 rounded-2xl border border-gray-200 flex items-center justify-center text-gray-400"
         >
           <i class="fa-solid fa-paperclip text-sm"></i>
         </span>
@@ -158,7 +181,7 @@
         <button
           type="submit"
           aria-label="Kirim pesan"
-          class="h-10 w-10 shrink-0 rounded-full bg-[#F8AFA8] text-white transition hover:bg-[#F0958C]"
+          class="h-10 w-10 shrink-0 rounded-2xl bg-[#F8AFA8] text-white transition hover:bg-[#F0958C]"
         >
           <i class="fa-solid fa-paper-plane text-sm"></i>
         </button>

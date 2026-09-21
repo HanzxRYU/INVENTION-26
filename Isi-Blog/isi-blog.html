@@ -250,8 +250,6 @@
     <footer class="relative z-30 bg-white pt-16 sm:pt-[280px]">
 
       <!-- ===== 1. LENGKUNGAN PINK (SVG) ===== -->
-      <!-- Mau lengkungannya lebih tinggi/landai? Ubah angka "10" di path
-           (makin kecil = makin tinggi kubahnya) -->
       <svg
         viewBox="0 0 1440 120"
         preserveAspectRatio="none"
@@ -259,27 +257,23 @@
         aria-hidden="true"
       >
         <path d="M0,120 L0,90 C320,10 1120,10 1440,90 L1440,120 Z" fill="#FFA2A2"></path>
-      
-      <path
-    d="M0,90 C320,10 1120,10 1440,90"
-    fill="none"
-    class="stroke-[#FF8385] stroke-[1]"
-  ></path>
+
+        <path
+          d="M0,90 C320,10 1120,10 1440,90"
+          fill="none"
+          class="stroke-[#FF8385] stroke-[1]"
+        ></path>
       </svg>
 
       <!-- ===== 2. AREA PINK (badan footer) ===== -->
-      <!-- pb-0 = gak ada padding bawah, karena penutupnya sekarang
-           adalah wordmark "gizy" gede yang kepotong di tepi -->
       <div class="bg-[#FFA2A2] text-white px-4 pt-4 pb-0">
 
-        <!-- ===== CARD CTA (ditarik ke atas pakai -mt biar nimpa lengkungannya) ===== -->
-        <div id="bmi" class="max-w-[1006px] mx-auto -mt-20 sm:-mt-[320px] relative z-10">
-          <div
-  class="bg-[#F6FFE5] rounded-3xl border border-[#C6D4A9] overflow-hidden flex flex-col-reverse md:flex-row"
->
+        <!-- ===== CARD CTA ===== -->
+        <!-- HP: gambar di atas teks (flex-col-reverse) | desktop: teks kiri, gambar kanan -->
+        <div id="bmi" class="max-w-[1006px] mx-auto -mt-32 sm:-mt-[320px] relative z-10">
+          <div class="bg-[#F6FFE5] rounded-3xl border border-[#C6D4A9] overflow-hidden flex flex-col-reverse md:flex-row">
             <!-- KIRI: teks & tombol -->
             <div class="p-8 sm:p-12 flex-1">
-              <!-- kotak hijau kecil sebagai logo/aksen -->
               <div class="w-10 h-10 rounded-lg mb-6 flex items-center justify-center">
                 <img src="../assets/vector/kotak-lengkung-green.svg" class="h-12 w-12" alt="">
               </div>
@@ -290,12 +284,11 @@
                 Siap Jalani hidup<br />lebih bergizi?
               </h3>
 
-              <p class="text-[18px] text-[#6B6B6B] leading-tight mb-[90px] max-w-xs">
+              <p class="text-[18px] text-[#6B6B6B] leading-tight mb-10 sm:mb-[90px] max-w-xs">
                 Ketahui status gizimu,
                 kebutuhan kalori harian dan saran personal dengan alat pengukur BMI!
               </p>
 
-              <!-- Tombol (arah ke kalkulator BMI, ganti kalau perlu) -->
               <button
                 onclick="window.location.href = '../BMI/kalkulator.html'"
                 class="px-6 py-3 w-[242px] h-[48px] bg-[#C6D4A9] rounded-[16px] text-[18px] font-semibold text-white hover:bg-[#A8B88A] transition-colors items-center justify-center gap-2"
@@ -316,26 +309,15 @@
         </div>
 
         <!-- ===== 3. ISI FOOTER ===== -->
+        <!-- Urutan sesuai mockup HP: Jelajah+Kontak DULU, baru Web Edukasi+copyright.
+             Tapi urutan HTML tidak diubah — cukup pakai order di HP:
+             - HP : grup kanan (order-1) tampil duluan, blok kiri (order-2) di bawah
+             - md : balik normal (blok kiri kiri, grup kanan kanan) -->
         <div class="max-w-[1006px] mx-auto mt-[87px]">
-          <!-- Flex luar: blok kiri vs GRUP kanan, didorong ke ujung pakai justify-between -->
           <div class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0">
 
-            <!-- BLOK KIRI: tagline + copyright + logo -->
-            <div class="flex flex-col">
-              <p class="text-[18px] text-white/90">
-                Web Edukasi untuk keluarga<br />menuju Indonesia Sehat
-              </p>
-              <p class="text-[18px] text-white/70 mt-6">&copy; 2026 Gizy</p>
-              <img
-    src="../assets/vector/text-gede.svg"
-    class="sm:w-[128px] mt-6 pointer-events-none"
-    alt=""
-  />
-            </div>
-
-            <!-- GRUP KANAN: Jelajah + Kontak dipeluk bareng -->
-            <!-- gap-24 = 96px antara Jelajah dan Kontak (ubah sesuai selera) -->
-            <div class="flex flex-col sm:flex-row gap-10 sm:gap-24 lg:gap-32">
+            <!-- GRUP KANAN (Jelajah + Kontak) — di HP diturunin ke atas pakai order-1 -->
+            <div class="order-1 md:order-2 flex w-full md:w-auto md:ml-auto justify-between gap-x-12 lg:gap-x-32">
 
               <!-- KOLOM JELAJAH -->
               <div>
@@ -359,45 +341,62 @@
                 </ul>
               </div>
             </div>
+
+            <!-- BLOK KIRI (Web Edukasi + copyright) — di HP ke bawah pakai order-2 -->
+            <div class="order-2 md:order-1 flex flex-col">
+              <p class="text-[18px] text-white/90">
+                Web Edukasi untuk keluarga<br />menuju Indonesia Sehat
+              </p>
+              <p class="text-[18px] text-white/70 mt-6">&copy; 2026 Gizy</p>
+              <!-- Logo kecil: sembunyi di HP (wordmark gede di bawah sudah mewakili) -->
+              <img
+                src="../assets/vector/text-gede.svg"
+                class="hidden sm:block w-[128px] mt-6 pointer-events-none"
+                alt=""
+              />
+            </div>
           </div>
         </div>
 
-<!-- ===== 4. WORDMARK "GIZY" GEDE DI PALING BAWAH ===== -->
-<div class="relative overflow-hidden mt-[152px]" aria-hidden="true">
+        <!-- ===== 4. WORDMARK "GIZY" GEDE DI PALING BAWAH ===== -->
+        <div class="relative overflow-hidden mt-[100px] sm:mt-[152px]" aria-hidden="true">
 
+          <!-- ===== LAPISAN VECTOR ===== -->
+          <div
+            class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 sm:gap-8 pointer-events-none"
+          >
+            <img
+              src="../assets/vector/kotak-lengkung-pink.svg"
+              class="w-[20%] sm:w-[300px] shrink-0 object-contain -mb-[30px] sm:-mb-[150px]"
+              alt=""
+            />
+            <img
+              src="../assets/vector/lingkaran-pink.svg"
+              class="w-[20%] sm:w-[300px] shrink-0 object-contain -mb-[30px] sm:-mb-[150px]"
+              alt=""
+            />
+            <img
+              src="../assets/vector/segitiga-pink.svg"
+              class="w-[20%] sm:w-[300px] shrink-0 object-contain -mb-[30px] sm:-mb-[150px]"
+              alt=""
+            />
+            <img
+              src="../assets/vector/bintang-pink.svg"
+              class="w-[20%] sm:w-[300px] shrink-0 object-contain -mb-[30px] sm:-mb-[150px]"
+              alt=""
+            />
+          </div>
 
-<!-- ===== LAPISAN VECTOR ===== -->
-<div
-  class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 sm:gap-8 pointer-events-none"
->
-  <img
-    src="../assets/vector/kotak-lengkung-pink.svg"
-    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
-    alt=""
-  />
-  <img
-    src="../assets/vector/lingkaran-pink.svg"
-    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
-    alt=""
-  />
-  <img
-    src="../assets/vector/segitiga-pink.svg"
-    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
-    alt=""
-  />
-  <img
-    src="../assets/vector/bintang-pink.svg"
-    class="w-[300px] shrink-0 object-contain sm:-mb-[150px]"
-    alt=""
-  />
-</div>
-  <!-- WORDMARK: tetap di depan (z-10), bawahnya kepotong -->
-  <img
-    src="../assets/vector/text-gede.svg"
-    class="relative z-10 block mx-auto w-[75%] sm:w-[1006px] -mb-[5vw] sm:-mb-[80px] pointer-events-none"
-    alt=""
-  />
-</div>    </footer>
+          <!-- WORDMARK gizy: di depan (z-10), bawahnya kepotong -->
+          <img
+            src="../assets/vector/text-gede.svg"
+            class="relative z-10 block mx-auto w-[100%] sm:w-[1006px] -mb-[6vw] sm:-mb-[80px] pointer-events-none"
+            alt=""
+          />
+        </div>
+      </div>
+    </footer>
+    <!-- ================= AKHIR FOOTER ================= -->
 
     <script src="../Isi-Blog/isi-blog.js"></script>
 </body>

@@ -98,7 +98,7 @@
       class="hidden md:hidden fixed top-24 left-4 right-4 z-40 bg-white border border-black/[0.09] rounded-2xl shadow-xl p-3"
     >
       <a
-        href="../Home-Page/gizy.html#beranda"
+        href="../Home-Page/gizy.html"
         class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
         >Beranda</a
       >
@@ -146,7 +146,7 @@
             <div class="flex items-center gap-4 bg-white p-4 sm:p-5 rounded-2xl border-white hover:border-[#B8A9C9] transition border duration-300">
               <!-- GANTI src di bawah ini dengan gambar ikon kamu sendiri -->
               <img
-                src="../assets/vector/kotak-lengkung.svg"
+                src="../assets/vector/kotak-lengkung-purple.svg"
                 class="h-11 w-11 shrink-0"
                 alt="Ikon menghitung berat badan"
               />
@@ -157,7 +157,7 @@
             <div class="flex items-center gap-4 bg-white p-4 sm:p-5 rounded-2xl hover:border-[#F4A698] transition border border-white duration-300">
               <!-- GANTI src di bawah ini dengan gambar ikon kamu sendiri -->
               <img
-                src="../assets/vector/lingkaran.svg"
+                src="../assets/vector/lingkaran-pink.svg"
                 class="h-11 w-11 shrink-0"
                 alt="Ikon kategori berat badan"
               />
@@ -168,7 +168,7 @@
             <div class="flex items-center gap-4 bg-white p-4 sm:p-5 rounded-2xl border-white hover:border-[#c5d9a4] transition border duration-300">
               <!-- GANTI src di bawah ini dengan gambar ikon kamu sendiri -->
               <img
-                src="../assets/vector/segitiga.svg"
+                src="../assets/vector/segitiga-green-gede.svg"
                 class="h-11 w-11 shrink-0"
                 alt="Ikon program penurunan berat badan"
               />
@@ -271,18 +271,19 @@
         </div>
       </div>
 
-      <!-- ============ BANNER PENJELASAN KATEGORI ============ -->
-      <!-- FIX MOBILE: -mx-6 sm:mx-0 → full edge-to-edge di HP (sesuai mockup),
-           desktop tetap 726px di tengah dengan sudut membulat -->
-      <div class="-mx-6 sm:mx-0">
-        <div class="w-full h-auto sm:h-[140px] sm:max-w-[726px] sm:mx-auto mt-12 relative overflow-hidden rounded-[32px] sm:rounded-[32px] bg-[#FF7A7A] p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-10">
+      <!-- ============ BANNER PENJELASAN KATEGORI + KONSULTASI AI ============ -->
+      <!-- HP : banner & tombol konsultasi ditumpuk, full edge-to-edge
+           Desktop: banner pink (kiri) + card ungu konsultasi (kanan), sejajar -->
+      <div class="-mx-6 sm:mx-auto sm:max-w-[800px] mt-12 flex flex-col sm:flex-row gap-4 sm:gap-3">
 
+        <!-- ===== PINK BANNER (29.4 + badge + deskripsi) ===== -->
+        <div class="relative overflow-hidden rounded-[32px] bg-[#FF7A7A] p-6 sm:p-8 flex-1 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 sm:h-[140px]">
           <!-- dekorasi kotak-lengkung, cuma hiasan -->
           <img src="../assets/vector/kotak-lengkung-pink.svg" class="absolute -top-10 left-10 w-50 h-50 rotate-12 pointer-events-none">
           <img src="../assets/vector/kotak-lengkung-pink.svg" class="absolute -bottom-10 -right-20 w-50 h-50 pointer-events-none">
 
-          <!-- angka + badge: di HP ditumpuk & di-tengah (sesuai img 3) -->
-          <div class="relative z-10 flex flex-col sm:block items-center text-center sm:text-left shrink-0">
+          <!-- angka + badge: HP rata kiri ditumpuk, desktop kiri -->
+          <div class="relative z-10 shrink-0">
             <div
               id="out-bmi-banner"
               class="font-black text-[48px] text-white leading-none"
@@ -299,67 +300,78 @@
 
           <p
             id="out-desc-banner"
-            class="relative z-10 text-[16px] sm:text-lg text-white font-semibold text-center sm:text-right leading-relaxed m-0"
+            class="relative z-10 text-[16px] sm:text-[14px] lg:text-[15px] text-white font-semibold text-left leading-relaxed m-0"
           >
             Isi data di atas lalu klik "Hitung BMI" untuk melihat penjelasan
             status gizimu di sini.
           </p>
         </div>
 
-        <!-- ===== TOMBOL KONSULTASI AI CHATBOT (muncul setelah hitung) ===== -->
+        <!-- ===== CARD UNGU: KONSULTASI AI CHATBOT ===== -->
+        <!-- HP: bar lebar penuh, teks di tengah | desktop: card tinggi di kanan -->
         <button
           id="btn-konsultasi"
-          class="flex justify-center hidden w-full sm:max-w-[726px] sm:mx-auto mt-4 py-3.5 rounded-[16px] bg-[#F6FFE5] border border-[#C6D4A9] text-[16px] font-semibold text-[#1A1A1A] hover:bg-[#EDF5D9] transition-colors"
+          class="hidden relative overflow-hidden rounded-[16px] sm:rounded-[32px] bg-[#C2A6CC] w-full sm:w-[300px] sm:shrink-0 px-5 py-4 sm:p-6"
         >
-          Konsultasikan dengan AI Chatbot
+          <!-- ===== SLOT GAMBAR CHATBOT ===== -->
+               <img src="../assets/vector/robot.svg"
+                    class="absolute top-5 right-5 w-200 h-200" alt="" />
+          
+
+          <!-- teks: HP di tengah | desktop pojok kiri bawah card -->
+          <p class="m-0 text-[15px] sm:text-[16px] font-bold text-white leading-snug text-center sm:text-left sm:absolute sm:bottom-6 sm:left-6">
+            Konsultasikan<br class="hidden sm:block" /> dengan AI Chatbot
+          </p>
         </button>
       </div>
 
       <!-- ============ HASIL DETAIL (MUNCUL SETELAH KLIK "HITUNG BMI") ============ -->
-      <div id="result-section" class="hidden mt-16 ">
+      <div id="result-section" class="hidden mt-16">
 
         <!-- ===== KEBUTUHAN KALORI HARIAN ===== -->
         <div class="font-bold text-lg text-[#FF6B81] mb-3">
           Kebutuhan Kalori Harian
         </div>
 
-        <!-- Angka kalori DAN bar: HP ditumpuk, desktop sejajar -->
-        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 mb-3">
-          <div class="flex items-end gap-2 shrink-0">
-            <span id="out-kalori" class="font-black text-[48px] text-[#1A1A1A] leading-none">--</span>
-            <span class="text-sm text-[#6B6B6B] mb-1">kkal/hari</span>
-          </div>
-
-          <div class="flex-1 flex h-[26px] rounded-lg overflow-hidden w-full">
-            <div id="bar-karbo" style="background: #B8A9C9; width: 55%"></div>
-            <div id="bar-protein" style="background: #C5D9A4; width: 30%"></div>
-            <div id="bar-lemak" style="background: #F4A698; width: 15%"></div>
-          </div>
-        </div>
-        <div class="flex gap-[18px] flex-wrap mb-8 justify-between items-center">
-          <span class="text-sm">
-            <span
-              class="w-2.5 h-2.5 rounded-[3px] inline-block mr-1.5"
-              style="background: #B8A9C9"
-            ></span
-            >Karbohidrat <strong id="out-karbo"></strong>
-          </span>
-          <span class="text-sm">
-            <span
-              class="w-2.5 h-2.5 rounded-[3px] inline-block mr-1.5"
-              style="background: #C5D9A4"
-            ></span
-            >Protein <strong id="out-protein"></strong>
-          </span>
-          <span class="text-sm">
-            <span
-              class="w-2.5 h-2.5 rounded-[3px] inline-block mr-1.5"
-              style="background: #F4A698"
-            ></span
-            >Lemak <strong id="out-lemak"></strong>
-          </span>
+        <!-- Angka: HP ditumpuk (2.434 lalu kkal/hari di bawahnya),
+             desktop sejajar seperti sebelumnya -->
+        <div class="flex flex-col sm:flex-row sm:items-end gap-0 sm:gap-2 mb-3">
+          <span id="out-kalori" class="font-black text-[48px] text-[#1A1A1A] leading-none">--</span>
+          <span class="text-sm text-[#6B6B6B] sm:mb-1">kkal/hari</span>
         </div>
 
+        <!-- Bar: full width di HP & desktop -->
+        <div class="flex h-[26px] rounded-lg overflow-hidden mb-4">
+          <div id="bar-karbo" style="background: #B8A9C9; width: 55%"></div>
+          <div id="bar-protein" style="background: #C5D9A4; width: 30%"></div>
+          <div id="bar-lemak" style="background: #F4A698; width: 15%"></div>
+        </div>
+
+        <!-- Legenda: HP = teks kiri + kotak warna kanan (satu per baris),
+             desktop = sejajar, kotak warna di kiri teks (seperti semula) -->
+        <div class="flex flex-col sm:flex-row gap-2.5 sm:gap-[18px] mb-8 items-stretch sm:items-center sm:justify-between">
+          <span class="text-sm flex items-center justify-between w-full sm:w-auto sm:flex-row-reverse sm:justify-start gap-4 sm:gap-1.5">
+            <span class="flex items-baseline gap-1">
+              Karbohidrat <strong id="out-karbo"></strong>
+            </span>
+            <span class="w-2.5 h-2.5 rounded-[3px] shrink-0" style="background: #B8A9C9"></span>
+          </span>
+          <span class="text-sm flex items-center justify-between w-full sm:w-auto sm:flex-row-reverse sm:justify-start gap-4 sm:gap-1.5">
+            <span class="flex items-baseline gap-1">
+              Protein <strong id="out-protein"></strong>
+            </span>
+            <span class="w-2.5 h-2.5 rounded-[3px] shrink-0" style="background: #C5D9A4"></span>
+          </span>
+          <span class="text-sm flex items-center justify-between w-full sm:w-auto sm:flex-row-reverse sm:justify-start gap-4 sm:gap-1.5">
+            <span class="flex items-baseline gap-1">
+              Lemak <strong id="out-lemak"></strong>
+            </span>
+            <span class="w-2.5 h-2.5 rounded-[3px] shrink-0" style="background: #F4A698"></span>
+          </span>
+        </div>
+
+        <!-- ===== SARAN PER BAGIAN ===== -->
+        <!-- (sisanya di bawah ini TIDAK berubah, lanjut seperti kodemu) -->
         <!-- ===== SARAN PER BAGIAN ===== -->
         <div class="font-bold text-lg text-[#FF6B81] mb-3">
           Saran Per Bagian
@@ -483,13 +495,13 @@
           <div class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0">
 
             <!-- GRUP KANAN (Jelajah + Kontak) — di HP diturunin ke atas pakai order-1 -->
-            <div class="order-1 md:order-2 flex w-full gap-16 sm:gap-24 lg:gap-32">
+            <div class="order-1 md:order-2 flex w-full md:w-auto md:ml-auto justify-between gap-x-12 lg:gap-x-32">
 
               <!-- KOLOM JELAJAH -->
               <div>
                 <h4 class="font-bold text-[18px] mb-3">Jelajah</h4>
                 <ul class="space-y-2 text-[18px] text-white/90">
-                  <li><a href="#beranda" class="hover:opacity-80">Beranda</a></li>
+                  <li><a href="../Home-Page/gizy.html" class="hover:opacity-80">Beranda</a></li>
                   <li><a href="../BMI/kalkulator.html" class="hover:opacity-80">BMI</a></li>
                   <li><a href="../Blog/blog.html" class="hover:opacity-80">Blog</a></li>
                   <li><a href="../ChatBot/chatbot.html" class="hover:opacity-80">ChatBot</a></li>
