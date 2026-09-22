@@ -51,19 +51,19 @@
     </style>
   </head>
   <body class="bg-white text-gray-800">
-    <!-- ================= NAVBAR ADAPTIF (DESKTOP: LINK TEKS | HP: ICON MENU) ================= -->
-    <nav
+  <!-- ================= NAVBAR ================= -->
+<nav
       id="main-nav"
       class="fixed top-0 left-0 w-full z-50 py-5 transition-all duration-150 ease-in-out flex justify-center"
     >
       <div
         id="nav-container"
-        class="w-full max-w-[1006px] px-4 flex justify-between items-center transition-all duration-150 ease-in-out"
+        class="w-full max-w-5xl px-4 flex justify-between items-center transition-all duration-150 ease-in-out"
       >
-        <!-- Group Kiri: SEMBUNYI di HP (hidden md:flex = muncul mulai layar tablet) -->
+        <!-- Group Kiri: SEMBUNYI di HP -->
         <div class="hidden md:flex flex-1 items-center justify-end gap-4 sm:gap-8">
           <a
-            href="#beranda"
+            href="../Home-Page/gizy.html#beranda"
             class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
             >Beranda</a
           >
@@ -74,9 +74,9 @@
           >
         </div>
 
-        <!-- Logo: di desktop tetap di tengah, di HP otomatis ke kiri -->
+        <!-- Logo: di desktop di tengah, di HP otomatis ke kiri -->
         <a
-          href="#beranda"
+          href="../Home-Page/gizy.html"
           id="nav-logo"
           class="text-2xl font-extrabold text-black tracking-tight md:mx-6 lg:mx-10 transition-colors duration-150 flex-shrink-0"
         >
@@ -87,7 +87,7 @@
         <div class="hidden md:flex flex-1 items-center justify-start gap-4 sm:gap-8">
           <a
             href="../Blog/blog.html"
-            class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
+            class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap scroll-top-link"
             >Blog</a
           >
           <a
@@ -97,7 +97,7 @@
           >
         </div>
 
-        <!-- Tombol hamburger: CUMA MUNCUL di HP (md:hidden) -->
+        <!-- Tombol hamburger: CUMA MUNCUL di HP -->
         <button
           id="nav-toggle"
           type="button"
@@ -110,31 +110,45 @@
       </div>
     </nav>
 
-    <!-- ================= MENU MOBILE (turun pas hamburger diklik) ================= -->
-    <div
-      id="mobile-menu"
-      class="hidden md:hidden fixed top-24 left-4 right-4 z-40 bg-white border border-black/[0.09] rounded-2xl shadow-xl p-3"
-    >
-      <a
-        href="#beranda"
-        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
-        >Beranda</a
+    <!-- ================= MENU MOBILE (overlay gelap + kartu-kartu putih) ================= -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40 bg-black/60">
+      <!-- Panel = cuma "wadah" transparan:
+           pt-24      = mulai di bawah navbar (biar gak nimpa logo gizy & ✕)
+           px-4       = jarak dari pinggir kiri-kanan layar -->
+      <div
+        id="mobile-panel"
+        class="pt-24 px-4 transition-transform duration-300 -translate-y-full"
       >
-      <a
-        href="../BMI/kalkulator.html"
-        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
-        >BMI</a
-      >
-      <a
-        href="../Blog/blog.html"
-        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
-        >Blog</a
-      >
-      <a
-        href="../ChatBot/chatbot.html"
-        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
-        >ChatBot</a
-      >
+        <!-- TIAP LINK = 1 kartu putih sendiri, ada jarak antar kartu (mb-3) -->
+        <a
+          href="../Home-Page/gizy.html"
+          class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
+        >
+          Beranda
+          <i class="fa-solid fa-house text-gray-400"></i>
+        </a>
+        <a
+          href="../BMI/kalkulator.html"
+          class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
+        >
+          BMI
+          <i class="fa-solid fa-calculator text-gray-400"></i>
+        </a>
+        <a
+          href="../Blog/blog.html"
+          class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
+        >
+          Blog
+          <i class="fa-solid fa-newspaper text-gray-400"></i>
+        </a>
+        <a
+          href="../ChatBot/chatbot.html"
+          class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
+        >
+          ChatBot
+          <i class="fa-solid fa-comment-dots text-gray-400"></i>
+        </a>
+      </div>
     </div>
 
     <!-- ================= HERO SECTION (STICKY) ================= -->
@@ -214,7 +228,7 @@ class="block absolute bottom-[-40px] -right-8 w-24 h-24
         <!-- Bagian Tombol Aksi -->
         <div class="flex flex-col sm:flex-row gap-4">
           <button
-            onclick="window.location.href = '#'"
+            onclick="window.location.href = '../BMI/kalkulator.html'"
             class="group flex items-center text-[#FF8385]"
           >
             <!-- Lingkaran Ikon Kiri (Muncul saat Hover) -->

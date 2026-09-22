@@ -17,45 +17,29 @@ window.addEventListener("load", function () {
   window.scrollTo({ top: 0, left: 0, behavior: "instant" });
 });
 
-// ================= NAVBAR SCROLL EFFECT =================
+// ================= NAVBAR SCROLL EFFECT (sama seperti gizy.js) =================
 const mainNav = document.getElementById("main-nav");
 const navContainer = document.getElementById("nav-container");
 const navLogo = document.getElementById("nav-logo");
 const navItems = document.querySelectorAll(".nav-item");
-
-// Tambahan: ambil elemen hamburger & menu mobile
 const navToggle = document.getElementById("nav-toggle");
 const navToggleIcon = document.getElementById("nav-toggle-icon");
 const mobileMenu = document.getElementById("mobile-menu");
+const mobilePanel = document.getElementById("mobile-panel"); // panel menu putih (di dalam layer gelap)
 
-// Jalankan fungsi ini setiap kali layar di-scroll
 window.addEventListener("scroll", function () {
-  // Cek apakah posisi scroll sudah lebih dari 40 piksel
   if (window.scrollY > 40) {
     // --- TAMPILAN SAAT DI-SCROLL (KAPSUL PINK + BLUR) ---
     mainNav.classList.remove("top-0", "py-5");
-    mainNav.classList.add("top-4"); // Turun sedikit dari atas layar
-
-    // CATATAN: yang di-remove harus "max-w-[1006px]" (sesuai HTML),
-    // bukan "max-w-5xl" — kalau gak sama, kapsulnya gak akan mengecil.
-    navContainer.classList.remove("max-w-[1006px]", "px-4");
+    mainNav.classList.add("top-4");
+    navContainer.classList.remove("max-w-5xl", "px-4");
     navContainer.classList.add(
-      "max-w-xl",
-      "px-6",
-      "py-3",
-      "mx-4", // biar kapsul gak nempel banget ke pinggir layar HP
-      "bg-[#FFA2A2]/50", // Background pink transparan
-      "backdrop-blur-md", // Efek buram pada elemen di belakangnya
-      "rounded-full", // Bentuk kapsul melengkung
-      "border",
-      "border-white/80", // Garis tepi putih
-      "shadow-lg",
+      "max-w-xl", "px-6", "py-3", "mx-4",
+      "bg-[#FFA2A2]/50", "backdrop-blur-md", "rounded-full",
+      "border", "border-white/80", "shadow-lg",
     );
-
-    // Ubah warna teks logo & ikon hamburger jadi putih
     navLogo.classList.replace("text-black", "text-white");
     navToggle.classList.replace("text-black", "text-white");
-
     navItems.forEach((item) => {
       item.classList.remove("text-gray-600", "hover:text-black");
       item.classList.add("text-white", "hover:opacity-80");
@@ -64,25 +48,14 @@ window.addEventListener("scroll", function () {
     // --- TAMPILAN AWAL (KEMBALI TRANSPARAN & TEKS GELAP) ---
     mainNav.classList.remove("top-4");
     mainNav.classList.add("top-0", "py-5");
-
     navContainer.classList.remove(
-      "max-w-xl",
-      "px-6",
-      "py-3",
-      "mx-4",
-      "bg-[#FFA2A2]/50",
-      "backdrop-blur-md",
-      "rounded-full",
-      "border",
-      "border-white/80",
-      "shadow-lg",
+      "max-w-xl", "px-6", "py-3", "mx-4",
+      "bg-[#FFA2A2]/50", "backdrop-blur-md", "rounded-full",
+      "border", "border-white/80", "shadow-lg",
     );
-    navContainer.classList.add("max-w-[1006px]", "px-4");
-
-    // Kembalikan warna teks logo & ikon hamburger ke hitam
+    navContainer.classList.add("max-w-5xl", "px-4");
     navLogo.classList.replace("text-white", "text-black");
     navToggle.classList.replace("text-white", "text-black");
-
     navItems.forEach((item) => {
       item.classList.remove("text-white", "hover:opacity-80");
       item.classList.add("text-gray-600", "hover:text-black");
@@ -90,38 +63,56 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// ================= MENU MOBILE (HAMBURGER) =================
-// Fungsi kecil biar gak nulis kode yang sama berkali-kali
+// ================= MENU MOBILE (OVERLAY GELAP) =================
+// Layer gelap = #mobile-menu (nutupin seluruh layar)
+// Panel putih = #mobile-panel (daftar menu, turun dari atas pas dibuka)
+function bukaMenuMobile() {
+  mobileMenu.classList.remove("hidden");            // layer gelap muncul
+  document.body.classList.add("overflow-hidden");   // halaman belakang gak bisa di-scroll
+
+  // sedikit jeda (satu frame) supaya transisi turun-nya terbaca browser
+  requestAnimationFrame(() => {
+    mobilePanel.classList.remove("-translate-y-full");
+    mobilePanel.classList.add("translate-y-0");
+  });
+
+  navToggleIcon.classList.replace("fa-bars", "fa-xmark");
+  navToggle.setAttribute("aria-expanded", "true");
+}
+
 function tutupMenuMobile() {
-  mobileMenu.classList.add("hidden");
-  navToggleIcon.classList.replace("fa-xmark", "fa-bars"); // ikon X -> garis 3
+  mobilePanel.classList.add("-translate-y-full");   // panel naik keluar layar
+  mobilePanel.classList.remove("translate-y-0");
+  document.body.classList.remove("overflow-hidden");
+  navToggleIcon.classList.replace("fa-xmark", "fa-bars");
   navToggle.setAttribute("aria-expanded", "false");
+
+  // layer gelapnya baru dihilangkan SETELAH panel selesai naik (300ms,
+  // sama dengan duration-300 di HTML-nya)
+  setTimeout(() => {
+    mobileMenu.classList.add("hidden");
+  }, 300);
 }
 
 navToggle.addEventListener("click", function () {
   const lagiTertutup = mobileMenu.classList.contains("hidden");
-
   if (lagiTertutup) {
-    mobileMenu.classList.remove("hidden"); // tampilkan menu
-    navToggleIcon.classList.replace("fa-bars", "fa-xmark"); // garis 3 -> X
-    navToggle.setAttribute("aria-expanded", "true");
+    bukaMenuMobile();
   } else {
     tutupMenuMobile();
   }
 });
 
-// Tutup menu otomatis setelah salah satu link di dalamnya diklik
+// Klik link mana pun → tutup menunya dulu, baru pindah halaman
 document.querySelectorAll(".mobile-link").forEach(function (link) {
-  link.addEventListener("click", tutupMenuMobile);
+  link.addEventListener("click", function () {
+    tutupMenuMobile();
+  });
 });
 
-// Tutup juga kalau user klik di luar area menu / tombolnya
-document.addEventListener("click", function (e) {
-  if (
-    !mobileMenu.classList.contains("hidden") &&
-    !mobileMenu.contains(e.target) &&
-    !navToggle.contains(e.target)
-  ) {
+// Bonus: klik area GELAP di luar panel → tutup menu juga
+mobileMenu.addEventListener("click", function (e) {
+  if (!mobilePanel.contains(e.target)) {
     tutupMenuMobile();
   }
 });

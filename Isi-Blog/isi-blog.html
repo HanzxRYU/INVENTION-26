@@ -33,7 +33,8 @@
 </head>
 <body>
     
-    <nav
+  <!-- ================= NAVBAR ================= -->
+<nav
       id="main-nav"
       class="fixed top-0 left-0 w-full z-50 py-5 transition-all duration-150 ease-in-out flex justify-center"
     >
@@ -68,7 +69,7 @@
         <div class="hidden md:flex flex-1 items-center justify-start gap-4 sm:gap-8">
           <a
             href="../Blog/blog.html"
-            class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
+            class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap scroll-top-link"
             >Blog</a
           >
           <a
@@ -91,33 +92,46 @@
       </div>
     </nav>
 
-    <!-- ================= MENU MOBILE (turun pas hamburger diklik) ================= -->
-    <div
-      id="mobile-menu"
-      class="hidden md:hidden fixed top-24 left-4 right-4 z-40 bg-white border border-black/[0.09] rounded-2xl shadow-xl p-3"
-    >
-      <a
-        href="../Home-Page/gizy.html#beranda"
-        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
-        >Beranda</a
+    <!-- ================= MENU MOBILE (overlay gelap + kartu-kartu putih) ================= -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40 bg-black/60">
+      <!-- Panel = cuma "wadah" transparan:
+           pt-24      = mulai di bawah navbar (biar gak nimpa logo gizy & ✕)
+           px-4       = jarak dari pinggir kiri-kanan layar -->
+      <div
+        id="mobile-panel"
+        class="pt-24 px-4 transition-transform duration-300 -translate-y-full"
       >
-      <a
-        href="../BMI/kalkulator.html"
-        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
-        >BMI</a
-      >
-      <a
-        href="../Blog/blog.html"
-        class="mobile-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
-        >Blog</a
-      >
-      <a
-        href="../ChatBot/chatbot.html"
-        class="mobile-link scroll-top-link block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-[#FFF0F0]"
-        >Chatbox</a
-      >
+        <!-- TIAP LINK = 1 kartu putih sendiri, ada jarak antar kartu (mb-3) -->
+        <a
+          href="../Home-Page/gizy.html"
+          class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
+        >
+          Beranda
+          <i class="fa-solid fa-house text-gray-400"></i>
+        </a>
+        <a
+          href="../BMI/kalkulator.html"
+          class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
+        >
+          BMI
+          <i class="fa-solid fa-calculator text-gray-400"></i>
+        </a>
+        <a
+          href="../Blog/blog.html"
+          class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
+        >
+          Blog
+          <i class="fa-solid fa-newspaper text-gray-400"></i>
+        </a>
+        <a
+          href="../ChatBot/chatbot.html"
+          class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
+        >
+          ChatBot
+          <i class="fa-solid fa-comment-dots text-gray-400"></i>
+        </a>
+      </div>
     </div>
-
         <!-- ================= KONTEN ARTIKEL ================= -->
 <div id="atas" class="mx-4 max-w-none px-0 pt-32 pb-[100px] text-[#5C5C5C] lg:mx-[218px]">
   <img
