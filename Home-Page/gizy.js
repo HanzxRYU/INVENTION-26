@@ -1,32 +1,38 @@
-// ================= INTRO VIDEO (LOOPING + DURASI CUSTOM) =================
+// ================= INTRO VIDEO (CUMA SAAT PERTAMA MASUK WEB) =================
 const introScreen = document.getElementById("intro-screen");
 const introVideo = document.getElementById("intro-video");
 
-// ★★★ ATUR DURASI INTRO DI SINI ★★★
-// dalam MILIDETIK (1000 = 1 detik)
-// contoh: 5000 = 5 detik, 8000 = 8 detik
+// ★★★ ATUR DURASI INTRO DI SINI (milidetik, 1000 = 1 detik) ★★★
 const DURASI_INTRO = 6000;
 
-let introSudahSelesai = false; // penjaga biar gak dobel eksekusi
+let introSudahSelesai = false;
 
 function akhiriIntro() {
-  // cegah dobel (timer & tombol skip bisa kepicu barengan)
   if (introSudahSelesai) return;
   introSudahSelesai = true;
 
-  document.body.classList.remove("overflow-hidden"); // buka scroll lagi
-  introScreen.classList.add("opacity-0");            // memudar halus
-  setTimeout(() => introScreen.remove(), 600);       // dihapus total setelah fade
+  // Catat ke browser: "user ini udah masuk web"
+  // sessionStorage hidup selama tab-nya kebuka, hilang pas tab ditutup
+  sessionStorage.setItem("gizy_sudah_masuk", "ya");
+
+  document.body.classList.remove("overflow-hidden");
+  introScreen.classList.add("opacity-0");
+  setTimeout(() => introScreen.remove(), 600);
 }
 
-// 1. TIMER UTAMA: intro berakhir sesuai durasi yang kamu tentukan
-setTimeout(akhiriIntro, DURASI_INTRO);
+// Cek: user ini udah pernah masuk web (dalam tab/sesi ini)?
+if (sessionStorage.getItem("gizy_sudah_masuk") === "ya") {
+  // UDAH PERNAH → intro dihapus INSTAN (gak diputar sama sekali)
+  introScreen.remove();
+} else {
+  // BELUM PERNAH (ini bener2 masuk web pertama kali) → putar intro
 
-// 2. Tombol "Lewati" → keluar duluan
-document.getElementById("intro-skip").addEventListener("click", akhiriIntro);
+  document.body.classList.add("overflow-hidden"); // kunci scroll selama intro
 
-// 3. Kunci scroll selama intro
-document.body.classList.add("overflow-hidden");
+  // Timer utama: intro berakhir sesuai durasi yang kamu tentuin
+  setTimeout(akhiriIntro, DURASI_INTRO);
+
+}
 
 
 // ================= KEMBALI KE HERO SAAT HALAMAN DI-REFRESH =================

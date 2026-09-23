@@ -412,12 +412,10 @@ document.getElementById("btn-hitung").addEventListener("click", () => {
     .join("");
 
       // Tampilkan tombol konsultasi AI (muncul bareng result-section)  ← ★ INI
-  document.getElementById("btn-konsultasi").classList.remove("hidden");
+    document.getElementById("btn-konsultasi").classList.remove("hidden");
 
-  document.getElementById("result-section").style.display = "block";
-  document
-    .getElementById("result-section")
-    .scrollIntoView({ behavior: "smooth" });
+  // Munculkan panah ke bawah (JANGAN auto-scroll — user yang tentukan sendiri)
+  document.getElementById("btn-arrow-down").classList.remove("hidden");
 });
 
 // ================= TOMBOL "KONSULTASI AI CHATBOT" =================
@@ -427,3 +425,20 @@ if (btnKonsultasi) {
     window.location.href = "../ChatBot/chatbot.html";
   });
 }
+
+// ================= PANAH KE BAWAH → SCROLL SEDIKIT KE BANNER =================
+document.getElementById("btn-arrow-down").addEventListener("click", function () {
+  // scroll ke banner, dan banner ditaruh di TENGAH layar (block: "center")
+  // → gak terlalu kebawah: silhouette & form masih keliatan di bagian atas
+
+    document.getElementById("result-section").style.display = "block";
+
+
+  document.getElementById("out-bmi-banner").scrollIntoView({
+    behavior: "smooth",
+    block: "center",
+  });
+
+  // Tugasnya selesai → sembunyikan lagi
+  this.classList.add("hidden");
+});
