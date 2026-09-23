@@ -1,3 +1,34 @@
+// ================= INTRO VIDEO (LOOPING + DURASI CUSTOM) =================
+const introScreen = document.getElementById("intro-screen");
+const introVideo = document.getElementById("intro-video");
+
+// ★★★ ATUR DURASI INTRO DI SINI ★★★
+// dalam MILIDETIK (1000 = 1 detik)
+// contoh: 5000 = 5 detik, 8000 = 8 detik
+const DURASI_INTRO = 6000;
+
+let introSudahSelesai = false; // penjaga biar gak dobel eksekusi
+
+function akhiriIntro() {
+  // cegah dobel (timer & tombol skip bisa kepicu barengan)
+  if (introSudahSelesai) return;
+  introSudahSelesai = true;
+
+  document.body.classList.remove("overflow-hidden"); // buka scroll lagi
+  introScreen.classList.add("opacity-0");            // memudar halus
+  setTimeout(() => introScreen.remove(), 600);       // dihapus total setelah fade
+}
+
+// 1. TIMER UTAMA: intro berakhir sesuai durasi yang kamu tentukan
+setTimeout(akhiriIntro, DURASI_INTRO);
+
+// 2. Tombol "Lewati" → keluar duluan
+document.getElementById("intro-skip").addEventListener("click", akhiriIntro);
+
+// 3. Kunci scroll selama intro
+document.body.classList.add("overflow-hidden");
+
+
 // ================= KEMBALI KE HERO SAAT HALAMAN DI-REFRESH =================
 
 // 1. Matikan fitur browser yang "mengingat" posisi scroll terakhir
