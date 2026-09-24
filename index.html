@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
@@ -7,8 +7,8 @@
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/svg+xml" href="../assets/vector/bintang-pink.svg" />
-    <link rel="stylesheet" href="gizy.css" />
+    <link rel="icon" type="image/svg+xml" href="assets/vector/bintang-pink.svg" />
+    <link rel="stylesheet" href="css/input.css" />
 
     <!-- Font Google (Plus Jakarta Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -85,7 +85,7 @@
     >
       <video
         id="intro-video"
-        src="../assets/backgrounds/intro.mp4"
+        src="assets/backgrounds/intro.mp4"
         autoplay
         muted
         loop
@@ -111,7 +111,7 @@
             >Beranda</a
           >
           <a
-            href="../BMI/kalkulator.html"
+            href="pages/kalkulator.html"
             class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
             >BMI</a
           >
@@ -129,12 +129,12 @@
         <!-- Group Kanan: SEMBUNYI di HP -->
         <div class="hidden md:flex flex-1 items-center justify-start gap-4 md:gap-8">
           <a
-            href="../Blog/blog.html"
+            href="pages/blog.html"
             class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
             >Blog</a
           >
           <a
-            href="../ChatBot/chatbot.html"
+            href="pages/chatbot.html"
             class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
             >ChatBot</a
           >
@@ -156,7 +156,7 @@
     <!-- ================= MENU MOBILE (overlay gelap + kartu-kartu putih) ================= -->
     <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40 bg-black/60">
       <!-- Panel = cuma "wadah" transparan:
-           pt-24  = mulai di bawah navbar (biar gak nimpa logo gizy & ✕)
+           pt-24  = mulai di bawah navbar (biar gak nimpa logo gizy & âœ•)
            px-4   = jarak dari pinggir kiri-kanan layar -->
       <div
         id="mobile-panel"
@@ -173,7 +173,7 @@
           </svg>
         </a>
         <a
-          href="../BMI/kalkulator.html"
+          href="pages/kalkulator.html"
           class="scroll-top-link mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
         >
           BMI
@@ -182,7 +182,7 @@
           </svg>
         </a>
         <a
-          href="../Blog/blog.html"
+          href="pages/blog.html"
           class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
         >
           Blog
@@ -191,7 +191,7 @@
           </svg>
         </a>
         <a
-          href="../ChatBot/chatbot.html"
+          href="pages/chatbot.html"
           class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
         >
           ChatBot
@@ -211,7 +211,7 @@
 
       <!-- 1. Shape Segitiga Hijau Muda -->
       <img
-        src="../assets/vector/segitiga-green-gede.svg"
+        src="assets/vector/segitiga-green-gede.svg"
         alt=""
         class="block absolute top-[12%] left-5 w-32 h-32 md:top-[100px] md:w-48 md:h-48
                md:left-20
@@ -221,7 +221,7 @@
 
       <!-- 2. Shape Kapsul Merah Muda -->
       <img
-        src="../assets/vector/bintang-purple-gede.svg"
+        src="assets/vector/bintang-purple-gede.svg"
         alt=""
         class="block absolute top-[5%] right-2 w-32 h-32 md:top-[100px] md:w-48 md:h-48
                md:right-20
@@ -231,7 +231,7 @@
 
       <!-- 3. Shape Lingkaran Merah Muda -->
       <img
-        src="../assets/vector/kapsul-pink.svg"
+        src="assets/vector/kapsul-pink.svg"
         alt=""
         class="block absolute top-[30%] -left-16 w-28 h-28
                md:top-auto md:bottom-12 md:left-6 md:w-48 md:h-48
@@ -241,7 +241,7 @@
 
       <!-- 4. Shape Bunga/Awan Ungu -->
       <img
-        src="../assets/vector/lingkaran.svg"
+        src="assets/vector/lingkaran.svg"
         alt=""
         class="block absolute top-[38%] -right-10 w-24 h-24
                md:top-auto md:bottom-[100px] md:right-[100px] md:w-32 md:h-32
@@ -251,7 +251,7 @@
 
       <!-- Shape Tengah Kanan -->
       <img
-        src="../assets/vector/kotak-lengkung-purple.svg"
+        src="assets/vector/kotak-lengkung-purple.svg"
         alt=""
         class="block absolute bottom-[50px] -left-10 w-32 h-32
                md:bottom-[-40px] md:left-[28%] md:w-48 md:h-48
@@ -261,7 +261,7 @@
 
       <!-- Shape Tengah Kiri -->
       <img
-        src="../assets/vector/segitiga-green-gede.svg"
+        src="assets/vector/segitiga-green-gede.svg"
         alt=""
         class="block absolute bottom-[50px] -right-8 w-24 h-24
                md:bottom-[-40px] md:right-[28%] md:w-48 md:h-48
@@ -289,7 +289,7 @@
         <!-- Bagian Tombol Aksi -->
         <div class="flex flex-col md:flex-row gap-4">
           <button
-            onclick="window.location.href = '../BMI/kalkulator.html'"
+            onclick="window.location.href = 'pages/kalkulator.html'"
             class="group flex items-center text-[#FF8385]"
           >
             <!-- Lingkaran Ikon Kiri (Muncul saat Hover) -->
@@ -373,7 +373,7 @@
                 class="card-stat group relative overflow-hidden rounded-3xl shadow-md cursor-pointer"
               >
                 <img
-                  src="../assets/backgrounds/Rectangle 7.svg"
+                  src="assets/backgrounds/Rectangle 7.svg"
                   alt="Pemeriksaan Gizi Anak"
                   class="w-full h-64 md:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -414,7 +414,7 @@
                   >sekitar 1 dari 5 anak Indonesia masih mengalami stunting
                   akibat kekurangan gizi kronis</span
                 >
-                — angka yang meski menurun, tetap menjadi tantangan besar
+                angka yang meski menurun, tetap menjadi tantangan besar
                 setiap tahunnya.
               </p>
 
@@ -422,7 +422,7 @@
                 class="card-stat group relative overflow-hidden rounded-3xl shadow-md cursor-pointer"
               >
                 <img
-                  src="../assets/backgrounds/Rectangle 9.svg"
+                  src="assets/backgrounds/Rectangle 9.svg"
                   alt="Anak-anak Indonesia"
                   class="w-full h-64 md:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -468,9 +468,9 @@
             <p
               class="text-[18px] md:text-[24px] text-[#5C5C5C] leading-relaxed font-semibold m-0"
             >
-              Gizy mengajak kamu belajar pelan–pelan lewat infografis yang mudah
+              Gizy mengajak kamu belajar pelan-pelan lewat infografis yang mudah
               dipahami, sekaligus tips sederhana yang sudah dicoba dan dibagikan
-              oleh teman–teman.
+              oleh teman-teman.
             </p>
 
             <!-- ikon kecil: panduan, tips, blog sehat -->
@@ -585,7 +585,7 @@
               >
                 <div class="relative h-12 w-12 shrink-0">
                   <img
-                    src="../assets/vector/kotak-lengkung-angka.svg"
+                    src="assets/vector/kotak-lengkung-angka.svg"
                     class="h-12 w-12"
                     alt=""
                   />
@@ -609,7 +609,7 @@
               >
                 <div class="relative h-12 w-12 shrink-0">
                   <img
-                    src="../assets/vector/lingkaran-angka.svg"
+                    src="assets/vector/lingkaran-angka.svg"
                     class="h-12 w-12"
                     alt=""
                   />
@@ -633,7 +633,7 @@
               >
                 <div class="relative h-12 w-12 shrink-0">
                   <img
-                    src="../assets/vector/segitiga-angka.svg"
+                    src="assets/vector/segitiga-angka.svg"
                     class="h-12 w-12"
                     alt=""
                   />
@@ -657,7 +657,7 @@
               >
                 <div class="relative h-12 w-12 shrink-0">
                   <img
-                    src="../assets/vector/bintang.svg"
+                    src="assets/vector/bintang.svg"
                     class="h-12 w-12"
                     alt=""
                   />
@@ -708,7 +708,7 @@
                 class="relative h-[320px] w-[239.5px] shrink-0 snap-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#FFAEAF] to-[#FFCACA] p-5 flex flex-col justify-between"
               >
                 <img
-                  src="../assets/vector/kotak-lengkung-pink.svg"
+                  src="assets/vector/kotak-lengkung-pink.svg"
                   class="absolute z-0 w-[200px] h-[200px] left-[-40px] top-[-65px] pointer-events-none"
                   alt=""
                 />
@@ -756,7 +756,7 @@
                     class="absolute inset-0 overflow-hidden rounded-2xl bg-[#C6D4A9] p-5 [backface-visibility:hidden] [transform:rotateY(180deg)]"
                   >
                     <img
-                      src="../assets/vector/kotak-lengkung-green-gede.svg"
+                      src="assets/vector/kotak-lengkung-green-gede.svg"
                       class="absolute z-0 w-[200px] h-[200px] left-[-40px] top-[-65px] pointer-events-none"
                       alt=""
                     />
@@ -821,7 +821,7 @@
                     class="absolute inset-0 overflow-hidden rounded-2xl bg-[#C2A6CC] p-5 [backface-visibility:hidden] [transform:rotateY(180deg)]"
                   >
                     <img
-                      src="../assets/vector/kotak-lengkung-purple.svg"
+                      src="assets/vector/kotak-lengkung-purple.svg"
                       class="absolute z-0 w-[200px] h-[200px] left-[-40px] top-[-65px] pointer-events-none"
                       alt=""
                     />
@@ -888,7 +888,7 @@
                     class="absolute inset-0 overflow-hidden rounded-2xl bg-gradient-to-br from-[#FF8385] to-[#FFAEAF] p-5 [backface-visibility:hidden] [transform:rotateY(180deg)]"
                   >
                     <img
-                      src="../assets/vector/kotak-lengkung-muda.svg"
+                      src="assets/vector/kotak-lengkung-muda.svg"
                       class="absolute left-[-40px] top-[-65px] z-0 h-[200px] w-[200px] pointer-events-none"
                       alt=""
                     />
@@ -955,7 +955,7 @@
                 class="bg-white rounded-2xl p-4 flex flex-col border border-white hover:border-[#F9C4BE] transition duration-300 transition-transform hover:scale-105"
               >
                 <img
-                  src="../assets/backgrounds/mbg.svg"
+                  src="assets/backgrounds/mbg.svg"
                   alt="Piring makanan seimbang"
                   class="w-full h-40 object-cover rounded-xl border border-[#5C5C5C] mb-4"
                 />
@@ -973,7 +973,7 @@
                 </div>
                 <!-- Tombol warna pink -->
                 <a
-                  href="../Isi-Blog/isi-blog.html"
+                  href="pages/isi-blog.html"
                   class="flex items-center justify-center mt-auto w-full py-2.5 rounded-lg border border-[#FF8385] font-semibold bg-[#FFAEAF] text-[#5C5C5C] hover:bg-[#FF8385] transition-colors"
                 >
                   Pelajari Lebih Lanjut
@@ -985,7 +985,7 @@
                 class="bg-white rounded-2xl p-4 flex flex-col border border-white hover:border-[#E4F1CE] transition duration-300 transition-transform hover:scale-105"
               >
                 <img
-                  src="../assets/backgrounds/sedang-masak.svg"
+                  src="assets/backgrounds/sedang-masak.svg"
                   alt="Memasak makanan sehat"
                   class="w-full h-40 object-cover rounded-xl border border-[#5C5C5C] mb-4"
                 />
@@ -1003,7 +1003,7 @@
                 </div>
                 <!-- Tombol warna hijau -->
                 <a
-                  href="../Isi-Blog/isi-blog.html"
+                  href="pages/isi-blog.html"
                   class="flex items-center justify-center mt-auto w-full py-2.5 rounded-lg text-[18px] border border-[#C6D4A9] font-semibold bg-[#F6FFE5] text-[#5C5C5C] hover:bg-[#C6D4A9] transition-colors"
                 >
                   Pelajari Lebih Lanjut
@@ -1015,7 +1015,7 @@
                 class="bg-white rounded-2xl p-4 flex flex-col border border-white hover:border-[#D7CEE9] transition duration-300 transition-transform hover:scale-105"
               >
                 <img
-                  src="../assets/backgrounds/susah-makan.svg"
+                  src="assets/backgrounds/susah-makan.svg"
                   alt="Anak susah makan"
                   class="w-full h-40 object-cover rounded-xl border border-[#5C5C5C] mb-4"
                 />
@@ -1033,7 +1033,7 @@
                 </div>
                 <!-- Tombol warna ungu -->
                 <a
-                  href="../Isi-Blog/isi-blog.html"
+                  href="pages/isi-blog.html"
                   class="flex items-center justify-center mt-auto w-full py-2.5 rounded-lg border border-[#9B85A3] text-[18px] font-semibold bg-[#C2A6CC] text-[#5C5C5C] hover:bg-[#9B85A3] transition-colors"
                 >
                   Pelajari Lebih Lanjut
@@ -1044,7 +1044,7 @@
             <!-- Tombol "Lihat Semua" -> langsung pindah ke halaman blog -->
             <div class="mt-12 text-center">
               <button
-                onclick="window.location.href = '../Blog/blog.html'"
+                onclick="window.location.href = 'pages/blog.html'"
                 class="group inline-flex items-center text-[#FF8385]"
               >
                 <!-- Lingkaran Ikon Kiri (Muncul saat Hover) -->
@@ -1120,7 +1120,7 @@
                 class="w-10 h-10 rounded-lg mb-6 flex items-center justify-center"
               >
                 <img
-                  src="../assets/vector/kotak-lengkung-green.svg"
+                  src="assets/vector/kotak-lengkung-green.svg"
                   class="h-12 w-12"
                   alt=""
                 />
@@ -1140,7 +1140,7 @@
               </p>
 
               <button
-                onclick="window.location.href = '../BMI/kalkulator.html'"
+                onclick="window.location.href = 'pages/kalkulator.html'"
                 class="px-6 py-3 w-[242px] h-[48px] bg-[#C6D4A9] rounded-[16px] text-[18px] font-semibold text-white hover:bg-[#A8B88A] transition-colors items-center justify-center gap-2"
               >
                 Kalkulator BMI<i
@@ -1152,7 +1152,7 @@
             <!-- KANAN: gambar makanan -->
             <div class="md:w-[45%] h-56 md:h-auto">
               <img
-                src="../assets/backgrounds/buah2an.svg"
+                src="assets/backgrounds/buah2an.svg"
                 alt="Bahan makanan segar"
                 class="w-full h-full object-cover"
               />
@@ -1165,7 +1165,7 @@
           <div
             class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0"
           >
-            <!-- GRUP KANAN (Jelajah + Kontak) — di HP diturunin ke atas pakai order-1 -->
+            <!-- GRUP KANAN (Jelajah + Kontak) â€” di HP diturunin ke atas pakai order-1 -->
             <div
               class="order-1 md:order-2 flex w-full md:w-auto md:ml-auto justify-between gap-x-12 lg:gap-x-32"
             >
@@ -1177,13 +1177,13 @@
                     <a href="#beranda" class="hover:opacity-80">Beranda</a>
                   </li>
                   <li>
-                    <a href="../BMI/kalkulator.html" class="hover:opacity-80">BMI</a>
+                    <a href="pages/kalkulator.html" class="hover:opacity-80">BMI</a>
                   </li>
                   <li>
-                    <a href="../Blog/blog.html" class="hover:opacity-80">Blog</a>
+                    <a href="pages/blog.html" class="hover:opacity-80">Blog</a>
                   </li>
                   <li>
-                    <a href="../ChatBot/chatbot.html" class="hover:opacity-80">ChatBot</a>
+                    <a href="pages/chatbot.html" class="hover:opacity-80">ChatBot</a>
                   </li>
                 </ul>
               </div>
@@ -1204,7 +1204,7 @@
               </div>
             </div>
 
-            <!-- BLOK KIRI (Web Edukasi + copyright) — di HP ke bawah pakai order-2 -->
+            <!-- BLOK KIRI (Web Edukasi + copyright) â€” di HP ke bawah pakai order-2 -->
             <div class="order-2 md:order-1 flex flex-col">
               <p class="text-[18px] text-white/90">
                 Web Edukasi untuk keluarga<br />menuju Indonesia Sehat
@@ -1212,7 +1212,7 @@
               <p class="text-[18px] text-white/70 mt-6">&copy; 2026 Gizy</p>
               <!-- Logo kecil: sembunyi di HP (wordmark gede di bawah sudah mewakili) -->
               <img
-                src="../assets/vector/text-gede.svg"
+                src="assets/vector/text-gede.svg"
                 class="hidden md:block w-[128px] mt-6 pointer-events-none"
                 alt=""
               />
@@ -1230,22 +1230,22 @@
             class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 md:gap-8 pointer-events-none"
           >
             <img
-              src="../assets/vector/kotak-lengkung-pink.svg"
+              src="assets/vector/kotak-lengkung-pink.svg"
               class="w-[20%] md:w-[300px] shrink-0 object-contain -mb-[30px] md:-mb-[150px]"
               alt=""
             />
             <img
-              src="../assets/vector/lingkaran-pink.svg"
+              src="assets/vector/lingkaran-pink.svg"
               class="w-[20%] md:w-[300px] shrink-0 object-contain -mb-[30px] md:-mb-[150px]"
               alt=""
             />
             <img
-              src="../assets/vector/segitiga-pink.svg"
+              src="assets/vector/segitiga-pink.svg"
               class="w-[20%] md:w-[300px] shrink-0 object-contain -mb-[30px] md:-mb-[150px]"
               alt=""
             />
             <img
-              src="../assets/vector/bintang-pink.svg"
+              src="assets/vector/bintang-pink.svg"
               class="w-[20%] md:w-[300px] shrink-0 object-contain -mb-[30px] md:-mb-[150px]"
               alt=""
             />
@@ -1253,7 +1253,7 @@
 
           <!-- WORDMARK gizy: di depan (z-10), bawahnya kepotong -->
           <img
-            src="../assets/vector/text-gede.svg"
+            src="assets/vector/text-gede.svg"
             class="relative z-10 block mx-auto w-[100%] md:w-[1006px] -mb-[6vw] md:-mb-[80px] pointer-events-none"
             alt=""
           />
@@ -1262,6 +1262,6 @@
     </footer>
     <!-- ================= AKHIR FOOTER ================= -->
 
-    <script src="gizy.js"></script>
+    <script src="js/gizy.js"></script>
   </body>
 </html>
