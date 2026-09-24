@@ -422,7 +422,7 @@ document.getElementById("btn-hitung").addEventListener("click", () => {
 const btnKonsultasi = document.getElementById("btn-konsultasi");
 if (btnKonsultasi) {
   btnKonsultasi.addEventListener("click", function () {
-    window.location.href = "../ChatBot/chatbot.html";
+    window.location.href = "chatbot.html";
   });
 }
 
