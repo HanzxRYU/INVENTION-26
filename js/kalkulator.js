@@ -132,7 +132,7 @@ let selectedGender = "L";
 // Dua "paket" class ini ditukar bolak-balik: kalau satu paket masuk,
 // paket satunya pasti dikeluarkan dulu. Jadi gak akan ada bentrok
 // (misalnya warna latar lama nempel bareng warna latar baru).
-const genderActiveClasses = ["bg-[#FF6B81]", "border-[#FF6B81]", "text-white"];
+const genderActiveClasses = ["bg-[#FFAEAF]", "border-[#FF8385]", "text-[#FF8385]"];
 const genderInactiveClasses = ["bg-white", "border-black/[0.09]", "text-[#6B6B6B]"];
 
 document.querySelectorAll(".gender-btn").forEach((btn) => {
@@ -167,33 +167,33 @@ function kategoriBMI(bmi) {
     return {
       label: "Sangat Kurus",
       color: "#D9483A",
-      bg: "#FCE7E5",
+      bg: "#FF8385",
       desc: "Berat badanmu di bawah kisaran sehat. Prioritaskan tambahan kalori dan protein secara bertahap, dan pertimbangkan konsultasi ke tenaga medis.",
     };
   if (bmi < 18.5)
     return {
       label: "Kurus",
       color: "#D98E14",
-      bg: "#FDF1DD",
+      bg: "#FF8385",
       desc: "Berat badanmu sedikit di bawah kisaran ideal. Tambahkan porsi makan secara bertahap, fokus ke sumber protein dan karbohidrat kompleks.",
     };
   if (bmi <= 25.0)
     return {
       label: "Normal",
       color: "#3FA66B",
-      bg: "#E6F5EC",
+      bg: "#C6D4A9",
       desc: "Berat badanmu berada di kisaran sehat. Pertahankan pola makan seimbang dan tetap aktif bergerak.",
     };
   if (bmi <= 27.0)
     return {
       label: "Gemuk",
-      color: "#D98E14",
+      color: "#C2A6CC",
       bg: "#FDF1DD",
       desc: "Berat badanmu sedikit di atas kisaran ideal. Kurangi porsi karbohidrat sederhana dan perbanyak aktivitas fisik ringan secara rutin.",
     };
   return {
     label: "Obesitas",
-    color: "#D9483A",
+    color: "#C2A6CC",
     bg: "#FCE7E5",
     desc: "Berat badanmu jauh di atas ideal. Atur pola makan bertahap dan konsultasi ke tenaga medis.",
   };
@@ -402,10 +402,10 @@ document.getElementById("btn-hitung").addEventListener("click", () => {
   saranContainer.innerHTML = saranPerBagian(kat.label)
     .map(
       (s) => `
-    <div class="border border-white rounded-xl p-[18px]">
-      <img src="${s.icon}" alt="${s.title}" class="h-8 w-8 mb-2" />
-      <h3 class="text-[15px] mb-1.5 font-bold">${s.title}</h3>
-      <p class="text-[13.5px] m-0 text-[#6B6B6B]">${s.text}</p>
+    <div class="border-2 border-[#F7F7F7] rounded-[16px] px-[24px] py-[24px]">
+      <img src="${s.icon}" alt="${s.title}" class="h-8 w-8 mb-4" />
+      <h3 class="text-[18px] text-[#5C5C5C] mb-1.5 font-bold">${s.title}</h3>
+      <p class="text-[18x] m-0 text-[#6B6B6B]">${s.text}</p>
     </div>
   `,
     )
