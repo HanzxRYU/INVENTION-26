@@ -65,38 +65,28 @@ const mobileMenu = document.getElementById("mobile-menu");
 const mobilePanel = document.getElementById("mobile-panel"); // panel menu putih (di dalam layer gelap)
 
 window.addEventListener("scroll", function () {
-  if (window.scrollY > 40) {
+  if (window.scrollY > 80) {
     // --- TAMPILAN SAAT DI-SCROLL (KAPSUL PINK + BLUR) ---
     mainNav.classList.remove("top-0", "py-5");
-    mainNav.classList.add("top-4");
+    mainNav.classList.add("-top-2");
     navContainer.classList.remove("max-w-5xl", "px-4");
     navContainer.classList.add(
-      "max-w-xl", "px-6", "py-3", "mx-4",
-      "bg-[#FFA2A2]/50", "backdrop-blur-md", "rounded-full",
+      "w-auto", "py-5", "px-10",
+      "bg-white", "rounded-bl-[16px]", "rounded-br-[16px]",
       "border", "border-white/80", "shadow-lg",
     );
-    navLogo.classList.replace("text-black", "text-white");
-    navToggle.classList.replace("text-black", "text-white");
-    navItems.forEach((item) => {
-      item.classList.remove("text-gray-600", "hover:text-black");
-      item.classList.add("text-white", "hover:opacity-80");
-    });
   } else {
     // --- TAMPILAN AWAL (KEMBALI TRANSPARAN & TEKS GELAP) ---
     mainNav.classList.remove("top-4");
     mainNav.classList.add("top-0", "py-5");
     navContainer.classList.remove(
       "max-w-xl", "px-6", "py-3", "mx-4",
-      "bg-[#FFA2A2]/50", "backdrop-blur-md", "rounded-full",
+      "bg-[#FFA2A2]/50", "backdrop-blur-md", "rounded-",
       "border", "border-white/80", "shadow-lg",
     );
     navContainer.classList.add("max-w-5xl", "px-4");
     navLogo.classList.replace("text-white", "text-black");
     navToggle.classList.replace("text-white", "text-black");
-    navItems.forEach((item) => {
-      item.classList.remove("text-white", "hover:opacity-80");
-      item.classList.add("text-gray-600", "hover:text-black");
-    });
   }
 });
 
