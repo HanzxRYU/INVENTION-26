@@ -28,38 +28,44 @@ const mobileMenu = document.getElementById("mobile-menu");
 const mobilePanel = document.getElementById("mobile-panel"); // panel menu putih (di dalam layer gelap)
 
 window.addEventListener("scroll", function () {
-  if (window.scrollY > 40) {
-    // --- TAMPILAN SAAT DI-SCROLL (KAPSUL PINK + BLUR) ---
+  if (window.scrollY > 70) {
     mainNav.classList.remove("top-0", "py-5");
-    mainNav.classList.add("top-4");
+    mainNav.classList.add("-top-2");
     navContainer.classList.remove("max-w-5xl", "px-4");
     navContainer.classList.add(
-      "max-w-xl", "px-6", "py-3", "mx-4",
-      "bg-[#FFA2A2]/50", "backdrop-blur-md", "rounded-full",
-      "border", "border-white/80", "shadow-lg",
+      "max-w-xl",
+      "md:w-auto",
+      "md:py-5",
+      "py-3",
+      "md:px-10",
+      "px-5",
+      "mt-5",
+      "bg-white",
+      "rounded-[16px]",
+      "mx-5",
+      "border-2",
+      "border-[#F7F7F7]",
+      "shadow-lg",
     );
-    navLogo.classList.replace("text-black", "text-white");
-    navToggle.classList.replace("text-black", "text-white");
-    navItems.forEach((item) => {
-      item.classList.remove("text-gray-600", "hover:text-black");
-      item.classList.add("text-white", "hover:opacity-80");
-    });
   } else {
-    // --- TAMPILAN AWAL (KEMBALI TRANSPARAN & TEKS GELAP) ---
-    mainNav.classList.remove("top-4");
+    mainNav.classList.remove("-top-2");
     mainNav.classList.add("top-0", "py-5");
     navContainer.classList.remove(
-      "max-w-xl", "px-6", "py-3", "mx-4",
-      "bg-[#FFA2A2]/50", "backdrop-blur-md", "rounded-full",
-      "border", "border-white/80", "shadow-lg",
+      "max-w-xl",
+      "md:w-auto",
+      "md:py-5",
+      "py-3",
+      "md:px-10",
+      "px-5",
+      "mt-5",
+      "bg-white",
+      "rounded-[16px]",
+      "mx-5",
+      "border-2",
+      "border-[#F7F7F7]",
+      "shadow-lg",
     );
     navContainer.classList.add("max-w-5xl", "px-4");
-    navLogo.classList.replace("text-white", "text-black");
-    navToggle.classList.replace("text-white", "text-black");
-    navItems.forEach((item) => {
-      item.classList.remove("text-white", "hover:opacity-80");
-      item.classList.add("text-gray-600", "hover:text-black");
-    });
   }
 });
 

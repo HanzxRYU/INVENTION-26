@@ -31,9 +31,7 @@ if (sessionStorage.getItem("gizy_sudah_masuk") === "ya") {
 
   // Timer utama: intro berakhir sesuai durasi yang kamu tentuin
   setTimeout(akhiriIntro, DURASI_INTRO);
-
 }
-
 
 // ================= KEMBALI KE HERO SAAT HALAMAN DI-REFRESH =================
 
@@ -65,28 +63,47 @@ const mobileMenu = document.getElementById("mobile-menu");
 const mobilePanel = document.getElementById("mobile-panel"); // panel menu putih (di dalam layer gelap)
 
 window.addEventListener("scroll", function () {
-  if (window.scrollY > 80) {
-    // --- TAMPILAN SAAT DI-SCROLL (KAPSUL PINK + BLUR) ---
+  if (window.scrollY > 70) {
+
     mainNav.classList.remove("top-0", "py-5");
     mainNav.classList.add("-top-2");
     navContainer.classList.remove("max-w-5xl", "px-4");
     navContainer.classList.add(
-      "w-auto", "py-5", "px-10",
-      "bg-white", "rounded-bl-[16px]", "rounded-br-[16px]",
-      "border", "border-white/80", "shadow-lg",
+      "max-w-xl",
+      "md:w-auto",
+      "md:py-5",
+      "py-3",
+      "md:px-10",
+      "px-5",
+      "mt-5",
+      "bg-white",
+      "rounded-[16px]",
+      "mx-5",
+      "border-2",
+      "border-[#F7F7F7]",
+      "shadow-lg",
     );
   } else {
-    // --- TAMPILAN AWAL (KEMBALI TRANSPARAN & TEKS GELAP) ---
-    mainNav.classList.remove("top-4");
+
+    mainNav.classList.remove("-top-2");
     mainNav.classList.add("top-0", "py-5");
     navContainer.classList.remove(
-      "max-w-xl", "px-6", "py-3", "mx-4",
-      "bg-[#FFA2A2]/50", "backdrop-blur-md", "rounded-",
-      "border", "border-white/80", "shadow-lg",
+      "max-w-xl",
+      "md:w-auto",
+      "md:py-5",
+      "py-3",
+      "md:px-10",
+      "px-5",
+      "mt-5",
+      "bg-white",
+      "rounded-[16px]",
+      "mx-5",
+      "border-2",
+      "border-[#F7F7F7]",
+      "shadow-lg",
     );
     navContainer.classList.add("max-w-5xl", "px-4");
-    navLogo.classList.replace("text-white", "text-black");
-    navToggle.classList.replace("text-white", "text-black");
+
   }
 });
 
@@ -94,8 +111,8 @@ window.addEventListener("scroll", function () {
 // Layer gelap = #mobile-menu (nutupin seluruh layar)
 // Panel putih = #mobile-panel (daftar menu, turun dari atas pas dibuka)
 function bukaMenuMobile() {
-  mobileMenu.classList.remove("hidden");            // layer gelap muncul
-  document.body.classList.add("overflow-hidden");   // halaman belakang gak bisa di-scroll
+  mobileMenu.classList.remove("hidden"); // layer gelap muncul
+  document.body.classList.add("overflow-hidden"); // halaman belakang gak bisa di-scroll
 
   // sedikit jeda (satu frame) supaya transisi turun-nya terbaca browser
   requestAnimationFrame(() => {
@@ -108,7 +125,7 @@ function bukaMenuMobile() {
 }
 
 function tutupMenuMobile() {
-  mobilePanel.classList.add("-translate-y-full");   // panel naik keluar layar
+  mobilePanel.classList.add("-translate-y-full"); // panel naik keluar layar
   mobilePanel.classList.remove("translate-y-0");
   document.body.classList.remove("overflow-hidden");
   navToggleIcon.classList.replace("fa-xmark", "fa-bars");
