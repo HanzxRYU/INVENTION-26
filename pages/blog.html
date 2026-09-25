@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gizy - Blog</title>
 
-    <!-- Tailwind CSS CDN (sama seperti di gizy.html) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="icon" type="image/svg+xml" href="../assets/vector/kotak-lengkung-purple.svg">
 
-    <!-- Font Google (Plus Jakarta Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,7 +16,6 @@
       rel="stylesheet"
     />
 
-    <!-- Font Awesome (Ikon Visual) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -43,7 +40,6 @@
         id="nav-container"
         class="w-full max-w-5xl px-4 flex justify-between items-center transition-all duration-150 ease-in-out"
       >
-        <!-- Group Kiri: SEMBUNYI di HP -->
         <div class="hidden md:flex flex-1 items-center justify-end gap-4 sm:gap-8">
           <a
             href="../index.html#beranda"
@@ -57,7 +53,6 @@
           >
         </div>
 
-        <!-- Logo: di desktop di tengah, di HP otomatis ke kiri -->
         <a
           href="../index.html"
           id="nav-logo"
@@ -66,7 +61,6 @@
           <img src="/assets/gizylogo.svg" alt="" class="w-12 mx-6 pt-1">
         </a>
 
-        <!-- Group Kanan: SEMBUNYI di HP -->
         <div class="hidden md:flex flex-1 items-center justify-start gap-4 sm:gap-8">
           <a
             href="blog.html"
@@ -80,7 +74,6 @@
           >
         </div>
 
-        <!-- Tombol hamburger: CUMA MUNCUL di HP -->
         <button
           id="nav-toggle"
           type="button"
@@ -95,14 +88,10 @@
 
     <!-- ================= MENU MOBILE (overlay gelap + kartu-kartu putih) ================= -->
     <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40 bg-black/60">
-      <!-- Panel = cuma "wadah" transparan:
-           pt-24      = mulai di bawah navbar (biar gak nimpa logo gizy & âœ•)
-           px-4       = jarak dari pinggir kiri-kanan layar -->
       <div
         id="mobile-panel"
         class="pt-24 px-4 transition-transform duration-300 -translate-y-full"
       >
-        <!-- TIAP LINK = 1 kartu putih sendiri, ada jarak antar kartu (mb-3) -->
         <a
           href="../index.html"
           class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
@@ -127,7 +116,7 @@
         >
           Blog
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 0H5C2.24 0 0 2.24 0 5V19C0 21.76 2.24 24 5 24H19C21.76 24 24 21.76 24 19V5C24 2.24 21.76 0 19 0ZM22 19C22 20.65 20.65 22 19 22H5C3.35 22 2 20.65 2 19V5C2 3.35 3.35 2 5 2H19C20.65 2 22 3.35 22 5V19ZM5 10C5 9.45 5.45 9 6 9H15C15.55 9 16 9.45 16 10C16 10.55 15.55 11 15 11H6C5.45 11 5 10.55 5 10ZM5 6C5 5.45 5.45 5 6 5H12C12.55 5 13 5.45 13 6C13 6.55 12.55 7 12 7H6C5.45 7 5 6.55 5 6ZM19 14C19 14.55 18.55 15 18 15H6C5.45 15 5 14.55 5 14C5 13.45 5.45 13 6 13H18C18.55 13 19 13.45 19 14ZM10 18C10 18.55 9.55 19 9 19H6C5.45 19 5 18.55 5 18C5 17.45 5.45 17 6 17H9C9.55 17 10 17.45 10 18Z" fill="#5C5C5C"/>
+            <path d="M19 0H5C2.24 0 0 2.24 0 5V19C0 21.76 2.24 24 5 24H19C21.76 24 24 21.76 24 19V5C24 2.24 21.76 0 19 0ZM22 19C22 20.65 20.65 22 19 22H5C3.35 22 2 20.65 2 19V5C2 3.35 3.35 2 5 2H19C20.65 2 22 3.35 22 5V19ZM5 10C5 9.45 5.45 9 6 9H15C15.55 9 16 10C16 10.55 15.55 11 15 11H6C5.45 11 5 10.55 5 10ZM5 6C5 5.45 5.45 5 6 5H12C12.55 5 13 6C13 6.55 12.55 7 12 7H6C5.45 7 5 6.55 5 6ZM19 14C19 14.55 18.55 15 18 15H6C5.45 15 5 14.55 5 14C5 13.45 5.45 13 6 13H18C18.55 13 19 13.45 19 14ZM10 18C10 18.55 9.55 19 9 19H6C5.45 19 5 18.55 5 18C5 17.45 5.45 17 6 17H9C9.55 17 10 17.45 10 18Z" fill="#5C5C5C"/>
           </svg>
         </a>
         <a
@@ -176,7 +165,6 @@
   <!-- ===== GRID ARTIKEL (6 kartu = 2 baris) ===== -->
   <div id="daftar-artikel" class="grid grid-cols-1 sm:grid-cols-3 gap-5 text-left">
 
-    <!-- KARTU 1 (PINK) -->
     <div class="bg-white rounded-2xl p-4 flex flex-col border border-white hover:border-[#F9C4BE] transition duration-300 hover:scale-105">
       <img src="../assets/backgrounds/susah-makan.svg" alt="Anak susah makan"
         class="w-full h-full object-cover rounded-xl border border-[#5C5C5C] mb-4" />
@@ -194,7 +182,6 @@
       </a>
     </div>
 
-    <!-- KARTU 2 (HIJAU) -->
     <div class="bg-white rounded-2xl p-4 flex flex-col border border-white hover:border-[#E4F1CE] transition duration-300 hover:scale-105">
       <img src="../assets/backgrounds/sedang-masak.svg" alt="Memasak makanan sehat"
         class="w-full h-full object-cover rounded-xl border border-[#5C5C5C] mb-4" />
@@ -212,7 +199,6 @@
       </a>
     </div>
 
-    <!-- KARTU 3 (PINK) -->
     <div class="bg-white rounded-2xl p-4 flex flex-col border border-white hover:border-[#F9C4BE] transition duration-300 hover:scale-105">
       <img src="../assets/backgrounds/mbg.svg" alt="Piring makanan seimbang"
         class="w-full h-full object-cover rounded-xl border border-[#5C5C5C] mb-4" />
@@ -230,7 +216,6 @@
       </a>
     </div>
 
-    <!-- KARTU 4 (PINK) -->
     <div class="bg-white rounded-2xl p-4 flex flex-col border border-white hover:border-[#F9C4BE] transition duration-300 hover:scale-105">
       <img src="../assets/backgrounds/banyak-makanan.svg" alt="Bahan makanan bergizi"
         class="w-full h-full object-cover rounded-xl border border-[#5C5C5C] mb-4" />
@@ -248,7 +233,6 @@
       </a>
     </div>
 
-    <!-- KARTU 5 (UNGU) -->
     <div class="bg-white rounded-2xl p-4 flex flex-col border border-white hover:border-[#D7CEE9] transition duration-300 hover:scale-105">
       <img src="../assets/backgrounds/garam-and-friend.svg" alt="Membaca label gizi"
         class="w-full h-full object-cover rounded-xl border border-[#5C5C5C] mb-4" />
@@ -266,7 +250,6 @@
       </a>
     </div>
 
-    <!-- KARTU 6 (HIJAU) -->
     <div class="bg-white rounded-2xl p-4 flex flex-col border border-white hover:border-[#E4F1CE] transition duration-300 hover:scale-105">
       <img src="../assets/backgrounds/tiga-mangkok.svg" alt="Panduan gizi makanan"
         class="w-full h-full object-cover rounded-xl border border-[#5C5C5C] mb-4" />
@@ -287,17 +270,14 @@
 
   <!-- ===== PAGINATION ===== -->
   <div id="pagination" class="flex items-center justify-center gap-2 mt-14">
-    <!-- panah kiri -->
     <button class="h-10 w-10 flex items-center justify-center text-[#5C5C5C] rounded-full hover:bg-[#FFF0F0] transition-colors">
       <i class="fa-solid fa-chevron-left"></i>
     </button>
-    <!-- halaman 1 (sedang aktif = solid pink) -->
     <button class="h-10 w-10 rounded-[16px] border border-[#FF8385] bg-[#F9C4BE] text-lg text-[#FF8385] font-extrabold">1</button>
     <button class="h-10 w-10 rounded-[16px] border border-[#F7F7F7] text-[#5C5C5C] text-lg font-extrabold hover:bg-[#FFF0F0] transition-colors">2</button>
     <button class="h-10 w-10 rounded-[16px] border border-[#F7F7F7] text-[#5C5C5C] text-lg font-extrabold hover:bg-[#FFF0F0] transition-colors">3</button>
     <button class="h-10 w-10 rounded-[16px] border border-[#F7F7F7] text-[#5C5C5C] text-lg font-extrabold hover:bg-[#FFF0F0] transition-colors">4</button>
     <button class="h-10 w-10 rounded-[16px] border border-[#F7F7F7] text-[#5C5C5C] text-lg font-extrabold hover:bg-[#FFF0F0] transition-colors">5</button>
-    <!-- panah kanan -->
     <button class="h-10 w-10 flex items-center justify-center text-[#5C5C5C] rounded-full hover:bg-[#FFF0F0] transition-colors">
       <i class="fa-solid fa-chevron-right"></i>
     </button>
@@ -327,10 +307,8 @@
       <div class="bg-[#FFA2A2] text-white px-4 pt-4 pb-0">
 
         <!-- ===== CARD CTA ===== -->
-        <!-- HP: gambar di atas teks (flex-col-reverse) | desktop: teks kiri, gambar kanan -->
         <div id="bmi" class="max-w-[1006px] mx-auto -mt-32 sm:-mt-[320px] relative z-10">
           <div class="bg-[#F6FFE5] rounded-3xl border border-[#C6D4A9] overflow-hidden flex flex-col-reverse md:flex-row">
-            <!-- KIRI: teks & tombol -->
             <div class="p-8 sm:p-12 flex-1">
               <div class="w-10 h-10 rounded-lg mb-6 flex items-center justify-center">
                 <img src="../assets/vector/kotak-lengkung-green.svg" class="h-12 w-12" alt="">
@@ -355,7 +333,6 @@
               </button>
             </div>
 
-            <!-- KANAN: gambar makanan -->
             <div class="md:w-[45%] h-56 md:h-auto">
               <img
                 src="../assets/backgrounds/buah2an.svg"
@@ -367,17 +344,11 @@
         </div>
 
         <!-- ===== 3. ISI FOOTER ===== -->
-        <!-- Urutan sesuai mockup HP: Jelajah+Kontak DULU, baru Web Edukasi+copyright.
-             Tapi urutan HTML tidak diubah â€” cukup pakai order di HP:
-             - HP : grup kanan (order-1) tampil duluan, blok kiri (order-2) di bawah
-             - md : balik normal (blok kiri kiri, grup kanan kanan) -->
         <div class="max-w-[1006px] mx-auto mt-[87px]">
           <div class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0">
 
-            <!-- GRUP KANAN (Jelajah + Kontak) â€” di HP diturunin ke atas pakai order-1 -->
             <div class="order-1 md:order-2 flex w-full md:w-auto md:ml-auto justify-between gap-x-12 lg:gap-x-32">
 
-              <!-- KOLOM JELAJAH -->
               <div>
                 <h4 class="font-bold text-[18px] mb-3">Jelajah</h4>
                 <ul class="space-y-2 text-[18px] text-white/90">
@@ -388,7 +359,6 @@
                 </ul>
               </div>
 
-              <!-- KOLOM KONTAK -->
               <div>
                 <h4 class="font-bold text-[18px] mb-3">Kontak</h4>
                 <ul class="space-y-2 text-[18px] text-white/90">
@@ -400,13 +370,11 @@
               </div>
             </div>
 
-            <!-- BLOK KIRI (Web Edukasi + copyright) â€” di HP ke bawah pakai order-2 -->
             <div class="order-2 md:order-1 flex flex-col">
               <p class="text-[18px] text-white/90">
                 Web Edukasi untuk keluarga<br />menuju Indonesia Sehat
               </p>
               <p class="text-[18px] text-white/70 mt-6">&copy; 2026 Gizy</p>
-              <!-- Logo kecil: sembunyi di HP (wordmark gede di bawah sudah mewakili) -->
               <img
                 src="../assets/vector/text-gede.svg"
                 class="hidden sm:block w-[128px] mt-6 pointer-events-none"
@@ -445,7 +413,6 @@
             />
           </div>
 
-          <!-- WORDMARK gizy: di depan (z-10), bawahnya kepotong -->
           <img
             src="../assets/vector/text-gede.svg"
             class="relative z-10 block mx-auto w-[100%] sm:w-[1006px] -mb-[6vw] sm:-mb-[80px] pointer-events-none"
