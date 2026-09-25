@@ -8,7 +8,6 @@
     />
     <title>Gizy - Home</title>
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="icon"
@@ -20,7 +19,6 @@
       href="css/input.css"
     />
 
-    <!-- Font Google (Plus Jakarta Sans) -->
     <link
       rel="preconnect"
       href="https://fonts.googleapis.com"
@@ -35,7 +33,6 @@
       rel="stylesheet"
     />
 
-    <!-- Font Awesome (Ikon Visual) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -49,7 +46,6 @@
         font-family: "Plus Jakarta Sans", sans-serif;
       }
 
-      /* Scrollbar slide tips disembunyikan (HP + desktop) */
       .tips-scroller::-webkit-scrollbar {
         display: none;
       }
@@ -58,7 +54,6 @@
         -ms-overflow-style: none; /* Edge lama */
       }
 
-      /* ===== CSS UNTUK SECTION 1 STICKY ===== */
       .masalah-fixed {
         position: fixed !important;
         top: 0;
@@ -68,15 +63,10 @@
         box-shadow: none !important;
       }
 
-      /* ===== INTRO VIDEO ===== */
-      /* Supaya pas menghilang, videonya MEMUDAR halus (bukan ilang mendadak) */
       #intro-screen {
         transition: opacity 0.6s ease;
       }
 
-      /* ===== FLOATING SHAPE (hero) ===== */
-      /* Gerakan naik-turun pelan, kayak melayang.
-         var(--rot) = rotasi asli tiap shape, biar gak hilang saat animasi jalan */
       @keyframes float {
         0% {
           transform: translateY(0) rotate(var(--rot, 0deg));
@@ -120,7 +110,6 @@
         id="nav-container"
         class="w-full max-w-5xl px-4 flex justify-between items-center transition-all duration-150 ease-in-out"
       >
-        <!-- Group Kiri: SEMBUNYI di HP -->
         <div
           class="hidden md:flex flex-1 items-center justify-end gap-4 md:gap-8"
         >
@@ -136,7 +125,6 @@
           >
         </div>
 
-        <!-- Logo: di desktop di tengah, di HP otomatis ke kiri -->
         <a
           href="#beranda"
           id="nav-logo"
@@ -145,7 +133,6 @@
           <img src="assets/gizylogo.svg" alt="" class="w-12 mx-6 pt-1">
         </a>
 
-        <!-- Group Kanan: SEMBUNYI di HP -->
         <div
           class="hidden md:flex flex-1 items-center justify-start gap-4 md:gap-8"
         >
@@ -161,7 +148,6 @@
           >
         </div>
 
-        <!-- Tombol hamburger: CUMA MUNCUL di HP -->
         <button
           id="nav-toggle"
           type="button"
@@ -182,14 +168,10 @@
       id="mobile-menu"
       class="hidden md:hidden fixed inset-0 z-40 bg-black/60"
     >
-      <!-- Panel = cuma "wadah" transparan:
-           pt-24  = mulai di bawah navbar (biar gak nimpa logo gizy & âœ•)
-           px-4   = jarak dari pinggir kiri-kanan layar -->
       <div
         id="mobile-panel"
         class="pt-24 px-4 transition-transform duration-300 -translate-y-full"
       >
-        <!-- TIAP LINK = 1 kartu putih sendiri, ada jarak antar kartu (mb-3) -->
         <a
           href="#beranda"
           class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
@@ -277,8 +259,6 @@
         class="absolute left-1/2 top-[calc(50%+120px)] w-[750px] h-[750px] z-0 -translate-x-1/2 -translate-y-1/2 object-cover pointer-events-none md:top-[calc(50%+180px)] md:h-[1300px] md:w-[1300px] overflow-hidden"
       />
 
-      <!-- Bentuk Hiasan Dekoratif -->
-
       <img
         src="assets/vector/segitiga-green-mini.svg"
         alt=""
@@ -335,11 +315,9 @@
         style="--rot: -18deg; animation-duration: 6s;"
       />
 
-      <!-- Konten Teks & Tombol -->
       <div
         class="relative z-10 max-w-4xl mx-auto flex flex-col items-center -mt-24"
       >
-        <!-- Judul Utama -->
         <h1
           class="text-4xl sm:text-6xl md:text-[98px] font-black text-black tracking-tight leading-[1.1] mb-6"
         >
@@ -347,36 +325,31 @@
           dari Piringmu
         </h1>
 
-        <!-- Subteks -->
         <p
           class="text-[16px] sm:text-[18px] md:text-base text-gray-500 font-medium mb-10 md:mb-[61px] max-w-md"
         >
           Pelajari pola hidup sehat mulai dari gizimu!
         </p>
 
-        <!-- Bagian Tombol Aksi -->
         <div class="flex flex-col md:flex-row gap-4">
           <button
-            onclick="window.location.href = '#isi-piring'"
-            class="group flex items-center text-[#FF8385]"
+            onclick="window.location.href = 'pages/kalkulator.html'"
+            class="group flex items-center justify-center text-[#FF8385]"
           >
-            <!-- Lingkaran Ikon Kiri (Muncul saat Hover) -->
             <div
-              class="text-[#FF8385] w-[64px] h-[64px] lg:w-[74px] lg:h-[74px] border border-[#FF8385] rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 scale-0 group-hover:scale-100 -mr-10 lg:-mr-12 z-10"
+              class="text-[#FF8385] hidden md:flex w-[64px] h-[64px] lg:w-[74px] lg:h-[74px] border border-[#FF8385] rounded-full items-center justify-center overflow-hidden transition-all duration-300 scale-0 group-hover:scale-100 -mr-10 lg:-mr-12 z-10"
             >
               <i
                 class="fa-solid fa-chevron-down text-lg -translate-x-8 -translate-y-8 transition-transform duration-300 delay-100 group-hover:translate-x-0 group-hover:translate-y-0"
               ></i>
             </div>
 
-            <!-- Teks Utama (Bergeser ke Kanan saat Hover) -->
             <div
               class="justify-center text-[#FF8385] h-[64px] w-[260px] lg:h-[74px] px-4 lg:px-6 border border-[#FF8385] rounded-full flex items-center text-[16px] lg:text-[18px] font-semibold transition-transform duration-300 group-hover:translate-x-10 lg:group-hover:translate-x-12"
             >
               Pelajari Gizi Sehat!
             </div>
 
-            <!-- Lingkaran Ikon Kanan (Sembunyi saat Hover) -->
             <div
               class="text-[#FF8385] w-[64px] h-[64px] lg:w-[74px] lg:h-[74px] border border-[#FF8385] rounded-full flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-0"
             >
@@ -390,7 +363,6 @@
     </header>
 
     <div class="relative">
-      <!-- SECTION 1: Nutupin Hero, lalu jadi Sticky -->
       <section
         id="masalah"
         class="relative z-[5] bg-[#FFA2A2] text-white pb-24 md:pb-32 pt-16 px-4 flex flex-col justify-start shadow-[0_-20px_40px_rgba(0,0,0,0.15)]"
@@ -402,13 +374,11 @@
           preserveAspectRatio="none"
           aria-hidden="true"
         >
-          <!-- Isi lengkungan -->
           <path
             d="M0,120 C300,0 900,0 1200,120 L1200,120 L0,120 Z"
             fill="#FFA2A2"
           ></path>
 
-          <!-- Border hanya pada sisi atas/lengkungan -->
           <path
             d="M0,120 C300,0 900,0 1200,120"
             fill="none"
@@ -417,25 +387,21 @@
         </svg>
 
         <div class="max-w-[1006px] mx-auto text-center">
-          <!-- Badge "Masalah Kami" -->
           <div
             class="inline-flex items-center justify-center h-10 lg:h-12 px-6 lg:px-8 border border-white/80 rounded-full text-white text-sm lg:text-[18px] font-extralight mb-6 md:mb-8"
           >
             Masalah Kami
           </div>
 
-          <!-- Judul Utama -->
           <h2
-            class="text-2xl sm:text-[4xl] md:text-[48px] font-extrabold tracking-tight leading-tight mt-6 md:mt-8 mb-16 md:mb-20 max-w-2xl mx-auto"
+            class="text-2xl sm:text-4xl md:text-[48px] font-extrabold tracking-tight leading-tight mt-6 md:mt-8 mb-16 md:mb-20 max-w-2xl mx-auto"
           >
             Masalah gizi anak di Indonesia masih menjadi tantangan besar
           </h2>
 
-          <!-- Grid 2 Kolom -->
           <div
             class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 text-left items-start"
           >
-            <!-- KOLOM KIRI -->
             <div class="flex flex-col gap-4">
               <div
                 class="card-stat group relative overflow-hidden rounded-3xl shadow-md"
@@ -452,7 +418,7 @@
                     Di tahun 2024, jumlah anak balita di indonesia sebanyak
                   </p>
                   <h3
-                    class="text-[100px] md:text-[128px] font-black tracking-tight my-auto"
+                    class="text-[64px] md:text-[128px] font-black tracking-tight my-auto"
                   >
                     <span
                       class="stat-number"
@@ -474,7 +440,6 @@
               </p>
             </div>
 
-            <!-- KOLOM KANAN -->
             <div
               class="flex flex-col gap-4 max-md:flex-col-reverse md:flex-row-reverse md:flex-col"
             >
@@ -505,7 +470,7 @@
                     Sekitar 1 dari 5 anak Indonesia tercatat masih
                   </p>
                   <h3
-                    class="text-[100px] md:text-[128px] font-black tracking-tight my-auto"
+                    class="text-[64px] md:text-[128px] font-black tracking-tight my-auto"
                   >
                     <span
                       class="stat-number"
@@ -521,23 +486,19 @@
             </div>
           </div>
 
-          <!-- TEKS PENUTUP BAWAH (kosong; di HP diperkecil biar gak jadi gap gede) -->
           <div class="mt-10 md:mt-32 mb-4 md:mb-8 max-w-2xl mx-auto px-4"></div>
         </div>
       </section>
 
-      <!-- Spacer: mencegah layout jump saat section 1 jadi fixed -->
       <div
         id="masalah-spacer"
         aria-hidden="true"
       ></div>
 
-      <!-- SECTION 2: Nutupin Section 1 yang Sticky -->
       <section
         id="isi-piring"
         class="relative z-20 bg-white text-gray-800 shadow-[0_-20px_40px_rgba(0,0,0,0.15)] min-h-screen pt-16 pb-24 px-4 md:px-8"
       >
-        <!-- ===== CARD PENUTUP (ditarik ke atas biar nimpa batas pink & putih) ===== -->
         <div
           class="relative w-full max-w-[768px] h-auto md:h-[214px] z-10 -top-24 md:-top-52 mx-auto"
         >
@@ -552,7 +513,6 @@
               oleh teman-teman.
             </p>
 
-            <!-- ikon kecil: panduan, tips, blog sehat -->
             <div
               class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-5 text-[#A9BD8B] text-[16px]"
             >
@@ -573,7 +533,6 @@
             fill="white"
           ></path>
 
-          <!-- Border hanya pada sisi atas/lengkungan -->
           <path
             d="M0,120 C300,0 900,0 1200,120"
             fill="none"
@@ -582,7 +541,6 @@
         </svg>
 
         <div class="max-w-[1006px] mx-auto">
-          <!-- Header Section -->
           <div class="text-center mb-12 md:mb-16">
             <div
               class="inline-flex items-center justify-center h-10 lg:h-12 px-6 lg:px-8 border border-gray-300 rounded-full text-gray-600 text-sm lg:text-[18px] font-extralight mb-6 md:mb-8"
@@ -596,13 +554,10 @@
             </h2>
           </div>
 
-          <!-- Grid 2 Kolom -->
           <div
             class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center"
           >
-            <!-- KOLOM KIRI: DONUT CHART -->
             <div class="lg:col-span-5 flex flex-col items-center">
-              <!-- Donut Chart (HP: w-64 biar gak mepet, desktop: 400px) -->
               <div
                 class="relative w-64 h-64 md:w-[400px] md:h-[400px] rounded-full flex items-center justify-center transition-transform duration-300 hover:scale-105"
                 style="
@@ -614,18 +569,15 @@
                   );
                 "
               >
-                <!-- Lingkaran tengah (hitam + gambar makanan + teks) -->
                 <div
                   class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden flex items-center justify-center relative shadow-inner"
                   style="background: #1a1a1a"
                 >
-                  <!-- Gambar sayur-segar sebagai latar -->
                   <img
                     src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=400&auto=format&fit=crop"
                     alt="Sayur segar"
                     class="absolute inset-0 w-full h-full object-cover opacity-40"
                   />
-                  <!-- Teks di atas gambar -->
                   <span
                     class="relative z-10 text-white text-center font-bold text-sm md:text-[24px] px-3 leading-tight"
                     >Panduan<br />Gizi Sehat</span
@@ -633,7 +585,6 @@
                 </div>
               </div>
 
-              <!-- Legenda Warna di bawah chart -->
               <div
                 class="flex flex-wrap justify-center gap-3 mt-6 text-[18px] font-semibold text-gray-600"
               >
@@ -656,9 +607,7 @@
               </div>
             </div>
 
-            <!-- KOLOM KANAN: KARTU PENJELASAN -->
             <div class="lg:col-span-7 flex flex-col gap-4">
-              <!-- Kartu 1: Karbohidrat -->
               <div
                 class="bg-white p-4 md:p-5 rounded-2xl border border-white flex items-start gap-4 hover:border-[#B8A9C9] transition border duration-300"
               >
@@ -682,7 +631,6 @@
                 </div>
               </div>
 
-              <!-- Kartu 2: Protein (Lauk Pauk) -->
               <div
                 class="bg-white p-4 md:p-5 rounded-2xl border border-white flex items-start gap-4 hover:border-[#F4A698] transition border duration-300"
               >
@@ -706,7 +654,6 @@
                 </div>
               </div>
 
-              <!-- Kartu 3: Sayur-Sayuran -->
               <div
                 class="bg-white p-4 md:p-5 rounded-2xl border border-white flex items-start gap-4 hover:border-[#A8DADC] transition border duration-300"
               >
@@ -730,7 +677,6 @@
                 </div>
               </div>
 
-              <!-- Kartu 4: Buah-Buahan -->
               <div
                 class="bg-white p-4 md:p-5 rounded-2xl border border-white flex items-start gap-4 hover:border-[#B8A9C9] transition border duration-300"
               >
@@ -758,9 +704,6 @@
             </div>
           </div>
 
-          <!-- ========================================================================= -->
-          <!-- [BAGIAN: TIPS MAKAN SEHAT - DESKTOP: HOVER FLIP | HP: SLIDE + TAP FLIP] -->
-          <!-- ========================================================================= -->
           <div class="mt-[229px] text-center">
             <div
               class="inline-flex items-center justify-center h-10 lg:h-12 px-6 lg:px-8 border border-gray-300 rounded-full text-gray-600 text-sm lg:text-[18px] font-extralight mb-6 md:mb-8"
@@ -773,15 +716,11 @@
               Tips Makan Sehat
             </h2>
 
-            <!-- ===== PEMBUNGUS ===== -->
-            <!-- HP: flex + bisa di-slide ke samping (overflow-x-auto + snap) -->
-            <!-- md : balik jadi grid 4 kolom persis seperti desain desktop -->
             <div
-              class="tips-scroller flex overflow-x-auto snap-x snap-mandatory gap-4 text-left px-4 -mx-4 md:grid md:grid-cols-4 md:overflow-visible md:mx-0 md:px-0"
+              class="tips-scroller flex overflow-x-auto snap-x snap-mandatory gap-4 text-left px-4 -mx-4 lg:grid lg:grid-cols-4 lg:overflow-visible lg:mx-0 lg:px-0"
             >
-              <!-- ===== KARTU 1: pembuka (gak bisa dibalik, warna solid) ===== -->
               <div
-                class="relative h-[320px] border border-[#FF8385] w-[239.5px] shrink-0 snap-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#FFAEAF] to-[#FFCACA] p-7 flex flex-col justify-between"
+                class="relative h-[320px] border border-[#FF8385] w-[239.5px] lg:w-full shrink-0 snap-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#FFAEAF] to-[#FFCACA] p-7 flex flex-col justify-between"
               >
                 <img
                   src="assets/vector/kotak-lengkung-pink.svg"
@@ -802,14 +741,10 @@
                 </p>
               </div>
 
-              <!-- ===== KARTU 2: Makan Seimbang dan Beragam (FLIP) ===== -->
-              <div
-                class="flip-card group [perspective:1000px] h-[320px] w-[239.5px] shrink-0 snap-center"
-              >
+              <div class="flip-card group [perspective:1000px] h-[320px] w-[239.5px] lg:w-full shrink-0 snap-center">
                 <div
                   class="flip-rotator relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
                 >
-                  <!-- Sisi depan -->
                   <div
                     class="absolute inset-0 rounded-2xl overflow-hidden [backface-visibility:hidden]"
                   >
@@ -827,7 +762,6 @@
                       Makan Seimbang<br> dan Beragam
                     </h3>
                   </div>
-                  <!-- Sisi belakang -->
                   <div
                     class="absolute inset-0 overflow-hidden rounded-2xl bg-[#C6D4A9] p-5 [backface-visibility:hidden] [transform:rotateY(180deg)]"
                   >
@@ -871,10 +805,7 @@
                 </div>
               </div>
 
-              <!-- ===== KARTU 3: Batasi Asupan & Jaga Kebersihan (FLIP) ===== -->
-              <div
-                class="flip-card group [perspective:1000px] h-[320px] w-[239.5px] shrink-0 snap-center"
-              >
+              <div class="flip-card group [perspective:1000px] h-[320px] w-[239.5px] lg:w-full shrink-0 snap-center">
                 <div
                   class="flip-rotator relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
                 >
@@ -940,10 +871,7 @@
                 </div>
               </div>
 
-              <!-- ===== KARTU 4: Rutinitas Sehat Setiap Hari (FLIP) ===== -->
-              <div
-                class="flip-card group [perspective:1000px] h-[320px] w-[239.5px] shrink-0 snap-center"
-              >
+              <div class="flip-card group [perspective:1000px] h-[320px] w-[239.5px] lg:w-full shrink-0 snap-center">
                 <div
                   class="flip-rotator relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
                 >
@@ -1010,30 +938,23 @@
             </div>
           </div>
 
-          <!-- ========================================================================= -->
-          <!-- [BAGIAN: BLOG PANDUAN SEHAT] -->
-          <!-- ========================================================================= -->
           <div
             id="blog"
             class="mt-[229px] text-center"
           >
-            <!-- Badge kecil di atas judul -->
             <div
               class="inline-flex items-center justify-center h-10 lg:h-12 px-6 lg:px-8 border border-gray-300 rounded-full text-gray-600 text-sm lg:text-[18px] font-extralight mb-6 md:mb-8"
             >
               Artikel Terbaru
             </div>
 
-            <!-- Judul section -->
             <h2
               class="text-3xl md:text-[48px] font-black text-gray-900 tracking-tight mb-10"
             >
               Blog Panduan Sehat
             </h2>
 
-            <!-- ===== GRID PERTAMA: 1 baris (3 kartu), SELALU TERLIHAT ===== -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 text-left">
-              <!-- KARTU ARTIKEL 1 (tombol PINK) -->
               <div
                 class="bg-white rounded-2xl p-4 flex flex-col border border-white hover:border-[#F9C4BE] transition duration-300 transition-transform hover:scale-105"
               >
@@ -1054,7 +975,6 @@
                   </div>
                   <span class="text-[14px] text-[#5C5C5C]">John Doe</span>
                 </div>
-                <!-- Tombol warna pink -->
                 <a
                   href="pages/isi-blog.html"
                   class="flex items-center justify-center mt-auto w-full py-2.5 rounded-lg border border-[#FF8385] font-semibold bg-[#FFAEAF] text-[#5C5C5C] hover:bg-[#FF8385] transition-colors"
@@ -1063,7 +983,6 @@
                 </a>
               </div>
 
-              <!-- KARTU ARTIKEL 2 (tombol HIJAU) -->
               <div
                 class="bg-white rounded-2xl p-4 flex flex-col border border-white hover:border-[#E4F1CE] transition duration-300 transition-transform hover:scale-105"
               >
@@ -1084,7 +1003,6 @@
                   </div>
                   <span class="text-[14px] text-[#5C5C5C]">John Doe</span>
                 </div>
-                <!-- Tombol warna hijau -->
                 <a
                   href="pages/isi-blog.html"
                   class="flex items-center justify-center mt-auto w-full py-2.5 rounded-lg text-[18px] border border-[#C6D4A9] font-semibold bg-[#F6FFE5] text-[#5C5C5C] hover:bg-[#C6D4A9] transition-colors"
@@ -1093,7 +1011,6 @@
                 </a>
               </div>
 
-              <!-- KARTU ARTIKEL 3 (tombol UNGU) -->
               <div
                 class="bg-white rounded-2xl p-4 flex flex-col border border-white hover:border-[#D7CEE9] transition duration-300 transition-transform hover:scale-105"
               >
@@ -1114,7 +1031,6 @@
                   </div>
                   <span class="text-[14px] text-[#5C5C5C]">John Doe</span>
                 </div>
-                <!-- Tombol warna ungu -->
                 <a
                   href="pages/isi-blog.html"
                   class="flex items-center justify-center mt-auto w-full py-2.5 rounded-lg border border-[#9B85A3] text-[18px] font-semibold bg-[#C2A6CC] text-[#5C5C5C] hover:bg-[#9B85A3] transition-colors"
@@ -1124,31 +1040,27 @@
               </div>
             </div>
 
-            <!-- Tombol "Lihat Semua" -> langsung pindah ke halaman blog -->
             <div class="mt-12 text-center">
               <button
                 onclick="window.location.href = 'pages/blog.html'"
                 class="group inline-flex items-center text-[#FF8385]"
               >
-                <!-- Lingkaran Ikon Kiri (Muncul saat Hover) -->
                 <div
-                  class="text-[#FF8385] w-[64px] h-[64px] lg:h-[74px] lg:w-[74px] border border-[#FF8385] rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 scale-0 group-hover:scale-100 -mr-10 lg:-mr-12 z-10"
+                  class="text-[#FF8385] hidden md:flex w-[64px] h-[64px] lg:h-[74px] lg:w-[74px] border-2 border-[#FF8385] rounded-full items-center justify-center overflow-hidden transition-all duration-300 scale-0 group-hover:scale-100 -mr-10 lg:-mr-12 z-10"
                 >
                   <i
                     class="fa-solid fa-chevron-down text-lg -translate-x-8 -translate-y-8 transition-transform duration-300 delay-100 group-hover:translate-x-0 group-hover:translate-y-0"
                   ></i>
                 </div>
 
-                <!-- Teks Utama (Bergeser ke Kanan saat Hover) -->
                 <div
-                  class="text-[#FF8385] h-[64px] w-[260px] lg:h-[74px] px-4 lg:px-6 border border-[#FF8385] rounded-full flex justify-center items-center text-[16px] lg:text-[18px] font-extralight transition-transform duration-300 group-hover:translate-x-10 lg:group-hover:translate-x-12"
+                  class="text-[#FF8385] h-[64px] w-[222px] lg:h-[74px] px-4 lg:px-6 border-2 border-[#FF8385] rounded-full flex justify-center items-center text-[16px] lg:text-[18px] font-extralight transition-transform duration-300 group-hover:translate-x-10 lg:group-hover:translate-x-12"
                 >
                   Lihat Semua Blog
                 </div>
 
-                <!-- Lingkaran Ikon Kanan (Sembunyi saat Hover) -->
                 <div
-                  class="text-[#FF8385] w-[64px] h-[64px] lg:h-[74px] lg:w-[74px] border border-[#FF8385] rounded-full flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-0"
+                  class="text-[#FF8385] w-[64px] h-[64px] lg:h-[74px] lg:w-[74px] border-2 border-[#FF8385] rounded-full flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-0"
                 >
                   <i
                     class="fa-solid fa-chevron-down text-lg transition-transform duration-300 group-hover:translate-x-8 group-hover:translate-y-8"
@@ -1157,17 +1069,11 @@
               </button>
             </div>
           </div>
-          <!-- [AKHIR BAGIAN BLOG] -->
         </div>
-        <!-- nutup wadah max-w-[1006px] -->
       </section>
-      <!-- nutup section isi-piring -->
     </div>
-    <!-- nutup div class="relative" -->
 
-    <!-- ================= FOOTER BARU: LENGKUNG + CARD CTA + WORDMARK ================= -->
     <footer class="relative z-30 bg-white pt-16 md:pt-[280px]">
-      <!-- ===== 1. LENGKUNGAN PINK (SVG) ===== -->
       <svg
         viewBox="0 0 1440 120"
         preserveAspectRatio="none"
@@ -1186,10 +1092,7 @@
         ></path>
       </svg>
 
-      <!-- ===== 2. AREA PINK (badan footer) ===== -->
       <div class="bg-[#FFA2A2] text-white px-4 pt-4 pb-0">
-        <!-- ===== CARD CTA ===== -->
-        <!-- HP: gambar di atas teks (flex-col-reverse) | desktop: teks kiri, gambar kanan -->
         <div
           id="bmi"
           class="max-w-[1006px] mx-auto -mt-32 md:-mt-[320px] relative z-10"
@@ -1197,7 +1100,6 @@
           <div
             class="bg-[#F6FFE5] rounded-3xl border border-[#C6D4A9] overflow-hidden flex flex-col-reverse md:flex-row"
           >
-            <!-- KIRI: teks & tombol -->
             <div class="p-8 md:p-12 flex-1">
               <div
                 class="w-10 h-10 rounded-lg mb-6 flex items-center justify-center"
@@ -1232,7 +1134,6 @@
               </button>
             </div>
 
-            <!-- KANAN: gambar makanan -->
             <div class="md:w-[45%] h-56 md:h-auto">
               <img
                 src="assets/backgrounds/buah2an.svg"
@@ -1243,16 +1144,13 @@
           </div>
         </div>
 
-        <!-- ===== 3. ISI FOOTER ===== -->
         <div class="max-w-[1006px] mx-auto mt-[87px]">
           <div
             class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0"
           >
-            <!-- GRUP KANAN (Jelajah + Kontak) â€” di HP diturunin ke atas pakai order-1 -->
             <div
               class="order-1 md:order-2 flex w-full md:w-auto md:ml-auto justify-between gap-x-12 lg:gap-x-32"
             >
-              <!-- KOLOM JELAJAH -->
               <div>
                 <h4 class="font-bold text-[18px] mb-3">Jelajah</h4>
                 <ul class="space-y-2 text-[18px] text-white/90">
@@ -1287,7 +1185,6 @@
                 </ul>
               </div>
 
-              <!-- KOLOM KONTAK -->
               <div>
                 <h4 class="font-bold text-[18px] mb-3">Kontak</h4>
                 <ul class="space-y-2 text-[18px] text-white/90">
@@ -1311,13 +1208,11 @@
               </div>
             </div>
 
-            <!-- BLOK KIRI (Web Edukasi + copyright) â€” di HP ke bawah pakai order-2 -->
             <div class="order-2 md:order-1 flex flex-col">
               <p class="text-[18px] text-white/90">
                 Web Edukasi untuk keluarga<br />menuju Indonesia Sehat
               </p>
               <p class="text-[18px] text-white/70 mt-6">&copy; 2026 Gizy</p>
-              <!-- Logo kecil: sembunyi di HP (wordmark gede di bawah sudah mewakili) -->
               <img
                 src="assets/vector/text-gede.svg"
                 class="hidden md:block w-[128px] mt-6 pointer-events-none"
@@ -1327,12 +1222,10 @@
           </div>
         </div>
 
-        <!-- ===== 4. WORDMARK "GIZY" GEDE DI PALING BAWAH ===== -->
         <div
           class="relative overflow-hidden mt-[100px] md:mt-[152px]"
           aria-hidden="true"
         >
-          <!-- ===== LAPISAN VECTOR ===== -->
           <div
             class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 md:gap-8 pointer-events-none"
           >
@@ -1358,7 +1251,6 @@
             />
           </div>
 
-          <!-- WORDMARK gizy: di depan (z-10), bawahnya kepotong -->
           <img
             src="assets/vector/text-gede.svg"
             class="relative z-10 block mx-auto w-[100%] md:w-[1006px] -mb-[6vw] md:-mb-[80px] pointer-events-none"
@@ -1367,7 +1259,6 @@
         </div>
       </div>
     </footer>
-    <!-- ================= AKHIR FOOTER ================= -->
 
     <script src="js/gizy.js"></script>
   </body>
