@@ -2,17 +2,34 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>gizy - Home</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/svg+xml" href="assets/vector/bintang-pink.svg" />
-    <link rel="stylesheet" href="css/input.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/vector/bintang-pink.svg"
+    />
+    <link
+      rel="stylesheet"
+      href="css/input.css"
+    />
 
     <!-- Font Google (Plus Jakarta Sans) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -37,7 +54,7 @@
         display: none;
       }
       .tips-scroller {
-        scrollbar-width: none;    /* Firefox */
+        scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none; /* Edge lama */
       }
 
@@ -75,9 +92,7 @@
       .floaty {
         animation: float 5s ease-in-out infinite;
       }
-
-
-</style>
+    </style>
   </head>
   <body class="bg-white text-gray-800">
     <!-- ================= INTRO VIDEO (LOOPING) ================= -->
@@ -106,7 +121,9 @@
         class="w-full max-w-5xl px-4 flex justify-between items-center transition-all duration-150 ease-in-out"
       >
         <!-- Group Kiri: SEMBUNYI di HP -->
-        <div class="hidden md:flex flex-1 items-center justify-end gap-4 md:gap-8">
+        <div
+          class="hidden md:flex flex-1 items-center justify-end gap-4 md:gap-8"
+        >
           <a
             href="#beranda"
             class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap scroll-top-link"
@@ -129,7 +146,9 @@
         </a>
 
         <!-- Group Kanan: SEMBUNYI di HP -->
-        <div class="hidden md:flex flex-1 items-center justify-start gap-4 md:gap-8">
+        <div
+          class="hidden md:flex flex-1 items-center justify-start gap-4 md:gap-8"
+        >
           <a
             href="pages/blog.html"
             class="nav-item text-sm font-medium text-gray-600 hover:text-black transition-colors duration-150 whitespace-nowrap"
@@ -150,13 +169,19 @@
           aria-expanded="false"
           class="md:hidden h-10 w-10 flex items-center justify-center rounded-full text-xl text-black transition hover:opacity-70"
         >
-          <i id="nav-toggle-icon" class="fa-solid fa-bars"></i>
+          <i
+            id="nav-toggle-icon"
+            class="fa-solid fa-bars"
+          ></i>
         </button>
       </div>
     </nav>
 
     <!-- ================= MENU MOBILE (overlay gelap + kartu-kartu putih) ================= -->
-    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40 bg-black/60">
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden fixed inset-0 z-40 bg-black/60"
+    >
       <!-- Panel = cuma "wadah" transparan:
            pt-24  = mulai di bawah navbar (biar gak nimpa logo gizy & âœ•)
            px-4   = jarak dari pinggir kiri-kanan layar -->
@@ -170,8 +195,17 @@
           class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
         >
           Beranda
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 24H5C2.243 24 0 21.7574 0 19.0009V9.72668C0 8.06199 0.824 6.51228 2.204 5.58245L9.203 0.859339C10.902 -0.286446 13.098 -0.286446 14.797 0.859339L21.797 5.58245C23.176 6.51228 24 8.06099 24 9.72668V19.0009C24 21.7574 21.757 24 19 24ZM12 2.00112C11.416 2.00112 10.832 2.17309 10.322 2.51803L3.322 7.24014C2.494 7.79804 2 8.72686 2 9.72568V18.9999C2 20.6536 3.346 21.9994 5 21.9994H19C20.654 21.9994 22 20.6536 22 18.9999V9.72668C22 8.72786 21.506 7.79804 20.679 7.24114L13.678 2.51803C13.168 2.17309 12.584 2.00112 12 2.00112Z" fill="#5C5C5C" />
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 24H5C2.243 24 0 21.7574 0 19.0009V9.72668C0 8.06199 0.824 6.51228 2.204 5.58245L9.203 0.859339C10.902 -0.286446 13.098 -0.286446 14.797 0.859339L21.797 5.58245C23.176 6.51228 24 8.06099 24 9.72668V19.0009C24 21.7574 21.757 24 19 24ZM12 2.00112C11.416 2.00112 10.832 2.17309 10.322 2.51803L3.322 7.24014C2.494 7.79804 2 8.72686 2 9.72568V18.9999C2 20.6536 3.346 21.9994 5 21.9994H19C20.654 21.9994 22 20.6536 22 18.9999V9.72668C22 8.72786 21.506 7.79804 20.679 7.24114L13.678 2.51803C13.168 2.17309 12.584 2.00112 12 2.00112Z"
+              fill="#5C5C5C"
+            />
           </svg>
         </a>
         <a
@@ -179,8 +213,17 @@
           class="scroll-top-link mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
         >
           BMI
-          <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 2.01083H16.461C15.7695 1.22264 14.8807 0.632772 13.8858 0.301839C12.8909 -0.0290932 11.8258 -0.0891528 10.8 0.127832C9.55068 0.382602 8.42128 1.04491 7.589 2.01083H5C3.6744 2.01242 2.40356 2.53971 1.46622 3.47705C0.528882 4.41439 0.00158786 5.68524 0 7.01083L0 19.0108C0.00158786 20.3364 0.528882 21.6073 1.46622 22.5446C2.40356 23.482 3.6744 24.0092 5 24.0108H19C20.3256 24.0092 21.5964 23.482 22.5338 22.5446C23.4711 21.6073 23.9984 20.3364 24 19.0108V7.01083C23.9984 5.68524 23.4711 4.41439 22.5338 3.47705C21.5964 2.53971 20.3256 2.01242 19 2.01083ZM12 2.01083C13.0609 2.01083 14.0783 2.43226 14.8284 3.18241C15.5786 3.93255 16 4.94997 16 6.01083C16 6.27605 15.8946 6.5304 15.7071 6.71794C15.5196 6.90548 15.2652 7.01083 15 7.01083H12.868L13.832 5.56583C13.9792 5.34517 14.0327 5.07508 13.9808 4.81496C13.9288 4.55485 13.7757 4.32603 13.555 4.17883C13.3343 4.03164 13.0642 3.97813 12.8041 4.03008C12.544 4.08202 12.3152 4.23517 12.168 4.45583L10.465 7.01083H9C8.73478 7.01083 8.48043 6.90548 8.29289 6.71794C8.10536 6.5304 8 6.27605 8 6.01083C8 4.94997 8.42143 3.93255 9.17157 3.18241C9.92172 2.43226 10.9391 2.01083 12 2.01083ZM22 19.0108C22 19.8065 21.6839 20.5695 21.1213 21.1322C20.5587 21.6948 19.7956 22.0108 19 22.0108H5C4.20435 22.0108 3.44129 21.6948 2.87868 21.1322C2.31607 20.5695 2 19.8065 2 19.0108V7.01083C2 6.21518 2.31607 5.45212 2.87868 4.88951C3.44129 4.3269 4.20435 4.01083 5 4.01083H6.393C6.1339 4.72062 6.0009 5.47024 6 6.22583C6.00079 6.96422 6.29447 7.67213 6.81658 8.19425C7.3387 8.71636 8.04662 9.01004 8.785 9.01083H15.215C15.932 9.01742 16.6235 8.74492 17.1432 8.25095C17.6629 7.75697 17.9702 7.08024 18 6.36383C18.01 5.56627 17.8939 4.77214 17.656 4.01083H19C19.7956 4.01083 20.5587 4.3269 21.1213 4.88951C21.6839 5.45212 22 6.21518 22 7.01083V19.0108Z" fill="#5C5C5C" />
+          <svg
+            width="24"
+            height="25"
+            viewBox="0 0 24 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 2.01083H16.461C15.7695 1.22264 14.8807 0.632772 13.8858 0.301839C12.8909 -0.0290932 11.8258 -0.0891528 10.8 0.127832C9.55068 0.382602 8.42128 1.04491 7.589 2.01083H5C3.6744 2.01242 2.40356 2.53971 1.46622 3.47705C0.528882 4.41439 0.00158786 5.68524 0 7.01083L0 19.0108C0.00158786 20.3364 0.528882 21.6073 1.46622 22.5446C2.40356 23.482 3.6744 24.0092 5 24.0108H19C20.3256 24.0092 21.5964 23.482 22.5338 22.5446C23.4711 21.6073 23.9984 20.3364 24 19.0108V7.01083C23.9984 5.68524 23.4711 4.41439 22.5338 3.47705C21.5964 2.53971 20.3256 2.01242 19 2.01083ZM12 2.01083C13.0609 2.01083 14.0783 2.43226 14.8284 3.18241C15.5786 3.93255 16 4.94997 16 6.01083C16 6.27605 15.8946 6.5304 15.7071 6.71794C15.5196 6.90548 15.2652 7.01083 15 7.01083H12.868L13.832 5.56583C13.9792 5.34517 14.0327 5.07508 13.9808 4.81496C13.9288 4.55485 13.7757 4.32603 13.555 4.17883C13.3343 4.03164 13.0642 3.97813 12.8041 4.03008C12.544 4.08202 12.3152 4.23517 12.168 4.45583L10.465 7.01083H9C8.73478 7.01083 8.48043 6.90548 8.29289 6.71794C8.10536 6.5304 8 6.27605 8 6.01083C8 4.94997 8.42143 3.93255 9.17157 3.18241C9.92172 2.43226 10.9391 2.01083 12 2.01083ZM22 19.0108C22 19.8065 21.6839 20.5695 21.1213 21.1322C20.5587 21.6948 19.7956 22.0108 19 22.0108H5C4.20435 22.0108 3.44129 21.6948 2.87868 21.1322C2.31607 20.5695 2 19.8065 2 19.0108V7.01083C2 6.21518 2.31607 5.45212 2.87868 4.88951C3.44129 4.3269 4.20435 4.01083 5 4.01083H6.393C6.1339 4.72062 6.0009 5.47024 6 6.22583C6.00079 6.96422 6.29447 7.67213 6.81658 8.19425C7.3387 8.71636 8.04662 9.01004 8.785 9.01083H15.215C15.932 9.01742 16.6235 8.74492 17.1432 8.25095C17.6629 7.75697 17.9702 7.08024 18 6.36383C18.01 5.56627 17.8939 4.77214 17.656 4.01083H19C19.7956 4.01083 20.5587 4.3269 21.1213 4.88951C21.6839 5.45212 22 6.21518 22 7.01083V19.0108Z"
+              fill="#5C5C5C"
+            />
           </svg>
         </a>
         <a
@@ -188,8 +231,17 @@
           class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
         >
           Blog
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 0H5C2.24 0 0 2.24 0 5V19C0 21.76 2.24 24 5 24H19C21.76 24 24 21.76 24 19V5C24 2.24 21.76 0 19 0ZM22 19C22 20.65 20.65 22 19 22H5C3.35 22 2 20.65 2 19V5C2 3.35 3.35 2 5 2H19C20.65 2 22 3.35 22 5V19ZM5 10C5 9.45 5.45 9 6 9H15C15.55 9 16 10C16 10.55 15.55 11 15 11H6C5.45 11 5 10.55 5 10ZM5 6C5 5.45 5.45 5 6 5H12C12.55 5 13 6C13 6.55 12.55 7 12 7H6C5.45 7 5 6.55 5 6ZM19 14C19 14.55 18.55 15 18 15H6C5.45 15 5 14.55 5 14C5 13.45 5.45 13 6 13H18C18.55 13 19 13.45 19 14ZM10 18C10 18.55 9.55 19 9 19H6C5.45 19 5 18.55 5 18C5 17.45 5.45 17 6 17H9C9.55 17 10 17.45 10 18Z" fill="#5C5C5C" />
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 0H5C2.24 0 0 2.24 0 5V19C0 21.76 2.24 24 5 24H19C21.76 24 24 21.76 24 19V5C24 2.24 21.76 0 19 0ZM22 19C22 20.65 20.65 22 19 22H5C3.35 22 2 20.65 2 19V5C2 3.35 3.35 2 5 2H19C20.65 2 22 3.35 22 5V19ZM5 10C5 9.45 5.45 9 6 9H15C15.55 9 16 10C16 10.55 15.55 11 15 11H6C5.45 11 5 10.55 5 10ZM5 6C5 5.45 5.45 5 6 5H12C12.55 5 13 6C13 6.55 12.55 7 12 7H6C5.45 7 5 6.55 5 6ZM19 14C19 14.55 18.55 15 18 15H6C5.45 15 5 14.55 5 14C5 13.45 5.45 13 6 13H18C18.55 13 19 13.45 19 14ZM10 18C10 18.55 9.55 19 9 19H6C5.45 19 5 18.55 5 18C5 17.45 5.45 17 6 17H9C9.55 17 10 17.45 10 18Z"
+              fill="#5C5C5C"
+            />
           </svg>
         </a>
         <a
@@ -197,8 +249,17 @@
           class="mobile-link flex items-center justify-between bg-white rounded-2xl px-5 py-4 mb-3 shadow-lg text-base font-bold text-gray-800"
         >
           ChatBot
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M23 9H22V4C22 1.794 20.206 0 18 0H6C3.794 0 2 1.794 2 4V9H1C0.448 9 0 9.447 0 10C0 10.553 0.448 11 1 11H2V16C2 18.206 3.794 20 6 20H6.923L10.671 23.156C11.053 23.496 11.533 23.665 12.009 23.665C12.476 23.665 12.94 23.502 13.301 23.18L17.148 20H18C20.206 20 22 18.206 22 16V11H23C23.552 11 24 10.553 24 10C24 9.447 23.552 9 23 9ZM20 16C20 17.103 19.103 18 18 18H16.789C16.557 18 16.331 18.081 16.152 18.229L11.98 21.644L7.933 18.235C7.753 18.083 7.525 18 7.289 18H6C4.897 18 4 17.103 4 16V4C4 2.897 4.897 2 6 2H18C19.103 2 20 2.897 20 4V16ZM16 6H8C6.895 6 6 6.895 6 8V13C6 14.105 6.895 15 8 15H16C17.105 15 18 14.105 18 13V8C18 6.895 17.105 6 16 6ZM9.5 12C8.672 12 8 11.328 8 10.5C8 9.672 8.672 9 9.5 9C10.328 9 11 9.672 11 10.5C11 11.328 10.328 12 9.5 12ZM14.5 12C13.672 12 13 11.328 13 10.5C13 9.672 13.672 9 14.5 9C15.328 9 16 9.672 16 10.5C16 11.328 15.328 12 14.5 12Z" fill="#5C5C5C" />
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M23 9H22V4C22 1.794 20.206 0 18 0H6C3.794 0 2 1.794 2 4V9H1C0.448 9 0 9.447 0 10C0 10.553 0.448 11 1 11H2V16C2 18.206 3.794 20 6 20H6.923L10.671 23.156C11.053 23.496 11.533 23.665 12.009 23.665C12.476 23.665 12.94 23.502 13.301 23.18L17.148 20H18C20.206 20 22 18.206 22 16V11H23C23.552 11 24 10.553 24 10C24 9.447 23.552 9 23 9ZM20 16C20 17.103 19.103 18 18 18H16.789C16.557 18 16.331 18.081 16.152 18.229L11.98 21.644L7.933 18.235C7.753 18.083 7.525 18 7.289 18H6C4.897 18 4 17.103 4 16V4C4 2.897 4.897 2 6 2H18C19.103 2 20 2.897 20 4V16ZM16 6H8C6.895 6 6 6.895 6 8V13C6 14.105 6.895 15 8 15H16C17.105 15 18 14.105 18 13V8C18 6.895 17.105 6 16 6ZM9.5 12C8.672 12 8 11.328 8 10.5C8 9.672 8.672 9 9.5 9C10.328 9 11 9.672 11 10.5C11 11.328 10.328 12 9.5 12ZM14.5 12C13.672 12 13 11.328 13 10.5C13 9.672 13.672 9 14.5 9C15.328 9 16 9.672 16 10.5C16 11.328 15.328 12 14.5 12Z"
+              fill="#5C5C5C"
+            />
           </svg>
         </a>
       </div>
@@ -209,78 +270,75 @@
       id="beranda"
       class="sticky top-0 z-[1] bg-white min-h-screen flex items-center justify-center text-center px-4 pt-20 overflow-hidden"
     >
-
-    <img
-  src="assets/backgrounds/piring.svg"
-  alt=""
-  aria-hidden="true"
-  class="absolute left-1/2 top-[calc(50%+120px)] z-0 h-[750px] w-[750px] -translate-x-1/2 -translate-y-1/2 object-contain pointer-events-none md:top-[calc(50%+180px)] md:h-[1100px] md:w-[1100px]"
-/>
+      <img
+        src="assets/backgrounds/piring.svg"
+        alt=""
+        aria-hidden="true"
+        class="absolute left-1/2 top-[calc(50%+120px)] w-[750px] h-[750px] z-0 -translate-x-1/2 -translate-y-1/2 object-cover pointer-events-none md:top-[calc(50%+180px)] md:h-[1300px] md:w-[1300px] overflow-hidden"
+      />
 
       <!-- Bentuk Hiasan Dekoratif -->
 
-      <!-- 1. Shape Segitiga Hijau Muda -->
       <img
-        src="assets/vector/segitiga-green-gede.svg"
+        src="assets/vector/segitiga-green-mini.svg"
         alt=""
-        class="block absolute top-[12%] left-5 w-32 h-32 md:top-[100px] md:w-48 md:h-48
-               md:left-20
-               object-contain pointer-events-none z-10 floaty"
-        style="--rot: 12deg; animation-duration: 5s; animation-delay: 0s"
+        class="block absolute top-[10%] left-12 w-32 h-32 md:top-[150px] md:w-[5%] md:h-[96px] md:left-36 object-contain pointer-events-none z-10 floaty"
+        style="--rot: -8deg; animation-duration: 5s; animation-delay: 0s"
       />
 
-      <!-- 2. Shape Kapsul Merah Muda -->
       <img
         src="assets/vector/bintang-purple-gede.svg"
         alt=""
-        class="block absolute top-[5%] right-2 w-32 h-32 md:top-[100px] md:w-48 md:h-48
-               md:right-20
-               object-contain pointer-events-none z-10 floaty"
-        style="--rot: 0deg; animation-duration: 6s; animation-delay: 0.5s"
+        class="block absolute bottom-[80px] -left-[186px] w-64 h-64 md:bottom-[-55px] md:w-[20%] md:h-80 md:left-20 object-contain pointer-events-none z-10 floaty"
+        style="--rot: 12deg; animation-duration: 6s; animation-delay: 0.5s"
       />
 
-      <!-- 3. Shape Lingkaran Merah Muda -->
       <img
         src="assets/vector/kapsul-pink.svg"
         alt=""
-        class="block absolute top-[30%] -left-16 w-28 h-28
-               md:top-auto md:bottom-12 md:left-6 md:w-48 md:h-48
-               object-contain pointer-events-none z-10 floaty"
+        class="block absolute top-[25%] -left-16 w-32 h-48 md:top-[300px] md:bottom-12 md:left-24 md:w-[5%] md:h-48 object-contain pointer-events-none z-10 floaty"
         style="--rot: -45deg; animation-duration: 5.5s; animation-delay: 1s"
       />
 
-      <!-- 4. Shape Bunga/Awan Ungu -->
       <img
         src="assets/vector/lingkaran.svg"
         alt=""
-        class="block absolute top-[38%] -right-10 w-24 h-24
-               md:top-auto md:bottom-[100px] md:right-[100px] md:w-32 md:h-32
-               object-contain pointer-events-none z-10 floaty"
+        class="block absolute top-[5%] right-[80px] w-28 h-28 md:top-[150px] md:right-[200px] md:w-[5%] md:h-24 object-contain pointer-events-none z-10 floaty"
         style="--rot: 12deg; animation-duration: 6.5s; animation-delay: 1.5s"
       />
 
-      <!-- Shape Tengah Kanan -->
       <img
-        src="assets/vector/kotak-lengkung-purple.svg"
+        src="assets/vector/kotak-lengkung-purple-gede.svg"
         alt=""
-        class="block absolute bottom-[50px] -left-10 w-32 h-32
-               md:bottom-[-40px] md:left-[28%] md:w-48 md:h-48
-               object-contain pointer-events-none z-10 floaty"
-        style="--rot: -12deg; animation-duration: 7s; animation-delay: 2s"
+        class="block absolute top-[30%] -right-4 w-28 h-28 md:top-[300px] md:bottom-12 md:right-24 md:w-[10%] md:h-[156px] object-contain pointer-events-none z-10 floaty"
+        style="--rot: 8deg; animation-duration: 5.5s; animation-delay: 1s"
       />
 
-      <!-- Shape Tengah Kiri -->
+      <img
+        src="assets/vector/lingkaran-green.svg"
+        alt=""
+        class="block absolute bottom-[10px] left-12 w-32 h-32 md:bottom-[-50px] md:left-[32%] md:w-[15%] md:h-48 object-contain pointer-events-none z-10 floaty"
+        style="--rot: 0deg; animation-duration: 7s; animation-delay: 2s"
+      />
+
+      <img
+        src="assets/vector/kapsul-purple.svg"
+        alt=""
+        class="block absolute right-[70px] -bottom-[70px] w-32 h-48 md:bottom-[-140px] md:right-[35%] md:w-[10%] md:h-80 object-contain pointer-events-none z-10 floaty"
+        style="--rot: 50deg; animation-duration: 7s; animation-delay: 2s"
+      />
+
       <img
         src="assets/vector/segitiga-green-gede.svg"
         alt=""
-        class="block absolute bottom-[50px] -right-8 w-24 h-24
-               md:bottom-[-40px] md:right-[28%] md:w-48 md:h-48
-               object-contain pointer-events-none z-10 floaty"
-        style="--rot: 12deg; animation-duration: 6s; animation-delay: 0.8s"
+        class="block absolute bottom-[140px] -right-16 w-36 h-36 md:bottom-[-30px] md:right-[8%] md:w-[20%] md:h-80 object-contain pointer-events-none z-10 floaty"
+        style="--rot: -18deg; animation-duration: 6s; animation-delay: 0.8s"
       />
 
       <!-- Konten Teks & Tombol -->
-      <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center -mt-8">
+      <div
+        class="relative z-10 max-w-4xl mx-auto flex flex-col items-center -mt-8"
+      >
         <!-- Judul Utama -->
         <h1
           class="text-4xl sm:text-6xl md:text-[98px] font-black text-black tracking-tight leading-[1.1] mb-6"
@@ -396,7 +454,11 @@
                   <h3
                     class="text-[100px] md:text-[128px] font-black tracking-tight my-auto"
                   >
-                    <span class="stat-number" data-target="19">1</span>%
+                    <span
+                      class="stat-number"
+                      data-target="19"
+                      >1</span
+                    >%
                   </h3>
                   <p class="text-xs md:text-sm font-bold leading-snug">
                     Mengalami Stunting<br />(Gagal Tumbuh)
@@ -424,8 +486,8 @@
                   >sekitar 1 dari 5 anak Indonesia masih mengalami stunting
                   akibat kekurangan gizi kronis</span
                 >
-                angka yang meski menurun, tetap menjadi tantangan besar
-                setiap tahunnya.
+                angka yang meski menurun, tetap menjadi tantangan besar setiap
+                tahunnya.
               </p>
 
               <div
@@ -445,7 +507,11 @@
                   <h3
                     class="text-[100px] md:text-[128px] font-black tracking-tight my-auto"
                   >
-                    <span class="stat-number" data-target="20">1</span>%
+                    <span
+                      class="stat-number"
+                      data-target="20"
+                      >1</span
+                    >%
                   </h3>
                   <p class="text-xs md:text-sm font-bold leading-snug">
                     Kekurangan Gizi Kronis<br />(Tingkat Nasional)
@@ -461,7 +527,10 @@
       </section>
 
       <!-- Spacer: mencegah layout jump saat section 1 jadi fixed -->
-      <div id="masalah-spacer" aria-hidden="true"></div>
+      <div
+        id="masalah-spacer"
+        aria-hidden="true"
+      ></div>
 
       <!-- SECTION 2: Nutupin Section 1 yang Sticky -->
       <section
@@ -665,13 +734,15 @@
               <div
                 class="bg-white p-4 md:p-5 rounded-2xl border border-white flex items-start gap-4 hover:border-[#B8A9C9] transition border duration-300"
               >
-<div class="relative h-20 w-20 shrink-0 -ml-2 flex justify-center">
-  <img
-    src="assets/vector/Group 3.svg"
-    class="h-24 w-24 max-w-none object-contain -m-2"
-    alt=""
-  />
-</div>
+                <div
+                  class="relative h-20 w-20 shrink-0 -ml-2 flex justify-center"
+                >
+                  <img
+                    src="assets/vector/Group 3.svg"
+                    class="h-24 w-24 max-w-none object-contain -m-2"
+                    alt=""
+                  />
+                </div>
                 <div>
                   <h3 class="text-[18px] font-bold text-[#5C5C5C] mb-1">
                     Buah-Buahan
@@ -706,8 +777,7 @@
             <!-- HP: flex + bisa di-slide ke samping (overflow-x-auto + snap) -->
             <!-- md : balik jadi grid 4 kolom persis seperti desain desktop -->
             <div
-              class="tips-scroller flex overflow-x-auto snap-x snap-mandatory gap-4 text-left px-4 -mx-4
-                     md:grid md:grid-cols-4 md:overflow-visible md:mx-0 md:px-0"
+              class="tips-scroller flex overflow-x-auto snap-x snap-mandatory gap-4 text-left px-4 -mx-4 md:grid md:grid-cols-4 md:overflow-visible md:mx-0 md:px-0"
             >
               <!-- ===== KARTU 1: pembuka (gak bisa dibalik, warna solid) ===== -->
               <div
@@ -770,7 +840,9 @@
                     <div
                       class="relative z-10 flex h-full flex-col justify-center text-left"
                     >
-                      <h3 class="text-[#5C5C5C] font-extrabold text-[20px] mb-8">
+                      <h3
+                        class="text-[#5C5C5C] font-extrabold text-[20px] mb-8"
+                      >
                         Makan Seimbang<br />dan Beragam
                       </h3>
 
@@ -835,7 +907,9 @@
                     <div
                       class="relative z-10 flex h-full flex-col justify-center text-left"
                     >
-                      <h3 class="text-[#5C5C5C] font-extrabold text-[20px] mb-6">
+                      <h3
+                        class="text-[#5C5C5C] font-extrabold text-[20px] mb-6"
+                      >
                         Batasi Asupan &amp;<br />Jaga Kebersihan
                       </h3>
 
@@ -939,7 +1013,10 @@
           <!-- ========================================================================= -->
           <!-- [BAGIAN: BLOG PANDUAN SEHAT] -->
           <!-- ========================================================================= -->
-          <div id="blog" class="mt-[229px] text-center">
+          <div
+            id="blog"
+            class="mt-[229px] text-center"
+          >
             <!-- Badge kecil di atas judul -->
             <div
               class="inline-flex items-center justify-center h-10 lg:h-12 px-6 lg:px-8 border border-gray-300 rounded-full text-gray-600 text-sm lg:text-[18px] font-extralight mb-6 md:mb-8"
@@ -1180,16 +1257,32 @@
                 <h4 class="font-bold text-[18px] mb-3">Jelajah</h4>
                 <ul class="space-y-2 text-[18px] text-white/90">
                   <li>
-                    <a href="#beranda" class="hover:opacity-80">Beranda</a>
+                    <a
+                      href="#beranda"
+                      class="hover:opacity-80"
+                      >Beranda</a
+                    >
                   </li>
                   <li>
-                    <a href="pages/kalkulator.html" class="hover:opacity-80">BMI</a>
+                    <a
+                      href="pages/kalkulator.html"
+                      class="hover:opacity-80"
+                      >BMI</a
+                    >
                   </li>
                   <li>
-                    <a href="pages/blog.html" class="hover:opacity-80">Blog</a>
+                    <a
+                      href="pages/blog.html"
+                      class="hover:opacity-80"
+                      >Blog</a
+                    >
                   </li>
                   <li>
-                    <a href="pages/chatbot.html" class="hover:opacity-80">ChatBot</a>
+                    <a
+                      href="pages/chatbot.html"
+                      class="hover:opacity-80"
+                      >ChatBot</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -1201,10 +1294,18 @@
                   <li>+62 081812623943</li>
                   <li>gizy@gmail.com</li>
                   <li>
-                    <a href="#" class="hover:opacity-80">Instagram</a>
+                    <a
+                      href="#"
+                      class="hover:opacity-80"
+                      >Instagram</a
+                    >
                   </li>
                   <li>
-                    <a href="#" class="hover:opacity-80">Facebook</a>
+                    <a
+                      href="#"
+                      class="hover:opacity-80"
+                      >Facebook</a
+                    >
                   </li>
                 </ul>
               </div>
